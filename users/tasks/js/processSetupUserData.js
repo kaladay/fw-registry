@@ -20,7 +20,6 @@ var formatSourceData = function (args) {
         } else {
           sourceData[key][keyValParts[0]] = keyValParts[1] === '' ? null : keyValParts[1];
         }
-
       }
     } else if (typeof value === 'string' && value.indexOf(';;') !== -1) {
       sourceData[key] = value.split(';;');
@@ -67,14 +66,6 @@ returnObj = {
     'texshare': 'texs',
     'other': 'cour',
     'ill': 'illend'
-  },
-  addressTypes: {
-    'Claim': '',
-    'Home': '',
-    'Order': '',
-    'Payment': '',
-    'Returns': '',
-    'Work': ''
   },
   countryCodes: {
     'AFGHANISTAN': 'AFG',

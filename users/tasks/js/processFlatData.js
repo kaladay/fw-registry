@@ -33,4 +33,8 @@ if (args.sourceData.MIDDLE_NAME) {
   args.userRequestBody.personal.middleName = args.sourceData.MIDDLE_NAME;
 }
 
+if (args.sourceData.EMAIL) {
+  args.userRequestBody.personal.email = args.sourceData.EMAIL;
+}
+
 returnObj = args;
