@@ -68,6 +68,7 @@ returnObj = {
     'ill': 'illend'
   },
   addressTypes: {
+    'Temp': '79d73d04-0248-11ea-8d71-362b9e155667',
     'Claim': 'f07c4b4c-9560-4a01-b3d5-9a034299aee1',
     'Home': '8ead10c7-cab3-4467-8bda-51874be1e634',
     'Order': '1b6165d3-042b-48a9-aa08-8f3a31299751',

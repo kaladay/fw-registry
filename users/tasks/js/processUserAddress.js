@@ -1,5 +1,5 @@
 if(args.sourceData.ADDRESS_ID) {
-  var addressFieldMap = {addressLine1:'ADDRESS_LINE1',addressLine2:'ADDRESS_LINE2',city:'CITY',stateRegion:'STATE_PROVINCE',zipCode:'ZIP_POSTAL',country:'COUNTRY'};
+  var addressFieldMap = {addressLine1:'ADDRESS_LINE1',addressLine2:'ADDRESS_LINE2',city:'CITY',stateRegion:'STATE_PROVINCE',zipCode:'ZIP_POSTAL',country:'COUNTRY',addressTypeId:'ADDRESS_DESC'};
   var addressKeys = Object.keys(addressFieldMap);
 
   for(var i=0;i<args.sourceData.ADDRESS_ID.length;i++) {
