@@ -1,4 +1,6 @@
 returnObj = {
   users: args,
-  totalRecords: args.length
+  totalRecords: args.length,
+  deactivateMissingUsers: false,
+  updateOnlyPresentFields: true
 };
