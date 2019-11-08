@@ -67,14 +67,6 @@ returnObj = {
     'other': 'cour',
     'ill': 'illend'
   },
-  addressTypes: {
-    'Claim': '',
-    'Home': '',
-    'Order': '',
-    'Payment': '',
-    'Returns': '',
-    'Work': ''
-  },
   countryCodes: {
     'AFGHANISTAN': 'AFG',
     'ALA ALAND ISLANDS': 'ALA',
