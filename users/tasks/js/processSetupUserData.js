@@ -67,15 +67,6 @@ returnObj = {
     'other': 'cour',
     'ill': 'illend'
   },
-  addressTypes: {
-    'Temp': '79d73d04-0248-11ea-8d71-362b9e155667',
-    'Claim': 'f07c4b4c-9560-4a01-b3d5-9a034299aee1',
-    'Home': '8ead10c7-cab3-4467-8bda-51874be1e634',
-    'Order': '1b6165d3-042b-48a9-aa08-8f3a31299751',
-    'Payment': '1b73407a-4c15-4ef1-b5a2-7a0fc83ad73e',
-    'Returns': 'a0d84fa4-44b4-4eac-a342-522a952a9cfa',
-    'Work': 'b6fa6431-ecee-41f9-9bcc-7e4e5070e2ce'
-  },
   countryCodes: {
     'AFGHANISTAN': 'AFG',
     'ALA ALAND ISLANDS': 'ALA',
