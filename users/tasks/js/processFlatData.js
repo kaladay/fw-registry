@@ -13,6 +13,7 @@ var isActive = function (expireDateString) {
 
 args.userRequestBody.id = args.sourceData.id;
 args.userRequestBody.username = args.sourceData.netid ? args.sourceData.netid : args.sourceData.SCHEMA + '_' + args.sourceData.ID;
+args.userRequestBody.externalSystemId = args.sourceData.EXTERNAL_SYSTEM_ID;
 args.userRequestBody.barcode = args.sourceData.PATRON_BARCODE;
 
 if (args.sourceData.ACTIVE_DATE) {
