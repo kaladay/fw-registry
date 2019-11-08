@@ -4,6 +4,6 @@
   "delegate": "streamAccumulationDelegate",
   "deserializeAs": "AccumulatorTask",
   "streaming": false,
-  "accumulateTo": 10000,
+  "accumulateTo": 20000,
   "delayDuration": 5
 }
