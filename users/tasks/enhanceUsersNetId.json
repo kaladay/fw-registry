@@ -17,5 +17,5 @@
     }
   ],
   "mergeStrategy": "ENHANCE",
-  "streamSource": "{{mod-data-extractor}}/extractors/96b02e0b-850b-4f5f-88cd-e41dacfec581/run"
+  "streamSource": "{{mod-data-extractor-internal}}/extractors/96b02e0b-850b-4f5f-88cd-e41dacfec581/run"
 }
