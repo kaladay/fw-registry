@@ -5,5 +5,5 @@
   "deserializeAs": "StreamingExtractorTask",
   "streaming": true,
   "mergeStrategy": "CONCAT",
-  "streamSource": "{{mod-data-extractor}}/extractors/ea1dcb2e-3015-40c0-94c5-0f44447d0a8a/run"
+  "streamSource": "{{mod-data-extractor-internal}}/extractors/ea1dcb2e-3015-40c0-94c5-0f44447d0a8a/run"
 }

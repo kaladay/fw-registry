@@ -11,5 +11,5 @@
     }
   ],
   "mergeStrategy": "MERGE",
-  "streamSource": "{{mod-data-extractor}}/extractors/d0e5d47e-79f0-43b8-a001-ef34873c84ee/run"
+  "streamSource": "{{mod-data-extractor-internal}}/extractors/d0e5d47e-79f0-43b8-a001-ef34873c84ee/run"
 }
