@@ -1,0 +1,6 @@
+{
+  "id": "ed3fa3de-4341-4960-bf7e-552ffd2ad04f",
+  "name": "Bibliographic Reference Link AMDB Extractor",
+  "query": "bibReferenceLinksAMDB.sql",
+  "type": "VOYAGER"
+}
