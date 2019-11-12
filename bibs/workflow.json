@@ -1,0 +1,9 @@
+{
+  "id": "80eaa890-0556-11ea-82fe-ed43c4a668a8",
+  "name": "Bibliographics Migration Workflow",
+  "deploymentId": null,
+  "processDefinitionIds": [],
+  "active": false,
+  "tasks": [],
+  "startTrigger": "{{mod-workflow}}/eventTrigger/80ea5a70-0556-11ea-82fe-ed43c4a668a8"
+}

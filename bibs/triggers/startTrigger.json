@@ -1,0 +1,9 @@
+{
+  "id": "80ea5a70-0556-11ea-82fe-ed43c4a668a8",
+  "name": "Bibliographic Migration Trigger",
+  "description": "Triggers bibliographic migration",
+  "type": "MESSAGE_CORRELATE",
+  "method": "POST",
+  "deserializeAs": "EventTrigger",
+  "pathPattern": "/events/voyager/bibs/migrate"
+}
