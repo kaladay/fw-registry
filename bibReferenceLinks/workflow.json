@@ -1,0 +1,9 @@
+{
+  "id": "f2f06ab0-0556-11ea-823a-5390ca978abc",
+  "name": "Bibliographics Reference Link Workflow",
+  "deploymentId": null,
+  "processDefinitionIds": [],
+  "active": false,
+  "tasks": [],
+  "startTrigger": "{{mod-workflow}}/eventTrigger/f2f043a0-0556-11ea-823a-5390ca978abc"
+}
