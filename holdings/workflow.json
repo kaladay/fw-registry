@@ -1,0 +1,9 @@
+{
+  "id": "c4bcc2a0-0557-11ea-9170-e74ca6d83b55",
+  "name": "Holdings Migration Workflow",
+  "deploymentId": null,
+  "processDefinitionIds": [],
+  "active": false,
+  "tasks": [],
+  "startTrigger": "{{mod-workflow}}/eventTrigger/c4bc9b90-0557-11ea-9170-e74ca6d83b55"
+}
