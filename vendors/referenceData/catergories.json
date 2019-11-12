@@ -1,0 +1,25 @@
+{
+  "path": "organizations-storage/categories",
+  "data": [
+    {
+      "id": "d931bdc4-ef47-4871-98d7-2c48f5ff4fe0",
+      "value": "CLAIM"
+    },
+    {
+      "id": "9718aa38-8fb4-49e4-910b-bbdc2b1aa579",
+      "value": "ORDER"
+    },
+    {
+      "id": "04f39c67-b212-4fe7-87f0-0875c8995d21",
+      "value": "OTHER"
+    },
+    {
+      "id": "ac6528cc-8ba0-4678-9b08-627ca2314ffd",
+      "value": "PAYMENT"
+    },
+    {
+      "id": "544459af-fc5e-4e64-9b40-acb84ac4d3aa",
+      "value": "RETURN"
+    }
+  ]
+}
