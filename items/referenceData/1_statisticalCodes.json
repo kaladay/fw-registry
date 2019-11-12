@@ -1,0 +1,173 @@
+{
+  "path": "statistical-codes",
+  "data": [
+    {
+      "id": "746429f5-30fd-453e-b07b-e74eb857e47d",
+      "code": "bindery",
+      "name": "At Bindery",
+      "statisticalCodeTypeId": "e7dff618-aad7-4af9-8d8d-a5a945b12431",
+      "source": "local"
+    },
+    {
+      "id": "5fab41c6-88e1-4b45-a352-f055ab00b323",
+      "code": "call_slip",
+      "name": "Call Slip Request",
+      "statisticalCodeTypeId": "e7dff618-aad7-4af9-8d8d-a5a945b12431",
+      "source": "local"
+    },
+    {
+      "id": "50b06961-26e9-482b-97ea-c8308dda77d8",
+      "code": "cat_review",
+      "name": "Cataloging Review",
+      "statisticalCodeTypeId": "e7dff618-aad7-4af9-8d8d-a5a945b12431",
+      "source": "local"
+    },
+    {
+      "id": "974bfd47-47c9-48af-91e8-2c25a586ba2a",
+      "code": "charged",
+      "name": "Charged",
+      "statisticalCodeTypeId": "e7dff618-aad7-4af9-8d8d-a5a945b12431",
+      "source": "local"
+    },
+    {
+      "id": "e13e1b95-3167-4976-a6ca-12a6689e81c4",
+      "code": "circ_review",
+      "name": "Circulation Review",
+      "statisticalCodeTypeId": "e7dff618-aad7-4af9-8d8d-a5a945b12431",
+      "source": "local"
+    },
+    {
+      "id": "6b95543b-14e4-43ac-8861-860e9f9aa149",
+      "code": "claims_return",
+      "name": "Claims Returned",
+      "statisticalCodeTypeId": "e7dff618-aad7-4af9-8d8d-a5a945b12431",
+      "source": "local"
+    },
+    {
+      "id": "fdcb9916-2624-4196-84e8-9445e0df00e7",
+      "code": "discharged",
+      "name": "Discharged",
+      "statisticalCodeTypeId": "e7dff618-aad7-4af9-8d8d-a5a945b12431",
+      "source": "local"
+    },
+    {
+      "id": "c242c618-033b-46aa-93c1-1f40a410f82f",
+      "code": "hold",
+      "name": "Hold Request",
+      "statisticalCodeTypeId": "e7dff618-aad7-4af9-8d8d-a5a945b12431",
+      "source": "local"
+    },
+    {
+      "id": "fef0a61c-7a29-4b9e-ae05-6c70b8656e9c",
+      "code": "in_process",
+      "name": "In Process",
+      "statisticalCodeTypeId": "e7dff618-aad7-4af9-8d8d-a5a945b12431",
+      "source": "local"
+    },
+    {
+      "id": "96cb1c7f-e188-4a24-b390-11ef4d1ffc99",
+      "code": "in_transit",
+      "name": "In Transit",
+      "statisticalCodeTypeId": "e7dff618-aad7-4af9-8d8d-a5a945b12431",
+      "source": "local"
+    },
+    {
+      "id": "ef9468b0-1a26-4476-a356-8360bedc90ff",
+      "code": "in_transit_discharged",
+      "name": "In Transit Discharged",
+      "statisticalCodeTypeId": "e7dff618-aad7-4af9-8d8d-a5a945b12431",
+      "source": "local"
+    },
+    {
+      "id": "af4ddf3a-405a-4b42-887d-53119dca26c9",
+      "code": "in_transit_on_hold",
+      "name": "In Transit On Hold",
+      "statisticalCodeTypeId": "e7dff618-aad7-4af9-8d8d-a5a945b12431",
+      "source": "local"
+    },
+    {
+      "id": "ccf06fc3-4a02-4dbd-b51f-e1d84f75ab4b",
+      "code": "lost_library",
+      "name": "Lost--Library Applied",
+      "statisticalCodeTypeId": "e7dff618-aad7-4af9-8d8d-a5a945b12431",
+      "source": "local"
+    },
+    {
+      "id": "37e178fa-dd83-441d-bb2f-77de049cfba1",
+      "code": "lost_system",
+      "name": "Lost--System Applied",
+      "statisticalCodeTypeId": "e7dff618-aad7-4af9-8d8d-a5a945b12431",
+      "source": "local"
+    },
+    {
+      "id": "9a579158-d437-4e13-87b2-550c401a3994",
+      "code": "missing",
+      "name": "Missing",
+      "statisticalCodeTypeId": "e7dff618-aad7-4af9-8d8d-a5a945b12431",
+      "source": "local"
+    },
+    {
+      "id": "71b2451d-408f-4ac7-ad28-e5e774efd06a",
+      "code": "not_charged",
+      "name": "Not Charged",
+      "statisticalCodeTypeId": "e7dff618-aad7-4af9-8d8d-a5a945b12431",
+      "source": "local"
+    },
+    {
+      "id": "0b40ba6b-b169-4e44-a7a5-5cbbe3f120f4",
+      "code": "on_hold",
+      "name": "On Hold",
+      "statisticalCodeTypeId": "e7dff618-aad7-4af9-8d8d-a5a945b12431",
+      "source": "local"
+    },
+    {
+      "id": "d96462aa-ec7b-4330-b68b-8f8fb5c6f4d0",
+      "code": "overdue",
+      "name": "Overdue",
+      "statisticalCodeTypeId": "e7dff618-aad7-4af9-8d8d-a5a945b12431",
+      "source": "local"
+    },
+    {
+      "id": "f347bcf1-9e09-4202-9971-4449253e9672",
+      "code": "recall",
+      "name": "Recall Request",
+      "statisticalCodeTypeId": "e7dff618-aad7-4af9-8d8d-a5a945b12431",
+      "source": "local"
+    },
+    {
+      "id": "30d8ab13-b397-4e1e-b0b8-ec87f3341122",
+      "code": "remote_storage",
+      "name": "Remote Storage Request",
+      "statisticalCodeTypeId": "e7dff618-aad7-4af9-8d8d-a5a945b12431",
+      "source": "local"
+    },
+    {
+      "id": "6363d3b7-aef1-4470-8934-8df96498d27b",
+      "code": "renewed",
+      "name": "Renewed",
+      "statisticalCodeTypeId": "e7dff618-aad7-4af9-8d8d-a5a945b12431",
+      "source": "local"
+    },
+    {
+      "id": "6972a1f6-b22a-48bf-829e-a673337c9031",
+      "code": "scheduled",
+      "name": "Scheduled",
+      "statisticalCodeTypeId": "e7dff618-aad7-4af9-8d8d-a5a945b12431",
+      "source": "local"
+    },
+    {
+      "id": "a9091510-e99b-49d6-869f-3e0f6319bcf9",
+      "code": "short_loan",
+      "name": "Short Loan Request",
+      "statisticalCodeTypeId": "e7dff618-aad7-4af9-8d8d-a5a945b12431",
+      "source": "local"
+    },
+    {
+      "id": "7cfd2e13-f85e-4337-8b10-f36e0b325d9b",
+      "code": "Withdrawn",
+      "name": "Withdrawn",
+      "statisticalCodeTypeId": "e7dff618-aad7-4af9-8d8d-a5a945b12431",
+      "source": "local"
+    }
+  ]
+}
