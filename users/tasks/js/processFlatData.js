@@ -37,4 +37,18 @@ if (args.sourceData.EMAIL) {
   args.userRequestBody.personal.email = args.sourceData.EMAIL;
 }
 
+if (args.sourceData.PHONE_NUMBER) {
+  var argKeys = Object.keys(args.sourceData.PHONE_NUMBER);
+
+  for (var i = 0; i < argKeys.length; i++) {
+    var key = argKeys[i];
+    if (args.sourceData.PHONE_TYPE && args.sourceData.PHONE_TYPE[key] != null) {
+      if (args.sourceData.PHONE_TYPE[key] != null && args.userRequestBody.personal.phone == null && args.sourceData.PHONE_TYPE[key] == 1) {
+        args.userRequestBody.personal.phone = args.sourceData.PHONE_NUMBER[key];
+      } else if (args.sourceData.PHONE_TYPE[key] != null && !args.userRequestBody.personal.mobilePhone == null && args.sourceData.PHONE_TYPE[key] == 2) {
+        args.userRequestBody.personal.mobilePhone = args.sourceData.PHONE_NUMBER[key];
+      }
+    }
+  }
+}
 returnObj = args;

@@ -16,9 +16,9 @@ WITH
   ),
   patron_phone_with_desc AS (
     SELECT pa.patron_id AS patron_id0,
-      LISTAGG(pa.patron_id || '::' || pp.phone_number || ';;') WITHIN GROUP (ORDER BY pa.patron_id, pp.address_id) OVER (PARTITION BY pa.patron_id) AS phone_number,
-      LISTAGG(pa.patron_id || '::' || pp.phone_type || ';;') WITHIN GROUP (ORDER BY pa.patron_id, pp.address_id) OVER (PARTITION BY pa.patron_id) AS phone_type,
-      LISTAGG(pa.patron_id || '::' || pt.phone_desc || ';;') WITHIN GROUP (ORDER BY pa.patron_id, pp.address_id) OVER (PARTITION BY pa.patron_id) AS phone_desc
+      LISTAGG(pa.address_id || '::' || pp.phone_number || ';;') WITHIN GROUP (ORDER BY pa.patron_id, pp.address_id) OVER (PARTITION BY pa.patron_id) AS phone_number,
+      LISTAGG(pa.address_id || '::' || pp.phone_type || ';;') WITHIN GROUP (ORDER BY pa.patron_id, pp.address_id) OVER (PARTITION BY pa.patron_id) AS phone_type,
+      LISTAGG(pa.address_id || '::' || pt.phone_desc || ';;') WITHIN GROUP (ORDER BY pa.patron_id, pp.address_id) OVER (PARTITION BY pa.patron_id) AS phone_desc
     FROM AMDB.patron_phone pp
       INNER JOIN AMDB.patron_address pa ON (pp.address_id = pa.address_id)
       LEFT JOIN phone_type pt ON pp.phone_type = pt.phone_type
