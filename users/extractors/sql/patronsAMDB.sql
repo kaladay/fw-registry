@@ -14,6 +14,21 @@ WITH
     FROM AMDB.patron ap
     WHERE ap.last_name IS NOT NULL
   ),
+  patron_phone_with_desc AS (
+    SELECT pa.patron_id AS patron_id0,
+      LISTAGG(pa.address_id || '::' || pp.phone_number || ';;') WITHIN GROUP (ORDER BY pa.patron_id, pp.address_id) OVER (PARTITION BY pa.patron_id) AS phone_number,
+      LISTAGG(pa.address_id || '::' || pp.phone_type || ';;') WITHIN GROUP (ORDER BY pa.patron_id, pp.address_id) OVER (PARTITION BY pa.patron_id) AS phone_type,
+      LISTAGG(pa.address_id || '::' || pt.phone_desc || ';;') WITHIN GROUP (ORDER BY pa.patron_id, pp.address_id) OVER (PARTITION BY pa.patron_id) AS phone_desc
+    FROM AMDB.patron_phone pp
+      INNER JOIN AMDB.patron_address pa ON (pp.address_id = pa.address_id)
+      LEFT JOIN phone_type pt ON pp.phone_type = pt.phone_type
+    ORDER BY pa.patron_id, pa.address_id
+  ),
+  patron_phone_with_desc_d AS (
+    SELECT DISTINCT
+      ppwd1.*
+    FROM patron_phone_with_desc ppwd1
+  ),
   patron_barcodes_ranked AS (
     SELECT pb.patron_id AS id,
       pb.barcode_status,
@@ -81,12 +96,9 @@ WITH
       pa.zip_postal,
       pa.country,
       pa.address_status,
-      pa.effect_date,
-      pp.phone_number,
-      pp.phone_desc
+      pa.effect_date
     FROM AMDB.patron_address pa
       LEFT JOIN AMDB.address_type at ON pa.address_type = at.address_type
-      LEFT JOIN patron_phone_with_desc pp ON pa.address_id = pp.address_id
     WHERE pa.effect_date < sysdate
     ORDER BY pa.patron_id
   ),
@@ -103,8 +115,6 @@ WITH
       country,
       address_status,
       effect_date,
-      phone_number,
-      phone_desc,
       RANK() OVER (PARTITION BY id, address_type ORDER BY effect_date DESC) dest_rank
     FROM patron_addresses_full
     WHERE address_type IN (2, 3)
@@ -131,9 +141,7 @@ WITH
       zip_postal,
       country,
       address_status,
-      effect_date,
-      phone_number,
-      phone_desc
+      effect_date
     FROM patron_addresses_ranked
     WHERE dest_rank = 1
       AND address_type = 2
@@ -149,9 +157,7 @@ WITH
       zip_postal,
       country,
       address_status,
-      effect_date,
-      phone_number,
-      phone_desc
+      effect_date
     FROM patron_addresses_full
     WHERE address_type = 1
   ),
@@ -167,9 +173,7 @@ WITH
       LISTAGG(pau.address_id || '::' || pau.zip_postal || ';;') WITHIN GROUP (ORDER BY pau.id, pau.address_id, pau.zip_postal) OVER (PARTITION BY pau.id) AS zip_postal,
       LISTAGG(pau.address_id || '::' || pau.country || ';;') WITHIN GROUP (ORDER BY pau.id, pau.address_id, pau.country) OVER (PARTITION BY pau.id) AS country,
       LISTAGG(pau.address_id || '::' || pau.address_status || ';;') WITHIN GROUP (ORDER BY pau.id, pau.address_id, pau.address_status) OVER (PARTITION BY pau.id) AS address_status,
-      LISTAGG(pau.address_id || '::' || pau.effect_date || ';;') WITHIN GROUP (ORDER BY pau.id, pau.address_id, pau.effect_date) OVER (PARTITION BY pau.id) AS effect_date,
-      LISTAGG(pau.address_id || '::' || pau.phone_number || ';;') WITHIN GROUP (ORDER BY pau.id, pau.address_id, pau.phone_number) OVER (PARTITION BY pau.id) AS phone_number,
-      LISTAGG(pau.address_id || '::' || pau.phone_desc || ';;') WITHIN GROUP (ORDER BY pau.id, pau.address_id, pau.phone_desc) OVER (PARTITION BY pau.id) AS phone_desc
+      LISTAGG(pau.address_id || '::' || pau.effect_date || ';;') WITHIN GROUP (ORDER BY pau.id, pau.address_id, pau.effect_date) OVER (PARTITION BY pau.id) AS effect_date
     FROM patron_addresses_union pau
     ORDER BY id
   )
@@ -200,12 +204,14 @@ SELECT pwd.id,
   paa.country,
   paa.address_status,
   paa.effect_date,
-  paa.phone_number,
-  paa.phone_desc,
-  pare.email
+  pare.email,
+  ppwdd.phone_number,
+  ppwdd.phone_type,
+  ppwdd.phone_desc
 FROM patrons_with_date pwd
   LEFT JOIN patron_barcodes pb ON pwd.id = pb.id
   LEFT JOIN patron_addresses_aggregate paa ON pwd.id = paa.id
   LEFT JOIN patron_addresses_ranked_email pare ON paa.id = pare.id
+  LEFT JOIN patron_phone_with_desc_d ppwdd ON pwd.id = ppwdd.patron_id0
 ORDER BY pwd.external_system_id
 ;
