@@ -1,10 +1,24 @@
-SELECT /*+ FIRST_ROWS(1000) */ bm.bib_id,
-  mm.mfhd_id,
-  mm.suppress_in_opac,
-  mm.location_id,
-  mm.display_call_no,
+WITH
+  one_holding_to_many_bibs AS (
+    SELECT mm.mfhd_id,
+      mm.suppress_in_opac,
+      mm.location_id,
+      mm.display_call_no,
+      mm.call_no_type,
+      mm.record_type,
+      mm.field_008,
+      bm.bib_id,
+      COUNT(*) OVER (PARTITION BY bm.bib_id) AS total
+    FROM MSDB.mfhd_master mm
+      INNER JOIN MSDB.bib_mfhd bm ON mm.mfhd_id = bm.mfhd_id
+  )
+SELECT /*+ FIRST_ROWS(1000) */ hb.bib_id,
+  hb.mfhd_id,
+  hb.suppress_in_opac,
+  hb.location_id,
+  hb.display_call_no,
   DECODE (
-    mm.call_no_type,
+    hb.call_no_type,
     ' ', '24badefa-4456-40c5-845c-3f45ffbc4c03',
     '0', '95467209-6d7b-468b-94df-0f5d7ad2747d',
     '1', '03dd64d0-5626-4ecd-8ece-4531e0069f35',
@@ -16,14 +30,14 @@ SELECT /*+ FIRST_ROWS(1000) */ bm.bib_id,
     '8', '6caca63e-5651-4db6-9247-3205156e9699'
   ) AS call_no_type,
   DECODE (
-    mm.record_type,
+    hb.record_type,
     'u', '61155a36-148b-4664-bb7f-64ad708e0b32',
     'v', 'dc35d0ae-e877-488b-8e97-6e41444e6d0a',
     'x', '03c9c400-b9e3-4a07-ac0e-05ab470233ed',
     'y', 'e6da6c98-6dd0-41bc-8b4b-cfd4bbd9c3ae'
   ) AS record_type,
   DECODE (
-    SUBSTR(mm.field_008, 7, 1),
+    SUBSTR(hb.field_008, 7, 1),
     '0', 'Unknown',
     '1', 'Other receipt or acquisition status',
     '2', 'Received and complete or ceased',
@@ -34,7 +48,7 @@ SELECT /*+ FIRST_ROWS(1000) */ bm.bib_id,
     '|', 'Unknown'
   ) AS receipt_status,
   DECODE (
-    SUBSTR(mm.field_008, 8, 1),
+    SUBSTR(hb.field_008, 8, 1),
     'c', 'Cooperative or consortial purchase',
     'd', 'Deposit',
     'e', 'Exchange',
@@ -50,7 +64,7 @@ SELECT /*+ FIRST_ROWS(1000) */ bm.bib_id,
     '|', 'Unknown'
   ) AS acq_method,
   DECODE (
-    SUBSTR(mm.field_008, 13, 1),
+    SUBSTR(hb.field_008, 13, 1),
     ' ', 'Unknown',
     '|', 'Unknown',
     '0', 'Unknown',
@@ -64,7 +78,7 @@ SELECT /*+ FIRST_ROWS(1000) */ bm.bib_id,
     '8', 'Permanently retained'
   ) AS retention_policy,
   'MSDB' AS schema
-FROM MSDB.bib_mfhd bm
-  INNER JOIN MSDB.mfhd_master mm ON bm.mfhd_id = mm.mfhd_id
-ORDER BY bm.bib_id
+FROM one_holding_to_many_bibs hb
+WHERE hb.total = 1
+ORDER BY hb.bib_id
 ;
