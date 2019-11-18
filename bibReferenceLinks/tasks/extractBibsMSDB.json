@@ -3,6 +3,7 @@
   "name": "Concat Bibliographics MSDB",
   "delegate": "concatenatingExtractorDelegate",
   "deserializeAs": "StreamingExtractorTask",
+  "streaming": true,
   "mergeStrategy": "CONCAT",
   "streamSource": "{{mod-data-extractor-internal}}/extractors/ff31c0d4-f196-4dd7-8a92-a674589599f9/run"
 }
