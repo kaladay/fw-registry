@@ -1,0 +1,9 @@
+{
+  "id": "8b975c46-5cc4-4db9-8603-f9bf6c249d2b",
+  "name": "Extract Bibliographics AMDB",
+  "delegate": "concatenatingExtractorDelegate",
+  "deserializeAs": "StreamingExtractorTask",
+  "streaming": true,
+  "mergeStrategy": "CONCAT",
+  "streamSource": "{{mod-data-extractor-internal}}/extractors/ed3fa3de-4341-4960-bf7e-552ffd2ad04f/run"
+}
