@@ -1,8 +1,8 @@
 {
   "path": "change-manager/jobExecutions",
+  "config": "jobExecutionId",
   "data": [
     {
-      "id": "36439f51-bee5-4266-88ab-285441f2438b",
       "files": [],
       "sourceType": "ONLINE",
       "jobProfileInfo": {
@@ -10,7 +10,7 @@
         "name": "TAMU Bibligraphic Migration",
         "dataType": "MARC"
       },
-      "userId": ""
+      "userId": "{{userId}}"
     }
   ]
 }

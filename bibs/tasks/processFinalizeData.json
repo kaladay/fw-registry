@@ -1,9 +1,9 @@
 {
   "id": "495cfc16-a801-4a5c-8b2d-dd1991d47add",
-  "name": "ProcessBibFlatData",
+  "name": "ProcessBibFinalizeData",
   "delegate": "streamingProcessDelegate",
   "deserializeAs": "ProcessorTask",
   "streaming": false,
-  "script": "processFlatData.js",
+  "script": "processFinalizeData.js",
   "scriptType": "JS"
 }

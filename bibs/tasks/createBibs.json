@@ -4,5 +4,5 @@
   "delegate": "streamingRequestDelegate",
   "deserializeAs": "StreamingRequestTask",
   "streaming": false,
-  "storageDestination": "{{okapi}}/change-manager/jobExecutions/36439f51-bee5-4266-88ab-285441f2438b/records"
+  "storageDestination": "{{okapi}}/change-manager/jobExecutions/{{jobExecutionId}}/records"
 }
