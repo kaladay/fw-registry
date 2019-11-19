@@ -1,0 +1,6 @@
+{
+  "id": "97986569-0761-4351-80ab-6752a5eb976b",
+  "name": "Holding Reference Link AMDB Extractor",
+  "query": "holdingsReferenceLinkAMDB.sql",
+  "type": "VOYAGER"
+}

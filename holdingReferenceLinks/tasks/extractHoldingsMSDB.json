@@ -1,0 +1,9 @@
+{
+  "id": "a3a1546a-5630-4407-91bc-46829f2e7d75",
+  "name": "Concat Holdings MSDB",
+  "delegate": "concatenatingExtractorDelegate",
+  "deserializeAs": "StreamingExtractorTask",
+  "streaming": true,
+  "mergeStrategy": "CONCAT",
+  "streamSource": "{{mod-data-extractor-internal}}/extractors/858bca8d-0501-4a04-b790-978836533d41/run"
+}
