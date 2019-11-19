@@ -1,6 +1,6 @@
 {
   "id": "a3a1546a-5630-4407-91bc-46829f2e7d75",
-  "name": "Concat Holdings MSDB",
+  "name": "Concat Holdings for Reference Links MSDB",
   "delegate": "concatenatingExtractorDelegate",
   "deserializeAs": "StreamingExtractorTask",
   "streaming": true,

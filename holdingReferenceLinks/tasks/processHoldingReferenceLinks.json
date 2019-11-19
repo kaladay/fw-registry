@@ -1,6 +1,6 @@
 {
   "id": "bcd1bf07-9728-4d5d-91f4-df3c931cd939",
-  "name": "buildHoldingReferenceLinks",
+  "name": "ProcessHoldingReferenceLinks",
   "delegate": "streamingProcessDelegate",
   "deserializeAs": "ProcessorTask",
   "streaming": false,

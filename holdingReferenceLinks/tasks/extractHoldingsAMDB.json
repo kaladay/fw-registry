@@ -1,6 +1,6 @@
 {
   "id": "cdc967aa-39d4-4750-923b-f215986139b5",
-  "name": "Extract Holdings AMDB",
+  "name": "Extract Holdings for Reference Links AMDB",
   "delegate": "concatenatingExtractorDelegate",
   "deserializeAs": "StreamingExtractorTask",
   "streaming": true,

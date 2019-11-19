@@ -1,6 +1,6 @@
 {
   "id": "8b975c46-5cc4-4db9-8603-f9bf6c249d2b",
-  "name": "Extract Bibliographics AMDB",
+  "name": "Extract Bibliographics for Reference Links AMDB",
   "delegate": "concatenatingExtractorDelegate",
   "deserializeAs": "StreamingExtractorTask",
   "streaming": true,
