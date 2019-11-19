@@ -1,6 +1,6 @@
 {
   "id": "3c9c3a5b-79a4-4af9-9373-714e922d4fd0",
-  "name": "Concat Users MSDB",
+  "name": "Concat Users for Reference Links MSDB",
   "delegate": "concatenatingExtractorDelegate",
   "deserializeAs": "StreamingExtractorTask",
   "streaming": true,

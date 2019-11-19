@@ -1,6 +1,6 @@
 {
   "id": "f4ba610d-32cc-40ed-a862-e61fe95e6b14",
-  "name": "SetupVendorData",
+  "name": "ProcessSetupVendorData",
   "delegate": "streamingProcessDelegate",
   "deserializeAs": "ProcessorTask",
   "streaming": false,

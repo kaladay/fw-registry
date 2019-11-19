@@ -1,6 +1,6 @@
 {
   "id": "b57bef31-a045-42a4-8e0d-d3478ae317c2",
-  "name": "ProcessFlatData",
+  "name": "ProcessVendorFlatData",
   "delegate": "streamingProcessDelegate",
   "deserializeAs": "ProcessorTask",
   "streaming": false,

@@ -1,6 +1,6 @@
 {
   "id": "a98fe894-1f06-4d6b-b214-434cfa5298ed",
-  "name": "Extract Vendors AMDB",
+  "name": "Extract Vendors for Reference Links AMDB",
   "delegate": "concatenatingExtractorDelegate",
   "deserializeAs": "StreamingExtractorTask",
   "streaming": true,
