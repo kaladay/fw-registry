@@ -80,5 +80,5 @@ SELECT /*+ FIRST_ROWS(1000) */ hb.bib_id,
   'MSDB' AS schema
 FROM one_holding_to_many_bibs hb
 WHERE hb.total = 1
-ORDER BY hb.bib_id
+ORDER BY hb.mfhd_id
 ;
