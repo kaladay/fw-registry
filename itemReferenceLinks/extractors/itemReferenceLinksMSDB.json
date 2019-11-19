@@ -1,0 +1,6 @@
+{
+  "id": "9d9b1fec-9103-439d-b075-41cb06ec726e",
+  "name": "Item Reference Link MSDB Extractor",
+  "query": "itemsReferenceLinkMSDB.sql",
+  "type": "VOYAGER"
+}

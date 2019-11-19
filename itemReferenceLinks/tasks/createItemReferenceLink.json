@@ -1,0 +1,8 @@
+{
+  "id": "1797387d-8855-4ad5-a619-6ca78913e2a2",
+  "name": "Create Item Reference Links",
+  "delegate": "streamingRequestDelegate",
+  "deserializeAs": "StreamingRequestTask",
+  "streaming": false,
+  "storageDestination": "{{mod-external-reference-resolver-internal}}/batch/referenceLinks"
+}
