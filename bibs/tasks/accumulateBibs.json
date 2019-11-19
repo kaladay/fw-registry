@@ -4,6 +4,6 @@
   "delegate": "streamAccumulationDelegate",
   "deserializeAs": "AccumulatorTask",
   "streaming": false,
-  "accumulateTo": 10000,
-  "delayDuration": 15
+  "accumulateTo": "{{bibBatchSize}}",
+  "delayDuration": 5
 }
