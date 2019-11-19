@@ -1,0 +1,6 @@
+{
+  "id": "81f94aea-b7e0-423e-a726-791c3da1c392",
+  "name": "Item Reference Link AMDB Extractor",
+  "query": "itemsReferenceLinkAMDB.sql",
+  "type": "VOYAGER"
+}
