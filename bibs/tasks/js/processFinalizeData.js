@@ -9,7 +9,7 @@ for (var i = 0; i < args; i++) {
   total = args.total;
 }
 
-total = Math.floor(total / {{bibBatchSize}});
+total = Math.ceil(total / {{bibBatchSize}});
 
 returnObj = {
   recordsMetadata: {
