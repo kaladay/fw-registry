@@ -1,0 +1,1 @@
+var returnObj = [].concat.apply([], args);
