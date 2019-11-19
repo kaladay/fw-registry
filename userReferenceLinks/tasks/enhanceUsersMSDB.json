@@ -16,8 +16,8 @@
       "fromProperty": "/EXTERNAL_SYSTEM_ID"
     },
     {
-      "toProperty": "MSDB_ID",
-      "fromProperty": "/ID"
+      "toProperty": "MSDB_PATRON_ID",
+      "fromProperty": "/PATRON_ID"
     }
   ],
   "mergeStrategy": "ENHANCE",
