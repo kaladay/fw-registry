@@ -1,15 +1,17 @@
-var last = false;
-var counter = 1;
-var total = 1;
-var contentType = 'MARC_JSON';
-var initialRecords = [];
+var lastBibTotal;
+var lastBibIndex;
 
 for (var i = 0; i < args; i++) {
   initialRecords.push({ record: args[i].marc });
-  total = args.total;
+  lastBibTotal = args.bibTotal;
+  lastBibIndex = args.bibIndex;
 }
 
-total = Math.ceil(total / {{bibBatchSize}});
+var last = lastBibIndex >= lastBibTotal;
+var counter = Math.ceil(lastBibIndex / {{bibBatchSize}});
+var total = Math.ceil(lastBibTotal / {{bibBatchSize}});
+var contentType = 'MARC_JSON';
+var initialRecords = [];
 
 returnObj = {
   recordsMetadata: {

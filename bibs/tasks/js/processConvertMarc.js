@@ -1,7 +1,8 @@
 returnObj = {
   id: args.folioReference,
-  bibId: args.BIB_ID,
   suppressInOpac: args.SUPPRESS_IN_OPAC,
-  total: args.TOTAL,
+  bibId: args.BIB_ID,
+  bibTotal: args.BIB_TOTAL,
+  bibIndex: args.BIB_INDEX,
   marc: JSON.parse(scriptEngineUtility.rawMarcToJson(args.MARC_RECORD))
 };
