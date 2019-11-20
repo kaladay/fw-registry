@@ -4,9 +4,8 @@ var lastBibTotal;
 var initialRecords = [];
 
 for (var i = 0; i < args.length; i++) {
-  // NOTE: sometimes this is an empty object {}
   var marc = JSON.stringify(args[i].marc);
-  if (marc !== '' && marc != '{}') {
+  if (marc !== '' && marc !== '{}') {
     initialRecords.push({ record: marc });
   }
   lastBibIndex = args[i].bibIndex;
