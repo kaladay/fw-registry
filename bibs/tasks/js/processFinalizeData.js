@@ -3,8 +3,8 @@ var lastBibIndex;
 
 for (var i = 0; i < args; i++) {
   initialRecords.push({ record: args[i].marc });
-  lastBibTotal = args.bibTotal;
-  lastBibIndex = args.bibIndex;
+  lastBibIndex = args[i].bibIndex;
+  lastBibTotal = args[i].bibTotal;
 }
 
 var last = lastBibIndex >= lastBibTotal;
