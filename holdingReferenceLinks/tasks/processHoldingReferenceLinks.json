@@ -1,9 +1,0 @@
-{
-  "id": "bcd1bf07-9728-4d5d-91f4-df3c931cd939",
-  "name": "buildHoldingReferenceLinks",
-  "delegate": "streamingProcessDelegate",
-  "deserializeAs": "ProcessorTask",
-  "streaming": false,
-  "script": "processHoldingReferenceLinks.js",
-  "scriptType": "JS"
-}

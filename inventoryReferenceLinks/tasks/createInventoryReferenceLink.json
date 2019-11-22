@@ -1,6 +1,6 @@
 {
-  "id": "c343f22c-cbb7-4362-919b-55919a86b38b",
-  "name": "Create Holding Reference Links",
+  "id": "ae4f0bb8-cc41-4d92-b29f-f7fcf97cd3b3",
+  "name": "Create Inventory Reference Links",
   "delegate": "streamingRequestDelegate",
   "deserializeAs": "StreamingRequestTask",
   "streaming": false,

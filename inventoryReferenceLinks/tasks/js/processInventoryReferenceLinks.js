@@ -24,7 +24,7 @@ var bibTypes = {
 var sourceUUID = UUID.randomUUID().toString();
 var instanceUUID = UUID.randomUUID().toString();
 
-var bibReferenceLinks = [
+var inventoryReferenceLinks = [
   {
     folioReference: sourceUUID,
     externalReference: args.BIB_ID,
@@ -37,4 +37,4 @@ var bibReferenceLinks = [
   }
 ];
 
-var returnObj = bibReferenceLinks;
+var returnObj = inventoryReferenceLinks;

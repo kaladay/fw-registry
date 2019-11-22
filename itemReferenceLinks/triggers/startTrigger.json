@@ -1,9 +1,0 @@
-{
-  "id": "4368fdaa-14bb-4cc9-bb59-53f8fe79d949",
-  "name": "Item Reference Link Trigger",
-  "description": "Triggers item reference link build",
-  "type": "MESSAGE_CORRELATE",
-  "method": "POST",
-  "deserializeAs": "EventTrigger",
-  "pathPattern": "/events/referencelink/voyager/items"
-}
