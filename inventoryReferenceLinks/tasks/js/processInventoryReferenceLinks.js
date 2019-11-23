@@ -53,20 +53,67 @@ var inventoryTypes = {
   }
 };
 
-var sourceUUID = UUID.randomUUID().toString();
-var instanceUUID = UUID.randomUUID().toString();
+var sourceRLID = UUID.randomUUID().toString();
+var sourceFID = UUID.randomUUID().toString();
+
+var instanceRLID = UUID.randomUUID().toString();
+var instanceFID = UUID.randomUUID().toString();
 
 var inventoryReferenceLinks = [
   {
-    folioReference: sourceUUID,
+    id: sourceRLID,
+    folioReference: sourceFID,
     externalReference: args.BIB_ID,
     type: inventoryTypes[args.SCHEMA].SOURCE
   },
   {
-    folioReference: instanceUUID,
+    id: instanceRLID,
+    folioReference: sourceFID,
     externalReference: args.BIB_ID,
     type: inventoryTypes[args.SCHEMA].INSTANCE
   }
 ];
+
+var holdingItems = args.HOLDING_ITEMS;
+
+var holdingRLID;
+var holdingFID;
+
+for (var i = 0; i < holdingItems.length; i++) {
+    var holdingItem = JSON.parse(holdingItems[i]);
+
+    if (i == 0) {
+      holdingRLID = UUID.randomUUID().toString();
+      holdingFID = UUID.randomUUID().toString();
+      inventoryReferenceLinks.push({
+        id: holdingRLID,
+        folioReference: holdingFID,
+        externalReference: holdingItem.HOLDING_ID,
+        type: inventoryTypes[args.SCHEMA].HOLDING
+      });
+
+      inventoryReferenceLinks.push({
+        folioReference: instanceRLID,
+        externalReference: holdingRLID,
+        type: inventoryTypes[args.SCHEMA].HOLDING_TO_BIB
+      });
+    }
+
+    var itemRLID =  UUID.randomUUID().toString();
+    var itemFID =  UUID.randomUUID().toString();
+
+    inventoryReferenceLinks.push({
+      id: itemRLID,
+      folioReference: itemFID,
+      externalReference: holdingItem.ITEM_ID,
+      type: inventoryTypes[args.SCHEMA].ITEM
+    });
+
+    inventoryReferenceLinks.push({
+      folioReference: holdingRLID,
+      externalReference: itemRLID,
+      type: inventoryTypes[args.SCHEMA].ITEM_TO_HOLDING
+    });
+}
 
 var returnObj = inventoryReferenceLinks;
