@@ -122,7 +122,6 @@ for (var i = 0; i < holdingItems.length; i++) {
       type: inventoryTypes[args.SCHEMA].ITEM_TO_HOLDING
     });
   }
-
 }
 
 var returnObj = inventoryReferenceLinks;

@@ -11,5 +11,4 @@ SELECT
   CAST(COLLECT(bih.mfhd_id || '::' || bih.item_id) AS sys.odcivarchar2list) AS holding_items
 FROM bib_item_holdings bih
 GROUP BY bih.bib_id
-FETCH NEXT 1000 ROWS ONLY
 ;
