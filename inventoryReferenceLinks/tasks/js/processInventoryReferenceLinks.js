@@ -79,33 +79,40 @@ var holdingItems = args.HOLDING_ITEMS;
 var holdingRLID;
 var holdingFID;
 
+var holdings = [];
+
 for (var i = 0; i < holdingItems.length; i++) {
-    var holdingItem = JSON.parse(holdingItems[i]);
+  var holdingItem = holdingItems[i].split('::');
+  var holdingId = holdingItem[0];
+  var itemId = holdingItem[1];
 
-    if (i == 0) {
-      holdingRLID = UUID.randomUUID().toString();
-      holdingFID = UUID.randomUUID().toString();
-      inventoryReferenceLinks.push({
-        id: holdingRLID,
-        folioReference: holdingFID,
-        externalReference: holdingItem.HOLDING_ID,
-        type: inventoryTypes[args.SCHEMA].HOLDING
-      });
+  if (holdings.indexOf(holdingId) === -1) {
+    holdingRLID = UUID.randomUUID().toString();
+    holdingFID = UUID.randomUUID().toString();
+    inventoryReferenceLinks.push({
+      id: holdingRLID,
+      folioReference: holdingFID,
+      externalReference: holdingId,
+      type: inventoryTypes[args.SCHEMA].HOLDING
+    });
 
-      inventoryReferenceLinks.push({
-        folioReference: instanceRLID,
-        externalReference: holdingRLID,
-        type: inventoryTypes[args.SCHEMA].HOLDING_TO_BIB
-      });
-    }
+    inventoryReferenceLinks.push({
+      folioReference: instanceRLID,
+      externalReference: holdingRLID,
+      type: inventoryTypes[args.SCHEMA].HOLDING_TO_BIB
+    });
 
-    var itemRLID =  UUID.randomUUID().toString();
-    var itemFID =  UUID.randomUUID().toString();
+    holdings.push(holdingId);
+  }
+
+  if (itemId && itemId.length > 0) {
+    var itemRLID = UUID.randomUUID().toString();
+    var itemFID = UUID.randomUUID().toString();
 
     inventoryReferenceLinks.push({
       id: itemRLID,
       folioReference: itemFID,
-      externalReference: holdingItem.ITEM_ID,
+      externalReference: itemId,
       type: inventoryTypes[args.SCHEMA].ITEM
     });
 
@@ -114,6 +121,8 @@ for (var i = 0; i < holdingItems.length; i++) {
       externalReference: itemRLID,
       type: inventoryTypes[args.SCHEMA].ITEM_TO_HOLDING
     });
+  }
+
 }
 
 var returnObj = inventoryReferenceLinks;
