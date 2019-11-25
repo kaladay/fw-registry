@@ -100,8 +100,8 @@ for (var i = 0; i < holdingItems.length; i++) {
     });
 
     inventoryReferenceLinks.push({
-      folioReference: instanceIds.RLID,
-      externalReference: holdingIds.RLID,
+      folioReference: holdingIds.RLID,
+      externalReference: instanceIds.RLID,
       type: inventoryTypes[args.SCHEMA].HOLDING_TO_BIB
     });
 
@@ -119,8 +119,8 @@ for (var i = 0; i < holdingItems.length; i++) {
     });
 
     inventoryReferenceLinks.push({
-      folioReference: holdingIds.RLID,
-      externalReference: itemIds.RLID,
+      folioReference: itemIds.RLID,
+      externalReference: holdingIds.RLID,
       type: inventoryTypes[args.SCHEMA].ITEM_TO_HOLDING
     });
   }
