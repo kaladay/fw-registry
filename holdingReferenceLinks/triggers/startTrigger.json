@@ -1,9 +1,0 @@
-{
-  "id": "3ae89970-0ad7-11ea-9a5d-536d128b1924",
-  "name": "Holding Reference Link Trigger",
-  "description": "Triggers holding reference link build",
-  "type": "MESSAGE_CORRELATE",
-  "method": "POST",
-  "deserializeAs": "EventTrigger",
-  "pathPattern": "/events/referencelink/voyager/holdings"
-}

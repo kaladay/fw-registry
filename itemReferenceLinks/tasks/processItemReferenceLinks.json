@@ -1,9 +1,0 @@
-{
-  "id": "e86f9959-5aaf-4498-905f-9f3214d43813",
-  "name": "buildItemReferenceLinks",
-  "delegate": "streamingProcessDelegate",
-  "deserializeAs": "ProcessorTask",
-  "streaming": false,
-  "script": "processItemReferenceLinks.js",
-  "scriptType": "JS"
-}

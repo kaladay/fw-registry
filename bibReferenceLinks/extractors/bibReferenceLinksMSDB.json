@@ -1,6 +1,0 @@
-{
-  "id": "ff31c0d4-f196-4dd7-8a92-a674589599f9",
-  "name": "Bibliographic Reference Link MSDB Extractor",
-  "query": "bibReferenceLinksMSDB.sql",
-  "type": "VOYAGER"
-}

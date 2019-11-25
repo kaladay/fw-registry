@@ -1,8 +1,0 @@
-{
-  "id": "ae4f0bb8-cc41-4d92-b29f-f7fcf97cd3b3",
-  "name": "Create Bibliographic Reference Links",
-  "delegate": "streamingRequestDelegate",
-  "deserializeAs": "StreamingRequestTask",
-  "streaming": false,
-  "storageDestination": "{{mod-external-reference-resolver-internal}}/batch/referenceLinks"
-}
