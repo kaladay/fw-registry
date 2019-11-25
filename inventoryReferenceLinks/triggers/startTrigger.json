@@ -1,9 +1,9 @@
 {
   "id": "f2f043a0-0556-11ea-823a-5390ca978abc",
-  "name": "Bibliographic Reference Link Trigger",
-  "description": "Triggers bilbiographic reference link build",
+  "name": "Inventory Reference Link Trigger",
+  "description": "Triggers inventory reference link build",
   "type": "MESSAGE_CORRELATE",
   "method": "POST",
   "deserializeAs": "EventTrigger",
-  "pathPattern": "/events/referencelink/voyager/bibs"
+  "pathPattern": "/events/referencelink/voyager/inventory"
 }
