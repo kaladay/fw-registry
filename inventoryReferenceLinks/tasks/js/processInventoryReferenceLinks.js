@@ -53,22 +53,26 @@ var inventoryTypes = {
   }
 };
 
-var sourceRLID = UUID.randomUUID().toString();
-var sourceFID = UUID.randomUUID().toString();
+function createUUIDPair() {
+  return {
+    RLID: UUID.randomUUID().toString(),
+    FID: UUID.randomUUID().toString()
+  };
+}
 
-var instanceRLID = UUID.randomUUID().toString();
-var instanceFID = UUID.randomUUID().toString();
+var sourceIds = createUUIDPair();
+var instanceIds = createUUIDPair();
 
 var inventoryReferenceLinks = [
   {
-    id: sourceRLID,
-    folioReference: sourceFID,
+    id: sourceIds.RLID,
+    folioReference: sourceIds.FID,
     externalReference: args.BIB_ID,
     type: inventoryTypes[args.SCHEMA].SOURCE
   },
   {
-    id: instanceRLID,
-    folioReference: sourceFID,
+    id: instanceIds.RLID,
+    folioReference: instanceIds.FID,
     externalReference: args.BIB_ID,
     type: inventoryTypes[args.SCHEMA].INSTANCE
   }
@@ -87,18 +91,17 @@ for (var i = 0; i < holdingItems.length; i++) {
   var itemId = holdingItem[1];
 
   if (holdings.indexOf(holdingId) === -1) {
-    holdingRLID = UUID.randomUUID().toString();
-    holdingFID = UUID.randomUUID().toString();
+    holdingIds = createUUIDPair();
     inventoryReferenceLinks.push({
-      id: holdingRLID,
-      folioReference: holdingFID,
+      id: holdingIds.RLID,
+      folioReference: holdingIds.FID,
       externalReference: holdingId,
       type: inventoryTypes[args.SCHEMA].HOLDING
     });
 
     inventoryReferenceLinks.push({
-      folioReference: instanceRLID,
-      externalReference: holdingRLID,
+      folioReference: instanceIds.RLID,
+      externalReference: holdingIds.RLID,
       type: inventoryTypes[args.SCHEMA].HOLDING_TO_BIB
     });
 
@@ -106,19 +109,18 @@ for (var i = 0; i < holdingItems.length; i++) {
   }
 
   if (itemId && itemId.length > 0) {
-    var itemRLID = UUID.randomUUID().toString();
-    var itemFID = UUID.randomUUID().toString();
+    var itemIds = createUUIDPair();
 
     inventoryReferenceLinks.push({
-      id: itemRLID,
-      folioReference: itemFID,
+      id: itemIds.RLID,
+      folioReference: itemIds.FID,
       externalReference: itemId,
       type: inventoryTypes[args.SCHEMA].ITEM
     });
 
     inventoryReferenceLinks.push({
-      folioReference: holdingRLID,
-      externalReference: itemRLID,
+      folioReference: holdingIds.RLID,
+      externalReference: itemIds.RLID,
       type: inventoryTypes[args.SCHEMA].ITEM_TO_HOLDING
     });
   }
