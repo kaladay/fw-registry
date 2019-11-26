@@ -1,6 +1,0 @@
-{
-  "id": "858bca8d-0501-4a04-b790-978836533d41",
-  "name": "Holding Reference Link MSDB Extractor",
-  "query": "holdingsReferenceLinkMSDB.sql",
-  "type": "VOYAGER"
-}
