@@ -4,6 +4,7 @@
   "deploymentId": null,
   "processDefinitionIds": [],
   "active": false,
+  "requiresAuthentication": true,
   "tasks": [],
   "startTrigger": "{{mod-workflow}}/eventTrigger/6c50f500-0557-11ea-ba3a-fdc8d64acffa"
 }
