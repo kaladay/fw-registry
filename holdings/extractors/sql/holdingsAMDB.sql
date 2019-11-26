@@ -1,4 +1,4 @@
-SELECT /*+ FIRST_ROWS(1000) */
+SELECT
   mm.mfhd_id,
   mm.suppress_in_opac,
   mm.location_id,
@@ -13,7 +13,8 @@ SELECT /*+ FIRST_ROWS(1000) */
     '4', '28927d76-e097-4f63-8510-e56f2b7a3ad0',
     '5', '5ba6b62e-6858-490a-8102-5b1369873835',
     '6', 'cd70562c-dd0b-42f6-aa80-ce803d24d4a1',
-    '8', '6caca63e-5651-4db6-9247-3205156e9699'
+    '8', '6caca63e-5651-4db6-9247-3205156e9699',
+    '6caca63e-5651-4db6-9247-3205156e9699'
   ) AS call_no_type,
   DECODE (
     mm.record_type,
@@ -63,6 +64,7 @@ SELECT /*+ FIRST_ROWS(1000) */
     '7', 'Not retained',
     '8', 'Permanently retained'
   ) AS retention_policy,
+  AMDB.getMFHDBlob(mm.mfhd_id) as marc_record,
   'AMDB' AS schema
 FROM AMDB.mfhd_master mm
 ORDER BY mm.mfhd_id
