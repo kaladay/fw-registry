@@ -1,9 +1,0 @@
-{
-  "id": "8bc62fa8-8825-4b62-a2e1-4d2d92260177",
-  "name": "Extract Items for Reference Links AMDB",
-  "delegate": "concatenatingExtractorDelegate",
-  "deserializeAs": "StreamingExtractorTask",
-  "streaming": true,
-  "mergeStrategy": "CONCAT",
-  "streamSource": "{{mod-data-extractor-internal}}/extractors/81f94aea-b7e0-423e-a726-791c3da1c392/run"
-}

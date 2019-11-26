@@ -1,9 +1,0 @@
-{
-  "id": "4009a864-633c-4faa-8219-902bc85183f8",
-  "name": "ProcessBibReferenceLinks",
-  "delegate": "streamingProcessDelegate",
-  "deserializeAs": "ProcessorTask",
-  "streaming": false,
-  "script": "processBibReferenceLinks.js",
-  "scriptType": "JS"
-}
