@@ -4,5 +4,5 @@
   "delegate": "streamingRequestDelegate",
   "deserializeAs": "StreamingRequestTask",
   "streaming": false,
-  "storageDestination": "{{okapi}}"
+  "storageDestination": "{{okapi}}/holdings-storage/holdings"
 }
