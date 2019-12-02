@@ -1,0 +1,9 @@
+{
+  "id": "0a1912a0-5485-46e5-8df7-1b97cea0cf8a",
+  "name": "Accumulate Bibs",
+  "delegate": "streamAccumulationDelegate",
+  "deserializeAs": "AccumulatorTask",
+  "streaming": false,
+  "accumulateTo": "{{bibBatchSize}}",
+  "delayDuration": 5
+}

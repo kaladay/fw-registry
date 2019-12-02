@@ -5,6 +5,15 @@
   "processDefinitionIds": [],
   "active": false,
   "requiresAuthentication": true,
-  "tasks": [],
+  "tasks": [
+    "{{mod-workflow}}/streamingExtractorTask/a78f3eda-0358-467b-ac54-f3477f9878f2",
+    "{{mod-workflow}}/streamingExtractorTask/38f23304-a7c3-4108-a165-efd1456f7708",
+    "{{mod-workflow}}/streamingExtractorTask/036d6268-bd75-40d2-8296-0148c9cd421c",
+    "{{mod-workflow}}/streamingExtractorTask/f79c0086-2199-45b4-923e-41d8c28d4af5",
+    "{{mod-workflow}}/processorTask/afebe908-2f91-48d4-b556-b5ee29874ab1",
+    "{{mod-workflow}}/accumulatorTask/0a1912a0-5485-46e5-8df7-1b97cea0cf8a",
+    "{{mod-workflow}}/processorTask/495cfc16-a801-4a5c-8b2d-dd1991d47add",
+    "{{mod-workflow}}/streamingRequestTask/9d912c2e-5179-44f7-9ea8-88fd6a39415b"
+  ],
   "startTrigger": "{{mod-workflow}}/eventTrigger/80ea5a70-0556-11ea-82fe-ed43c4a668a8"
 }

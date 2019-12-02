@@ -1,12 +1,12 @@
 {
-  "id": "773e7447-3c5a-47e6-b63c-33ae3a513e56",
-  "name": "Enhance Holding Reference Links AMDB",
+  "id": "036d6268-bd75-40d2-8296-0148c9cd421c",
+  "name": "Enhance Bib Reference Links AMDB",
   "delegate": "enhancingExtractorDelegate",
   "deserializeAs": "StreamingExtractorTask",
   "streaming": true,
   "enhancementComparisons": [
     {
-      "sourceProperty": "/MFHD_ID",
+      "sourceProperty": "/BIB_ID",
       "targetProperty": "/externalReference"
     },
     {
@@ -21,5 +21,5 @@
     }
   ],
   "mergeStrategy": "ENHANCE",
-  "streamSource": "{{mod-external-reference-resolver-internal}}/streaming/referenceLinks/type/67c65ccb-02b1-4f15-8278-eb5b029cdcd5/collect/39670cf7-de23-4473-b5e3-abf6d79735e1"
+  "streamSource": "{{mod-external-reference-resolver-internal}}/streaming/referenceLinks/type/96017110-47c5-4d55-8324-7dab1771749b"
 }

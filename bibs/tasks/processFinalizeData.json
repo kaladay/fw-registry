@@ -1,6 +1,6 @@
 {
-  "id": "54ff9ff6-4490-42dc-b204-adacaafb1d47",
-  "name": "ProcessInventoryReferenceLinkFinalizeData",
+  "id": "495cfc16-a801-4a5c-8b2d-dd1991d47add",
+  "name": "ProcessBibFinalizeData",
   "delegate": "streamingProcessDelegate",
   "deserializeAs": "ProcessorTask",
   "streaming": false,
