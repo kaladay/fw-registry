@@ -1,6 +1,6 @@
 {
   "id": "7541cd60-d642-499f-aa5e-93b03114e913",
-  "name": "ProcessPhoneNumbers",
+  "name": "ProcessVendorPhoneNumbers",
   "delegate": "streamingProcessDelegate",
   "deserializeAs": "ProcessorTask",
   "streaming": false,

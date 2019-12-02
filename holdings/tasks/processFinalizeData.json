@@ -1,6 +1,6 @@
 {
-  "id": "27edc167-15dc-4fe4-808e-d2abf49739a3",
-  "name": "ProcessFinalizeVendorData",
+  "id": "f01df210-0aee-11ea-9a29-cbe27e6e4833",
+  "name": "ProcessHoldingFinalizeData",
   "delegate": "streamingProcessDelegate",
   "deserializeAs": "ProcessorTask",
   "streaming": false,

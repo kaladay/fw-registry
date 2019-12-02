@@ -1,6 +1,6 @@
 {
   "id": "ea1dcb2e-3015-40c0-94c5-0f44447d0a8a",
-  "name": "Extract Users AMDB",
+  "name": "Extract Users for Reference Links AMDB",
   "delegate": "concatenatingExtractorDelegate",
   "deserializeAs": "StreamingExtractorTask",
   "streaming": true,

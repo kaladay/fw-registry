@@ -1,0 +1,8 @@
+{
+  "id": "38754598-1e64-46cb-aec1-46a90c4f3076",
+  "name": "Create Holdings",
+  "delegate": "streamingRequestDelegate",
+  "deserializeAs": "StreamingRequestTask",
+  "streaming": false,
+  "storageDestination": "{{okapi}}"
+}

@@ -1,9 +1,9 @@
 {
-  "id": "91e9e10d-6c25-4ed6-ada7-a2793e4f89be",
-  "name": "ProcessVendorAddresses",
+  "id": "c6640e04-da00-4b6e-87f1-3feb23c92315",
+  "name": "ProcessHoldingsSetupData",
   "delegate": "streamingProcessDelegate",
   "deserializeAs": "ProcessorTask",
   "streaming": false,
-  "script": "processAddresses.js",
+  "script": "processSetupData.js",
   "scriptType": "JS"
 }

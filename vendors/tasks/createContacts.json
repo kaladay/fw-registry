@@ -1,6 +1,6 @@
 {
   "id": "be62e1d1-f92d-42c5-9148-e4b12cc5b57c",
-  "name": "Create For Each Task",
+  "name": "Create Contacts For Each Vendor Task",
   "delegate": "streamCreateForEachDelegate",
   "deserializeAs": "StreamCreateForEachTask",
   "streaming": false,
