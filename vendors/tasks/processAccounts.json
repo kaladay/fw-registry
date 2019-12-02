@@ -1,6 +1,6 @@
 {
   "id": "acbb08fe-4f16-4cc2-8cf2-e549daa7d1d5",
-  "name": "ProcessAccounts",
+  "name": "ProcessVendorAccounts",
   "delegate": "streamingProcessDelegate",
   "deserializeAs": "ProcessorTask",
   "streaming": false,

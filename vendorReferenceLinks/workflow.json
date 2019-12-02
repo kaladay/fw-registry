@@ -4,6 +4,7 @@
   "deploymentId": null,
   "processDefinitionIds": [],
   "active": false,
+  "requiresAuthentication": false,
   "tasks": [
     "{{mod-workflow}}/streamingExtractorTask/a98fe894-1f06-4d6b-b214-434cfa5298ed",
     "{{mod-workflow}}/streamingExtractorTask/fb8381ed-fd9b-4250-b6ec-85da72597cae",

@@ -1,0 +1,11 @@
+{
+  "id": "a8907ecf-d107-45b3-9246-00fee84ba159",
+  "name": "Extract Holdings AMDB",
+  "delegate": "concatenatingExtractorDelegate",
+  "deserializeAs": "StreamingExtractorTask",
+  "streaming": true,
+  "enhancementComparisons": [],
+  "enhancementMappings": [],
+  "mergeStrategy": "CONCAT",
+  "streamSource": "{{mod-data-extractor-internal}}/extractors/adb2b101-7c54-4ec8-942b-1d41b0f11617/run"
+}

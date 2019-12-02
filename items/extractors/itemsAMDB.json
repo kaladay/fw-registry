@@ -1,0 +1,6 @@
+{
+  "id": "85f32760-b0a7-4eb4-873d-c89cf7525ee6",
+  "name": "Items AMDB Extractor",
+  "query": "itemsAMDB.sql",
+  "type": "VOYAGER"
+}

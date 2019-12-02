@@ -1,6 +1,6 @@
 {
   "id": "7df06a2f-f698-4201-926b-cd6fe07ab6d7",
-  "name": "ProcessEmails",
+  "name": "ProcessVendorEmails",
   "delegate": "streamingProcessDelegate",
   "deserializeAs": "ProcessorTask",
   "streaming": false,

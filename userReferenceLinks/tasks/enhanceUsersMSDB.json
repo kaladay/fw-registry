@@ -1,6 +1,6 @@
 {
   "id": "5b7b0915-1563-46f9-afa7-a574df7b9a52",
-  "name": "Enhance Users MSDB",
+  "name": "Enhance Users With Duplicates MSDB",
   "delegate": "enhancingExtractorDelegate",
   "deserializeAs": "StreamingExtractorTask",
   "streaming": true,
@@ -16,10 +16,10 @@
       "fromProperty": "/EXTERNAL_SYSTEM_ID"
     },
     {
-      "toProperty": "MSDB_ID",
-      "fromProperty": "/ID"
+      "toProperty": "MSDB_PATRON_ID",
+      "fromProperty": "/PATRON_ID"
     }
   ],
   "mergeStrategy": "ENHANCE",
-  "streamSource": "{{mod-data-extractor}}/extractors/bc1eac8c-a497-4672-9b15-b0a63848b09a/run"
+  "streamSource": "{{mod-data-extractor-internal}}/extractors/bc1eac8c-a497-4672-9b15-b0a63848b09a/run"
 }

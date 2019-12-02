@@ -1,0 +1,9 @@
+{
+  "id": "a42310fa-5883-4252-881c-98acdd5581c9",
+  "name": "Accumulate Holdings",
+  "delegate": "streamAccumulationDelegate",
+  "deserializeAs": "AccumulatorTask",
+  "streaming": false,
+  "accumulateTo": 2,
+  "delayDuration": 5
+}

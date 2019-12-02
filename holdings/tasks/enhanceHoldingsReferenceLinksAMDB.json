@@ -1,0 +1,25 @@
+{
+  "id": "773e7447-3c5a-47e6-b63c-33ae3a513e56",
+  "name": "Enhance Holding Reference Links AMDB",
+  "delegate": "enhancingExtractorDelegate",
+  "deserializeAs": "StreamingExtractorTask",
+  "streaming": true,
+  "enhancementComparisons": [
+    {
+      "sourceProperty": "/MFHD_ID",
+      "targetProperty": "/externalReference"
+    },
+    {
+      "sourceProperty": "/SCHEMA",
+      "targetProperty": "/type/name"
+    }
+  ],
+  "enhancementMappings": [
+    {
+      "toProperty": "folioReference",
+      "fromProperty": "/folioReference"
+    }
+  ],
+  "mergeStrategy": "ENHANCE",
+  "streamSource": "{{mod-external-reference-resolver-internal}}/streaming/referenceLinks/type/67c65ccb-02b1-4f15-8278-eb5b029cdcd5/collect/39670cf7-de23-4473-b5e3-abf6d79735e1"
+}

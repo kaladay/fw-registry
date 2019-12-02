@@ -1,0 +1,6 @@
+{
+  "id": "ff31c0d4-f196-4dd7-8a92-a674589599f9",
+  "name": "Inventory Reference Link MSDB Extractor",
+  "query": "inventoryReferenceLinksMSDB.sql",
+  "type": "VOYAGER"
+}

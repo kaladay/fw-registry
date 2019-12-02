@@ -1,0 +1,9 @@
+{
+  "id": "f01df210-0aee-11ea-9a29-cbe27e6e4833",
+  "name": "ProcessHoldingFinalizeData",
+  "delegate": "streamingProcessDelegate",
+  "deserializeAs": "ProcessorTask",
+  "streaming": false,
+  "script": "processFinalizeData.js",
+  "scriptType": "JS"
+}
