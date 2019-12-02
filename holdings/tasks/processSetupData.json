@@ -1,9 +1,9 @@
 {
-  "id": "cd676120-0aee-11ea-b818-0bd100c85c5f",
-  "name": "ProcessHoldingFlatData",
+  "id": "c6640e04-da00-4b6e-87f1-3feb23c92315",
+  "name": "ProcessHoldingsSetupData",
   "delegate": "streamingProcessDelegate",
   "deserializeAs": "ProcessorTask",
   "streaming": false,
-  "script": "processFlatData.js",
+  "script": "processSetupData.js",
   "scriptType": "JS"
 }
