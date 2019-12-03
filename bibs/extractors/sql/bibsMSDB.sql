@@ -5,7 +5,7 @@ WITH
   )
 SELECT /*+ FIRST_ROWS(1000) */ t.bib_id,
   t.suppress_in_opac,
-  'MSDB' AS schema,
+  'BIB_MSDB_SOURCE' AS schema,
   rtrim(MSDB.getBibBlob(t.bib_id)) AS marc_record,
   (SELECT * FROM total_bibs) AS bib_total
 FROM MSDB.bib_master t
