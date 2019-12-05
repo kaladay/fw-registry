@@ -1,0 +1,25 @@
+{
+  "id": "262d686e-47b0-44e9-add9-225eb158d65f",
+  "name": "Enhance Bib Instance Reference Links AMDB",
+  "delegate": "enhancingExtractorDelegate",
+  "deserializeAs": "StreamingExtractorTask",
+  "streaming": true,
+  "enhancementComparisons": [
+    {
+      "sourceProperty": "/BIB_ID",
+      "targetProperty": "/externalReference"
+    },
+    {
+      "sourceProperty": "/SCHEMA",
+      "targetProperty": "/type/name"
+    }
+  ],
+  "enhancementMappings": [
+    {
+      "toProperty": "folioReference",
+      "fromProperty": "/instanceId"
+    }
+  ],
+  "mergeStrategy": "ENHANCE",
+  "streamSource": "{{mod-external-reference-resolver-internal}}/streaming/referenceLinks/type/43efa217-2d57-4d75-82ef-4372507d0672"
+}

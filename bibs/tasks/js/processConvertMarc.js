@@ -3,7 +3,8 @@ if (!counter.bibs) {
 }
 
 returnObj = {
-  id: args.folioReference,
+  instanceId: args.instanceId,
+  sourceRecordId: args.sourceRecordId,
   suppressInOpac: args.SUPPRESS_IN_OPAC,
   bibId: args.BIB_ID,
   bibTotal: args.BIB_TOTAL,

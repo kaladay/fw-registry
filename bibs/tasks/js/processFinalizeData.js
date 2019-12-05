@@ -6,7 +6,11 @@ var initialRecords = [];
 for (var i = 0; i < args.length; i++) {
   var marc = JSON.stringify(args[i].marc);
   if (marc !== '' && marc !== '{}') {
-    initialRecords.push({ record: marc });
+    initialRecords.push({
+      record: marc,
+      instanceId: args[i].instanceId,
+      sourceRecordId: args[i].sourceRecordId,
+    });
   }
   lastBibIndex = args[i].bibIndex;
   lastBibTotal = args[i].bibTotal;
