@@ -83,14 +83,13 @@ var holdingItems = args.HOLDING_ITEMS;
 var holdingRLID;
 var holdingFID;
 
-var holdings = [];
+var currentHoldingId;
 
 for (var i = 0; i < holdingItems.length; i++) {
   var holdingItem = holdingItems[i].split('::');
   var holdingId = holdingItem[0];
   var itemId = holdingItem[1];
-
-  if (holdings.indexOf(holdingId) === -1) {
+  if (currentHoldingId !== holdingId) {
     holdingIds = createUUIDPair();
     inventoryReferenceLinks.push({
       id: holdingIds.RLID,
@@ -98,26 +97,22 @@ for (var i = 0; i < holdingItems.length; i++) {
       externalReference: holdingId,
       type: inventoryTypes[args.SCHEMA].HOLDING
     });
-
     inventoryReferenceLinks.push({
       folioReference: holdingIds.RLID,
       externalReference: instanceIds.RLID,
       type: inventoryTypes[args.SCHEMA].HOLDING_TO_BIB
     });
-
-    holdings.push(holdingId);
+    currentHoldingId = holdingId;
   }
 
   if (itemId && itemId.length > 0) {
     var itemIds = createUUIDPair();
-
     inventoryReferenceLinks.push({
       id: itemIds.RLID,
       folioReference: itemIds.FID,
       externalReference: itemId,
       type: inventoryTypes[args.SCHEMA].ITEM
     });
-
     inventoryReferenceLinks.push({
       folioReference: itemIds.RLID,
       externalReference: holdingIds.RLID,

@@ -1,6 +1,6 @@
 {
-  "id": "036d6268-bd75-40d2-8296-0148c9cd421c",
-  "name": "Enhance Bib Reference Links AMDB",
+  "id": "f79c0086-2199-45b4-923e-41d8c28d4af5",
+  "name": "Enhance Bib Source Record Reference Links MSDB",
   "delegate": "enhancingExtractorDelegate",
   "deserializeAs": "StreamingExtractorTask",
   "streaming": true,
@@ -10,16 +10,16 @@
       "targetProperty": "/externalReference"
     },
     {
-      "sourceProperty": "/SCHEMA",
+      "sourceProperty": "/SOURCE_SCHEMA",
       "targetProperty": "/type/name"
     }
   ],
   "enhancementMappings": [
     {
       "toProperty": "folioReference",
-      "fromProperty": "/folioReference"
+      "fromProperty": "/sourceRecordId"
     }
   ],
   "mergeStrategy": "ENHANCE",
-  "streamSource": "{{mod-external-reference-resolver-internal}}/streaming/referenceLinks/type/96017110-47c5-4d55-8324-7dab1771749b"
+  "streamSource": "{{mod-external-reference-resolver-internal}}/streaming/referenceLinks/type/b9f633b3-22e4-4bad-8785-da09d9eaa6c8"
 }
