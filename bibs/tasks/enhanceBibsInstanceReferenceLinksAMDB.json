@@ -10,7 +10,7 @@
       "targetProperty": "/externalReference"
     },
     {
-      "sourceProperty": "/SCHEMA",
+      "sourceProperty": "/INSTANCE_SCHEMA",
       "targetProperty": "/type/name"
     }
   ],
