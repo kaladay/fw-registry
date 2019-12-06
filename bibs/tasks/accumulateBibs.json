@@ -1,9 +1,9 @@
 {
-  "id": "a42310fa-5883-4252-881c-98acdd5581c9",
-  "name": "Accumulate Holdings",
+  "id": "0a1912a0-5485-46e5-8df7-1b97cea0cf8a",
+  "name": "Accumulate Bibs",
   "delegate": "streamAccumulationDelegate",
   "deserializeAs": "AccumulatorTask",
   "streaming": false,
-  "accumulateTo": 10000,
+  "accumulateTo": "{{bibBatchSize}}",
   "delayDuration": 15000
 }

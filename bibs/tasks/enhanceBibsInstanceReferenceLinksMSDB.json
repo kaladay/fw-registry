@@ -1,0 +1,25 @@
+{
+  "id": "38aa0bb6-1381-4251-accc-3f1c73db9d48",
+  "name": "Enhance Bib Instance Reference Links MSDB",
+  "delegate": "enhancingExtractorDelegate",
+  "deserializeAs": "StreamingExtractorTask",
+  "streaming": true,
+  "enhancementComparisons": [
+    {
+      "sourceProperty": "/BIB_ID",
+      "targetProperty": "/externalReference"
+    },
+    {
+      "sourceProperty": "/INSTANCE_SCHEMA",
+      "targetProperty": "/type/name"
+    }
+  ],
+  "enhancementMappings": [
+    {
+      "toProperty": "folioReference",
+      "fromProperty": "/instanceId"
+    }
+  ],
+  "mergeStrategy": "ENHANCE",
+  "streamSource": "{{mod-external-reference-resolver-internal}}/streaming/referenceLinks/type/fb6db4f0-e5c3-483b-a1da-3edbb96dc8e8"
+}

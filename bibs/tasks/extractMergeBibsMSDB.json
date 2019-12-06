@@ -1,0 +1,20 @@
+{
+  "id": "38f23304-a7c3-4108-a165-efd1456f7708",
+  "name": "Merge Bibs MSDB",
+  "delegate": "orderedMergingExtractorDelegate",
+  "deserializeAs": "StreamingExtractorTask",
+  "streaming": true,
+  "enhancementComparisons": [
+    {
+      "sourceProperty": "/BIB_ID",
+      "targetProperty": "/BIB_ID"
+    },
+    {
+      "sourceProperty": "/SCHEMA",
+      "targetProperty": "/SCHEMA"
+    }
+  ],
+  "enhancementMappings": [],
+  "mergeStrategy": "MERGE",
+  "streamSource": "{{mod-data-extractor-internal}}/extractors/954f331e-3c77-41fa-9a74-8f4de285e63c/run"
+}

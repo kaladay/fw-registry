@@ -44,8 +44,8 @@ var buildStatements = function (subFields) {
   return built;
 };
 
-var buildHoldings = function (sourceData, data) {
-  data.instanceId = null;
+var buildHolding = function (sourceData, data) {
+  data.instanceId = sourceData.folioReference === undefined ? null : sourceData.folioReference;
   data.id = sourceData.MDHF_ID;
   data.acquisitionMethod = sourceData.acq_method === undefined ? null : sourceData.ACQ_METHOD;
   data.callNumberTypeId = sourceData.CALL_NO_TYPE;
@@ -124,8 +124,4 @@ var buildHoldings = function (sourceData, data) {
   return data;
 };
 
-returnObj = {
-  holdings: buildHoldings(args.sourceData, args.holdings)
-};
-
-returnObj.totalRecords = returnObj.holdings.length;
+returnObj = buildHolding(args.sourceData, args.holdings);
