@@ -65,7 +65,8 @@ var buildHolding = function (sourceData, data) {
     }
   }
 
-  var marcFields = JSON.parse(scriptEngineUtility.getFieldsFromRawMarc(sourceData.MARC_RECORD, ['506', '541', '562', '583', '852', '866', '867', '868']));
+  var marcFieldsJson = scriptEngineUtility.getFieldsFromRawMarc(sourceData.MARC_RECORD, ['506', '541', '562', '583', '852', '866', '867', '868']);
+  var marcFields = JSON.parse(marcFieldsJson);
 
   if (marcFields) {
     marcFields.forEach(function(marcField, marcFieldKey) {
