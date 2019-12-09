@@ -11,7 +11,7 @@
     },
     {
       "sourceProperty": "/SCHEMA",
-      "targetProperty": "/type/name"
+      "targetProperty": "/typeName"
     }
   ],
   "enhancementMappings": [
