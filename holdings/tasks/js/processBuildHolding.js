@@ -56,12 +56,12 @@ var buildHolding = function (sourceData, data) {
   data.retentionPolicy = sourceData.RETENTION_POLICY === undefined ? null : sourceData.RETENTION_POLICY;
 
   if (sourceData.schema === 'AMDB') {
-    if (sourceData.locationsToFolioAMDB[sourceData.LOCATION_ID]) {
-      data.permanentLocationId = sourceData.locationsToFolioAMDB[sourceData.LOCATION_ID];
+    if (args.locationsToFolioAMDB[sourceData.LOCATION_ID]) {
+      data.permanentLocationId = args.locationsToFolioAMDB[sourceData.LOCATION_ID];
     }
   } else if (sourceData.schema === 'MSDB') {
-    if (sourceData.locationsToFolioMSDB[sourceData.LOCATION_ID]) {
-      data.permanentLocationId = sourceData.locationsToFolioMSDB[sourceData.LOCATION_ID];
+    if (args.locationsToFolioMSDB[sourceData.LOCATION_ID]) {
+      data.permanentLocationId = args.locationsToFolioMSDB[sourceData.LOCATION_ID];
     }
   }
 
