@@ -68,11 +68,11 @@ var buildHolding = function (sourceData, data) {
     data.retentionPolicy = sourceData.RETENTION_POLICY;
   }
 
-  if (sourceData.schema === 'HOLDING_AMDB') {
+  if (sourceData.SCHEMA === 'HOLDING_AMDB') {
     if (args.locationsToFolioAMDB[sourceData.LOCATION_ID]) {
       data.permanentLocationId = args.locationsToFolioAMDB[sourceData.LOCATION_ID];
     }
-  } else if (sourceData.schema === 'HOLDING_MSDB') {
+  } else if (sourceData.SCHEMA === 'HOLDING_MSDB') {
     if (args.locationsToFolioMSDB[sourceData.LOCATION_ID]) {
       data.permanentLocationId = args.locationsToFolioMSDB[sourceData.LOCATION_ID];
     }
