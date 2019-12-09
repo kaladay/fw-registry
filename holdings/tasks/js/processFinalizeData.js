@@ -1,4 +1,3 @@
 returnObj = {
-  holdingsRecords: args,
-  totalRecords: args.length
+  holdingsRecords: args
 };

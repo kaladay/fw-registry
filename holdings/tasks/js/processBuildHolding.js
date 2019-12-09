@@ -47,19 +47,32 @@ var buildStatements = function (subFields) {
 var buildHolding = function (sourceData, data) {
   data.id = sourceData.folioReference;
   data.instanceId = sourceData.reference;
-  data.acquisitionMethod = sourceData.acq_method === undefined ? null : sourceData.ACQ_METHOD;
-  data.callNumberTypeId = sourceData.CALL_NO_TYPE;
-  data.discoverySuppress = sourceData.SUPPRESS_IN_OPAC === 'true' ? true : false;
-  data.holdingsTypeId = sourceData.RECORD_TYPE === undefined ? null : sourceData.RECORD_TYPE;
-  data.notes = [];
-  data.receiptStatus = sourceData.RECEIPT_STATUS === undefined ? null : sourceData.RECEIPT_STATUS;
-  data.retentionPolicy = sourceData.RETENTION_POLICY === undefined ? null : sourceData.RETENTION_POLICY;
 
-  if (sourceData.schema === 'AMDB') {
+  data.callNumberTypeId = sourceData.CALL_NO_TYPE;
+
+  data.discoverySuppress = sourceData.SUPPRESS_IN_OPAC === 'true' ? true : false;
+
+  if (sourceData.ACQ_METHOD !== undefined) {
+    data.acquisitionMethod = sourceData.ACQ_METHOD;
+  }
+
+  if (sourceData.RECORD_TYPE !== undefined) {
+    data.holdingsTypeId = sourceData.RECORD_TYPE;
+  }
+
+  if (sourceData.RECEIPT_STATUS !== undefined) {
+    data.receiptStatus = sourceData.RECEIPT_STATUS;
+  }
+
+  if (sourceData.RETENTION_POLICY !== undefined) {
+    data.retentionPolicy = sourceData.RETENTION_POLICY;
+  }
+
+  if (sourceData.schema === 'HOLDING_AMDB') {
     if (args.locationsToFolioAMDB[sourceData.LOCATION_ID]) {
       data.permanentLocationId = args.locationsToFolioAMDB[sourceData.LOCATION_ID];
     }
-  } else if (sourceData.schema === 'MSDB') {
+  } else if (sourceData.schema === 'HOLDING_MSDB') {
     if (args.locationsToFolioMSDB[sourceData.LOCATION_ID]) {
       data.permanentLocationId = args.locationsToFolioMSDB[sourceData.LOCATION_ID];
     }
