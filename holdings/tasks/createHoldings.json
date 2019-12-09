@@ -4,5 +4,5 @@
   "delegate": "streamingRequestDelegate",
   "deserializeAs": "StreamingRequestTask",
   "streaming": false,
-  "storageDestination": "{{mod-inventory-storage}}/holdings-storage/holdings"
+  "storageDestination": "{{mod-inventory-storage}}/holdings-storage/batch/synchronous"
 }
