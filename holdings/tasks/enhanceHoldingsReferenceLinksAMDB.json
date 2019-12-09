@@ -18,8 +18,12 @@
     {
       "toProperty": "folioReference",
       "fromProperty": "/folioReference"
+    },
+    {
+      "toProperty": "reference",
+      "fromProperty": "/reference"
     }
   ],
   "mergeStrategy": "ENHANCE",
-  "streamSource": "{{mod-external-reference-resolver-internal}}/streaming/referenceLinks/type/67c65ccb-02b1-4f15-8278-eb5b029cdcd5/collect/39670cf7-de23-4473-b5e3-abf6d79735e1"
+  "streamSource": "{{mod-external-reference-resolver-internal}}/streaming/referenceLinks/type/67c65ccb-02b1-4f15-8278-eb5b029cdcd5/join/492fea54-399a-4822-8d4b-242096c2ab12"
 }
