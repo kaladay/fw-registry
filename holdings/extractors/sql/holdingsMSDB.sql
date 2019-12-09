@@ -65,7 +65,7 @@ SELECT /*+ FIRST_ROWS(1000) */
     '8', 'Permanently retained'
   ) AS retention_policy,
   MSDB.getMFHDBlob(mm.mfhd_id) as marc_record,
-  'MSDB' AS schema
+  'HOLDING_MSDB' AS schema
 FROM MSDB.mfhd_master mm
 ORDER BY mm.mfhd_id
 ;

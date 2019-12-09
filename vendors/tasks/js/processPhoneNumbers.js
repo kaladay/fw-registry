@@ -1,4 +1,4 @@
-if (args.sourceData.ADDRESS_IDS)
+if (args.sourceData.ADDRESS_IDS) {
   for (var i = 0; i < args.sourceData.ADDRESS_IDS.length; i++) {
     var phoneNumberObj = {};
     var addressId = args.sourceData.ADDRESS_IDS[i];
@@ -66,4 +66,5 @@ if (args.sourceData.ADDRESS_IDS)
 
     }
   }
+}
 returnObj = args;

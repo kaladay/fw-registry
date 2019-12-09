@@ -121,4 +121,4 @@ for (var i = 0; i < holdingItems.length; i++) {
   }
 }
 
-var returnObj = inventoryReferenceLinks;
+returnObj = inventoryReferenceLinks;

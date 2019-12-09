@@ -5,7 +5,7 @@ var vendorTypes = {
 
 var vendorUUID = UUID.randomUUID().toString();
 
-var returnObj = {
+returnObj = {
   folioReference: vendorUUID,
   externalReference: args.VENDOR_ID,
   type: vendorTypes[args.SCHEMA]
