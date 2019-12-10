@@ -43,7 +43,7 @@ SELECT i.item_id
   it_t.item_type_code AS temptype,
   ib.item_barcode,
   ib.barcode_status,
-  'MSDB' AS schema
+  'ITEM_MSDB' AS schema
 FROM MSDB.item i
   INNER JOIN MSDB.location l_p ON i.perm_location = l_p.location_id
   LEFT JOIN MSDB.location l_t ON i.temp_location <> 0 AND i.temp_location = l_t.location_id

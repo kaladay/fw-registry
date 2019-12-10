@@ -43,7 +43,7 @@ SELECT i.item_id
   it_t.item_type_code AS temptype,
   ib.item_barcode,
   ib.barcode_status,
-  'AMDB' AS schema
+  'ITEM_AMDB' AS schema
 FROM AMDB.item i
   INNER JOIN AMDB.location l_p ON i.perm_location = l_p.location_id
   LEFT JOIN AMDB.location l_t ON i.temp_location <> 0 AND i.temp_location = l_t.location_id
