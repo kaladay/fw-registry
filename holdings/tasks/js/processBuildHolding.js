@@ -52,19 +52,19 @@ var buildHolding = function (sourceData, data) {
 
   data.discoverySuppress = sourceData.SUPPRESS_IN_OPAC === 'true' ? true : false;
 
-  if (sourceData.ACQ_METHOD !== undefined) {
+  if (sourceData.ACQ_METHOD) {
     data.acquisitionMethod = sourceData.ACQ_METHOD;
   }
 
-  if (sourceData.RECORD_TYPE !== undefined) {
+  if (sourceData.RECORD_TYPE) {
     data.holdingsTypeId = sourceData.RECORD_TYPE;
   }
 
-  if (sourceData.RECEIPT_STATUS !== undefined) {
+  if (sourceData.RECEIPT_STATUS) {
     data.receiptStatus = sourceData.RECEIPT_STATUS;
   }
 
-  if (sourceData.RETENTION_POLICY !== undefined) {
+  if (sourceData.RETENTION_POLICY) {
     data.retentionPolicy = sourceData.RETENTION_POLICY;
   }
 
@@ -77,6 +77,8 @@ var buildHolding = function (sourceData, data) {
       data.permanentLocationId = args.locationsToFolioMSDB[sourceData.LOCATION_ID];
     }
   }
+
+  data.formerIds.push(sourceData.MFHD_ID);
 
   var marcFieldsJson = scriptEngineUtility.getFieldsFromRawMarc(sourceData.MARC_RECORD, ['506', '541', '562', '583', '852', '866', '867', '868']);
   var marcFields = JSON.parse(marcFieldsJson);
