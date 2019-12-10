@@ -1,0 +1,9 @@
+{
+  "id": "c1ddf6f7-52d8-4a58-8015-2eb5ecad5114",
+  "name": "Accumulate Items",
+  "delegate": "streamAccumulationDelegate",
+  "deserializeAs": "AccumulatorTask",
+  "streaming": false,
+  "accumulateTo": 10000,
+  "delayDuration": 15000
+}
