@@ -10,6 +10,7 @@ for (var i = 0; i < args.length; i++) {
       record: marc,
       instanceId: args[i].instanceId,
       sourceRecordId: args[i].sourceRecordId,
+      suppressDiscovery: args[i].suppressInOpac
     });
   }
   lastBibIndex = args[i].bibIndex;
