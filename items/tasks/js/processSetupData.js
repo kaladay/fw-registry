@@ -1,13 +1,11 @@
 var formatSourceData = function (args) {
   var data = {};
   var argKeys = Object.keys(args);
-
   for (var i = 0; i < argKeys.length; i++) {
     var key = argKeys[i];
     var value = args[key];
     data[key] = value;
   }
-
   return data;
 };
 
@@ -54,5 +52,32 @@ returnObj = {
     purchaseOrderLineIdentifier: null,
     tags: null,
     lastCheckIn: null
+  },
+  itemStatusTypes: {
+    '1': 'Not Charged',
+    '2': 'Charged',
+    '3': 'Renewed',
+    '4': 'Overdue',
+    '5': 'Recall Request',
+    '6': 'Hold Request',
+    '7': 'On Hold',
+    '8': 'In Transit',
+    '9': 'In Transit Discharged',
+    '10': 'In Transit On Hold',
+    '11': 'Discharged',
+    '12': 'Missing',
+    '13': 'Lost--Library Applied',
+    '14': 'Lost--System Applied',
+    '15': 'Claims Returned',
+    '16': 'Damaged',
+    '17': 'Withdrawn',
+    '18': 'At Bindery',
+    '19': 'Cataloging Review',
+    '20': 'Circulation Review',
+    '21': 'Scheduled',
+    '22': 'In Process',
+    '23': 'Call Slip Request',
+    '24': 'Short Loan Request',
+    '25': 'Remote Storage Request'
   }
 };

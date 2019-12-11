@@ -1,3 +1,13 @@
+var addItemNotes = function (notes, value, id, staff) {
+  if (value) {
+    notes.push({
+      'note': value,
+      'staffOnly': staff ? true : false,
+      'holdingsNoteTypeId': id
+    });
+  }
+};
+
 var buildHolding = function (sourceData, data) {
   data.id = sourceData.folioReference;
   data.holdingsRecordId = sourceData.reference;
@@ -13,7 +23,6 @@ var buildHolding = function (sourceData, data) {
   if (sourceData.CHRON) {
     data.chronology = sourceData.CHRON;
   }
-  
 
   if (sourceData.CAPTION) {
     data.yearCaption.push(sourceData.CAPTION);

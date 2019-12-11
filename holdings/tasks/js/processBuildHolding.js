@@ -16,13 +16,11 @@ var appendString = function (destination, value) {
       destination = value;
     }
   }
-
   return destination;
 };
 
 var buildStatements = function (subFields) {
   var built = null;
-
   subFields.forEach(function(subField, subFieldKey) {
     if (subField.code === 'a' || subField.code === 'x' || subField.code === 'z') {
       if (built === null) {
@@ -40,7 +38,6 @@ var buildStatements = function (subFields) {
       }
     }
   });
-
   return built;
 };
 
