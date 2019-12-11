@@ -5,7 +5,7 @@ if (!counter.bibs) {
 returnObj = {
   instanceId: args.instanceId,
   sourceRecordId: args.sourceRecordId,
-  suppressInOpac: args.SUPPRESS_IN_OPAC,
+  suppressDiscovery: args.SUPPRESS_IN_OPAC === 'Y',
   bibId: args.BIB_ID,
   bibTotal: args.BIB_TOTAL,
   bibIndex: counter.bibs++,
