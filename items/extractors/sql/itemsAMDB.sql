@@ -43,6 +43,13 @@ WITH
       ) AS sys.odcivarchar2list) AS item_statuses
     FROM item_status_with_desc iswd
     GROUP BY iswd.item_id
+  ),
+  item_with_notes AS (
+    SELECT
+      it_n.item_id,
+      CAST(COLLECT(it_n.item_note_type || '::' || it_n.item_note) AS sys.odcivarchar2list) AS item_notes
+    FROM AMDB.item_note it_n
+    GROUP BY it_n.item_id
   )
 SELECT
   i.item_id,
@@ -54,6 +61,7 @@ SELECT
   i.magnetic_media,
   i.sensitize,
   iws.item_statuses,
+  iwn.item_notes,
   mi.caption,
   mi.chron,
   mi.item_enum,
@@ -68,6 +76,7 @@ SELECT
   'ITEM_AMDB' AS schema
 FROM AMDB.item i
   INNER JOIN item_with_statuses iws ON i.item_id = iws.item_id
+  INNER JOIN item_with_notes iwn ON i.item_id = iwn.item_id
   INNER JOIN AMDB.mfhd_item mi ON i.item_id = mi.item_id
   INNER JOIN AMDB.location l_p ON i.perm_location = l_p.location_id
   LEFT JOIN AMDB.location l_t ON i.temp_location <> 0 AND i.temp_location = l_t.location_id
@@ -75,5 +84,4 @@ FROM AMDB.item i
   LEFT JOIN AMDB.item_type it_t ON i.temp_item_type_id <> 0 AND i.temp_item_type_id = it_t.item_type_id
   LEFT JOIN AMDB.item_barcode ib ON ib.barcode_status = '1' AND i.item_id = ib.item_id
 ORDER BY i.item_id
-FETCH NEXT 10 ROWS ONLY
 ;
