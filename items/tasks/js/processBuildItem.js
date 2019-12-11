@@ -51,11 +51,11 @@ var buildHolding = function (sourceData, data) {
   }
 
   if (sourceData.FREETEXT) {
-    var itemNodeObject = {
+    data.notes.push({
       note: sourceData.FREETEXT,
       staffOnly: true,
       itemNoteTypeId: '8d0a5eca-25de-4391-81a9-236eeefdd20b'
-    }
+    })
   }
 
   data.discoverySuppress = false;
