@@ -83,7 +83,7 @@ var buildHolding = function (sourceData, data) {
           data.status.date = statusDate;
         }
       } else {
-        // TODO: put in statistical code ids
+        data.statisticalCodeIds.push(args.statisticalCodeTypes[statusName]);
       }
     }
   }
