@@ -16,8 +16,8 @@
   ],
   "enhancementMappings": [
     {
-      "toProperty": "folioReference",
-      "fromProperty": "/sourceRecordId"
+      "toProperty": "sourceRecordId",
+      "fromProperty": "/folioReference"
     }
   ],
   "mergeStrategy": "ENHANCE",
