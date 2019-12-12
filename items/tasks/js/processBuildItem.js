@@ -60,6 +60,10 @@ var buildHolding = function (sourceData, data) {
 
   data.discoverySuppress = false;
 
+  data.status = {
+    name: 'Available'
+  };
+
   if (sourceData.ITEM_STATUSES) {
     for (var i = 0; i < sourceData.ITEM_STATUSES.length; i++) {
       var statusParts = sourceData.ITEM_STATUSES[i].split('::');
@@ -76,9 +80,7 @@ var buildHolding = function (sourceData, data) {
       }
 
       if (i === 0) {
-        data.status = {
-          name: statusName
-        };
+        data.status.name = statusName;
         if (statusDate.length > 0) {
           data.status.date = statusDate;
         }
@@ -89,9 +91,7 @@ var buildHolding = function (sourceData, data) {
   }
 
   if (data.status === null) {
-    data.status {
-      name: 'Available'
-    };
+    
   }
 
   if (sourceData.ITEM_NOTES) {
