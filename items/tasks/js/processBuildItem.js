@@ -90,10 +90,6 @@ var buildHolding = function (sourceData, data) {
     }
   }
 
-  if (data.status === null) {
-    
-  }
-
   if (sourceData.ITEM_NOTES) {
     for (var i = 0; i < sourceData.ITEM_NOTES.length; i++) {
       var noteParts = sourceData.ITEM_NOTES[i].split('::');
