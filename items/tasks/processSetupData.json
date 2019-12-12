@@ -1,0 +1,9 @@
+{
+  "id": "6277e5eb-37b5-40a7-b280-7019725a5b5d",
+  "name": "ProcessItemsSetupData",
+  "delegate": "streamingProcessDelegate",
+  "deserializeAs": "ProcessorTask",
+  "streaming": false,
+  "script": "processSetupData.js",
+  "scriptType": "JS"
+}

@@ -21,8 +21,8 @@ var inventoryTypes = {
       name: 'HOLDING_TO_BIB_AMDB'
     },
     ITEM_TO_HOLDING: {
-      id: '492fea54-399a-4822-8d4b-242096c2ab12',
-      name: 'ITEM_TO_HOLDING_MSDB'
+      'id': '39670cf7-de23-4473-b5e3-abf6d79735e1',
+      'name': 'ITEM_TO_HOLDING_AMDB'
     }
   },
   MSDB: {
@@ -47,8 +47,8 @@ var inventoryTypes = {
       name: 'HOLDING_TO_BIB_MSDB'
     },
     ITEM_TO_HOLDING: {
-      id: '39670cf7-de23-4473-b5e3-abf6d79735e1',
-      name: 'ITEM_TO_HOLDING_AMDB'
+      'id': '492fea54-399a-4822-8d4b-242096c2ab12',
+      'name': 'ITEM_TO_HOLDING_MSDB'
     }
   }
 };

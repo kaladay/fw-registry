@@ -1,13 +1,11 @@
 var formatSourceData = function (args) {
   var data = {};
   var argKeys = Object.keys(args);
-
   for (var i = 0; i < argKeys.length; i++) {
     var key = argKeys[i];
     var value = args[key];
     data[key] = value;
   }
-
   return data;
 };
 
