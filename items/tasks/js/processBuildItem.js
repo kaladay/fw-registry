@@ -55,7 +55,7 @@ var buildHolding = function (sourceData, data) {
       note: sourceData.FREETEXT,
       staffOnly: true,
       itemNoteTypeId: '8d0a5eca-25de-4391-81a9-236eeefdd20b'
-    })
+    });
   }
 
   data.discoverySuppress = false;
@@ -91,14 +91,14 @@ var buildHolding = function (sourceData, data) {
   }
 
   if (sourceData.ITEM_NOTES) {
-    for (var i = 0; i < sourceData.ITEM_NOTES.length; i++) {
-      var noteParts = sourceData.ITEM_NOTES[i].split('::');
+    for (var j = 0; j < sourceData.ITEM_NOTES.length; j++) {
+      var noteParts = sourceData.ITEM_NOTES[j].split('::');
       var noteType = noteParts[0];
       var noteText = noteParts[1];
       var note = {
         note: noteText.replace(/\s\s+/g, ' '),
         staffOnly: true
-      }
+      };
       if (noteType === 1) {
         note.itemNoteTypeId = '8d0a5eca-25de-4391-81a9-236eeefdd20b';
         data.notes.push(note);
