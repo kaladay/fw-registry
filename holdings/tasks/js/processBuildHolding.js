@@ -20,25 +20,21 @@ var appendString = function (destination, value) {
 };
 
 var buildStatements = function (subFields) {
-  var built = null;
+  var statements = [];
   subFields.forEach(function(subField, subFieldKey) {
     if (subField.code === 'a' || subField.code === 'x' || subField.code === 'z') {
-      if (built === null) {
-        built = {
-          statement: null,
-          notes: []
-        };
-      }
-
+      var obj = {
+        notes: []
+      };
       if (subField.code === 'a') {
-        built.statement = subField.data ? subField.data : null;
+        obj.statement = subField.data;
+      } else {
+        appendNote(obj.notes, subField.data, 'b160f13a-ddba-4053-b9c4-60ec5ea45d56');
       }
-      else {
-        appendNote(built.notes, subField.data, 'b160f13a-ddba-4053-b9c4-60ec5ea45d56');
-      }
+      statements.push(obj);
     }
   });
-  return built;
+  return statements;
 };
 
 var buildHolding = function (sourceData, data) {
