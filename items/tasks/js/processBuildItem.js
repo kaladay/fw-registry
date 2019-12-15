@@ -1,3 +1,12 @@
+var mapLoanType = function(code) {
+  if ('non') {
+    return 'noncirc';
+  } else if ('ser') {
+    return 'serial';
+  }
+  return code;
+};
+
 var buildHolding = function (sourceData, data) {
   data.id = sourceData.folioReference;
   data.holdingsRecordId = sourceData.reference;
@@ -34,20 +43,20 @@ var buildHolding = function (sourceData, data) {
     data.numberOfPieces = sourceData.PIECES;
   }
 
-  if (sourceData.PERMLOC) {
-    data.permanentLocationId = sourceData.PERMLOC;
+  if (args.locations[sourceData.SCHEMA][sourceData.PERM_LOC_ID]) {
+    data.permanentLocationId = args.locations[sourceData.SCHEMA][sourceData.PERM_LOC_ID];
   }
 
-  if (sourceData.TEMPLOC) {
-    data.temporaryLocationId = sourceData.TEMPLOC;
+  if (args.locations[sourceData.SCHEMA][sourceData.TEMP_LOC_ID]) {
+    data.temporaryLocationId = args.locations[sourceData.SCHEMA][sourceData.TEMP_LOC_ID];
   }
 
-  if (sourceData.PERMTYPE) {
-    data.permanentLoanTypeId = sourceData.PERMTYPE;
+  if (args.loanTypes[mapLoanType(sourceData.PERM_TYPE_CODE)]) {
+    data.permanentLoanTypeId = args.loanTypes[mapLoanType(sourceData.PERM_TYPE_CODE)];
   }
 
-  if (sourceData.TEMPTYPE) {
-    data.temporaryLoanTypeId = sourceData.TEMPTYPE;
+  if (args.loanTypes[mapLoanType(sourceData.TEMP_TYPE_CODE)]) {
+    data.temporaryLoanTypeId = args.loanTypes[mapLoanType(sourceData.TEMP_TYPE_CODE)];
   }
 
   if (sourceData.FREETEXT) {

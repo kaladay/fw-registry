@@ -61,14 +61,8 @@ var buildHolding = function (sourceData, data) {
     data.retentionPolicy = sourceData.RETENTION_POLICY;
   }
 
-  if (sourceData.SCHEMA === 'HOLDING_AMDB') {
-    if (args.locationsToFolioAMDB[sourceData.LOCATION_ID]) {
-      data.permanentLocationId = args.locationsToFolioAMDB[sourceData.LOCATION_ID];
-    }
-  } else if (sourceData.SCHEMA === 'HOLDING_MSDB') {
-    if (args.locationsToFolioMSDB[sourceData.LOCATION_ID]) {
-      data.permanentLocationId = args.locationsToFolioMSDB[sourceData.LOCATION_ID];
-    }
+  if (args.locations[sourceData.SCHEMA][sourceData.LOCATION_ID]) {
+    data.permanentLocationId = args.locations[sourceData.SCHEMA][sourceData.LOCATION_ID];
   }
 
   data.formerIds.push(sourceData.MFHD_ID);
