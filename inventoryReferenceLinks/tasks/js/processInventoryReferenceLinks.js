@@ -105,7 +105,7 @@ for (var i = 0; i < holdingItems.length; i++) {
     currentHoldingId = holdingId;
   }
 
-  if (itemId && itemId.length > 0) {
+  if (itemId) {
     var itemIds = createUUIDPair();
     inventoryReferenceLinks.push({
       id: itemIds.RLID,

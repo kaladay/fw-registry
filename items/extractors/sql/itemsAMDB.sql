@@ -75,8 +75,8 @@ SELECT
   ib.barcode_status,
   'ITEM_AMDB' AS schema
 FROM AMDB.item i
-  INNER JOIN item_with_statuses iws ON i.item_id = iws.item_id
-  INNER JOIN item_with_notes iwn ON i.item_id = iwn.item_id
+  LEFT JOIN item_with_statuses iws ON i.item_id = iws.item_id
+  LEFT JOIN item_with_notes iwn ON i.item_id = iwn.item_id
   INNER JOIN AMDB.mfhd_item mi ON i.item_id = mi.item_id
   INNER JOIN AMDB.location l_p ON i.perm_location = l_p.location_id
   LEFT JOIN AMDB.location l_t ON i.temp_location <> 0 AND i.temp_location = l_t.location_id
