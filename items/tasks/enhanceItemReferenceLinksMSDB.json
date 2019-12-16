@@ -1,0 +1,29 @@
+{
+  "id": "1c9e3f33-7fa9-4d3f-b328-116d0630050f",
+  "name": "Enhance Item Reference Links MSDB",
+  "delegate": "enhancingExtractorDelegate",
+  "deserializeAs": "StreamingExtractorTask",
+  "streaming": true,
+  "enhancementComparisons": [
+    {
+      "sourceProperty": "/ITEM_ID",
+      "targetProperty": "/externalReference"
+    },
+    {
+      "sourceProperty": "/SCHEMA",
+      "targetProperty": "/typeName"
+    }
+  ],
+  "enhancementMappings": [
+    {
+      "toProperty": "folioReference",
+      "fromProperty": "/folioReference"
+    },
+    {
+      "toProperty": "reference",
+      "fromProperty": "/reference"
+    }
+  ],
+  "mergeStrategy": "ENHANCE",
+  "streamSource": "{{mod-external-reference-resolver-internal}}/streaming/referenceLinks/type/0014559d-39f6-45c7-9406-03643459aaf0/join/492fea54-399a-4822-8d4b-242096c2ab12"
+}

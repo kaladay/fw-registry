@@ -1,6 +1,6 @@
 {
-  "id": "b7ec0b72-1aa0-11ea-978f-2e728ce88125",
-  "name": "ProcessHoldingFinalizeData",
+  "id": "45222189-6a84-4cfb-9dbc-0244d155986f",
+  "name": "ProcessItemFinalizeData",
   "delegate": "streamingProcessDelegate",
   "deserializeAs": "ProcessorTask",
   "streaming": false,

@@ -1,15 +1,16 @@
-WITH bib_item_holdings AS (
-  SELECT bh.bib_id,
-    bh.mfhd_id,
+WITH bib_holdings_items AS (
+  SELECT
+    bm.bib_id,
+    bm.mfhd_id,
     mi.item_id
-  FROM AMDB.bib_mfhd bh
-    LEFT JOIN AMDB.mfhd_item mi ON bh.mfhd_id = mi.mfhd_id
+  FROM AMDB.bib_mfhd bm
+    LEFT JOIN AMDB.mfhd_item mi ON bm.mfhd_id = mi.mfhd_id
  )
 SELECT
-  bih.bib_id,
+  bhi.bib_id,
   'AMDB' AS schema,
-  CAST(COLLECT(bih.mfhd_id || '::' || bih.item_id) AS sys.odcivarchar2list) AS holding_items
-FROM bib_item_holdings bih
-GROUP BY bih.bib_id
-ORDER BY bih.bib_id
+  CAST(COLLECT(bhi.mfhd_id || '::' || bhi.item_id) AS sys.odcivarchar2list) AS holding_items
+FROM bib_holdings_items bhi
+GROUP BY bhi.bib_id
+ORDER BY bhi.bib_id
 ;

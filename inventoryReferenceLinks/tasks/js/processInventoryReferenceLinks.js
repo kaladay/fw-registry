@@ -21,8 +21,8 @@ var inventoryTypes = {
       name: 'HOLDING_TO_BIB_AMDB'
     },
     ITEM_TO_HOLDING: {
-      id: '492fea54-399a-4822-8d4b-242096c2ab12',
-      name: 'ITEM_TO_HOLDING_MSDB'
+      id: '39670cf7-de23-4473-b5e3-abf6d79735e1',
+      name: 'ITEM_TO_HOLDING_AMDB'
     }
   },
   MSDB: {
@@ -47,8 +47,8 @@ var inventoryTypes = {
       name: 'HOLDING_TO_BIB_MSDB'
     },
     ITEM_TO_HOLDING: {
-      id: '39670cf7-de23-4473-b5e3-abf6d79735e1',
-      name: 'ITEM_TO_HOLDING_AMDB'
+      id: '492fea54-399a-4822-8d4b-242096c2ab12',
+      name: 'ITEM_TO_HOLDING_MSDB'
     }
   }
 };
@@ -83,14 +83,13 @@ var holdingItems = args.HOLDING_ITEMS;
 var holdingRLID;
 var holdingFID;
 
-var holdings = [];
+var currentHoldingId;
 
 for (var i = 0; i < holdingItems.length; i++) {
   var holdingItem = holdingItems[i].split('::');
   var holdingId = holdingItem[0];
   var itemId = holdingItem[1];
-
-  if (holdings.indexOf(holdingId) === -1) {
+  if (currentHoldingId !== holdingId) {
     holdingIds = createUUIDPair();
     inventoryReferenceLinks.push({
       id: holdingIds.RLID,
@@ -98,26 +97,22 @@ for (var i = 0; i < holdingItems.length; i++) {
       externalReference: holdingId,
       type: inventoryTypes[args.SCHEMA].HOLDING
     });
-
     inventoryReferenceLinks.push({
       folioReference: holdingIds.RLID,
       externalReference: instanceIds.RLID,
       type: inventoryTypes[args.SCHEMA].HOLDING_TO_BIB
     });
-
-    holdings.push(holdingId);
+    currentHoldingId = holdingId;
   }
 
-  if (itemId && itemId.length > 0) {
+  if (itemId) {
     var itemIds = createUUIDPair();
-
     inventoryReferenceLinks.push({
       id: itemIds.RLID,
       folioReference: itemIds.FID,
       externalReference: itemId,
       type: inventoryTypes[args.SCHEMA].ITEM
     });
-
     inventoryReferenceLinks.push({
       folioReference: itemIds.RLID,
       externalReference: holdingIds.RLID,
@@ -126,4 +121,4 @@ for (var i = 0; i < holdingItems.length; i++) {
   }
 }
 
-var returnObj = inventoryReferenceLinks;
+returnObj = inventoryReferenceLinks;

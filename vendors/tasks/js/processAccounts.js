@@ -1,4 +1,4 @@
-if (args.sourceData.ACCOUNT_IDS)
+if (args.sourceData.ACCOUNT_IDS) {
   for (var i = 0; i < args.sourceData.ACCOUNT_IDS.length; i++) {
     var account = {};
     var account_id = args.sourceData.ACCOUNT_IDS[i];
@@ -11,4 +11,5 @@ if (args.sourceData.ACCOUNT_IDS)
     account.libraryEdiCode = '';
     args.vendorRequestBody.accounts.push(account);
   }
+}
 returnObj = args;

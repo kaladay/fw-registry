@@ -1,6 +1,6 @@
 {
-  "id": "036d6268-bd75-40d2-8296-0148c9cd421c",
-  "name": "Enhance Bib Reference Links AMDB",
+  "id": "262d686e-47b0-44e9-add9-225eb158d65f",
+  "name": "Enhance Bib Instance Reference Links AMDB",
   "delegate": "enhancingExtractorDelegate",
   "deserializeAs": "StreamingExtractorTask",
   "streaming": true,
@@ -10,16 +10,16 @@
       "targetProperty": "/externalReference"
     },
     {
-      "sourceProperty": "/SCHEMA",
+      "sourceProperty": "/INSTANCE_SCHEMA",
       "targetProperty": "/type/name"
     }
   ],
   "enhancementMappings": [
     {
-      "toProperty": "folioReference",
+      "toProperty": "instanceId",
       "fromProperty": "/folioReference"
     }
   ],
   "mergeStrategy": "ENHANCE",
-  "streamSource": "{{mod-external-reference-resolver-internal}}/streaming/referenceLinks/type/96017110-47c5-4d55-8324-7dab1771749b"
+  "streamSource": "{{mod-external-reference-resolver-internal}}/streaming/referenceLinks/type/43efa217-2d57-4d75-82ef-4372507d0672"
 }

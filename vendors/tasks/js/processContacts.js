@@ -1,4 +1,4 @@
-if (args.sourceData.ADDRESS_IDS)
+if (args.sourceData.ADDRESS_IDS) {
   for (var i = 0; i < args.sourceData.ADDRESS_IDS.length; i++) {
     var addressId = args.sourceData.ADDRESS_IDS[i];
     if (args.sourceData.CONTACT_NAMES[addressId]) {
@@ -30,4 +30,5 @@ if (args.sourceData.ADDRESS_IDS)
       args.vendorRequestBody.contacts.push(contact);
     }
   }
+}
 returnObj = args;

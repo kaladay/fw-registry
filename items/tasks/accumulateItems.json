@@ -1,9 +1,9 @@
 {
-  "id": "a42310fa-5883-4252-881c-98acdd5581c9",
-  "name": "Accumulate Holdings",
+  "id": "c1ddf6f7-52d8-4a58-8015-2eb5ecad5114",
+  "name": "Accumulate Items",
   "delegate": "streamAccumulationDelegate",
   "deserializeAs": "AccumulatorTask",
   "streaming": false,
-  "accumulateTo": "{{holdingBatchSize}}",
+  "accumulateTo": "{{itemBatchSize}}",
   "delayDuration": 15000
 }

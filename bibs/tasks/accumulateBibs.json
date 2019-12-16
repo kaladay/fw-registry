@@ -5,5 +5,5 @@
   "deserializeAs": "AccumulatorTask",
   "streaming": false,
   "accumulateTo": "{{bibBatchSize}}",
-  "delayDuration": 5
+  "delayDuration": 15000
 }

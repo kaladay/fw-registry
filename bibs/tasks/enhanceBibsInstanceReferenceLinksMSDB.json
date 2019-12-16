@@ -1,25 +1,25 @@
 {
-  "id": "8b199071-9f41-41df-bc83-844e70b7119e",
-  "name": "Enhance User Reference Links AMDB",
+  "id": "38aa0bb6-1381-4251-accc-3f1c73db9d48",
+  "name": "Enhance Bib Instance Reference Links MSDB",
   "delegate": "enhancingExtractorDelegate",
   "deserializeAs": "StreamingExtractorTask",
   "streaming": true,
   "enhancementComparisons": [
     {
-      "sourceProperty": "/EXTERNAL_SYSTEM_ID",
+      "sourceProperty": "/BIB_ID",
       "targetProperty": "/externalReference"
     },
     {
-      "sourceProperty": "/SCHEMA",
+      "sourceProperty": "/INSTANCE_SCHEMA",
       "targetProperty": "/type/name"
     }
   ],
   "enhancementMappings": [
     {
-      "toProperty": "id",
+      "toProperty": "instanceId",
       "fromProperty": "/folioReference"
     }
   ],
   "mergeStrategy": "ENHANCE",
-  "streamSource": "{{mod-external-reference-resolver-internal}}/streaming/referenceLinks/type/0ed6f994-8dbd-4827-94c0-905504169c90?orderClass=String"
+  "streamSource": "{{mod-external-reference-resolver-internal}}/streaming/referenceLinks/type/fb6db4f0-e5c3-483b-a1da-3edbb96dc8e8"
 }

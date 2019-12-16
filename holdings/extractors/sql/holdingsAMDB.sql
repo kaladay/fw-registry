@@ -65,7 +65,7 @@ SELECT
     '8', 'Permanently retained'
   ) AS retention_policy,
   AMDB.getMFHDBlob(mm.mfhd_id) as marc_record,
-  'AMDB' AS schema
+  'HOLDING_AMDB' AS schema
 FROM AMDB.mfhd_master mm
 ORDER BY mm.mfhd_id
 ;
