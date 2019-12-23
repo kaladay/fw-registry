@@ -15,5 +15,4 @@ SELECT /*+ FIRST_ROWS(1000) */ t.bib_id,
   (SELECT * FROM total_bibs) AS bib_total
 FROM MSDB.bib_master t
 ORDER BY t.bib_id
-FETCH NEXT 1 ROWS ONLY
 ;
