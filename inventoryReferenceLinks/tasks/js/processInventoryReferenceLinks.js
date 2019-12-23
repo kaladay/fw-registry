@@ -88,36 +88,38 @@ var currentHoldingId;
 for (var i = 0; i < holdingItems.length; i++) {
   var holdingItem = holdingItems[i].split('::');
   var holdingId = holdingItem[0];
-  var itemId = holdingItem[1];
-  if (currentHoldingId !== holdingId) {
-    holdingIds = createUUIDPair();
-    inventoryReferenceLinks.push({
-      id: holdingIds.RLID,
-      folioReference: holdingIds.FID,
-      externalReference: holdingId,
-      type: inventoryTypes[args.SCHEMA].HOLDING
-    });
-    inventoryReferenceLinks.push({
-      folioReference: holdingIds.RLID,
-      externalReference: instanceIds.RLID,
-      type: inventoryTypes[args.SCHEMA].HOLDING_TO_BIB
-    });
-    currentHoldingId = holdingId;
-  }
+  if (holdingId) {
+    var itemId = holdingItem[1];
+    if (currentHoldingId !== holdingId) {
+      holdingIds = createUUIDPair();
+      inventoryReferenceLinks.push({
+        id: holdingIds.RLID,
+        folioReference: holdingIds.FID,
+        externalReference: holdingId,
+        type: inventoryTypes[args.SCHEMA].HOLDING
+      });
+      inventoryReferenceLinks.push({
+        folioReference: holdingIds.RLID,
+        externalReference: instanceIds.RLID,
+        type: inventoryTypes[args.SCHEMA].HOLDING_TO_BIB
+      });
+      currentHoldingId = holdingId;
+    }
 
-  if (itemId) {
-    var itemIds = createUUIDPair();
-    inventoryReferenceLinks.push({
-      id: itemIds.RLID,
-      folioReference: itemIds.FID,
-      externalReference: itemId,
-      type: inventoryTypes[args.SCHEMA].ITEM
-    });
-    inventoryReferenceLinks.push({
-      folioReference: itemIds.RLID,
-      externalReference: holdingIds.RLID,
-      type: inventoryTypes[args.SCHEMA].ITEM_TO_HOLDING
-    });
+    if (itemId) {
+      var itemIds = createUUIDPair();
+      inventoryReferenceLinks.push({
+        id: itemIds.RLID,
+        folioReference: itemIds.FID,
+        externalReference: itemId,
+        type: inventoryTypes[args.SCHEMA].ITEM
+      });
+      inventoryReferenceLinks.push({
+        folioReference: itemIds.RLID,
+        externalReference: holdingIds.RLID,
+        type: inventoryTypes[args.SCHEMA].ITEM_TO_HOLDING
+      });
+    }
   }
 }
 
