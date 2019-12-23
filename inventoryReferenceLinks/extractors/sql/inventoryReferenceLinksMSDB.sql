@@ -1,6 +1,6 @@
 WITH bib_holdings_items AS (
   SELECT
-    bm.bib_id,
+    b.bib_id,
     bm.mfhd_id,
     mi.item_id
   FROM MSDB.bib_master b

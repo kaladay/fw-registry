@@ -89,7 +89,6 @@ for (var i = 0; i < holdingItems.length; i++) {
   var holdingItem = holdingItems[i].split('::');
   var holdingId = holdingItem[0];
   if (holdingId) {
-    var itemId = holdingItem[1];
     if (currentHoldingId !== holdingId) {
       holdingIds = createUUIDPair();
       inventoryReferenceLinks.push({
@@ -105,7 +104,7 @@ for (var i = 0; i < holdingItems.length; i++) {
       });
       currentHoldingId = holdingId;
     }
-
+    var itemId = holdingItem[1];
     if (itemId) {
       var itemIds = createUUIDPair();
       inventoryReferenceLinks.push({
