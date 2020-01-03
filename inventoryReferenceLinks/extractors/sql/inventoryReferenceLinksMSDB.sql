@@ -1,9 +1,10 @@
 WITH bib_holdings_items AS (
   SELECT
-    bm.bib_id,
+    b.bib_id,
     bm.mfhd_id,
     mi.item_id
-  FROM MSDB.bib_mfhd bm
+  FROM MSDB.bib_master b
+    LEFT JOIN MSDB.bib_mfhd bm ON b.bib_id = bm.bib_id
     LEFT JOIN MSDB.mfhd_item mi ON bm.mfhd_id = mi.mfhd_id
  )
 SELECT
