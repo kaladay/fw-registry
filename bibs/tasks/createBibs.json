@@ -1,8 +1,0 @@
-{
-  "id": "9d912c2e-5179-44f7-9ea8-88fd6a39415b",
-  "name": "Create Bibs",
-  "delegate": "streamingRequestDelegate",
-  "deserializeAs": "StreamingRequestTask",
-  "streaming": false,
-  "storageDestination": "{{okapi}}/change-manager/jobExecutions/{{jobExecutionId}}/records"
-}

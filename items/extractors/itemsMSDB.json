@@ -1,6 +1,0 @@
-{
-  "id": "ae0a3115-13cb-40df-9226-5b94d3e8768d",
-  "name": "Items MSDB Extractor",
-  "query": "itemsMSDB.sql",
-  "type": "VOYAGER"
-}

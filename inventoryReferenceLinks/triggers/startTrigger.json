@@ -1,7 +1,7 @@
 {
   "id": "f2f043a0-0556-11ea-823a-5390ca978abc",
-  "name": "Inventory Reference Link Trigger",
-  "description": "Triggers inventory reference link build",
+  "name": "Inventory Reference Link Workflow Trigger",
+  "description": "Triggers inventory reference link workflow",
   "type": "MESSAGE_CORRELATE",
   "method": "POST",
   "deserializeAs": "EventTrigger",

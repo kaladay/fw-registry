@@ -1,9 +1,0 @@
-{
-  "id": "e0e6c10a-bf8a-4b9c-a58d-d9fb6efd6353",
-  "name": "ProcessBuildItem",
-  "delegate": "streamingProcessDelegate",
-  "deserializeAs": "ProcessorTask",
-  "streaming": false,
-  "script": "processBuildItem.js",
-  "scriptType": "JS"
-}

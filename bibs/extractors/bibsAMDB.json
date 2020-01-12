@@ -1,6 +1,0 @@
-{
-  "id": "93a5c0ad-685c-4740-b112-3bf872427d12",
-  "name": "Bibliographic AMDB Extractor",
-  "query": "bibsAMDB.sql",
-  "type": "VOYAGER"
-}

@@ -1,3 +1,0 @@
-returnObj = {
-  items: args
-};

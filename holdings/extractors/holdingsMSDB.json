@@ -1,6 +1,0 @@
-{
-  "id": "63f14095-8632-4d3b-9e4f-83880ded072e",
-  "name": "Holdings MSDB Extractor",
-  "query": "holdingsMSDB.sql",
-  "type": "VOYAGER"
-}

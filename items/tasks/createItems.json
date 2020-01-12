@@ -1,8 +1,0 @@
-{
-  "id": "ab3a357f-d05a-4c27-a54a-68f016254795",
-  "name": "Create Items",
-  "delegate": "streamingRequestDelegate",
-  "deserializeAs": "StreamingRequestTask",
-  "streaming": false,
-  "storageDestination": "{{mod-inventory-storage}}/item-storage/batch/synchronous"
-}

@@ -1,6 +1,0 @@
-{
-  "id": "adb2b101-7c54-4ec8-942b-1d41b0f11617",
-  "name": "Holdings AMDB Extractor",
-  "query": "holdingsAMDB.sql",
-  "type": "VOYAGER"
-}

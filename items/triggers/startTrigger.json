@@ -1,9 +1,0 @@
-{
-  "id": "6c50f500-0557-11ea-ba3a-fdc8d64acffa",
-  "name": "Item Migration Trigger",
-  "description": "Triggers item migration",
-  "type": "MESSAGE_CORRELATE",
-  "method": "POST",
-  "deserializeAs": "EventTrigger",
-  "pathPattern": "/events/voyager/items/migrate"
-}

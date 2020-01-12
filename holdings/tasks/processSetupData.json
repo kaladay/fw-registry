@@ -1,9 +1,0 @@
-{
-  "id": "c6640e04-da00-4b6e-87f1-3feb23c92315",
-  "name": "ProcessHoldingsSetupData",
-  "delegate": "streamingProcessDelegate",
-  "deserializeAs": "ProcessorTask",
-  "streaming": false,
-  "script": "processSetupData.js",
-  "scriptType": "JS"
-}

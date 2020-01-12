@@ -1,9 +1,0 @@
-{
-  "id": "6e47c670-302a-43f9-b77a-d8213c0c263f",
-  "name": "Extract Concat Inventory MSDB",
-  "delegate": "concatenatingExtractorDelegate",
-  "deserializeAs": "StreamingExtractorTask",
-  "streaming": true,
-  "mergeStrategy": "CONCAT",
-  "streamSource": "{{mod-data-extractor-internal}}/extractors/ff31c0d4-f196-4dd7-8a92-a674589599f9/run"
-}
