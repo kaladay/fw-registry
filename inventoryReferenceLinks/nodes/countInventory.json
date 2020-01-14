@@ -1,0 +1,13 @@
+{
+  "id": "fe4f24fa-3620-11ea-978f-2e728ce88125",
+  "name": "Count Inventory",
+  "description": "Request task to get inventory count",
+  "deserializeAs": "RequestTask",
+  "url": "http://localhost:9002/extractors/af038bc0-3620-11ea-86c4-d3969e2e1d3d/list",
+  "method": "POST",
+  "contentType": "application/json",
+  "accept": "application/json",
+  "bodyTemplate": "{}",
+  "contextRequestKeys": [],
+  "contextResponseKey": "inventoryCount"
+}

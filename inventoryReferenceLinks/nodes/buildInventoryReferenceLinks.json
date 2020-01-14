@@ -1,0 +1,12 @@
+{
+  "id": "97798690-3593-11ea-b41b-377ad94fa43f",
+  "name": "Batch Inventory Reference Links",
+  "description": "Processor task to build inventory reference links batch",
+  "deserializeAs": "ProcessorTask",
+  "script": "buildInventoryReferenceLinks.js",
+  "scriptType": "JS",
+  "contextInputKeys": [
+    "inventoryPage"
+  ],
+  "contextOutputKey": "referenceLinkBatch"
+}

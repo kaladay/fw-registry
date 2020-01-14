@@ -1,0 +1,16 @@
+{
+  "id": "511a8194-3594-11ea-978f-2e728ce88125",
+  "name": "Page Inventory",
+  "description": "Request task to page inventory",
+  "deserializeAs": "RequestTask",
+  "url": "http://localhost:9002/extractors/ed3fa3de-4341-4960-bf7e-552ffd2ad04f/list",
+  "method": "POST",
+  "contentType": "application/json",
+  "accept": "application/json",
+  "bodyTemplate": "{ \"OFFSET\": \"${offset}\", \"LIMIT\": \"${limit}\" }",
+  "contextRequestKeys": [
+    "offset",
+    "limit"
+  ],
+  "contextResponseKey": "inventoryPage"
+}
