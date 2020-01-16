@@ -9,12 +9,13 @@
     "{{mod-workflow}}/startEvent/ada6eb86-3702-11ea-978f-2e728ce88125",
     "{{mod-workflow}}/setupTask/477f4f4c-3702-11ea-978f-2e728ce88125",
     "{{mod-workflow}}/requestTask/fe4f24fa-3620-11ea-978f-2e728ce88125",
-    "{{mod-workflow}}/processorTask/bd495ba0-3626-11ea-b4a1-f97a42871e4a",
     "{{mod-workflow}}/requestTask/511a8194-3594-11ea-978f-2e728ce88125",
     "{{mod-workflow}}/processorTask/97798690-3593-11ea-b41b-377ad94fa43f",
-    "{{mod-workflow}}/endEvent/89e541f6-3703-11ea-aec2-2e728ce88125"
+    "{{mod-workflow}}/exclusiveGateway/634b76ae-07b3-4bd7-9d78-984054e268b3",
+    "{{mod-workflow}}/moveToLastGateway/61198179-6f29-4b2c-badc-b239a10bd23f"
   ],
   "initialContext": {
+    "offset": 0,
     "limit": 10
   }
 }
