@@ -8,5 +8,5 @@
   "contextInputKeys": [
     "inventoryPage"
   ],
-  "contextOutputKey": "referenceLinkBatch"
+  "contextOutputKey": "referenceLinksBatch"
 }

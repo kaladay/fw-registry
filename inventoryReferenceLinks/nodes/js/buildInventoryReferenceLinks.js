@@ -60,9 +60,72 @@ function createUUIDPair() {
   };
 }
 
-var sourceIds = createUUIDPair();
-var instanceIds = createUUIDPair();
+var inventoryReferenceLinks = [];
 
-print(args);
+for (var i = 0; i < args.inventoryPage.length; i++) {
+  var row = args.inventoryPage[i];
 
-returnObj = args;
+  var sourceIds = createUUIDPair();
+
+  inventoryReferenceLinks.push({
+    id: sourceIds.RLID,
+    folioReference: sourceIds.FID,
+    externalReference: row.BIB_ID,
+    type: inventoryTypes[row.SCHEMA].SOURCE
+  });
+
+  var instanceIds = createUUIDPair();
+
+  inventoryReferenceLinks.push({
+    id: instanceIds.RLID,
+    folioReference: instanceIds.FID,
+    externalReference: row.BIB_ID,
+    type: inventoryTypes[row.SCHEMA].INSTANCE
+  });
+
+  var holdingItems = row.HOLDING_ITEMS;
+
+  var holdingRLID;
+  var holdingFID;
+
+  var currentHoldingId;
+
+  for (var j = 0; j < holdingItems.length; j++) {
+    var holdingItem = holdingItems[j].split('::');
+    var holdingId = holdingItem[0];
+    if (holdingId) {
+      if (currentHoldingId !== holdingId) {
+        holdingIds = createUUIDPair();
+        inventoryReferenceLinks.push({
+          id: holdingIds.RLID,
+          folioReference: holdingIds.FID,
+          externalReference: holdingId,
+          type: inventoryTypes[row.SCHEMA].HOLDING
+        });
+        inventoryReferenceLinks.push({
+          folioReference: holdingIds.RLID,
+          externalReference: instanceIds.RLID,
+          type: inventoryTypes[row.SCHEMA].HOLDING_TO_BIB
+        });
+        currentHoldingId = holdingId;
+      }
+      var itemId = holdingItem[1];
+      if (itemId) {
+        var itemIds = createUUIDPair();
+        inventoryReferenceLinks.push({
+          id: itemIds.RLID,
+          folioReference: itemIds.FID,
+          externalReference: itemId,
+          type: inventoryTypes[row.SCHEMA].ITEM
+        });
+        inventoryReferenceLinks.push({
+          folioReference: itemIds.RLID,
+          externalReference: holdingIds.RLID,
+          type: inventoryTypes[row.SCHEMA].ITEM_TO_HOLDING
+        });
+      }
+    }
+  }
+}
+
+returnObj = inventoryReferenceLinks;
