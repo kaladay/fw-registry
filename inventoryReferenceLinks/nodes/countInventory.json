@@ -9,5 +9,6 @@
   "accept": "application/json",
   "bodyTemplate": "{}",
   "contextRequestKeys": [],
-  "contextResponseKey": "inventoryCount"
+  "contextResponseKey": "inventoryCount",
+  "asyncBefore": true
 }

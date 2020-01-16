@@ -12,5 +12,6 @@
     "offset",
     "limit"
   ],
-  "contextResponseKey": "inventoryPage"
+  "contextResponseKey": "inventoryPage",
+  "asyncBefore": false
 }

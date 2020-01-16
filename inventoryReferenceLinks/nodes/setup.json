@@ -3,5 +3,6 @@
   "name": "Setup",
   "description": "Setup initial context and preload processor scripts",
   "deserializeAs": "SetupTask",
-  "loadInitialContext": true
+  "loadInitialContext": true,
+  "asyncBefore": true
 }
