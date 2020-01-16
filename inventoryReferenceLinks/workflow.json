@@ -2,9 +2,10 @@
   "id": "f2f06ab0-0556-11ea-823a-5390ca978abc",
   "name": "Bibliographics Reference Link Workflow",
   "description": "Workflow for creating bibliographic reference links",
+  "versionTag": "1.0",
+  "historyTimeToLive": 7,
   "active": false,
   "deploymentId": null,
-  "processDefinitionIds": [],
   "nodes": [
     "{{mod-workflow}}/startEvent/ada6eb86-3702-11ea-978f-2e728ce88125",
     "{{mod-workflow}}/setupTask/477f4f4c-3702-11ea-978f-2e728ce88125",
@@ -17,6 +18,6 @@
   ],
   "initialContext": {
     "offset": 0,
-    "limit": 10000
+    "limit": 25000
   }
 }
