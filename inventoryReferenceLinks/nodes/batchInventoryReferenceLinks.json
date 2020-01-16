@@ -1,6 +1,6 @@
 {
   "id": "c434d20e-aa7c-4b70-87ab-5d48b74a116a",
-  "name": "Batch Reference Links",
+  "name": "Submit Inventory Reference Links Batch",
   "description": "Request task to batch inventory reference links",
   "deserializeAs": "RequestTask",
   "url": "{{mod-external-reference-resolver-internal}}/batch/referenceLinks",
