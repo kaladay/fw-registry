@@ -8,10 +8,11 @@
   "contentType": "application/json",
   "accept": "application/json",
   "bodyTemplate": "{ \"OFFSET\": \"${offset}\", \"LIMIT\": \"${limit}\" }",
-  "contextRequestKeys": [
+  "contextInputKeys": [
     "offset",
     "limit"
   ],
-  "contextResponseKey": "inventoryPage",
-  "asyncBefore": false
+  "contextCacheInputKeys": [],
+  "outputKey": "inventoryPage",
+  "useCacheOutput": true
 }

@@ -9,6 +9,8 @@
     "offset",
     "limit"
   ],
-  "contextOutputKey": "offset",
-  "asyncBefore": true
+  "contextCacheInputKeys": [],
+  "outputKey": "offset",
+  "useCacheOutput": false,
+  "asyncAfter": true
 }

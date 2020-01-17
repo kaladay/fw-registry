@@ -5,9 +5,10 @@
   "deserializeAs": "ProcessorTask",
   "script": "buildInventoryReferenceLinks.js",
   "scriptType": "JS",
-  "contextInputKeys": [
+  "contextInputKeys": [],
+  "contextCacheInputKeys": [
     "inventoryPage"
   ],
-  "contextOutputKey": "referenceLinksBatch",
-  "asyncBefore": false
+  "outputKey": "referenceLinksBatch",
+  "useCacheOutput": true
 }

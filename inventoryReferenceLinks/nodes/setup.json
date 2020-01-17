@@ -1,8 +1,0 @@
-{
-  "id": "477f4f4c-3702-11ea-978f-2e728ce88125",
-  "name": "Setup",
-  "description": "Setup initial context and preload processor scripts",
-  "deserializeAs": "SetupTask",
-  "loadInitialContext": true,
-  "asyncBefore": true
-}

@@ -3,6 +3,5 @@
   "name": "Start Event",
   "description": "",
   "deserializeAs": "MessageCorrelationStartEvent",
-  "message": "/events/referencelink/voyager/inventory",
-  "asyncBefore": true
+  "message": "/events/referencelink/voyager/inventory"
 }

@@ -8,9 +8,11 @@
   "contentType": "application/json",
   "accept": "application/json",
   "bodyTemplate": "${referenceLinksBatch}",
-  "contextRequestKeys": [
+  "contextInputKeys": [],
+  "contextCacheInputKeys": [
     "referenceLinksBatch"
   ],
-  "contextResponseKey": "batchResponse",
-  "asyncBefore": false
+  "outputKey": "batchResponse",
+  "useCacheOutput": false,
+  "asyncAfter": true
 }

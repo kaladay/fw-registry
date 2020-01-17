@@ -8,7 +8,9 @@
   "contentType": "application/json",
   "accept": "application/json",
   "bodyTemplate": "{}",
-  "contextRequestKeys": [],
-  "contextResponseKey": "inventoryCount",
-  "asyncBefore": true
+  "contextInputKeys": [],
+  "contextCacheInputKeys": [],
+  "outputKey": "inventoryCount",
+  "useCacheOutput": false,
+  "asyncAfter": true
 }

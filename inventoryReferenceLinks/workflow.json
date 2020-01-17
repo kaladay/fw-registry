@@ -8,7 +8,6 @@
   "deploymentId": null,
   "nodes": [
     "{{mod-workflow}}/startEvent/ada6eb86-3702-11ea-978f-2e728ce88125",
-    "{{mod-workflow}}/setupTask/477f4f4c-3702-11ea-978f-2e728ce88125",
     "{{mod-workflow}}/requestTask/fe4f24fa-3620-11ea-978f-2e728ce88125",
     "{{mod-workflow}}/requestTask/511a8194-3594-11ea-978f-2e728ce88125",
     "{{mod-workflow}}/processorTask/97798690-3593-11ea-b41b-377ad94fa43f",
@@ -18,6 +17,6 @@
   ],
   "initialContext": {
     "offset": 0,
-    "limit": 25000
+    "limit": 10000
   }
 }
