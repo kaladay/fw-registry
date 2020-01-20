@@ -9,7 +9,7 @@
   },
   "inputVariables": [
     {
-      "key": "inventoryPage",
+      "key": "inventoryBatch",
       "type": "CACHE"
     }
   ],
