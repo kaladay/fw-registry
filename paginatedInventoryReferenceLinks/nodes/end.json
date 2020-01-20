@@ -1,0 +1,6 @@
+{
+  "id": "e440f0d7-8905-46f1-a40b-2ea041e2407d",
+  "name": "End",
+  "description": "Paginated inventory reference link workflow complete",
+  "deserializeAs": "EndEvent"
+}

@@ -1,7 +1,0 @@
-{
-  "id": "ada6eb86-3702-11ea-978f-2e728ce88125",
-  "name": "Start Event",
-  "description": "",
-  "deserializeAs": "MessageCorrelationStartEvent",
-  "message": "/events/referencelink/voyager/inventory"
-}

@@ -1,5 +1,5 @@
 {
-  "id": "c434d20e-aa7c-4b70-87ab-5d48b74a116a",
+  "id": "e4e67aec-0660-4e39-9dca-1821a848251e",
   "name": "Submit Inventory Reference Links Batch",
   "description": "Request task to batch inventory reference links",
   "deserializeAs": "RequestTask",

@@ -1,5 +1,5 @@
 {
-  "id": "af038bc0-3620-11ea-86c4-d3969e2e1d3d",
+  "id": "7437e61c-3f97-4cf4-b57c-1dc027a8ceb9",
   "name": "Inventory Count Extractor",
   "description": "",
   "queryTemplate": "inventoryCount.sql",

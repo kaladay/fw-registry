@@ -1,5 +1,5 @@
 {
-  "id": "97798690-3593-11ea-b41b-377ad94fa43f",
+  "id": "dc22b6d7-5748-48d5-bc4d-45871b6bf3f8",
   "name": "Build Inventory Reference Links Batch",
   "description": "Processor task to build inventory reference links batch",
   "deserializeAs": "ProcessorTask",

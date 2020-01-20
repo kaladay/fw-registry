@@ -1,9 +1,9 @@
 {
-  "id": "511a8194-3594-11ea-978f-2e728ce88125",
+  "id": "2003d59b-02c1-44d2-a9bd-85c01a94f94f",
   "name": "Page Inventory",
   "description": "Request task to page inventory",
   "deserializeAs": "RequestTask",
-  "url": "http://localhost:9002/extractors/ed3fa3de-4341-4960-bf7e-552ffd2ad04f/list",
+  "url": "http://localhost:9002/extractors/6d340ba6-6418-4de9-a9c0-adf22741b333/list",
   "method": "POST",
   "contentType": "application/json",
   "accept": "application/json",
