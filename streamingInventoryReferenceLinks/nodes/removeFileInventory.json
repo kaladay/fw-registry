@@ -2,9 +2,14 @@
   "id": "a1699288-0a67-4e9a-a09d-f521da39698d",
   "name": "Remove Inventory Batch File",
   "description": "Remove inventory batch file from directory",
-  "deserializeAs": "RemoveFileTask",
+  "deserializeAs": "DirectoryTask",
   "path": "/mod-camunda/folio_migration",
   "workflow": "inventoryReferenceLinks",
-  "outputKey": "remainingFiles",
+  "action": "DELETE_NEXT",
+  "inputVariables": [],
+  "outputVariable": {
+    "key": "remainingFiles",
+    "type": "PROCESS"
+  },
   "asyncBefore": true
 }

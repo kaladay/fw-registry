@@ -2,7 +2,8 @@
   "id": "634b76ae-07b3-4bd7-9d78-984054e268b3",
   "name": "Has another batch?",
   "description": "Exclusive gateway conditional on offset greater or equal total",
-  "deserializeAs": "ExclusiveGateway",
+  "deserializeAs": "ConditionalGateway",
+  "type": "EXCLUSIVE",
   "condition": "${remainingFiles <= 0}",
   "answer": "no",
   "nodes": [

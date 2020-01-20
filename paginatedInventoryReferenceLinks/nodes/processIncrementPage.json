@@ -3,14 +3,23 @@
   "name": "Increment Page",
   "description": "Increment offset by limit for next page",
   "deserializeAs": "ProcessorTask",
-  "script": "incrementPage.js",
-  "scriptType": "JS",
-  "contextInputKeys": [
-    "offset",
-    "limit"
+  "process": {
+    "script": "incrementPage.js",
+    "scriptType": "JS"
+  },
+  "inputVariables": [
+    {
+      "key": "offset",
+      "type": "PROCESS"
+    },
+    {
+      "key": "limit",
+      "type": "PROCESS"
+    }
   ],
-  "contextCacheInputKeys": [],
-  "outputKey": "offset",
-  "useCacheOutput": false,
+  "outputVariable": {
+    "key": "offset",
+    "type": "PROCESS"
+  },
   "asyncAfter": true
 }

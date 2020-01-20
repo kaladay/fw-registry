@@ -3,16 +3,26 @@
   "name": "Page Inventory",
   "description": "Request task to page inventory",
   "deserializeAs": "RequestTask",
-  "url": "http://localhost:9002/extractors/6d340ba6-6418-4de9-a9c0-adf22741b333/list",
-  "method": "POST",
-  "contentType": "application/json",
-  "accept": "application/json",
-  "bodyTemplate": "{ \"OFFSET\": \"${offset}\", \"LIMIT\": \"${limit}\" }",
-  "contextInputKeys": [
-    "offset",
-    "limit"
+  "request": {
+    "url": "http://localhost:9002/extractors/6d340ba6-6418-4de9-a9c0-adf22741b333/list",
+    "method": "POST",
+    "contentType": "application/json",
+    "accept": "application/json",
+    "bodyTemplate": "{ \"OFFSET\": \"${offset}\", \"LIMIT\": \"${limit}\" }"
+  },
+  "inputVariables": [
+    {
+      "key": "offset",
+      "type": "PROCESS"
+    },
+    {
+      "key": "limit",
+      "type": "PROCESS"
+    }
   ],
-  "contextCacheInputKeys": [],
-  "outputKey": "inventoryPage",
+  "outputVariable": {
+    "key": "inventoryPage",
+    "type": "CACHE"
+  },
   "useCacheOutput": true
 }

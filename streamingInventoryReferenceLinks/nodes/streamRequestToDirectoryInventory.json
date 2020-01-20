@@ -3,16 +3,18 @@
   "name": "Stream Inventory To Directory",
   "description": "Streaming extract batched files to dirctory",
   "deserializeAs": "StreamRequestToDirectoryTask",
-  "url": "{{mod-data-extractor}}/extractors/fb8ea084-3cfa-4efb-b65d-64cd22d40e88/stream",
-  "method": "POST",
-  "contentType": "application/stream+json",
-  "accept": "application/json",
-  "bodyTemplate": "{}",
-  "contextInputKeys": [],
-  "contextCacheInputKeys": [],
+  "request": {
+    "url": "{{mod-data-extractor}}/extractors/fb8ea084-3cfa-4efb-b65d-64cd22d40e88/stream",
+    "method": "POST",
+    "contentType": "application/stream+json",
+    "accept": "application/json",
+    "bodyTemplate": "{}"
+  },
+  "inputVariables": [],
   "path": "/mod-camunda/folio_migration",
   "workflow": "inventoryReferenceLinks",
   "batchSize": 10000,
   "completeMessage": "inventory-stream-finished",
+  "writeSignalMessage": "inventory-stream-batch-written",
   "asyncBefore": true
 }

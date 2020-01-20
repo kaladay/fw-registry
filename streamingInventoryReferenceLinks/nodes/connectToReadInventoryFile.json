@@ -3,5 +3,5 @@
   "name": "Goto Read Inventory File",
   "description": "Connect to read inventory file task node",
   "deserializeAs": "ConnectTo",
-  "nodeId": "read_directory_task_ed443a67_109b_44dc_9e42_2af18b3a563e"
+  "nodeId": "directory_task_ed443a67_109b_44dc_9e42_2af18b3a563e"
 }

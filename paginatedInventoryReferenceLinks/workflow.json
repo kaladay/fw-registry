@@ -12,8 +12,8 @@
     "{{mod-workflow}}/requestTask/2003d59b-02c1-44d2-a9bd-85c01a94f94f",
     "{{mod-workflow}}/processorTask/dc22b6d7-5748-48d5-bc4d-45871b6bf3f8",
     "{{mod-workflow}}/requestTask/e4e67aec-0660-4e39-9dca-1821a848251e",
-    "{{mod-workflow}}/exclusiveGateway/d3b47286-dfb1-4554-a2f9-1c8747b35d12",
-    "{{mod-workflow}}/moveToLastGateway/7468b784-7c20-4461-9677-3782fef0f815"
+    "{{mod-workflow}}/conditionalGateway/d3b47286-dfb1-4554-a2f9-1c8747b35d12",
+    "{{mod-workflow}}/conditionalGateway/7468b784-7c20-4461-9677-3782fef0f815"
   ],
   "initialContext": {
     "offset": 0,

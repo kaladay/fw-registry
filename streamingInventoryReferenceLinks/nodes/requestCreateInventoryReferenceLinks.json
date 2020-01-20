@@ -3,15 +3,22 @@
   "name": "Submit Inventory Reference Links Batch",
   "description": "Request task to batch inventory reference links",
   "deserializeAs": "RequestTask",
-  "url": "{{mod-external-reference-resolver-internal}}/batch/referenceLinks",
-  "method": "POST",
-  "contentType": "application/json",
-  "accept": "application/json",
-  "bodyTemplate": "${referenceLinksBatch}",
-  "contextInputKeys": [],
-  "contextCacheInputKeys": [
-    "referenceLinksBatch"
+  "request": {
+    "url": "{{mod-external-reference-resolver-internal}}/batch/referenceLinks",
+    "method": "POST",
+    "contentType": "application/json",
+    "accept": "application/json",
+    "bodyTemplate": "${referenceLinksBatch}"
+  },
+  "inputVariables": [
+    {
+      "key": "referenceLinksBatch",
+      "type": "CACHE"
+    }
   ],
-  "outputKey": "batchResponse",
+  "outputVariable": {
+    "key": "batchResponse",
+    "type": "PROCESS"
+  },
   "asyncBefore": true
 }

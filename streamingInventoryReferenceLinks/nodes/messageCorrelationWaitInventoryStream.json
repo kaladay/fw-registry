@@ -2,7 +2,7 @@
   "id": "4ed3b686-c017-4a6d-be07-3d998631934d",
   "name": "Inventory Stream Wait",
   "description": "Wait for inventory stream to correlate message",
-  "deserializeAs": "MessageCorrelationWait",
+  "deserializeAs": "ReceiveTask",
   "message": "inventory-stream-finished",
   "asyncBefore": true
 }

@@ -2,7 +2,8 @@
   "id": "d3b47286-dfb1-4554-a2f9-1c8747b35d12",
   "name": "Has next page?",
   "description": "Exclusive gateway conditional on offset greater or equal total",
-  "deserializeAs": "ExclusiveGateway",
+  "deserializeAs": "ConditionalGateway",
+  "type": "EXCLUSIVE",
   "condition": "${offset >= inventoryCount[0].TOTAL}",
   "answer": "no",
   "nodes": [
