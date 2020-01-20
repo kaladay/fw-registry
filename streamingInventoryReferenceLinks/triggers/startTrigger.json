@@ -1,0 +1,9 @@
+{
+  "id": "f2f043a0-0556-11ea-823a-5390ca978abc",
+  "name": "Streaming Inventory Reference Link Workflow Trigger",
+  "description": "Triggers streaming inventory reference link workflow",
+  "type": "MESSAGE_CORRELATE",
+  "deserializeAs": "EventTrigger",
+  "method": "POST",
+  "pathPattern": "/events/referencelink/voyager/inventory/streaming"
+}

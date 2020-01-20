@@ -1,0 +1,11 @@
+{
+  "id": "61198179-6f29-4b2c-badc-b239a10bd23f",
+  "name": "Next Inventory File",
+  "description": "Move to last gateway conditional on having next page",
+  "deserializeAs": "MoveToLastGateway",
+  "condition": "${remainingFiles > 0}",
+  "answer": "yes",
+  "nodes": [
+    "{{mod-workflow}}/connectTo/c32737ab-ea45-4da4-a118-5186a4477d28"
+  ]
+}

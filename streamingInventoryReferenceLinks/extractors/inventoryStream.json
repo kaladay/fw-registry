@@ -1,0 +1,7 @@
+{
+  "id": "fb8ea084-3cfa-4efb-b65d-64cd22d40e88",
+  "name": "Inventory Stream Extractor",
+  "description": "Stream inventory from Voyager",
+  "queryTemplate": "inventoryStream.sql",
+  "type": "VOYAGER"
+}

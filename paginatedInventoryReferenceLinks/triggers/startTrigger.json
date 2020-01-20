@@ -1,7 +1,7 @@
 {
   "id": "d4ae2e29-55db-4375-a62f-1e2e45456af6",
-  "name": "Inventory Reference Link Workflow Trigger",
-  "description": "Triggers inventory reference link workflow",
+  "name": "Paginated Inventory Reference Link Workflow Trigger",
+  "description": "Triggers paginated inventory reference link workflow",
   "type": "MESSAGE_CORRELATE",
   "deserializeAs": "EventTrigger",
   "method": "POST",

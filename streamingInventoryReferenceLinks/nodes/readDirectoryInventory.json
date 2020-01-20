@@ -1,0 +1,10 @@
+{
+  "id": "ed443a67-109b-44dc-9e42-2af18b3a563e",
+  "name": "Read Inventory Batch File Directory",
+  "description": "Read inventory batch file from directory",
+  "deserializeAs": "ReadDirectoryTask",
+  "path": "/mod-camunda/folio_migration",
+  "workflow": "inventoryReferenceLinks",
+  "outputKey": "inventoryBatch",
+  "useCacheOutput": true
+}

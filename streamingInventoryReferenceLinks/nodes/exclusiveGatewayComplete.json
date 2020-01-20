@@ -1,0 +1,11 @@
+{
+  "id": "634b76ae-07b3-4bd7-9d78-984054e268b3",
+  "name": "Has another batch?",
+  "description": "Exclusive gateway conditional on offset greater or equal total",
+  "deserializeAs": "ExclusiveGateway",
+  "condition": "${remainingFiles <= 0}",
+  "answer": "no",
+  "nodes": [
+    "{{mod-workflow}}/endEvent/89e541f6-3703-11ea-aec2-2e728ce88125"
+  ]
+}
