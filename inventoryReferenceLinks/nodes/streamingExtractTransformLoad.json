@@ -3,12 +3,35 @@
   "name": "Extract Tranform Load Inventory Reference Links",
   "description": "",
   "deserializeAs": "StreamingExtractTransformLoadTask",
-  "extractors": [],
-  "processors": [],
-  "requests": [],
+  "extractors": [
+    "{{mod-workflow}}/extractor/1788453e-fa3a-415f-89a8-a82aecad0324"
+  ],
+  "processors": [
+    {
+      "functionName": "processInventoryReferenceLinks",
+      "scriptType": "JS",
+      "code": "processInventoryReferenceLinks.js",
+      "buffer": 20000,
+      "delay": 10000
+    },
+    {
+      "functionName": "processFlatMapReferenceLinks",
+      "scriptType": "JS",
+      "code": "processFlatMapReferenceLinks.js"
+    }
+  ],
+  "requests": [
+    {
+      "url": "{{mod-external-reference-resolver-internal}}/batch/referenceLinks",
+      "method": "POST",
+      "contentType": "application/json",
+      "accept": "application/json",
+      "bodyTemplate": ""
+    }
+  ],
   "inputVariables": [],
   "outputVariable": {
-    "key": "result",
+    "key": "results",
     "type": "PROCESS"
   },
   "asyncBefore": true
