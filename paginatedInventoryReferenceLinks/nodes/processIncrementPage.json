@@ -3,9 +3,10 @@
   "name": "Increment Page",
   "description": "Increment offset by limit for next page",
   "deserializeAs": "ProcessorTask",
-  "process": {
-    "script": "incrementPage.js",
-    "scriptType": "JS"
+  "processor": {
+    "functionName": "incrementPage",
+    "scriptType": "JS",
+    "code": "incrementPage.js"
   },
   "inputVariables": [
     {

@@ -3,9 +3,10 @@
   "name": "Build Inventory Reference Links Batch",
   "description": "Processor task to build inventory reference links batch",
   "deserializeAs": "ProcessorTask",
-  "process": {
-    "script": "buildInventoryReferenceLinks.js",
-    "scriptType": "JS"
+  "processor": {
+    "functionName": "buildInventoryReferenceLinks",
+    "scriptType": "JS",
+    "code": "buildInventoryReferenceLinks.js"
   },
   "inputVariables": [
     {
