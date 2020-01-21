@@ -1,0 +1,15 @@
+{
+  "id": "8cf6f993-5431-4100-b23e-59bb5fc9b8bc",
+  "name": "Extract Tranform Load Inventory Reference Links",
+  "description": "",
+  "deserializeAs": "StreamingExtractTransformLoadTask",
+  "extractors": [],
+  "processors": [],
+  "requests": [],
+  "inputVariables": [],
+  "outputVariable": {
+    "key": "result",
+    "type": "PROCESS"
+  },
+  "asyncBefore": true
+}
