@@ -11,8 +11,8 @@
       "functionName": "processInventoryReferenceLinks",
       "scriptType": "JS",
       "code": "processInventoryReferenceLinks.js",
-      "buffer": 1000,
-      "delay": 250
+      "buffer": 25000,
+      "delay": 15000
     },
     {
       "functionName": "processFlatMapReferenceLinks",
@@ -34,5 +34,6 @@
     "key": "results",
     "type": "PROCESS"
   },
-  "asyncBefore": true
+  "asyncBefore": false,
+  "asyncAfter": false
 }
