@@ -4,7 +4,5 @@
   "description": "",
   "type": "MESSAGE_CORRELATION",
   "deserializeAs": "StartEvent",
-  "expression": "/events/referencelink/voyager/inventory",
-  "interrupting": false,
-  "asyncBefore": false
+  "expression": "/events/referencelink/voyager/inventory"
 }

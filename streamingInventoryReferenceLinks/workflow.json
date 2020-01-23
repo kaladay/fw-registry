@@ -6,6 +6,10 @@
   "historyTimeToLive": 7,
   "active": false,
   "deploymentId": null,
+  "setup": {
+    "asyncBefore": false,
+    "asyncAfter": true
+  },
   "nodes": [
     "{{mod-workflow}}/startEvent/ada6eb86-3702-11ea-978f-2e728ce88125",
     "{{mod-workflow}}/streamRequestToDirectoryTask/2bfcdf51-68fe-4c7d-9426-c08907b10745",

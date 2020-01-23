@@ -4,5 +4,6 @@
   "description": "Start streaming inventory reference links workflow",
   "deserializeAs": "StartEvent",
   "type": "MESSAGE_CORRELATION",
-  "expression": "/events/referencelink/voyager/inventory/streaming"
+  "expression": "/events/referencelink/voyager/inventory/streaming",
+  "asyncBefore": true
 }

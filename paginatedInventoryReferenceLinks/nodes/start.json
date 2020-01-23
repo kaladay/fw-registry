@@ -4,5 +4,6 @@
   "description": "Start paginated inventory reference link workflow",
   "deserializeAs": "StartEvent",
   "type": "MESSAGE_CORRELATION",
-  "expression": "/events/referencelink/voyager/inventory/paginated"
+  "expression": "/events/referencelink/voyager/inventory/paginated",
+  "asyncBefore": true
 }

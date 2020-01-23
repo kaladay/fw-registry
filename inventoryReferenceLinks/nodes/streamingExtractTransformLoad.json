@@ -4,7 +4,18 @@
   "description": "",
   "deserializeAs": "StreamingExtractTransformLoadTask",
   "extractors": [
-    "{{mod-workflow}}/extractor/1788453e-fa3a-415f-89a8-a82aecad0324"
+    {
+      "request": {
+        "url": "{{mod-data-extractor}}/extractors/40c64203-c60b-47c8-b6f1-ddf90417d2b7/stream",
+        "method": "POST",
+        "contentType": "application/stream+json",
+        "accept": "application/json",
+        "bodyTemplate": "{}"
+      },
+      "mergeStrategy": "CONCAT",
+      "comparisons": [],
+      "mappings": []
+    }
   ],
   "processors": [
     {

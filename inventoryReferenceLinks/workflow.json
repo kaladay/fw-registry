@@ -6,6 +6,10 @@
   "historyTimeToLive": 7,
   "active": false,
   "deploymentId": null,
+  "setup": {
+    "asyncBefore": false,
+    "asyncAfter": false
+  },
   "nodes": [
     "{{mod-workflow}}/startEvent/d11090c0-3c77-11ea-801e-77164ed45e34",
     "{{mod-workflow}}/streamingExtractTransformLoadTask/8cf6f993-5431-4100-b23e-59bb5fc9b8bc",
