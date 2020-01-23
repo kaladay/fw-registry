@@ -1,0 +1,7 @@
+{
+  "id": "a8139640-3e16-11ea-8581-6db00aef5154",
+  "name": "Patrons Reference Links AMDB Extractor",
+  "description": "",
+  "queryTemplate": "patronsReferenceLinksAMDB.sql",
+  "type": "VOYAGER"
+}

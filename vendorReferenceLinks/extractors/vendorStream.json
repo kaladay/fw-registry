@@ -1,0 +1,7 @@
+{
+  "id": "82dfe010-3e05-11ea-ba78-c1b94f038b7b",
+  "name": "Vendors Stream Extractor",
+  "description": "Stream vendors from Voyager",
+  "queryTemplate": "vendorStream.sql",
+  "type": "VOYAGER"
+}

@@ -1,0 +1,88 @@
+{
+  "id": "a149c287-65a7-4806-ba1f-48e43323b240",
+  "name": "Extract Tranform Load Users Reference Links",
+  "description": "",
+  "deserializeAs": "StreamingExtractTransformLoadTask",
+  "extractors": [
+    {
+      "request": {
+        "url": "{{mod-data-extractor}}/extractors/a8139640-3e16-11ea-8581-6db00aef5154/stream",
+        "method": "POST",
+        "contentType": "application/stream+json",
+        "accept": "application/json",
+        "bodyTemplate": "{}"
+      },
+      "mergeStrategy": "CONCAT",
+      "comparisons": [],
+      "mappings": []
+    },
+    {
+      "request": {
+        "url": "{{mod-data-extractor}}/extractors/b6a216a0-3e16-11ea-a4fd-8bf52bcc19cd/stream",
+        "method": "POST",
+        "contentType": "application/stream+json",
+        "accept": "application/json",
+        "bodyTemplate": "{}"
+      },
+      "mergeStrategy": "ENHANCE",
+      "comparisons": [
+        {
+          "sourceProperty": "/EXTERNAL_SYSTEM_ID",
+          "targetProperty": "/EXTERNAL_SYSTEM_ID"
+        }
+      ],
+      "mappings": [
+        {
+          "toProperty": "MSDB_EXTERNAL_SYSTEM_ID",
+          "fromProperty": "/EXTERNAL_SYSTEM_ID"
+        },
+        {
+          "toProperty": "MSDB_PATRON_ID",
+          "fromProperty": "/PATRON_ID"
+        }
+      ]
+    },
+    {
+      "request": {
+        "url": "{{mod-data-extractor}}/extractors/afd73260-3e16-11ea-a9be-b9b6efee8f9f/stream",
+        "method": "POST",
+        "contentType": "application/stream+json",
+        "accept": "application/json",
+        "bodyTemplate": "{}"
+      },
+      "mergeStrategy": "CONCAT",
+      "comparisons": [],
+      "mappings": []
+    }
+  ],
+  "processors": [
+    {
+      "functionName": "processUserReferenceLinks",
+      "scriptType": "JS",
+      "code": "processUserReferenceLinks.js",
+      "buffer": 5000,
+      "delay": 100
+    },
+    {
+      "functionName": "processFlatMapReferenceLinks",
+      "scriptType": "JS",
+      "code": "processFlatMapReferenceLinks.js"
+    }
+  ],
+  "requests": [
+    {
+      "url": "{{mod-external-reference-resolver-internal}}/batch/referenceLinks",
+      "method": "POST",
+      "contentType": "application/json",
+      "accept": "application/json",
+      "bodyTemplate": ""
+    }
+  ],
+  "inputVariables": [],
+  "outputVariable": {
+    "key": "results",
+    "type": "PROCESS"
+  },
+  "asyncBefore": false,
+  "asyncAfter": false
+}
