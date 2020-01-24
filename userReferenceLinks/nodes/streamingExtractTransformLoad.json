@@ -9,7 +9,7 @@
         "url": "{{mod-data-extractor}}/extractors/a8139640-3e16-11ea-8581-6db00aef5154/stream",
         "method": "POST",
         "contentType": "application/stream+json",
-        "accept": "application/json",
+        "accept": "application/stream+json",
         "bodyTemplate": "{}"
       },
       "mergeStrategy": "CONCAT",
@@ -21,7 +21,7 @@
         "url": "{{mod-data-extractor}}/extractors/b6a216a0-3e16-11ea-a4fd-8bf52bcc19cd/stream",
         "method": "POST",
         "contentType": "application/stream+json",
-        "accept": "application/json",
+        "accept": "application/stream+json",
         "bodyTemplate": "{}"
       },
       "mergeStrategy": "ENHANCE",
@@ -47,7 +47,7 @@
         "url": "{{mod-data-extractor}}/extractors/afd73260-3e16-11ea-a9be-b9b6efee8f9f/stream",
         "method": "POST",
         "contentType": "application/stream+json",
-        "accept": "application/json",
+        "accept": "application/stream+json",
         "bodyTemplate": "{}"
       },
       "mergeStrategy": "CONCAT",
@@ -61,7 +61,7 @@
       "scriptType": "JS",
       "code": "processUserReferenceLinks.js",
       "buffer": 5000,
-      "delay": 100
+      "delay": 25
     },
     {
       "functionName": "processFlatMapReferenceLinks",

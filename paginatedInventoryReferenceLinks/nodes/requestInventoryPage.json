@@ -4,7 +4,7 @@
   "description": "Request task to page inventory",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "http://localhost:9002/extractors/6d340ba6-6418-4de9-a9c0-adf22741b333/list",
+    "url": "{{mod-data-extractor}}/extractors/6d340ba6-6418-4de9-a9c0-adf22741b333/list",
     "method": "POST",
     "contentType": "application/json",
     "accept": "application/json",

@@ -1,7 +1,0 @@
-{
-  "id": "8aaaf640-3e05-11ea-a7b2-5ba918c5d8e2",
-  "name": "Users Stream Extractor",
-  "description": "Stream users from Voyager",
-  "queryTemplate": "userStream.sql",
-  "type": "VOYAGER"
-}

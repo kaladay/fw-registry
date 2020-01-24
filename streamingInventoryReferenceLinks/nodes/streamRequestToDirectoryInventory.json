@@ -7,7 +7,7 @@
     "url": "{{mod-data-extractor}}/extractors/fb8ea084-3cfa-4efb-b65d-64cd22d40e88/stream",
     "method": "POST",
     "contentType": "application/stream+json",
-    "accept": "application/json",
+    "accept": "application/stream+json",
     "bodyTemplate": "{}"
   },
   "inputVariables": [],

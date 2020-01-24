@@ -1,7 +1,6 @@
 {
   "id": "6d340ba6-6418-4de9-a9c0-adf22741b333",
   "name": "Inventory Paging Extractor",
-  "description": "",
   "queryTemplate": "inventoryPage.sql",
   "type": "VOYAGER"
 }

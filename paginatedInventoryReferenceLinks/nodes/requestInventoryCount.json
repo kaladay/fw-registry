@@ -4,7 +4,7 @@
   "description": "Request task to get inventory count",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "http://localhost:9002/extractors/7437e61c-3f97-4cf4-b57c-1dc027a8ceb9/list",
+    "url": "{{mod-data-extractor}}/extractors/7437e61c-3f97-4cf4-b57c-1dc027a8ceb9/list",
     "method": "POST",
     "contentType": "application/json",
     "accept": "application/json",
