@@ -1,0 +1,20 @@
+{
+  "id": "26666bd0-3ee9-11ea-bc0d-7b0ebc85287c",
+  "name": "Vendors Migration ETL Workflow",
+  "description": "Streaming ETL workflow for migrating vendors",
+  "versionTag": "1.0",
+  "historyTimeToLive": 0,
+  "deploymentId": null,
+  "active": false,
+  "setup": {
+    "asyncBefore": false,
+    "asyncAfter": false
+  },
+  "nodes": [
+    "{{mod-workflow}}/startEvent/2664be20-3ee9-11ea-bc0d-7b0ebc85287c",
+    "{{mod-workflow}}/requestTask/7d515811-a802-4830-88b9-2a1353a84533",
+    "{{mod-workflow}}/streamingExtractTransformLoadTask/306113a1-6897-4da9-93ab-287a4f8a8996",
+    "{{mod-workflow}}/endEvent/26653350-3ee9-11ea-bc0d-7b0ebc85287c"
+  ],
+  "initialContext": {}
+}

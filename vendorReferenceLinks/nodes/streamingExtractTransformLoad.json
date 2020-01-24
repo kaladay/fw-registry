@@ -9,8 +9,7 @@
         "url": "{{mod-data-extractor}}/extractors/82dfe010-3e05-11ea-ba78-c1b94f038b7b/stream",
         "method": "POST",
         "contentType": "application/stream+json",
-        "accept": "application/stream+json",
-        "bodyTemplate": "{}"
+        "accept": "application/stream+json"
       },
       "mergeStrategy": "CONCAT",
       "comparisons": [],
@@ -31,8 +30,7 @@
       "url": "{{mod-external-reference-resolver-internal}}/batch/referenceLinks",
       "method": "POST",
       "contentType": "application/json",
-      "accept": "application/json",
-      "bodyTemplate": ""
+      "accept": "application/json"
     }
   ],
   "inputVariables": [],
