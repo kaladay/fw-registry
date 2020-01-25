@@ -1,9 +1,0 @@
-{
-  "id": "4bf5d032-45a4-427f-af6b-1b40fe677787",
-  "name": "Start",
-  "description": "Start paginated inventory reference link workflow",
-  "deserializeAs": "StartEvent",
-  "type": "MESSAGE_CORRELATION",
-  "expression": "/events/referencelink/voyager/inventory/paginated",
-  "asyncBefore": true
-}

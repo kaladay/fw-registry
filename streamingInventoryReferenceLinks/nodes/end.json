@@ -1,6 +1,0 @@
-{
-  "id": "89e541f6-3703-11ea-aec2-2e728ce88125",
-  "name": "End",
-  "description": "Finished streaming inventory reference links workflow",
-  "deserializeAs": "EndEvent"
-}

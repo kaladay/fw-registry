@@ -1,6 +1,0 @@
-{
-  "id": "7437e61c-3f97-4cf4-b57c-1dc027a8ceb9",
-  "name": "Inventory Count Extractor",
-  "queryTemplate": "inventoryCount.sql",
-  "type": "VOYAGER"
-}

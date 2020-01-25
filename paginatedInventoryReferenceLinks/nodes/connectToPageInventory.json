@@ -1,7 +1,0 @@
-{
-  "id": "31b1a30a-8e67-4f74-a82b-c50e64058186",
-  "name": "Goto Page Inventory",
-  "description": "Connect to page inventory request task node",
-  "deserializeAs": "ConnectTo",
-  "nodeId": "request_task_2003d59b_02c1_44d2_a9bd_85c01a94f94f"
-}
