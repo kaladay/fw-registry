@@ -32,13 +32,8 @@ WITH
       CAST(COLLECT(bhi.mfhd_id || '::' || bhi.item_id) AS sys.odcivarchar2list) AS holding_items
     FROM msdb_bib_holdings_items bhi
     GROUP BY bhi.bib_id
-  ),
-  inventory AS (
-    SELECT /*+ PARALLEL */ * FROM amdb_inventory
-    UNION ALL
-    SELECT /*+ PARALLEL */ * FROM msdb_inventory
   )
-SELECT /*+ PARALLEL FIRST_ROWS(1000) */ *
-FROM inventory
-ORDER BY bib_id
+SELECT * FROM amdb_inventory
+UNION ALL
+SELECT * FROM msdb_inventory
 ;
