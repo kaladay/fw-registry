@@ -1,0 +1,7 @@
+{
+  "id": "2aaabe53-2528-4b0e-8989-71c780d5956a",
+  "name": "Start Schema Subprocess",
+  "description": "",
+  "type": "NONE",
+  "deserializeAs": "StartEvent"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "53cad6e1-24bc-4d36-a850-fb9b1b1183bf",
+  "name": "Start Job Subprocess",
+  "description": "",
+  "type": "NONE",
+  "deserializeAs": "StartEvent"
+}

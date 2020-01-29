@@ -1,0 +1,23 @@
+{
+  "id": "06fc3fe9-b1f9-4b36-be47-52a95fa548a8",
+  "name": "Job Subprocess",
+  "description": "Subprocess to encapsulate job execution",
+  "type": "EMBEDDED",
+  "deserializeAs": "Subprocess",
+  "nodes": [
+    "{{mod-workflow}}/startEvent/53cad6e1-24bc-4d36-a850-fb9b1b1183bf",
+    "{{mod-workflow}}/requestTask/8a528b04-bdf9-471d-91d3-2c87f3a8fb24",
+    "{{mod-workflow}}/scriptTask/83bae970-4108-11ea-92bf-7d8cb088ffe5",
+    "{{mod-workflow}}/requestTask/abec83f4-303b-4f40-9d7a-68daef0ff27a",
+    "{{mod-workflow}}/requestTask/e82526dd-ea28-404d-b191-3cbde429b5aa",
+    "{{mod-workflow}}/scriptTask/bfbe4e68-c743-402e-b9a0-430d0b4d49d5",
+    "{{mod-workflow}}/requestTask/2fea45e1-a533-46fb-835d-bfff6f09ce67",
+    "{{mod-workflow}}/endEvent/6d72de81-0947-44bd-8f86-176b5d4bd312"
+  ],
+  "asyncBefore": true,
+  "loopRef": {
+    "dataInputRefExpression": "${jobs.elements()}",
+    "inputDataName": "job",
+    "sequential": true
+  }
+}

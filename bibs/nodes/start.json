@@ -1,0 +1,9 @@
+{
+  "id": "bf63a9c0-3fe2-11ea-be2e-1d5f20c295d5",
+  "name": "Start",
+  "description": "",
+  "type": "MESSAGE_CORRELATION",
+  "deserializeAs": "StartEvent",
+  "expression": "/events/voyager/bibs/migrate",
+  "asyncBefore": false
+}

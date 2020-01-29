@@ -1,0 +1,8 @@
+{
+  "id": "83bae970-4108-11ea-92bf-7d8cb088ffe5",
+  "name": "Record to Bib Id",
+  "description": "Script task to map records to bib ids",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "scriptRecordToBibId.js"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "82ae740b-cdcd-462b-b599-1d999370b7ae",
+  "name": "Is Schema Complete?",
+  "description": "",
+  "deserializeAs": "ConditionalGateway",
+  "type": "EXCLUSIVE",
+  "condition": "${schema.prop('remaining').numberValue() <= 0}",
+  "answer": "yes",
+  "nodes": [
+    "{{mod-workflow}}/endEvent/ab94addf-021b-4b86-a49a-c370a3b3e9dc"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "id": "dd5efc90-3fe2-11ea-a0cb-e714d5b970dd",
+  "name": "Page Bibliographics",
+  "description": "",
+  "queryTemplate": "bibsPage.sql",
+  "type": "VOYAGER"
+}

@@ -54,7 +54,7 @@
     },
     {
       "request": {
-        "url": "{{mod-external-reference-resolver-internal}}/streaming/referenceLinks/type/0ed6f994-8dbd-4827-94c0-905504169c90?orderClass=String",
+        "url": "{{mod-external-reference-resolver-internal}}/streaming/referenceLinks/0ed6f994-8dbd-4827-94c0-905504169c90?orderClass=String",
         "method": "GET",
         "contentType": "application/stream+json",
         "accept": "application/stream+json",
@@ -80,7 +80,7 @@
     },
     {
       "request": {
-        "url": "{{mod-external-reference-resolver-internal}}/streaming/referenceLinks/type/426ce32f-388c-4edf-9c79-d6b8348148a0?orderClass=String",
+        "url": "{{mod-external-reference-resolver-internal}}/streaming/referenceLinks/426ce32f-388c-4edf-9c79-d6b8348148a0?orderClass=String",
         "method": "GET",
         "contentType": "application/stream+json",
         "accept": "application/stream+json",

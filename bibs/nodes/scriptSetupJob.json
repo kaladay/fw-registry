@@ -1,0 +1,8 @@
+{
+  "id": "ad760e47-0193-4ef4-9352-5672fb4927f4",
+  "name": "Setup Job",
+  "description": "Script task to setup next job",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "scriptSetupJob.js"
+}

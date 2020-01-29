@@ -1,0 +1,30 @@
+{
+  "id": "e82526dd-ea28-404d-b191-3cbde429b5aa",
+  "name": "Get Source Record Reference Links",
+  "description": "Request for biliographic source record reference links",
+  "deserializeAs": "RequestTask",
+  "request": {
+    "url": "{{mod-external-reference-resolver}}/lookup/referenceLinks/BIB_${job.schema}_SOURCE",
+    "method": "POST",
+    "contentType": "application/json",
+    "accept": "application/json",
+    "bodyTemplate": "${bibIds}"
+  },
+  "inputVariables": [
+    {
+      "key": "job",
+      "type": "PROCESS",
+      "spin": true
+    },
+    {
+      "key": "bibIds",
+      "type": "LOCAL"
+    }
+  ],
+  "headerOutputVariables": [],
+  "outputVariable": {
+    "key": "bibSourceRecordReferenceLinks",
+    "type": "LOCAL",
+    "spin": true
+  }
+}

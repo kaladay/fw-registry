@@ -1,0 +1,7 @@
+{
+  "id": "d7f587a0-3fe3-11ea-8607-9d96c704f059",
+  "name": "Count Bibliographics",
+  "description": "",
+  "queryTemplate": "bibsCount.sql",
+  "type": "VOYAGER"
+}
