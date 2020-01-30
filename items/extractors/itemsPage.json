@@ -1,0 +1,7 @@
+{
+  "id": "693877a0-43a3-11ea-82cd-63e6c4770e6f",
+  "name": "Page Items",
+  "description": "",
+  "queryTemplate": "itemsPage.sql",
+  "type": "VOYAGER"
+}

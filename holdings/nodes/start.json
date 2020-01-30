@@ -1,0 +1,8 @@
+{
+  "id": "7694d610-43a2-11ea-8081-199775d94ef5",
+  "name": "Start",
+  "description": "",
+  "type": "MESSAGE_CORRELATION",
+  "deserializeAs": "StartEvent",
+  "expression": ""
+}

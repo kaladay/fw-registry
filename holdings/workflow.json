@@ -1,0 +1,15 @@
+{
+  "id": "76954b40-43a2-11ea-8081-199775d94ef5",
+  "name": "",
+  "description": "",
+  "versionTag": "1.0",
+  "historyTimeToLive": 0,
+  "deploymentId": null,
+  "active": false,
+  "setup": {
+    "asyncBefore": false,
+    "asyncAfter": false
+  },
+  "nodes": [],
+  "initialContext": {}
+}

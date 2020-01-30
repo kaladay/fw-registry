@@ -1,0 +1,7 @@
+{
+  "id": "6ae27e20-43a3-11ea-b9b2-afd3db823368",
+  "name": "Count Items",
+  "description": "",
+  "queryTemplate": "itemsCount.sql",
+  "type": "VOYAGER"
+}

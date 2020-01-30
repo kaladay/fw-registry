@@ -1,0 +1,9 @@
+{
+  "id": "76952430-43a2-11ea-8081-199775d94ef5",
+  "name": "",
+  "description": "",
+  "type": "MESSAGE_CORRELATE",
+  "method": "POST",
+  "deserializeAs": "EventTrigger",
+  "pathPattern": ""
+}
