@@ -30,4 +30,4 @@ var records = {
   initialRecords: initialRecords
 };
 
-execution.setVariableLocal('records', JSON.stringify(records));
+execution.setVariableLocal('records', S(JSON.stringify(records)));

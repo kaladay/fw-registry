@@ -18,7 +18,9 @@
     },
     {
       "key": "records",
-      "type": "LOCAL"
+      "type": "LOCAL",
+      "spin": true,
+      "asJson": true
     }
   ],
   "headerOutputVariables": [],
