@@ -26,5 +26,6 @@
     "key": "bibSourceRecordReferenceLinks",
     "type": "LOCAL",
     "spin": true
-  }
+  },
+  "asyncBefore": true
 }

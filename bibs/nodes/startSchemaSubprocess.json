@@ -3,5 +3,6 @@
   "name": "Start Schema Subprocess",
   "description": "",
   "type": "NONE",
-  "deserializeAs": "StartEvent"
+  "deserializeAs": "StartEvent",
+  "asyncBefore": true
 }

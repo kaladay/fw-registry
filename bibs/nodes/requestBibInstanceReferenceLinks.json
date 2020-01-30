@@ -26,5 +26,6 @@
     "key": "bibInstanceReferenceLinks",
     "type": "LOCAL",
     "spin": true
-  }
+  },
+  "asyncBefore": true
 }

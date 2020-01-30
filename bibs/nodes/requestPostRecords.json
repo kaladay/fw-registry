@@ -26,5 +26,6 @@
     "key": "postRecordsResponse",
     "type": "LOCAL",
     "spin": true
-  }
+  },
+  "asyncBefore": true
 }

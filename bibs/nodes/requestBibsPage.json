@@ -22,5 +22,6 @@
     "key": "bibsPage",
     "type": "LOCAL",
     "spin": true
-  }
+  },
+  "asyncAfter": true
 }

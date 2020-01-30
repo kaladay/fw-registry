@@ -22,5 +22,6 @@
     "key": "jobExecution",
     "type": "PROCESS",
     "spin": true
-  }
+  },
+  "asyncBefore": true
 }

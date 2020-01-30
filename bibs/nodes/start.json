@@ -5,5 +5,5 @@
   "type": "MESSAGE_CORRELATION",
   "deserializeAs": "StartEvent",
   "expression": "/events/voyager/bibs/migrate",
-  "asyncBefore": false
+  "asyncBefore": true
 }

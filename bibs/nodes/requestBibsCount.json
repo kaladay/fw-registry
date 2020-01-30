@@ -22,5 +22,6 @@
     "key": "count",
     "type": "LOCAL",
     "spin": true
-  }
+  },
+  "asyncBefore": true
 }
