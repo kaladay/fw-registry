@@ -14,10 +14,9 @@
     "{{mod-workflow}}/requestTask/2fea45e1-a533-46fb-835d-bfff6f09ce67",
     "{{mod-workflow}}/endEvent/6d72de81-0947-44bd-8f86-176b5d4bd312"
   ],
-  "asyncBefore": true,
   "loopRef": {
     "dataInputRefExpression": "${jobs.elements()}",
     "inputDataName": "job",
-    "sequential": true
+    "parallel": true
   }
 }

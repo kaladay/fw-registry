@@ -21,13 +21,13 @@
     "schemas": [
       {
         "name": "AMDB",
-        "limit": 1000,
+        "limit": 5000,
         "offset": 0,
         "batch": 20
       },
       {
         "name": "MSDB",
-        "limit": 1000,
+        "limit": 5000,
         "offset": 0,
         "batch": 20
       }

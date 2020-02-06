@@ -15,10 +15,9 @@
     "{{mod-workflow}}/conditionalGateway/82ae740b-cdcd-462b-b599-1d999370b7ae",
     "{{mod-workflow}}/conditionalGateway/01472335-11bf-4e02-b8aa-cea8094a010e"
   ],
-  "asyncBefore": true,
   "loopRef": {
     "dataInputRefExpression": "${schemas.elements()}",
     "inputDataName": "schema",
-    "sequential": true
+    "parallel": true
   }
 }

@@ -23,5 +23,5 @@
     "type": "LOCAL",
     "spin": true
   },
-  "asyncAfter": true
+  "asyncBefore": true
 }
