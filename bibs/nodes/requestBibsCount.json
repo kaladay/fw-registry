@@ -4,7 +4,7 @@
   "description": "Request for biliographics count",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{mod-data-extractor}}/extractors/d7f587a0-3fe3-11ea-8607-9d96c704f059/list",
+    "url": "{{mod-data-extractor-internal}}/extractors/d7f587a0-3fe3-11ea-8607-9d96c704f059/list",
     "method": "POST",
     "contentType": "application/json",
     "accept": "application/json",

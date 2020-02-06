@@ -4,7 +4,7 @@
   "description": "Request to post records to job execution",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{okapi}}/change-manager/jobExecutions/${jobExecution.parentJobExecutionId}/records",
+    "url": "{{okapi-internal}}/change-manager/jobExecutions/${jobExecution.parentJobExecutionId}/records",
     "method": "POST",
     "contentType": "application/json",
     "accept": "application/json",

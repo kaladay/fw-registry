@@ -4,7 +4,7 @@
   "description": "Request for biliographics page",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{mod-data-extractor}}/extractors/dd5efc90-3fe2-11ea-a0cb-e714d5b970dd/list",
+    "url": "{{mod-data-extractor-internal}}/extractors/dd5efc90-3fe2-11ea-a0cb-e714d5b970dd/list",
     "method": "POST",
     "contentType": "application/json",
     "accept": "application/json",

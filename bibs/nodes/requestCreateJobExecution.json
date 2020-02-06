@@ -4,7 +4,7 @@
   "description": "Request to create job execution",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{okapi}}/change-manager/jobExecutions",
+    "url": "{{okapi-internal}}/change-manager/jobExecutions",
     "method": "POST",
     "contentType": "application/json",
     "accept": "application/json",

@@ -6,7 +6,7 @@
   "extractors": [
     {
       "request": {
-        "url": "{{mod-data-extractor}}/extractors/82dfe010-3e05-11ea-ba78-c1b94f038b7b/stream",
+        "url": "{{mod-data-extractor-internal}}/extractors/82dfe010-3e05-11ea-ba78-c1b94f038b7b/stream",
         "method": "POST",
         "contentType": "application/stream+json",
         "accept": "application/stream+json"

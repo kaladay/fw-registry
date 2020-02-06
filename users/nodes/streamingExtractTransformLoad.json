@@ -6,7 +6,7 @@
   "extractors": [
     {
       "request": {
-        "url": "{{mod-data-extractor}}/extractors/b564e765-4284-42c8-adff-37fafd2c7507/stream",
+        "url": "{{mod-data-extractor-internal}}/extractors/b564e765-4284-42c8-adff-37fafd2c7507/stream",
         "method": "POST",
         "contentType": "application/stream+json",
         "accept": "application/stream+json"
@@ -17,7 +17,7 @@
     },
     {
       "request": {
-        "url": "{{mod-data-extractor}}/extractors/d0e5d47e-79f0-43b8-a001-ef34873c84ee/stream",
+        "url": "{{mod-data-extractor-internal}}/extractors/d0e5d47e-79f0-43b8-a001-ef34873c84ee/stream",
         "method": "POST",
         "contentType": "application/stream+json",
         "accept": "application/stream+json"
@@ -33,7 +33,7 @@
     },
     {
       "request": {
-        "url": "{{mod-data-extractor}}/extractors/96b02e0b-850b-4f5f-88cd-e41dacfec581/stream",
+        "url": "{{mod-data-extractor-internal}}/extractors/96b02e0b-850b-4f5f-88cd-e41dacfec581/stream",
         "method": "POST",
         "contentType": "application/stream+json",
         "accept": "application/stream+json"

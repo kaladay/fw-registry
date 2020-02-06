@@ -6,7 +6,7 @@
   "extractors": [
     {
       "request": {
-        "url": "{{mod-data-extractor}}/extractors/c6b5a9b8-0044-11ea-8d71-362b9e155667/stream",
+        "url": "{{mod-data-extractor-internal}}/extractors/c6b5a9b8-0044-11ea-8d71-362b9e155667/stream",
         "method": "POST",
         "contentType": "application/stream+json",
         "accept": "application/stream+json"
@@ -17,7 +17,7 @@
     },
     {
       "request": {
-        "url": "{{mod-data-extractor}}/extractors/d12ef318-0044-11ea-8d71-362b9e155667/stream",
+        "url": "{{mod-data-extractor-internal}}/extractors/d12ef318-0044-11ea-8d71-362b9e155667/stream",
         "method": "POST",
         "contentType": "application/stream+json",
         "accept": "application/stream+json"
