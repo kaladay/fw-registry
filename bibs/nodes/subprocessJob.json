@@ -17,6 +17,6 @@
   "loopRef": {
     "dataInputRefExpression": "${jobs.elements()}",
     "inputDataName": "job",
-    "parallel": true
+    "parallel": false
   }
 }

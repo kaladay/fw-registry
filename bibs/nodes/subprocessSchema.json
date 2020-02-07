@@ -18,6 +18,6 @@
   "loopRef": {
     "dataInputRefExpression": "${schemas.elements()}",
     "inputDataName": "schema",
-    "parallel": true
+    "parallel": false
   }
 }
