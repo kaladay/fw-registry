@@ -1,0 +1,31 @@
+{
+  "id": "abec83f4-303b-4f40-9d7a-68daef0ff27a",
+  "name": "Get Instance Reference Links",
+  "description": "Request for biliographic instance reference links",
+  "deserializeAs": "RequestTask",
+  "request": {
+    "url": "{{mod-external-reference-resolver-internal}}/lookup/referenceLinks/BIB_${job.schema}_INSTANCE",
+    "method": "POST",
+    "contentType": "application/json",
+    "accept": "application/json",
+    "bodyTemplate": "${bibIds}"
+  },
+  "inputVariables": [
+    {
+      "key": "job",
+      "type": "PROCESS",
+      "spin": true
+    },
+    {
+      "key": "bibIds",
+      "type": "LOCAL"
+    }
+  ],
+  "headerOutputVariables": [],
+  "outputVariable": {
+    "key": "bibInstanceReferenceLinks",
+    "type": "LOCAL",
+    "spin": true
+  },
+  "asyncBefore": true
+}

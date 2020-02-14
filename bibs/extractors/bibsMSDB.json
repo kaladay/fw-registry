@@ -1,6 +1,0 @@
-{
-  "id": "954f331e-3c77-41fa-9a74-8f4de285e63c",
-  "name": "Bibliographic MSDB Extractor",
-  "query": "bibsMSDB.sql",
-  "type": "VOYAGER"
-}

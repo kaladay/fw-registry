@@ -1,0 +1,33 @@
+{
+  "id": "2fea45e1-a533-46fb-835d-bfff6f09ce67",
+  "name": "Post Records",
+  "description": "Request to post records to job execution",
+  "deserializeAs": "RequestTask",
+  "request": {
+    "url": "{{okapi-internal}}/change-manager/jobExecutions/${jobExecution.parentJobExecutionId}/records",
+    "method": "POST",
+    "contentType": "application/json",
+    "accept": "application/json",
+    "bodyTemplate": "${records}"
+  },
+  "inputVariables": [
+    {
+      "key": "jobExecution",
+      "type": "PROCESS",
+      "spin": true
+    },
+    {
+      "key": "records",
+      "type": "LOCAL",
+      "spin": true,
+      "asJson": true
+    }
+  ],
+  "headerOutputVariables": [],
+  "outputVariable": {
+    "key": "postRecordsResponse",
+    "type": "LOCAL",
+    "spin": true
+  },
+  "asyncBefore": true
+}

@@ -1,0 +1,8 @@
+{
+  "id": "2664be20-3ee9-11ea-bc0d-7b0ebc85287c",
+  "name": "Start",
+  "description": "",
+  "type": "MESSAGE_CORRELATION",
+  "deserializeAs": "StartEvent",
+  "expression": "/events/voyager/vendors/migrate"
+}

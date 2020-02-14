@@ -1,0 +1,8 @@
+{
+  "id": "bfbe4e68-c743-402e-b9a0-430d0b4d49d5",
+  "name": "Build Records",
+  "description": "Script task to build records",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "scriptBuildRecords.js"
+}

@@ -1,7 +1,7 @@
 {
-  "id": "b376cc2f-71f2-43be-8e64-f7941f815d73",
-  "name": "Vendor Reference Link Trigger",
-  "description": "Triggers vendor reference link build",
+  "id": "c90c3aa0-3e02-11ea-a527-7318174a2bcd",
+  "name": "Vendors Reference Link Workflow Trigger",
+  "description": "Triggers ETL vendors reference link workflow",
   "type": "MESSAGE_CORRELATE",
   "method": "POST",
   "deserializeAs": "EventTrigger",

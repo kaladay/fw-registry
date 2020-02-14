@@ -1,7 +1,7 @@
 {
-  "id": "80ea5a70-0556-11ea-82fe-ed43c4a668a8",
-  "name": "Bibliographic Migration Trigger",
-  "description": "Triggers bibliographic migration",
+  "id": "bf63f7e0-3fe2-11ea-be2e-1d5f20c295d5",
+  "name": "Bibliographics Migration Workflow Trigger",
+  "description": "Triggers biliographics migration workflow",
   "type": "MESSAGE_CORRELATE",
   "method": "POST",
   "deserializeAs": "EventTrigger",

@@ -1,0 +1,23 @@
+{
+  "id": "38f20fef-1dc1-4bce-9616-a47e33df5ba5",
+  "name": "Schema Subprocess",
+  "description": "Subprocess to encapsulate schema bibliographic migration",
+  "type": "EMBEDDED",
+  "deserializeAs": "Subprocess",
+  "nodes": [
+    "{{mod-workflow}}/startEvent/2aaabe53-2528-4b0e-8989-71c780d5956a",
+    "{{mod-workflow}}/requestTask/72861735-6009-4451-bff8-3c8f4ce00a92",
+    "{{mod-workflow}}/scriptTask/87904f59-b55d-4055-ab4a-97a56de9c019",
+    "{{mod-workflow}}/requestTask/9c91e632-9155-44e8-9126-346826bb7ebd",
+    "{{mod-workflow}}/scriptTask/ad760e47-0193-4ef4-9352-5672fb4927f4",
+    "{{mod-workflow}}/subprocess/06fc3fe9-b1f9-4b36-be47-52a95fa548a8",
+    "{{mod-workflow}}/scriptTask/1a9cdb25-6ed7-4196-8ea9-ec69619d41a5",
+    "{{mod-workflow}}/conditionalGateway/82ae740b-cdcd-462b-b599-1d999370b7ae",
+    "{{mod-workflow}}/conditionalGateway/01472335-11bf-4e02-b8aa-cea8094a010e"
+  ],
+  "loopRef": {
+    "dataInputRefExpression": "${schemas.elements()}",
+    "inputDataName": "schema",
+    "parallel": false
+  }
+}

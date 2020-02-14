@@ -1,20 +1,15 @@
 {
-  "id": "6c511c10-0557-11ea-ba3a-fdc8d64acffa",
-  "name": "Items Migration Workflow",
+  "id": "610577e0-43a3-11ea-90d6-dd1bc43cff81",
+  "name": "",
+  "description": "",
+  "versionTag": "1.0",
+  "historyTimeToLive": 0,
   "deploymentId": null,
-  "processDefinitionIds": [],
   "active": false,
-  "requiresAuthentication": true,
-  "tasks": [
-    "{{mod-workflow}}/streamingExtractorTask/95b8f335-ebc7-40b5-9048-07493aca2dda",
-    "{{mod-workflow}}/streamingExtractorTask/4eadf429-f54d-4f67-88b5-3e40607d70b5",
-    "{{mod-workflow}}/streamingExtractorTask/0c336483-8c05-4382-9e94-e9a3edf27be4",
-    "{{mod-workflow}}/streamingExtractorTask/1c9e3f33-7fa9-4d3f-b328-116d0630050f",
-    "{{mod-workflow}}/processorTask/6277e5eb-37b5-40a7-b280-7019725a5b5d",
-    "{{mod-workflow}}/processorTask/e0e6c10a-bf8a-4b9c-a58d-d9fb6efd6353",
-    "{{mod-workflow}}/accumulatorTask/c1ddf6f7-52d8-4a58-8015-2eb5ecad5114",
-    "{{mod-workflow}}/processorTask/45222189-6a84-4cfb-9dbc-0244d155986f",
-    "{{mod-workflow}}/streamingRequestTask/ab3a357f-d05a-4c27-a54a-68f016254795"
-  ],
-  "startTrigger": "{{mod-workflow}}/eventTrigger/6c50f500-0557-11ea-ba3a-fdc8d64acffa"
+  "setup": {
+    "asyncBefore": false,
+    "asyncAfter": false
+  },
+  "nodes": [],
+  "initialContext": {}
 }

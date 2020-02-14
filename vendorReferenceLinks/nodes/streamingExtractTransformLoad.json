@@ -1,0 +1,43 @@
+{
+  "id": "a149c287-65a7-4806-ba1f-48e43323b240",
+  "name": "Extract Tranform Load Vendors Reference Links",
+  "description": "",
+  "deserializeAs": "StreamingExtractTransformLoadTask",
+  "extractors": [
+    {
+      "request": {
+        "url": "{{mod-data-extractor-internal}}/extractors/82dfe010-3e05-11ea-ba78-c1b94f038b7b/stream",
+        "method": "POST",
+        "contentType": "application/stream+json",
+        "accept": "application/stream+json"
+      },
+      "mergeStrategy": "CONCAT",
+      "comparisons": [],
+      "mappings": []
+    }
+  ],
+  "processors": [
+    {
+      "functionName": "processVendorReferenceLinks",
+      "scriptType": "JS",
+      "code": "processVendorReferenceLinks.js",
+      "buffer": 500,
+      "delay": 50
+    }
+  ],
+  "requests": [
+    {
+      "url": "{{mod-external-reference-resolver-internal}}/batch/referenceLinks",
+      "method": "POST",
+      "contentType": "application/json",
+      "accept": "application/json"
+    }
+  ],
+  "inputVariables": [],
+  "outputVariable": {
+    "key": "results",
+    "type": "PROCESS"
+  },
+  "asyncBefore": false,
+  "asyncAfter": false
+}

@@ -1,0 +1,7 @@
+{
+  "id": "8e71d850-43a2-11ea-a144-7926bfe40d38",
+  "name": "Count Holdings",
+  "description": "",
+  "queryTemplate": "holdingsCount.sql",
+  "type": "VOYAGER"
+}

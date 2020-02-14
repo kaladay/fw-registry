@@ -1,21 +1,36 @@
 {
-  "id": "80eaa890-0556-11ea-82fe-ed43c4a668a8",
-  "name": "Bibliographics Migration Workflow",
+  "id": "bf641ef0-3fe2-11ea-be2e-1d5f20c295d5",
+  "name": "Bibliographic Migration Workflow",
+  "description": "Workflow for migrating bibliographic instances from Voyager to FOLIO",
+  "versionTag": "1.0",
+  "historyTimeToLive": 0,
   "deploymentId": null,
-  "processDefinitionIds": [],
   "active": false,
-  "requiresAuthentication": true,
-  "tasks": [
-    "{{mod-workflow}}/streamingExtractorTask/a78f3eda-0358-467b-ac54-f3477f9878f2",
-    "{{mod-workflow}}/streamingExtractorTask/38f23304-a7c3-4108-a165-efd1456f7708",
-    "{{mod-workflow}}/streamingExtractorTask/262d686e-47b0-44e9-add9-225eb158d65f",
-    "{{mod-workflow}}/streamingExtractorTask/036d6268-bd75-40d2-8296-0148c9cd421c",
-    "{{mod-workflow}}/streamingExtractorTask/38aa0bb6-1381-4251-accc-3f1c73db9d48",
-    "{{mod-workflow}}/streamingExtractorTask/f79c0086-2199-45b4-923e-41d8c28d4af5",
-    "{{mod-workflow}}/processorTask/afebe908-2f91-48d4-b556-b5ee29874ab1",
-    "{{mod-workflow}}/accumulatorTask/0a1912a0-5485-46e5-8df7-1b97cea0cf8a",
-    "{{mod-workflow}}/processorTask/495cfc16-a801-4a5c-8b2d-dd1991d47add",
-    "{{mod-workflow}}/streamingRequestTask/9d912c2e-5179-44f7-9ea8-88fd6a39415b"
+  "setup": {
+    "asyncBefore": false,
+    "asyncAfter": false
+  },
+  "nodes": [
+    "{{mod-workflow}}/startEvent/bf63a9c0-3fe2-11ea-be2e-1d5f20c295d5",
+    "{{mod-workflow}}/requestTask/e45c34f4-37d3-41b8-a579-8c6e4916d9a1",
+    "{{mod-workflow}}/subprocess/38f20fef-1dc1-4bce-9616-a47e33df5ba5",
+    "{{mod-workflow}}/endEvent/db3ce6ac-e906-47ea-9066-00cb5179d038"
   ],
-  "startTrigger": "{{mod-workflow}}/eventTrigger/80ea5a70-0556-11ea-82fe-ed43c4a668a8"
+  "initialContext": {
+    "userId": "{{userId}}",
+    "schemas": [
+      {
+        "name": "AMDB",
+        "limit": 500,
+        "offset": 0,
+        "batch": 20
+      },
+      {
+        "name": "MSDB",
+        "limit": 500,
+        "offset": 0,
+        "batch": 20
+      }
+    ]
+  }
 }

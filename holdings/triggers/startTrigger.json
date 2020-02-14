@@ -1,9 +1,9 @@
 {
-  "id": "c4bc9b90-0557-11ea-9170-e74ca6d83b55",
-  "name": "Holding Migration Trigger",
-  "description": "Triggers holding migration",
+  "id": "76952430-43a2-11ea-8081-199775d94ef5",
+  "name": "",
+  "description": "",
   "type": "MESSAGE_CORRELATE",
   "method": "POST",
   "deserializeAs": "EventTrigger",
-  "pathPattern": "/events/voyager/holdings/migrate"
+  "pathPattern": ""
 }

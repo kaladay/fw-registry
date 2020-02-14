@@ -1,6 +1,6 @@
 {
-  "id": "331c4123-fa61-4cb4-b336-10e4f341cc26",
+  "id": "afd73260-3e16-11ea-a9be-b9b6efee8f9f",
   "name": "Partons Reference Links MSDB Extractor Distinct",
-  "query": "patronsReferenceLinksDistinctMSDB.sql",
+  "queryTemplate": "patronsReferenceLinksDistinctMSDB.sql",
   "type": "VOYAGER"
 }

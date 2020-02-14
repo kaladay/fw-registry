@@ -1,0 +1,7 @@
+{
+  "id": "8a6a0bb0-43a2-11ea-8146-91cd53483d48",
+  "name": "Page Holdings",
+  "description": "",
+  "queryTemplate": "holdingsPage.sql",
+  "type": "VOYAGER"
+}

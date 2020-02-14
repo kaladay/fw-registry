@@ -1,9 +1,0 @@
-{
-  "id": "afebe908-2f91-48d4-b556-b5ee29874ab1",
-  "name": "ProcessBibConvertMarc",
-  "delegate": "streamingProcessDelegate",
-  "deserializeAs": "ProcessorTask",
-  "streaming": false,
-  "script": "processConvertMarc.js",
-  "scriptType": "JS"
-}

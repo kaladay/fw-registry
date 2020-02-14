@@ -1,0 +1,27 @@
+{
+  "id": "8a528b04-bdf9-471d-91d3-2c87f3a8fb24",
+  "name": "Page Bibliographics",
+  "description": "Request for biliographics page",
+  "deserializeAs": "RequestTask",
+  "request": {
+    "url": "{{mod-data-extractor-internal}}/extractors/dd5efc90-3fe2-11ea-a0cb-e714d5b970dd/list",
+    "method": "POST",
+    "contentType": "application/json",
+    "accept": "application/json",
+    "bodyTemplate": "{\"SCHEMA\": \"${job.schema}\", \"OFFSET\": \"${job.offset?c}\", \"LIMIT\": \"${job.limit?c}\"}"
+  },
+  "inputVariables": [
+    {
+      "key": "job",
+      "type": "PROCESS",
+      "spin": true
+    }
+  ],
+  "headerOutputVariables": [],
+  "outputVariable": {
+    "key": "bibsPage",
+    "type": "LOCAL",
+    "spin": true
+  },
+  "asyncBefore": true
+}
