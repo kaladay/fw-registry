@@ -27,7 +27,7 @@
   ],
   "requests": [
     {
-      "url": "{{mod-external-reference-resolver-internal}}/batch/referenceLinks",
+      "url": "{{mod-external-reference-resolver-internal}}/referenceLinks/batch",
       "method": "POST",
       "contentType": "application/json",
       "accept": "application/json"

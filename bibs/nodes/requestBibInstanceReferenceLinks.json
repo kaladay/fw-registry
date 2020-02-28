@@ -4,7 +4,7 @@
   "description": "Request for biliographic instance reference links",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{mod-external-reference-resolver-internal}}/lookup/referenceLinks/BIB_${job.schema}_INSTANCE",
+    "url": "{{mod-external-reference-resolver-internal}}/referenceLinks/list/BIB_${job.schema}_INSTANCE",
     "method": "POST",
     "contentType": "application/json",
     "accept": "application/json",
