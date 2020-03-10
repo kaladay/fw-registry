@@ -1,6 +1,6 @@
 WITH
   amdb_bib_holdings_items AS (
-    SELECT /*+ PARALLEL */
+    SELECT
       b.bib_id,
       bm.mfhd_id,
       mi.item_id

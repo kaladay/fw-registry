@@ -89,8 +89,8 @@ for (var i = 0; i < holdingItems.length; i++) {
   var holdingItem = holdingItems[i].split('::');
   var holdingId = holdingItem[0];
   if (holdingId) {
+    holdingIds = createUUIDPair();
     if (currentHoldingId !== holdingId) {
-      holdingIds = createUUIDPair();
       inventoryReferenceLinks.push({
         id: holdingIds.RLID,
         folioReference: holdingIds.FID,
