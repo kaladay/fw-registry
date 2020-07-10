@@ -2,128 +2,116 @@
   "path": "loan-types",
   "data": [
     {
-      "name": "120_day",
-      "id": "b9b1cac8-d7b6-4073-b90f-e9b22f2b9485"
+      "name": "1_day",
+      "id": "42865fba-5fd1-4275-85ff-7c5865c6990a"
+    },
+    {
+      "name": "1_hour",
+      "id": "228346af-f802-41ac-94bc-aa7269cf70a9"
+    },
+    {
+      "id": "b9b1cac8-d7b6-4073-b90f-e9b22f2b9485",
+      "name": "120_day"
     },
     {
       "id": "d9f09391-d275-41b0-8198-7efe099457a0",
       "name": "14_day"
     },
     {
-      "id": "42865fba-5fd1-4275-85ff-7c5865c6990a",
-      "name": "1_day"
-    },
-    {
-      "id": "228346af-f802-41ac-94bc-aa7269cf70a9",
-      "name": "1_hour"
-    },
-    {
-      "name": "24_hour",
-      "id": "03587733-eb74-4c0e-b7bc-762df304bb9d"
-    },
-    {
       "name": "2_hour",
       "id": "ca6eb163-d961-45dd-8813-22cfe3550875"
     },
     {
-      "name": "3_day",
-      "id": "3202aec5-31f0-44df-a803-72c0e86ad813"
+      "id": "3202aec5-31f0-44df-a803-72c0e86ad813",
+      "name": "3_day"
     },
     {
-      "id": "886d8b42-267d-4308-bab2-3ea56a1df0dc",
-      "name": "4_hour"
+      "name": "4_hour",
+      "id": "886d8b42-267d-4308-bab2-3ea56a1df0dc"
     },
     {
-      "id": "15777d1a-6b4c-45d0-b74c-0be1386b4f2d",
-      "name": "7_day"
+      "name": "7_day",
+      "id": "15777d1a-6b4c-45d0-b74c-0be1386b4f2d"
     },
     {
-      "name": "accessory",
-      "id": "6cbe221f-5e7d-443e-af5c-fd0e0606174a"
+      "id": "6cbe221f-5e7d-443e-af5c-fd0e0606174a",
+      "name": "accessory"
     },
     {
-      "name": "archives",
-      "id": "ac5044ef-8ab9-4671-8d32-48536342344f"
+      "name": "bluray",
+      "id": "be5f265b-5987-4df6-9f95-aef55d31dc6f"
     },
     {
-      "id": "be5f265b-5987-4df6-9f95-aef55d31dc6f",
-      "name": "bluray"
+      "id": "dcdb0cef-c30f-4a3b-b0b6-757d1400535d",
+      "name": "book"
     },
     {
-      "name": "book",
-      "id": "dcdb0cef-c30f-4a3b-b0b6-757d1400535d"
+      "id": "65b2d121-f056-4d8c-b2a7-a4d99a1de48b",
+      "name": "journal"
     },
     {
-      "id": "c0530546-63a9-4224-b159-f9cdd8134805",
-      "name": "calculator"
+      "name": "calculator",
+      "id": "c0530546-63a9-4224-b159-f9cdd8134805"
     },
     {
-      "name": "camera",
-      "id": "2b4a24e0-f208-4933-ab01-cdd24c8bc0ec"
+      "id": "2b4a24e0-f208-4933-ab01-cdd24c8bc0ec",
+      "name": "camera"
     },
     {
-      "id": "9d9e8d82-8ddd-4f3b-9d88-d5b471df56cc",
-      "name": "carrel"
+      "name": "carrel",
+      "id": "9d9e8d82-8ddd-4f3b-9d88-d5b471df56cc"
     },
     {
       "name": "cassette",
       "id": "e6c257e8-71f2-4e19-9834-6d2e7c2dfb9b"
     },
     {
-      "id": "19984b7e-4d12-4e7b-a445-4a4316aefb4f",
-      "name": "cd"
+      "name": "cd",
+      "id": "19984b7e-4d12-4e7b-a445-4a4316aefb4f"
     },
     {
-      "name": "default",
-      "id": "df6eff6a-8a21-4c9f-b852-f0df796654b8"
+      "id": "df6eff6a-8a21-4c9f-b852-f0df796654b8",
+      "name": "default"
     },
     {
       "name": "dvd",
       "id": "9a4a7782-18b8-4f3b-b052-49b1b21051b0"
     },
     {
-      "name": "electronic",
-      "id": "4a445803-f29f-4797-93e3-5ecf3dce0a5a"
-    },
-    {
       "id": "5ccb99f5-e508-4fba-af27-aa2073ec9470",
       "name": "gadgets"
     },
     {
-      "name": "headphones",
-      "id": "ffd5f80b-daa8-42ce-ad42-bad4cd16bf2f"
+      "id": "ffd5f80b-daa8-42ce-ad42-bad4cd16bf2f",
+      "name": "headphones"
     },
     {
-      "id": "80bc9b72-70b5-4515-aeb2-3de2dd592022",
-      "name": "ItemProb"
+      "name": "ItemProb",
+      "id": "80bc9b72-70b5-4515-aeb2-3de2dd592022"
     },
     {
-      "name": "journal",
-      "id": "65b2d121-f056-4d8c-b2a7-a4d99a1de48b"
+      "name": "key",
+      "id": "bf0e73be-3b00-459d-8b8b-3978219456cd"
     },
     {
-      "id": "bf0e73be-3b00-459d-8b8b-3978219456cd",
-      "name": "key"
+      "id": "6ceef090-de2d-4956-85d3-be0146e57c18",
+      "name": "laptop"
     },
     {
-      "name": "laptop",
-      "id": "6ceef090-de2d-4956-85d3-be0146e57c18"
-    },
-    {
-      "name": "leas",
-      "id": "464778df-75a1-4967-ab7a-27690e079ec1"
+      "id": "464778df-75a1-4967-ab7a-27690e079ec1",
+      "name": "leas"
     },
     {
       "name": "locker",
       "id": "8685bbaa-b2cc-4b88-94c0-d75c1a576c1f"
     },
     {
-      "name": "marker",
-      "id": "4371e7fe-a2ff-415e-bd69-697b4b404218"
+      "id": "4371e7fe-a2ff-415e-bd69-697b4b404218",
+      "name": "marker"
     },
     {
-      "name": "media",
-      "id": "344472de-a94a-4c99-82c7-159ae3ab80c5"
+      "id": "344472de-a94a-4c99-82c7-159ae3ab80c5",
+      "name": "media"
     },
     {
       "id": "dc008f39-8086-4fa0-9190-3681f877a0de",
@@ -138,20 +126,12 @@
       "name": "newbook"
     },
     {
-      "id": "c9bf331d-e554-4432-b59d-9412fa91f9ce",
-      "name": "noncirc"
+      "name": "noncirc",
+      "id": "c9bf331d-e554-4432-b59d-9412fa91f9ce"
     },
     {
-      "id": "b6f3a75f-1ac1-42be-b599-cbd928d81f89",
-      "name": "norm"
-    },
-    {
-      "name": "normal",
-      "id": "5d907602-badb-403f-86fa-35af4c86dc30"
-    },
-    {
-      "id": "642a6c2e-8e62-4090-822e-4c4e0a549415",
-      "name": "PDA"
+      "id": "5d907602-badb-403f-86fa-35af4c86dc30",
+      "name": "normal"
     },
     {
       "name": "players",
@@ -162,36 +142,20 @@
       "id": "76df5eae-8d9f-478c-ae0c-0f481e785f02"
     },
     {
-      "id": "43f28bee-9a11-42b8-967f-94a5ac62321a",
-      "name": "print"
-    },
-    {
       "name": "projector",
       "id": "248c40fb-e1b7-4deb-8c1a-58b209655c67"
     },
     {
-      "name": "rare",
-      "id": "cbf80c6f-834c-49b2-913f-40636cc2b456"
+      "id": "1e5ef2c6-7e94-4d56-a316-2cade7227860",
+      "name": "reader"
     },
     {
-      "name": "reader",
-      "id": "1e5ef2c6-7e94-4d56-a316-2cade7227860"
-    },
-    {
-      "id": "72cf1df5-2f41-4e72-89be-ab3a066b990f",
-      "name": "realia"
-    },
-    {
-      "name": "reserve",
-      "id": "ffd4ba32-a7ba-494f-ac03-91fd22b233bd"
+      "id": "ffd4ba32-a7ba-494f-ac03-91fd22b233bd",
+      "name": "reserve"
     },
     {
       "name": "ric",
       "id": "ecf1bdb4-19fa-434d-9d4b-631d460a2ad5"
-    },
-    {
-      "name": "RICJLF",
-      "id": "7438a613-1162-4305-986f-8085762b3546"
     },
     {
       "name": "ricship",
@@ -218,16 +182,20 @@
       "name": "tablet"
     },
     {
-      "id": "2545c5ee-bdfc-49fc-90e5-0893e0a8106e",
-      "name": "tv"
+      "id": "db768852-7d5e-401f-b8cd-e742c4744336",
+      "name": "tripod"
     },
     {
-      "id": "e5dd57a0-2676-4853-a26a-0459153cea16",
-      "name": "vhs"
+      "name": "tv",
+      "id": "2545c5ee-bdfc-49fc-90e5-0893e0a8106e"
     },
     {
-      "name": "voice_recorder",
-      "id": "efe735ce-bd12-41f1-81ac-0dbbb9346f0e"
+      "name": "vhs",
+      "id": "e5dd57a0-2676-4853-a26a-0459153cea16"
+    },
+    {
+      "id": "efe735ce-bd12-41f1-81ac-0dbbb9346f0e",
+      "name": "voice_recorder"
     },
     {
       "id": "e029dd79-1778-422c-b856-f0ac131f0369",
