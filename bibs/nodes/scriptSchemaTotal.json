@@ -1,8 +1,0 @@
-{
-  "id": "87904f59-b55d-4055-ab4a-97a56de9c019",
-  "name": "Schema Total",
-  "description": "Script task to enhance schema with total",
-  "deserializeAs": "ScriptTask",
-  "scriptFormat": "javascript",
-  "code": "scriptSchemaTotal.js"
-}

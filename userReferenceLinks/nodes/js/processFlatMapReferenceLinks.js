@@ -1,1 +1,0 @@
-returnObj = [].concat.apply([], args);

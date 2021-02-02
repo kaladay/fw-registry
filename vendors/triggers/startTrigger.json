@@ -1,9 +1,0 @@
-{
-  "id": "2665f6a0-3ee9-11ea-bc0d-7b0ebc85287c",
-  "name": "Vendors Migration Workflow Trigger",
-  "description": "Triggers ETL vendors migration workflow",
-  "type": "MESSAGE_CORRELATE",
-  "method": "POST",
-  "deserializeAs": "EventTrigger",
-  "pathPattern": "/events/voyager/vendors/migrate"
-}

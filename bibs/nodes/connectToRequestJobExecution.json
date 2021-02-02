@@ -1,7 +1,0 @@
-{
-  "id": "7b0e55f5-773d-4345-b238-9fc20eb6b7a5",
-  "name": "Goto Next Job Execution",
-  "description": "Connect to job execution request node",
-  "deserializeAs": "ConnectTo",
-  "nodeId": "request_task_9c91e632_9155_44e8_9126_346826bb7ebd"
-}
