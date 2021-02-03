@@ -1,0 +1,20 @@
+{
+  "id": "08627011-659a-11eb-8a13-fd1f031cfd74",
+  "name": "Test Email Workflow",
+  "description": "Simple workflow to test sending email",
+  "versionTag": "1.0",
+  "historyTimeToLive": 0,
+  "deploymentId": null,
+  "active": false,
+  "setup": {
+    "asyncBefore": false,
+    "asyncAfter": false
+  },
+  "nodes": [
+    "{{mod-workflow}}/startEvent/0861d3d0-659a-11eb-8a13-fd1f031cfd74",
+    "{{mod-workflow}}/processTask/5bb4a890-65be-11eb-b6c0-4146d0c5a0cd",
+    "{{mod-workflow}}/emailTask/8a528b04-bdf9-471d-91d3-2c87f3a8fb24",
+    "{{mod-workflow}}/endEvent/0861fae0-659a-11eb-8a13-fd1f031cfd74"
+  ],
+  "initialContext": {}
+}
