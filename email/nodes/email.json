@@ -1,0 +1,17 @@
+{
+  "id": "8a528b04-bdf9-471d-91d3-2c87f3a8fb24",
+  "name": "Send Email",
+  "description": "",
+  "deserializeAs": "EmailTask",
+  "inputVariables": [{
+    "key": "context",
+    "type": "PROCESS",
+    "spin": true
+  }],
+  "outputVariable": {},
+  "mailTo": "wwelling@library.tamu.edu",
+  "mailFrom": "wwelling@library.tamu.edu",
+  "mailSubject": "Test",
+  "mailText": "This is only a test! Hello, ${context.key.textValue()}!",
+  "asyncBefore": true
+}
