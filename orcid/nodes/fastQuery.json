@@ -1,0 +1,13 @@
+{
+  "id": "be4b87a9-e8c1-45d0-b264-04cca5d9ff32",
+  "name": "Query Faculity and Staff Orcid Ids",
+  "description": "",
+  "deserializeAs": "DatabaseQueryTask",
+  "inputVariables": [],
+  "outputVariable": {},
+  "outputPath": "fast.tsv",
+  "resultType": "TSV",
+  "designation": "divit",
+  "query": "SELECT pi.uid32 AS uid32, emp.uin AS id, emp.tamu_netid AS tamu_netid, nvl2(pi.last_name,pi.last_name,emp.last_name) AS last_name, nvl2(pi.first_name,pi.first_name,emp.first_name) AS first_name, emp.middle_name AS middle_name, emp.tamu_preferred_alias AS tamumail, emp.employee_type_name AS employee_type_name, emp.adloc_dept_name AS adloc_dept_name, emp.title AS title FROM patron.employees_retirees emp, patron.person_identifiers pi, patron.library_eresources eres WHERE emp.uin = eres.uin AND emp.employee_type_name != 'Student' AND emp.employee_type_name is not null AND emp.employment_status_name not in ('Deceased','Terminated') AND emp.uin = pi.uin(+) AND emp.title_code != '8491' order by emp.uin",
+  "asyncBefore": true
+}

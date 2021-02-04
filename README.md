@@ -46,3 +46,21 @@ fw build patron
 fw activate patron
 fw run patron
 ```
+
+## orcid
+
+Extract for ORCID workflow.
+
+```
+fw config set divit-url ***
+fw config set divit-user ***
+fw config set divit-password ***
+fw config set email-from ***
+fw config set email-to ***
+```
+
+```
+fw build orcid
+fw activate orcid
+fw run orcid
+```
