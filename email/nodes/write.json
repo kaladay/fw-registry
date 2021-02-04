@@ -1,0 +1,15 @@
+{
+  "id": "f9176b4e-5e8b-4918-ac18-da3041941c72",
+  "name": "Write File",
+  "description": "",
+  "deserializeAs": "FileTask",
+  "inputVariables": [{
+    "key": "context",
+    "type": "PROCESS",
+    "spin": true
+  }],
+  "outputVariable": {},
+  "path": "C:\\Users\\wwelling\\Development\\context.json",
+  "op": "WRITE",
+  "asyncBefore": true
+}

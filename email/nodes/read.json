@@ -1,0 +1,15 @@
+{
+  "id": "b9795765-dddf-4863-b20c-36fb217efd72",
+  "name": "Read File",
+  "description": "",
+  "deserializeAs": "FileTask",
+  "inputVariables": [],
+  "outputVariable": {
+    "key": "content",
+    "type": "PROCESS",
+    "spin": true
+  },
+  "path": "C:\\Users\\wwelling\\Development\\context.json",
+  "op": "READ",
+  "asyncBefore": true
+}

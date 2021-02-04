@@ -1,0 +1,11 @@
+{
+  "id": "41823f85-372e-4661-8328-f8a4240b3eda",
+  "name": "Delete File",
+  "description": "",
+  "deserializeAs": "FileTask",
+  "inputVariables": [],
+  "outputVariable": {},
+  "path": "C:\\Users\\wwelling\\Development\\context.json",
+  "op": "DELETE",
+  "asyncBefore": true
+}

@@ -4,7 +4,7 @@
   "description": "",
   "deserializeAs": "EmailTask",
   "inputVariables": [{
-    "key": "context",
+    "key": "content",
     "type": "PROCESS",
     "spin": true
   }],
@@ -12,6 +12,6 @@
   "mailTo": "{{mail-to}}",
   "mailFrom": "{{mail-from}}",
   "mailSubject": "Test",
-  "mailText": "This is only a test! Hello, ${context.key.textValue()}!",
+  "mailText": "This is only a test! Hello, ${content.key.textValue()}!",
   "asyncBefore": true
 }
