@@ -1,10 +1,10 @@
 function normalizePostalCode(postalCode) {
-  postalCode = postalCode.trim();
   if (postalCode) {
+    postalCode = postalCode.trim();
     if (postalCode.endsWith('-')) {
       postalCode = postalCode.substring(0, postalCode.length - 1);
     }
-    if (postalCode.length === 9 && !postalCode.includes('-')) {
+    if (postalCode.length === 9 && postalCode.indexOf('-') === -1) {
       postalCode = postalCode.substring(0, 5) + '-' + postalCode.substring(5);
     }
   }
@@ -48,7 +48,6 @@ function tranform(patrons) {
       permanentAddress.AddressLine2 = patron.ADDRESSES_PERMANENT_ADDRESSLINE2;
       permanentAddress.City = patron.ADDRESSES_PERMANENT_CITY;
       permanentAddress.Region = patron.ADDRESSES_PERMANENT_REGION;
-      /* TODO: normalize/format postal code */
       permanentAddress.PostalCode = normalizePostalCode(patron.ADDRESSES_PERMANENT_POSTALCODE);
 
       personal.addresses.push(permanentAddress);
@@ -62,7 +61,6 @@ function tranform(patrons) {
       temporaryAddress.AddressLine2 = patron.ADDRESSES_TEMPORARY_ADDRESSLINE2;
       temporaryAddress.City = patron.ADDRESSES_TEMPORARY_CITY;
       temporaryAddress.Region = patron.ADDRESSES_TEMPORARY_REGION;
-      /* TODO: normalize/format postal code */
       temporaryAddress.PostalCode = normalizePostalCode(patron.ADDRESSES_TEMPORARY_POSTALCODE);
 
       personal.addresses.push(temporaryAddress);
