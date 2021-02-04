@@ -9,8 +9,8 @@
     "spin": true
   }],
   "outputVariable": {},
-  "mailTo": "wwelling@library.tamu.edu",
-  "mailFrom": "wwelling@library.tamu.edu",
+  "mailTo": "{{mail-to}}",
+  "mailFrom": "{{mail-from}}",
   "mailSubject": "Test",
   "mailText": "This is only a test! Hello, ${context.key.textValue()}!",
   "asyncBefore": true
