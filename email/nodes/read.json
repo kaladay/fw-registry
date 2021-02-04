@@ -9,7 +9,7 @@
     "type": "PROCESS",
     "spin": true
   },
-  "path": "C:\\Users\\wwelling\\Development\\context.json",
+  "path": "context.json",
   "op": "READ",
   "asyncBefore": true
 }

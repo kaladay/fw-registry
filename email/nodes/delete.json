@@ -5,7 +5,7 @@
   "deserializeAs": "FileTask",
   "inputVariables": [],
   "outputVariable": {},
-  "path": "C:\\Users\\wwelling\\Development\\context.json",
+  "path": "context.json",
   "op": "DELETE",
   "asyncBefore": true
 }

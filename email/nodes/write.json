@@ -9,7 +9,7 @@
     "spin": true
   }],
   "outputVariable": {},
-  "path": "C:\\Users\\wwelling\\Development\\context.json",
+  "path": "context.json",
   "op": "WRITE",
   "asyncBefore": true
 }

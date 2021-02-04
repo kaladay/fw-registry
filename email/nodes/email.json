@@ -13,5 +13,6 @@
   "mailFrom": "{{mail-from}}",
   "mailSubject": "Test",
   "mailText": "This is only a test! Hello, ${content.key.textValue()}!",
+  "attachmentPath": "context.json",
   "asyncBefore": true
 }
