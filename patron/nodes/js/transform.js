@@ -1,15 +1,5 @@
-function normalizePostalCode(postalCode) {
-  if (postalCode) {
-    postalCode = postalCode.trim();
-    if (postalCode.endsWith('-')) {
-      postalCode = postalCode.substring(0, postalCode.length - 1);
-    }
-    if (postalCode.length === 9 && postalCode.indexOf('-') === -1) {
-      postalCode = postalCode.substring(0, 5) + '-' + postalCode.substring(5);
-    }
-  }
-  return postalCode;
-}
+var FormatUtility = Java.type("org.folio.rest.utility.FormatUtility");
+var formatUtility = new FormatUtility();
 
 function tranform(patrons) {
   var users = [];
@@ -36,8 +26,7 @@ function tranform(patrons) {
     personal.firstName = patron.PERSONAL_FIRSTNAME;
     personal.middleName = patron.PERSONAL_MIDDLENAME;
     personal.email = patron.PERSONAL_EMAIL;
-    /* TODO: normalize/format phone number */
-    personal.phone = patron.PERSONAL_PHONE;
+    personal.phone = formatUtility.normalizePhoneNumber(patron.PERSONAL_PHONE);
 
     if (patron.ADDRESSES_PERMANENT_ADDRESSLINE1) {
       var permanentAddress = {};
@@ -48,7 +37,7 @@ function tranform(patrons) {
       permanentAddress.AddressLine2 = patron.ADDRESSES_PERMANENT_ADDRESSLINE2;
       permanentAddress.City = patron.ADDRESSES_PERMANENT_CITY;
       permanentAddress.Region = patron.ADDRESSES_PERMANENT_REGION;
-      permanentAddress.PostalCode = normalizePostalCode(patron.ADDRESSES_PERMANENT_POSTALCODE);
+      permanentAddress.PostalCode = formatUtility.normalizePostalCode(patron.ADDRESSES_PERMANENT_POSTALCODE);
 
       personal.addresses.push(permanentAddress);
     }
@@ -61,7 +50,7 @@ function tranform(patrons) {
       temporaryAddress.AddressLine2 = patron.ADDRESSES_TEMPORARY_ADDRESSLINE2;
       temporaryAddress.City = patron.ADDRESSES_TEMPORARY_CITY;
       temporaryAddress.Region = patron.ADDRESSES_TEMPORARY_REGION;
-      temporaryAddress.PostalCode = normalizePostalCode(patron.ADDRESSES_TEMPORARY_POSTALCODE);
+      temporaryAddress.PostalCode = formatUtility.normalizePostalCode(patron.ADDRESSES_TEMPORARY_POSTALCODE);
 
       personal.addresses.push(temporaryAddress);
     }
