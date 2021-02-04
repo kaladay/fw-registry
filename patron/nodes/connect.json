@@ -6,8 +6,8 @@
   "inputVariables": [],
   "outputVariable": {},
   "designation": "divit",
-  "url": "",
-  "user": "",
-  "password": "",
+  "url": "{{divit-url}}",
+  "user": "{{divit-user}}",
+  "password": "{{divit-password}}",
   "asyncBefore": true
 }
