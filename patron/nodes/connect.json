@@ -1,0 +1,13 @@
+{
+  "id": "55f9f79f-5ac4-4ec9-ba64-e596dae956b6",
+  "name": "Connect DivIT",
+  "description": "",
+  "deserializeAs": "DatabaseConnectionTask",
+  "inputVariables": [],
+  "outputVariable": {},
+  "designation": "divit",
+  "url": "",
+  "user": "",
+  "password": "",
+  "asyncBefore": true
+}
