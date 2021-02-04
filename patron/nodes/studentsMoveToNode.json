@@ -1,0 +1,11 @@
+{
+  "id": "76bff6c3-20be-4645-b7c6-8865ccd25603",
+  "name": "Students",
+  "description": "",
+  "deserializeAs": "MoveToNode",
+  "gatewayId": "parallel_gateway_36942c89_e5f6_49ad_8b61_a1ed9c53fcb5",
+  "nodes": [
+    "{{mod-workflow}}/databaseQueryTask/18d0e1eb-46c2-4a9e-8838-88584d7998cd",
+    "{{mod-workflow}}/connectTo/50a69e06-40e2-4d8e-8f1d-e6db9344cfb0"
+  ]
+}

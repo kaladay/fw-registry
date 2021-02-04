@@ -1,0 +1,8 @@
+{
+  "id": "96286fc0-6663-11eb-b98e-f1ccdde4a279",
+  "name": "Transform Results",
+  "description": "",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "transform.js"
+}
