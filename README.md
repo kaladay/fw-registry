@@ -14,13 +14,13 @@ cd mod-camunda
 mvn clean spring-boot:run
 ```
 
-## email
+## sample email
 
 Sample workflow to send email.
 
 ```
-fw config set mail-to test@mailinator.com
-fw config set mail-from helpdesk@library.tamu.edu
+fw config set sample-mail-to test@mailinator.com
+fw config set sample-mail-from helpdesk@library.tamu.edu
 ```
 
 ```
@@ -55,8 +55,8 @@ Extract for ORCID workflow.
 fw config set divit-url ***
 fw config set divit-user ***
 fw config set divit-password ***
-fw config set email-from ***
-fw config set email-to ***
+fw config set orcid-mail-to ***
+fw config set orcid-mail-from ***
 ```
 
 ```

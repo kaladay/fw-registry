@@ -9,8 +9,8 @@
     "spin": true
   }],
   "outputVariable": {},
-  "mailTo": "{{mail-to}}",
-  "mailFrom": "{{mail-from}}",
+  "mailTo": "{{example-mail-to}}",
+  "mailFrom": "{{example-mail-from}}",
   "mailSubject": "Test",
   "mailText": "This is only a test! Hello, ${content.key.textValue()}!",
   "attachmentPath": "context.json",
