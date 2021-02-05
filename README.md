@@ -64,3 +64,21 @@ fw build orcid
 fw activate orcid
 fw run orcid
 ```
+
+## gobi
+
+ISBN report to GOBI workflow.
+
+```
+fw config set ldp-url ***
+fw config set ldp-user ***
+fw config set ldp-password ***
+fw config set gobi-mail-to ***
+fw config set gobi-mail-from ***
+```
+
+```
+fw build gobi
+fw activate gobi
+fw run gobi
+```
