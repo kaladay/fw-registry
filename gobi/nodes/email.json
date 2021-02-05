@@ -1,0 +1,14 @@
+{
+  "id": "d01b2444-ad34-474c-8a52-863ebc27ca31",
+  "name": "Send GOBI Email",
+  "description": "",
+  "deserializeAs": "EmailTask",
+  "inputVariables": [],
+  "outputVariable": {},
+  "mailTo": "{{gobi-mail-to}}",
+  "mailFrom": "{{gobi-mail-from}}",
+  "mailSubject": "TAMU ISBN Report",
+  "mailText": "ISBN TSV file attached",
+  "attachmentPath": "isbn.tsv",
+  "asyncBefore": true
+}
