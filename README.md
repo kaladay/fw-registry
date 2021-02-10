@@ -14,21 +14,6 @@ cd mod-camunda
 mvn clean spring-boot:run
 ```
 
-## sample email
-
-Sample workflow to send email.
-
-```
-fw config set sample-mail-to test@mailinator.com
-fw config set sample-mail-from helpdesk@library.tamu.edu
-```
-
-```
-fw build email
-fw activate email
-fw run email
-```
-
 ## patron
 
 DivIT patron workflow.
