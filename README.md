@@ -67,3 +67,19 @@ fw build gobi
 fw activate gobi
 fw run gobi
 ```
+
+## e-resource
+
+E-resource Workflow.
+
+```
+fw config set divit-url ***
+fw config set divit-user ***
+fw config set divit-password ***
+```
+
+```
+fw build e-resource
+fw activate e-resource
+fw run e-resource
+```

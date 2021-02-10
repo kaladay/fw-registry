@@ -1,8 +1,0 @@
-{
-  "id": "0861d3d0-659a-11eb-8a13-fd1f031cfd74",
-  "name": "Start",
-  "description": "",
-  "type": "MESSAGE_CORRELATION",
-  "deserializeAs": "StartEvent",
-  "expression": "/events/test/email"
-}
