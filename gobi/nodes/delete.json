@@ -1,0 +1,11 @@
+{
+  "id": "dec0f324-6566-460e-9ca9-79114ff1e1c0",
+  "name": "Delete ISBN TSV",
+  "description": "",
+  "deserializeAs": "FileTask",
+  "inputVariables": [],
+  "outputVariable": {},
+  "path": "isbn.tsv",
+  "op": "DELETE",
+  "asyncBefore": true
+}

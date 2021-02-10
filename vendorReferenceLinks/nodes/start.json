@@ -1,8 +1,0 @@
-{
-  "id": "c90bec80-3e02-11ea-a527-7318174a2bcd",
-  "name": "Start",
-  "description": "",
-  "type": "MESSAGE_CORRELATION",
-  "deserializeAs": "StartEvent",
-  "expression": "/events/referencelink/voyager/vendors"
-}

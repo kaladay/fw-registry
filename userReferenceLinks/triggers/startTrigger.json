@@ -1,9 +1,0 @@
-{
-  "id": "cfe046a0-3e02-11ea-b4d6-43b6065711b4",
-  "name": "Users Reference Link Workflow Trigger",
-  "description": "Triggers ETL users reference link workflow",
-  "type": "MESSAGE_CORRELATE",
-  "method": "POST",
-  "deserializeAs": "EventTrigger",
-  "pathPattern": "/events/referencelink/voyager/users"
-}

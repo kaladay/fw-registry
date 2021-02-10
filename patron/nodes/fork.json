@@ -1,0 +1,10 @@
+{
+  "id": "36942c89-e5f6-49ad-8b61-a1ed9c53fcb5",
+  "name": "Fork",
+  "description": "",
+  "deserializeAs": "ParallelGateway",
+  "nodes": [
+    "{{mod-workflow}}/databaseQueryTask/4a6d3c6a-6465-4f9f-9caf-06a0b3ff6047",
+    "{{mod-workflow}}/parallelGateway/09955855-531f-44ce-ba69-2824654a0411"
+  ]
+}

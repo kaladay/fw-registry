@@ -1,6 +1,0 @@
-{
-  "id": "40c64203-c60b-47c8-b6f1-ddf90417d2b7",
-  "name": "Inventory Stream Extractor",
-  "queryTemplate": "inventoryStream.sql",
-  "type": "VOYAGER"
-}

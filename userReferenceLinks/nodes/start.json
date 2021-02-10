@@ -1,8 +1,0 @@
-{
-  "id": "cfdfd170-3e02-11ea-b4d6-43b6065711b4",
-  "name": "Start",
-  "description": "",
-  "type": "MESSAGE_CORRELATION",
-  "deserializeAs": "StartEvent",
-  "expression": "/events/referencelink/voyager/users"
-}
