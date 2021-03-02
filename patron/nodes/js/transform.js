@@ -27,6 +27,7 @@ function tranform(patrons) {
     personal.middleName = patron.PERSONAL_MIDDLENAME;
     personal.email = patron.PERSONAL_EMAIL;
     personal.phone = formatUtility.normalizePhoneNumber(patron.PERSONAL_PHONE);
+    personal.preferredContactTypeId = '002';
 
     if (patron.ADDRESSES_PERMANENT_ADDRESSLINE1) {
       var permanentAddress = {};
@@ -38,6 +39,7 @@ function tranform(patrons) {
       permanentAddress.City = patron.ADDRESSES_PERMANENT_CITY;
       permanentAddress.Region = patron.ADDRESSES_PERMANENT_REGION;
       permanentAddress.PostalCode = formatUtility.normalizePostalCode(patron.ADDRESSES_PERMANENT_POSTALCODE);
+      permanentAddress.primaryAddress = true;
 
       personal.addresses.push(permanentAddress);
     }
