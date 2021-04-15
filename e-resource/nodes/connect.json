@@ -6,7 +6,7 @@
   "inputVariables": [],
   "outputVariable": {},
   "designation": "e-resource",
-  "url": "{{divit-url}}",
+  "url": "{{divit-cis-report-url}}",
   "username": "{{divit-user}}",
   "password": "{{divit-password}}",
   "asyncBefore": true
