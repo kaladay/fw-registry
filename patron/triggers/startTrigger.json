@@ -1,9 +1,0 @@
-{
-  "id": "df9d7460-665a-11eb-b9fd-afcd4d476de5",
-  "name": "Patron Start Trigger",
-  "description": "",
-  "type": "MESSAGE_CORRELATE",
-  "method": "POST",
-  "deserializeAs": "EventTrigger",
-  "pathPattern": "/events/test/patron"
-}

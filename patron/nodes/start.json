@@ -2,7 +2,7 @@
   "id": "df9cff30-665a-11eb-b9fd-afcd4d476de5",
   "name": "Start",
   "description": "",
-  "type": "MESSAGE_CORRELATION",
+  "type": "SCHEDULED",
   "deserializeAs": "StartEvent",
-  "expression": "/events/test/patron"
+  "expression": "0 7 * * *"
 }
