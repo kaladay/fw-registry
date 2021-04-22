@@ -1,9 +1,9 @@
 {
   "id": "d85748c0-6722-11eb-a782-4d1a319181c0",
   "name": "Orcid Email Workflow",
-  "description": "",
+  "description": "Generate and email Orcid report",
   "versionTag": "1.0",
-  "historyTimeToLive": 0,
+  "historyTimeToLive": 90,
   "deploymentId": null,
   "active": false,
   "setup": {

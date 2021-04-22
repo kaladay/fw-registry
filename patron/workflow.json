@@ -3,7 +3,7 @@
   "name": "DivIT Patron Workflow",
   "description": "Nightly DivIt Patron Workflow",
   "versionTag": "1.0",
-  "historyTimeToLive": 0,
+  "historyTimeToLive": 90,
   "deploymentId": null,
   "active": false,
   "setup": {

@@ -1,9 +1,9 @@
 {
   "id": "e1615440-67f6-11eb-b7ce-65b004d2db88",
   "name": "GOBI ISBN Report Workflow",
-  "description": "",
+  "description": "Generate and email ISBN report",
   "versionTag": "1.0",
-  "historyTimeToLive": 0,
+  "historyTimeToLive": 90,
   "deploymentId": null,
   "active": false,
   "setup": {
