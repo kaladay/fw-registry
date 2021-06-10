@@ -73,6 +73,7 @@ fw run gobi
 E-resource Workflow.
 
 ```
+fw config set e-resource-view library_eresources
 fw config set divit-cis-report-url ***
 fw config set divit-user ***
 fw config set divit-password ***
