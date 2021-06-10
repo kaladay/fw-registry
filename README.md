@@ -29,7 +29,6 @@ fw config set divit-password ***
 ```
 fw build patron
 fw activate patron
-fw run patron
 ```
 
 ## orcid
