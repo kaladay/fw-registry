@@ -4,5 +4,5 @@
   "description": "",
   "type": "MESSAGE_CORRELATION",
   "deserializeAs": "StartEvent",
-  "expression": ""
+  "expression": "/events/test/purchase-order"
 }
