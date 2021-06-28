@@ -1,0 +1,21 @@
+{
+  "id": "d6242b53-d850-11eb-9b1b-07ab610c71f4",
+  "name": "Purchase Orders Workflow",
+  "description": "MARC Purchase Order Creation Workflow",
+  "versionTag": "1.0",
+  "historyTimeToLive": 0,
+  "deploymentId": null,
+  "active": false,
+  "setup": {
+    "asyncBefore": false,
+    "asyncAfter": false
+  },
+  "nodes": [
+    "{{mod-workflow}}/startEvent/9219c68d-8019-4b3d-9ea6-f1a3a1c2d22c",
+    "{{mod-workflow}}/parallelGateway/b4440bc5-6fe8-4bf3-aa41-57debe0a813f",
+    "{{mod-workflow}}/moveToNode/6237b530-fa88-4b41-ac82-23c2c9069ab2",
+    "{{mod-workflow}}/moveToNode/65f53464-984c-4bcb-9941-ee6f7356f40c",
+    "{{mod-workflow}}/endEvent/98760d21-7f01-41d8-b915-39df79cad824",
+  ],
+  "initialContext": {}
+}
