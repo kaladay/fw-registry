@@ -1,0 +1,8 @@
+{
+  "id": "98606522-0f5a-4950-952f-d3e3fac86832",
+  "name": "Print MARC Record",
+  "description": "",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "printMarcRecord.js"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "38f20fef-1dc1-4bce-9616-a47e33df5ba5",
+  "name": "Purchase Order Create Subprocess",
+  "description": "Subprocess to create purchase order from MARC record",
+  "type": "EMBEDDED",
+  "deserializeAs": "Subprocess",
+  "nodes": [
+    "{{mod-workflow}}/startEvent/2aaabe53-2528-4b0e-8989-71c780d5956a",
+    "{{mod-workflow}}/scriptTask/98606522-0f5a-4950-952f-d3e3fac86832",
+    "{{mod-workflow}}/endEvent/ab94addf-021b-4b86-a49a-c370a3b3e9dc"
+  ],
+  "loopRef": {
+    "cardinalityExpression": "${records.size()}",
+    "parallel": false
+  }
+}
