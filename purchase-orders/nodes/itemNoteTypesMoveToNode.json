@@ -1,0 +1,11 @@
+{
+  "id": "6cf043cf-311f-4b2e-b026-396038f6aff8",
+  "name": "Item Note Types",
+  "description": "",
+  "deserializeAs": "MoveToNode",
+  "gatewayId": "parallel_gateway_b4440bc5_6fe8_4bf3_aa41_57debe0a813f",
+  "nodes": [
+    "{{mod-workflow}}/requestTask/7e1ce058-2f92-44bd-a88a-5cbdf7aa3e1d",
+    "{{mod-workflow}}/connectTo/5ecdd02e-2856-4ac7-8df7-368518ba38c0"
+  ]
+}

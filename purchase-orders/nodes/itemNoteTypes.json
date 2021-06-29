@@ -1,0 +1,19 @@
+{
+  "id": "7e1ce058-2f92-44bd-a88a-5cbdf7aa3e1d",
+  "name": "Request Item Note Types",
+  "description": "Retrieve the Instance Note Types.",
+  "deserializeAs": "RequestTask",
+  "request": {
+    "url": "{{okapi}}/item-note-types",
+    "method": "GET",
+    "accept": "application/json"
+  },
+  "inputVariables": [],
+  "headerOutputVariables": [],
+  "outputVariable": {
+    "key": "itemNoteTypes",
+    "type": "LOCAL",
+    "spin": true
+  },
+  "asyncBefore": true
+}
