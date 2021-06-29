@@ -4,7 +4,7 @@
   "description": "Retrieve the Holdings Note Types.",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{okapi}}/holdings-note-types",
+    "url": "{{okapi}}/holdings-note-types?limit=999",
     "method": "GET",
     "accept": "application/json"
   },
@@ -12,7 +12,7 @@
   "headerOutputVariables": [],
   "outputVariable": {
     "key": "holdingsNoteTypes",
-    "type": "LOCAL",
+    "type": "PROCESS",
     "spin": true
   },
   "asyncBefore": true

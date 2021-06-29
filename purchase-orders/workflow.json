@@ -18,6 +18,9 @@
     "{{mod-workflow}}/moveToNode/65f53464-984c-4bcb-9941-ee6f7356f40c",
     "{{mod-workflow}}/moveToNode/6cf043cf-311f-4b2e-b026-396038f6aff8",
     "{{mod-workflow}}/moveToNode/6237b530-fa88-4b41-ac82-23c2c9069ab2",
+    "{{mod-workflow}}/fileTask/08233df1-02cb-4608-874e-8c83b8f9e76a",
+    "{{mod-workflow}}/scriptTask/ba6e0cdf-7c82-4ff1-9cc5-ea2570f334bc",
+    "{{mod-workflow}}/fileTask/eda78d56-b57f-4395-a374-5d7f9a9d03da",
     "{{mod-workflow}}/endEvent/98760d21-7f01-41d8-b915-39df79cad824"
   ],
   "initialContext": {}

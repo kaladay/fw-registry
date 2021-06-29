@@ -1,0 +1,11 @@
+{
+  "id": "eda78d56-b57f-4395-a374-5d7f9a9d03da",
+  "name": "Delete MARC input file",
+  "description": "",
+  "deserializeAs": "FileTask",
+  "inputVariables": [],
+  "outputVariable": {},
+  "path": "/mnt/po.mrc",
+  "op": "DELETE",
+  "asyncBefore": true
+}

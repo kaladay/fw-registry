@@ -4,7 +4,7 @@
   "description": "Retrieve the Instance Note Types.",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{okapi}}/item-note-types",
+    "url": "{{okapi}}/item-note-types?limit=999",
     "method": "GET",
     "accept": "application/json"
   },
@@ -12,7 +12,7 @@
   "headerOutputVariables": [],
   "outputVariable": {
     "key": "itemNoteTypes",
-    "type": "LOCAL",
+    "type": "PROCESS",
     "spin": true
   },
   "asyncBefore": true
