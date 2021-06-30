@@ -17,7 +17,7 @@
   ],
   "headerOutputVariables": [],
   "outputVariable": {
-    "key": "fundLookupResponse",
+    "key": "fundsResponse",
     "type": "LOCAL",
     "spin": true
   },

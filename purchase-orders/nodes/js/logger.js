@@ -11,7 +11,7 @@ print('materialType = ' + materialType);
 
 /* print('\npoNumberResponse = ' + poNumberResponse + '\n'); */
 /* print('\nvendorLookupResponse = ' + vendorLookupResponse + '\n'); */
-/* print('\nfundLookupResponse = ' + fundLookupResponse + '\n'); */
+/* print('\nfundsResponse = ' + fundsResponse + '\n'); */
 /* print('\ninstanceTypesResponse = ' + instanceTypesResponse + '\n'); */
 /* print('\nmaterialTypesResponse = ' + materialTypesResponse + '\n'); */
 /* print('\nlocationsResponse = ' + locationsResponse + '\n'); */
