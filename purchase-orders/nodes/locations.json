@@ -1,17 +1,17 @@
 {
-  "id": "9dc4b5a6-7baa-4672-9045-bc950d8b9bea",
-  "name": "Request Instance Note Types",
-  "description": "Retrieve the Instance Note Types.",
+  "id": "e73919e6-6fee-4993-95b3-81e7cbc1f53b",
+  "name": "Request Locations",
+  "description": "Retrieve the Locations.",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{okapi}}/instance-note-types?limit=999",
+    "url": "{{okapi}}/locations?limit=999",
     "method": "GET",
     "accept": "application/json"
   },
   "inputVariables": [],
   "headerOutputVariables": [],
   "outputVariable": {
-    "key": "instanceNoteTypesResponse",
+    "key": "locationsResponse",
     "type": "PROCESS",
     "spin": true
   },

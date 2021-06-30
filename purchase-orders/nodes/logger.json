@@ -4,5 +4,5 @@
   "description": "",
   "deserializeAs": "ScriptTask",
   "scriptFormat": "javascript",
-  "code": "log.js"
+  "code": "logger.js"
 }

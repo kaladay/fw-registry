@@ -11,7 +11,7 @@
   "inputVariables": [],
   "headerOutputVariables": [],
   "outputVariable": {
-    "key": "materialTypes",
+    "key": "materialTypesResponse",
     "type": "PROCESS",
     "spin": true
   },

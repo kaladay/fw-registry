@@ -11,7 +11,7 @@
   "inputVariables": [],
   "headerOutputVariables": [],
   "outputVariable": {
-    "key": "itemNoteTypes",
+    "key": "itemNoteTypesResponse",
     "type": "PROCESS",
     "spin": true
   },
