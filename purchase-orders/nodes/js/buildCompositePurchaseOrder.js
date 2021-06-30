@@ -13,7 +13,7 @@ var locations = JSON.parse(locationsResponse).locations;
 
 var materialTypes = JSON.parse(materialTypesResponse).mtypes;
 
-var electronic = marcOrderDataObj.electronicIndicator && marcOrderDataObj.electronicIndicator.toLowerCase() === "electronic";
+var electronic = marcOrderDataObj.electronicIndicator && marcOrderDataObj.electronicIndicator.toLowerCase().indexOf('electronic') >= 0;
 
 var orderLine = {
   id: orderLineId,

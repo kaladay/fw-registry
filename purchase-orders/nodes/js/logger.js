@@ -1,25 +1,24 @@
-print('\nindex = ' + loopCounter);
+print('\nindex = ' + loopCounter + '\n');
 /* print('\nrecord = ' + records[loopCounter] + '\n'); */
 
-print('\npermELocation = ' + permELocation + '\n');
-print('\npermLocation = ' + permLocation + '\n');
-print('\nfiscalYearCode = ' + fiscalYearCode + '\n');
-print('\nloanType = ' + loanType + '\n');
-print('\ntextForElectronicResources = ' + textForElectronicResources + '\n');
-print('\nnoteType = ' + noteType + '\n');
-print('\nmaterialType = ' + materialType + '\n');
+print('permELocation = ' + permELocation);
+print('permLocation = ' + permLocation);
+print('fiscalYearCode = ' + fiscalYearCode);
+print('loanType = ' + loanType);
+print('textForElectronicResources = ' + textForElectronicResources);
+print('noteType = ' + noteType);
+print('materialType = ' + materialType);
 
-print('\npoNumberResponse = ' + poNumberResponse + '\n');
-print('\nvendorLookupResponse = ' + vendorLookupResponse + '\n');
-print('\nfundLookupResponse = ' + fundLookupResponse + '\n');
+/* print('\npoNumberResponse = ' + poNumberResponse + '\n'); */
+/* print('\nvendorLookupResponse = ' + vendorLookupResponse + '\n'); */
+/* print('\nfundLookupResponse = ' + fundLookupResponse + '\n'); */
+/* print('\ninstanceTypesResponse = ' + instanceTypesResponse + '\n'); */
+/* print('\nmaterialTypesResponse = ' + materialTypesResponse + '\n'); */
+/* print('\nlocationsResponse = ' + locationsResponse + '\n'); */
+/* print('\nitemNoteTypesResponse = ' + itemNoteTypesResponse + '\n'); */
+/* print('\ninstanceNoteTypesResponse = ' + instanceNoteTypesResponse + '\n'); */
+/* print('\nholdingsNoteTypesResponse = ' + holdingsNoteTypesResponse + '\n'); */
 
 print('\nmarcOrderData = ' + marcOrderData + '\n');
 
 print('\ncompositePurchaseOrder = ' + compositePurchaseOrder + '\n');
-
-print('\ninstanceTypesResponse = ' + instanceTypesResponse + '\n');
-print('\nmaterialTypesResponse = ' + materialTypesResponse + '\n');
-/*print('\nlocationsResponse = ' + locationsResponse + '\n');*/
-print('\nitemNoteTypesResponse = ' + itemNoteTypesResponse + '\n');
-print('\ninstanceNoteTypesResponse = ' + instanceNoteTypesResponse + '\n');
-print('\nholdingsNoteTypesResponse = ' + holdingsNoteTypesResponse + '\n');
