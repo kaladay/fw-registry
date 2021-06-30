@@ -1,6 +1,6 @@
 {
   "id": "695ef5e8-eb59-421b-a379-17d67161b12b",
-  "name": "Request Purchase Order Number",
+  "name": "Get Purchase Order Number",
   "description": "Retrieve the Purchase Order number.",
   "deserializeAs": "RequestTask",
   "request": {
@@ -12,7 +12,7 @@
   "headerOutputVariables": [],
   "outputVariable": {
     "key": "poNumberResponse",
-    "type": "PROCESS",
+    "type": "LOCAL",
     "spin": true
   },
   "asyncBefore": true
