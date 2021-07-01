@@ -24,3 +24,7 @@ print('\nmarcOrderData = ' + marcOrderData + '\n');
 print('\ncompositePurchaseOrder = ' + compositePurchaseOrder + '\n');
 
 print('\ninstance = ' + instance + '\n');
+
+print('\nmarcJsonRecord = ' + marcJsonRecord + '\n');
+
+print('\nrawMarcRecord = ' + rawMarcRecord + '\n');
