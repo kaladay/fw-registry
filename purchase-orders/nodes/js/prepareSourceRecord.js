@@ -3,7 +3,8 @@ var Variables = Java.type("org.camunda.bpm.engine.variable.Variables");
 var MarcUtility = Java.type("org.folio.rest.utility.MarcUtility");
 var marcUtility = new MarcUtility();
 
-var recordId = UUID.randomUUID().toString();
+var sourceRecordId = UUID.randomUUID().toString();
+var snapshotId = UUID.randomUUID().toString();
 
 var instanceObj = JSON.parse(instance);
 
@@ -19,7 +20,7 @@ var field = {
     data: instanceId
   }, {
     code: 's',
-    data: recordId
+    data: sourceRecordId
   }]
 };
 
@@ -31,5 +32,29 @@ marcJsonRecord = marcUtility.updateControlNumberField(marcJsonRecord, instanceHr
 
 var rawMarcRecord = marcUtility.marcJsonToRawMarc(marcJsonRecord);
 
-execution.setVariable('marcJsonRecord', Variables.stringValue(marcJsonRecord, true));
-execution.setVariable('rawMarcRecord', Variables.stringValue(rawMarcRecord, true));
+var jobExecution = {
+  jobExecutionId: snapshotId,
+  status: 'PARSING_IN_PROGRESS'
+};
+
+var sourceRecord = {
+  id: sourceRecordId,
+  recordType: 'MARC',
+  snapshotId: snapshotId,
+  matchedId:  instanceId,
+  externalIdsHolder: {
+    instanceId: instanceId
+  },
+  rawRecord: {
+    id: sourceRecordId,
+    content: rawMarcRecord
+  },
+  parsedRecord: {
+    id: sourceRecordId,
+    content: JSON.parse(marcJsonRecord)
+  }
+};
+
+execution.setVariableLocal('jobExecution', JSON.stringify(jobExecution));
+
+execution.setVariable('sourceRecord', Variables.stringValue(JSON.stringify(sourceRecord), true));

@@ -25,6 +25,6 @@ print('\ncompositePurchaseOrder = ' + compositePurchaseOrder + '\n');
 
 print('\ninstance = ' + instance + '\n');
 
-print('\nmarcJsonRecord = ' + marcJsonRecord + '\n');
+print('\njobExecution = ' + jobExecution + '\n');
 
-print('\nrawMarcRecord = ' + rawMarcRecord + '\n');
+print('\nsourceRecord = ' + sourceRecord + '\n');
