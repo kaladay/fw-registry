@@ -55,6 +55,7 @@ var sourceRecord = {
   }
 };
 
-execution.setVariableLocal('jobExecution', JSON.stringify(jobExecution));
+execution.setVariableLocal('jobExecution', S(JSON.stringify(jobExecution)));
 
-execution.setVariable('sourceRecord', Variables.stringValue(JSON.stringify(sourceRecord), true));
+execution.setVariableLocal('sourceRecord', S(JSON.stringify(sourceRecord)));
+
