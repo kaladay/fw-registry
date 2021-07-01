@@ -1,7 +1,6 @@
 var UUID = Java.type("java.util.UUID");
 var Variables = Java.type("org.camunda.bpm.engine.variable.Variables");
 var MarcUtility = Java.type("org.folio.rest.utility.MarcUtility");
-var marcUtility = new MarcUtility();
 
 var sourceRecordId = UUID.randomUUID().toString();
 var snapshotId = UUID.randomUUID().toString();
@@ -26,11 +25,11 @@ var field = {
 
 var marcJsonRecord = records[loopCounter];
 
-marcJsonRecord = marcUtility.addFieldToMarcJson(marcJsonRecord, JSON.stringify(field));
+marcJsonRecord = MarcUtility.addFieldToMarcJson(marcJsonRecord, JSON.stringify(field));
 
-marcJsonRecord = marcUtility.updateControlNumberField(marcJsonRecord, instanceHrid);
+marcJsonRecord = MarcUtility.updateControlNumberField(marcJsonRecord, instanceHrid);
 
-var rawMarcRecord = marcUtility.marcJsonToRawMarc(marcJsonRecord);
+var rawMarcRecord = MarcUtility.marcJsonToRawMarc(marcJsonRecord);
 
 var jobExecution = {
   jobExecutionId: snapshotId,

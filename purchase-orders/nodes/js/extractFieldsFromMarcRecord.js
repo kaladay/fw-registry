@@ -1,7 +1,6 @@
 var MarcUtility = Java.type("org.folio.rest.utility.MarcUtility");
-var marcUtility = new MarcUtility();
 
-var fields = JSON.parse(marcUtility.getFieldsFromMarcJson(records[loopCounter], ['245', '980']));
+var fields = JSON.parse(MarcUtility.getFieldsFromMarcJson(records[loopCounter], ['245', '980']));
 
 var getSubfield = function (fields, tag, code) {
   for (var i = 0; i < fields.length; ++i) {
