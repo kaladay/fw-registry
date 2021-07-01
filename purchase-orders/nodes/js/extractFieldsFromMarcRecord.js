@@ -1,6 +1,6 @@
 var MarcUtility = Java.type("org.folio.rest.utility.MarcUtility");
 
-var fields = JSON.parse(MarcUtility.getFieldsFromMarcJson(records[loopCounter], ['245', '980']));
+var fields = JSON.parse(MarcUtility.getFieldsFromMarcJson(records[loopCounter], ['245', '947', '980']));
 
 var getSubfield = function (fields, tag, code) {
   for (var i = 0; i < fields.length; ++i) {
@@ -31,17 +31,10 @@ var getMultipleSubfield = function (fields, tag, code) {
 
 var title = getSubfield(fields, '245', 'a');
 if (title.endsWith(' :')) {
-  title = title.substring(0, title.length - 1);
-  title += getSubfield(fields, '245', 'b');
-}
-if (title.endsWith(' ;')) {
-  title = title.substring(0, title.length - 2);
-}
-if (title.endsWith(' =')) {
-  title = title.substring(0, title.length - 2);
+  title += ' ' + getSubfield(fields, '245', 'b');
 }
 if (title.endsWith(' /')) {
-  title = title.substring(0, title.length - 2);
+  title += ' ' + getSubfield(fields, '245', 'c');
 }
 
 /* TODO: Ask about MARC title parsing */
