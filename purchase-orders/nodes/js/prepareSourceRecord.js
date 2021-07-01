@@ -1,14 +1,10 @@
 var UUID = Java.type("java.util.UUID");
-var Variables = Java.type("org.camunda.bpm.engine.variable.Variables");
 var MarcUtility = Java.type("org.folio.rest.utility.MarcUtility");
 
 var sourceRecordId = UUID.randomUUID().toString();
 var snapshotId = UUID.randomUUID().toString();
 
 var instanceObj = JSON.parse(instance);
-
-var instanceId = instanceObj.id;
-var instanceHrid = instanceObj.hrid;
 
 var field = {
   tag: '999',
@@ -27,7 +23,7 @@ var marcJsonRecord = records[loopCounter];
 
 marcJsonRecord = MarcUtility.addFieldToMarcJson(marcJsonRecord, JSON.stringify(field));
 
-marcJsonRecord = MarcUtility.updateControlNumberField(marcJsonRecord, instanceHrid);
+marcJsonRecord = MarcUtility.updateControlNumberField(marcJsonRecord, instanceObj.hrid);
 
 var rawMarcRecord = MarcUtility.marcJsonToRawMarc(marcJsonRecord);
 
@@ -40,9 +36,9 @@ var sourceRecord = {
   id: sourceRecordId,
   recordType: 'MARC',
   snapshotId: snapshotId,
-  matchedId:  instanceId,
+  matchedId:  instanceObj.id,
   externalIdsHolder: {
-    instanceId: instanceId
+    instanceId: instanceObj.id
   },
   rawRecord: {
     id: sourceRecordId,
@@ -57,4 +53,3 @@ var sourceRecord = {
 execution.setVariableLocal('jobExecution', S(JSON.stringify(jobExecution)));
 
 execution.setVariableLocal('sourceRecord', S(JSON.stringify(sourceRecord)));
-

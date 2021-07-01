@@ -23,8 +23,10 @@ print('\nmarcOrderData = ' + marcOrderData + '\n');
 
 print('\ncompositePurchaseOrder = ' + compositePurchaseOrder + '\n');
 
-print('\ninstance = ' + instance + '\n');
-
 print('\njobExecution = ' + jobExecution + '\n');
 
 print('\nsourceRecord = ' + sourceRecord + '\n');
+
+print('\ninstance = ' + instance + '\n');
+
+print('\nholdingsResponse = ' + holdingsResponse + '\n');

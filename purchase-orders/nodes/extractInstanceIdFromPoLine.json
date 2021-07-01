@@ -4,5 +4,5 @@
   "description": "",
   "deserializeAs": "ScriptTask",
   "scriptFormat": "javascript",
-  "code": "getInstanceIdFromPoLine.js"
+  "code": "extractInstanceIdFromPoLine.js"
 }
