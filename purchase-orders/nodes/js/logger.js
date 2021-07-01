@@ -22,3 +22,5 @@ print('materialType = ' + materialType);
 print('\nmarcOrderData = ' + marcOrderData + '\n');
 
 print('\ncompositePurchaseOrder = ' + compositePurchaseOrder + '\n');
+
+print('\ninstance = ' + instance + '\n');

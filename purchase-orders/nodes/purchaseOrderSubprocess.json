@@ -14,6 +14,8 @@
     "{{mod-workflow}}/requestTask/b8973fbb-1a0a-4d0e-8721-9deabe0dbb88",
     "{{mod-workflow}}/scriptTask/8e2153f9-651f-4084-91b8-944a849593d7",
     "{{mod-workflow}}/subprocess/ba134de0-4754-413b-afbb-29fac81227bc",
+    "{{mod-workflow}}/scriptTask/2f0e2715-3e17-456c-a207-54596e54a9ba",
+    "{{mod-workflow}}/requestTask/c8c18fc1-5422-4770-ade3-3a189b942071",
     "{{mod-workflow}}/scriptTask/98606522-0f5a-4950-952f-d3e3fac86832",
     "{{mod-workflow}}/endEvent/ab94addf-021b-4b86-a49a-c370a3b3e9dc"
   ],
