@@ -17,7 +17,7 @@
   ],
   "headerOutputVariables": [],
   "outputVariable": {
-    "key": "vendorLookupResponse",
+    "key": "vendorsResponse",
     "type": "PROCESS",
     "spin": true
   },

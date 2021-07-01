@@ -5,7 +5,7 @@ var orderLineId = UUID.randomUUID().toString();
 
 var poNumber = JSON.parse(poNumberResponse).poNumber;
 
-var vendorId = JSON.parse(vendorLookupResponse).organizations[0].id;
+var vendorId = JSON.parse(vendorsResponse).organizations[0].id;
 
 var marcOrderDataObj = JSON.parse(marcOrderData);
 

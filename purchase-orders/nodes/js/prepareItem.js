@@ -36,5 +36,9 @@ itemObj.materialTypeId = findMaterialTypeIdByName(materialType);
 
 itemObj.barcode = marcOrderDataObj.barcode;
 
+if (logLevel === 'DEBUG') {
+  print('\nitem = ' + JSON.stringify(itemObj) + '\n');
+}
+
 execution.setVariableLocal('itemId', itemObj.id);
 execution.setVariableLocal('item', S(JSON.stringify(itemObj)));

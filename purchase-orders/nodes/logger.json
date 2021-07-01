@@ -1,6 +1,6 @@
 {
   "id": "98606522-0f5a-4950-952f-d3e3fac86832",
-  "name": "Temp Logger",
+  "name": "Debug Logger",
   "description": "",
   "deserializeAs": "ScriptTask",
   "scriptFormat": "javascript",

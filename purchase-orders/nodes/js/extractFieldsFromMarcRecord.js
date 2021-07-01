@@ -2,6 +2,10 @@ var MarcUtility = Java.type("org.folio.rest.utility.MarcUtility");
 
 var fields = JSON.parse(MarcUtility.getFieldsFromMarcJson(records[loopCounter], ['245', '947', '980']));
 
+if (logLevel === 'DEBUG') {
+  print('\nfields = ' + JSON.stringify(fields) + '\n');
+}
+
 var getSubfield = function (fields, tag, code) {
   for (var i = 0; i < fields.length; ++i) {
     if (fields[i].tag === tag) {
