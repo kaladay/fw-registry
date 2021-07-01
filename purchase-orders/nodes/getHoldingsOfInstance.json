@@ -11,13 +11,13 @@
   "inputVariables": [
     {
       "key": "instanceId",
-      "type": "LOCAL"
+      "type": "PROCESS"
     }
   ],
   "headerOutputVariables": [],
   "outputVariable": {
     "key": "holdingsResponse",
-    "type": "LOCAL",
+    "type": "PROCESS",
     "spin": true
   },
   "asyncBefore": true

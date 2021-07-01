@@ -12,7 +12,7 @@
   "headerOutputVariables": [],
   "outputVariable": {
     "key": "poNumberResponse",
-    "type": "LOCAL",
+    "type": "PROCESS",
     "spin": true
   },
   "asyncBefore": true

@@ -1,3 +1,3 @@
 var items = JSON.parse(itemsResponse).items;
 
-execution.setVariableLocal('items', S(JSON.stringify(items)));
+execution.setVariable('items', S(JSON.stringify(items)));

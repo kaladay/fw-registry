@@ -16,5 +16,5 @@ mappedInstanceObj.statusId = instanceObj.statusId;
 mappedInstanceObj.statusUpdatedDate = instanceObj.statusUpdatedDate;
 mappedInstanceObj.discoverySuppress = false;
 
-execution.setVariableLocal('instance', S(JSON.stringify(mappedInstanceObj)));
+execution.setVariable('instance', S(JSON.stringify(mappedInstanceObj)));
 

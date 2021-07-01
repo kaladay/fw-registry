@@ -29,5 +29,5 @@ if (electronic) {
   holdingsObj.temporaryLocationId = findLocationIdByName(tempLocation);
 }
 
-execution.setVariableLocal('holdingsRecordId', holdingsObj.id);
-execution.setVariableLocal('holdings', S(JSON.stringify(holdingsObj)));
+execution.setVariable('holdingsRecordId', holdingsObj.id);
+execution.setVariable('holdings', S(JSON.stringify(holdingsObj)));

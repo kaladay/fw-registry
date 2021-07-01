@@ -13,11 +13,11 @@
   "inputVariables": [
     {
       "key": "holdingsRecordId",
-      "type": "LOCAL"
+      "type": "PROCESS"
     },
     {
       "key": "holdings",
-      "type": "LOCAL",
+      "type": "PROCESS",
       "spin": true,
       "asJson": true
     }
@@ -25,7 +25,7 @@
   "headerOutputVariables": [],
   "outputVariable": {
     "key": "holdings",
-    "type": "LOCAL",
+    "type": "PROCESS",
     "spin": true
   },
   "asyncBefore": true

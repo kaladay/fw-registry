@@ -11,13 +11,13 @@
   "inputVariables": [
     {
       "key": "instanceId",
-      "type": "LOCAL"
+      "type": "PROCESS"
     }
   ],
   "headerOutputVariables": [],
   "outputVariable": {
     "key": "instance",
-    "type": "LOCAL",
+    "type": "PROCESS",
     "spin": true
   },
   "asyncBefore": true

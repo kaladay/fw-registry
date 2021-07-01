@@ -11,14 +11,14 @@
   "inputVariables": [
     {
       "key": "marcOrderData",
-      "type": "LOCAL",
+      "type": "PROCESS",
       "spin": true
     }
   ],
   "headerOutputVariables": [],
   "outputVariable": {
     "key": "fundsResponse",
-    "type": "LOCAL",
+    "type": "PROCESS",
     "spin": true
   },
   "asyncBefore": true

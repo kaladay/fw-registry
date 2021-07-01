@@ -52,4 +52,4 @@ var marcOrderData = {
   barcode: getSubfield(fields, '947', 'a')
 };
 
-execution.setVariableLocal('marcOrderData', S(JSON.stringify(marcOrderData)));
+execution.setVariable('marcOrderData', S(JSON.stringify(marcOrderData)));

@@ -11,13 +11,13 @@
   "inputVariables": [
     {
       "key": "holdingsRecordId",
-      "type": "LOCAL"
+      "type": "PROCESS"
     }
   ],
   "headerOutputVariables": [],
   "outputVariable": {
     "key": "itemsResponse",
-    "type": "LOCAL",
+    "type": "PROCESS",
     "spin": true
   },
   "asyncBefore": true
