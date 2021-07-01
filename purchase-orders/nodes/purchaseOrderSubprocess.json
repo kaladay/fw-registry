@@ -22,6 +22,9 @@
     "{{mod-workflow}}/requestTask/3f394e18-7e8e-4c66-8e81-88320fc39968",
     "{{mod-workflow}}/scriptTask/4845fc57-9e86-4782-8e20-325133f5cb6e",
     "{{mod-workflow}}/requestTask/8a5b4584-3b0e-4207-824f-6880692925f0",
+    "{{mod-workflow}}/scriptTask/a9f5c38e-4c05-4732-ae53-88f763107427",
+    "{{mod-workflow}}/requestTask/90057fb3-7409-4a35-aa3b-6c56b30c8a8d",
+    "{{mod-workflow}}/requestTask/e28cd32e-7715-4fe9-9d3d-c4ac6d808f85",
     "{{mod-workflow}}/scriptTask/98606522-0f5a-4950-952f-d3e3fac86832",
     "{{mod-workflow}}/endEvent/ab94addf-021b-4b86-a49a-c370a3b3e9dc"
   ],
@@ -30,3 +33,4 @@
     "parallel": false
   }
 }
+

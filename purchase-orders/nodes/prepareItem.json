@@ -1,0 +1,8 @@
+{
+  "id": "f25f7775-a01e-4624-9435-951ae2bea165",
+  "name": "Prepare Item",
+  "description": "",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "prepareItem.js"
+}

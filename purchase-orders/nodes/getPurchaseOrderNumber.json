@@ -1,6 +1,6 @@
 {
   "id": "695ef5e8-eb59-421b-a379-17d67161b12b",
-  "name": "Get Purchase Order Number",
+  "name": "Request Next Purchase Order Number",
   "description": "Retrieve the Purchase Order number.",
   "deserializeAs": "RequestTask",
   "request": {

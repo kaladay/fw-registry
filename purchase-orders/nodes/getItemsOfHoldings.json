@@ -1,0 +1,24 @@
+{
+  "id": "e28cd32e-7715-4fe9-9d3d-c4ac6d808f85",
+  "name": "Request Items of Holdings",
+  "description": "Retrieve the Items of Instance Holdings by the Purchase Order Line.",
+  "deserializeAs": "RequestTask",
+  "request": {
+    "url": "{{okapi}}/item-storage/items?query=(holdingsRecordId==\"${holdingsRecordId}\")",
+    "method": "GET",
+    "accept": "application/json"
+  },
+  "inputVariables": [
+    {
+      "key": "holdingsRecordId",
+      "type": "LOCAL"
+    }
+  ],
+  "headerOutputVariables": [],
+  "outputVariable": {
+    "key": "itemsResponse",
+    "type": "LOCAL",
+    "spin": true
+  },
+  "asyncBefore": true
+}

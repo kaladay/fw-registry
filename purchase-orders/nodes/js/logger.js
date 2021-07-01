@@ -1,13 +1,18 @@
 print('\nindex = ' + loopCounter + '\n');
 /* print('\nrecord = ' + records[loopCounter] + '\n'); */
 
-print('permELocation = ' + permELocation);
+print('okapiUrl = ' + okapiUrl);
 print('permLocation = ' + permLocation);
+print('tempLocation = ' + tempLocation);
 print('fiscalYearCode = ' + fiscalYearCode);
-print('loanType = ' + loanType);
-print('textForElectronicResources = ' + textForElectronicResources);
+print('permLoanType = ' + permLoanType);
+print('tempLoanType = ' + tempLoanType);
 print('noteType = ' + noteType);
 print('materialType = ' + materialType);
+
+print('permELocation = ' + permELocation);
+print('eMaterialType = ' + eMaterialType);
+print('eHoldingsType = ' + eHoldingsType);
 
 /* print('\npoNumberResponse = ' + poNumberResponse + '\n'); */
 /* print('\nvendorLookupResponse = ' + vendorLookupResponse + '\n'); */
@@ -29,4 +34,6 @@ print('\nsourceRecord = ' + sourceRecord + '\n');
 
 print('\ninstance = ' + instance + '\n');
 
-print('\nholdingsResponse = ' + holdingsResponse + '\n');
+print('\nholdings = ' + holdings + '\n');
+
+print('\nitemsResponse = ' + itemsResponse + '\n');

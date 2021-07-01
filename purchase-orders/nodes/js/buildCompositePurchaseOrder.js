@@ -71,7 +71,8 @@ if (electronic) {
     activated: false,
     createInventory: 'Instance, Holding',
     trial: false,
-    accessProvider: vendorId
+    accessProvider: vendorId,
+    materialType: findMaterialTypeIdByName(eMaterialType)
   };
 
   orderLine.cost.quantityElectronic = 1;

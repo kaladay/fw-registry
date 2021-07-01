@@ -1,0 +1,19 @@
+{
+  "id": "7a890bb7-ed1c-49e3-900f-b90dd7f5090f",
+  "name": "Request Holdings Types",
+  "description": "Retrieve the Holdings Types.",
+  "deserializeAs": "RequestTask",
+  "request": {
+    "url": "{{okapi}}/holdings-types?limit=999",
+    "method": "GET",
+    "accept": "application/json"
+  },
+  "inputVariables": [],
+  "headerOutputVariables": [],
+  "outputVariable": {
+    "key": "holdingsTypesResponse",
+    "type": "PROCESS",
+    "spin": true
+  },
+  "asyncBefore": true
+}
