@@ -1,0 +1,18 @@
+{
+  "id": "25e32f01-0d24-4e0a-8ed4-97dd59caada9",
+  "name": "Item Update Subprocess",
+  "description": "Subprocess to update items of a purchase order line",
+  "type": "EMBEDDED",
+  "deserializeAs": "Subprocess",
+  "nodes": [
+    "{{mod-workflow}}/startEvent/1e1e5d80-7d3d-4e84-a609-e8d00127ae77",
+    "{{mod-workflow}}/scriptTask/f25f7775-a01e-4624-9435-951ae2bea165",
+    "{{mod-workflow}}/requestTask/0dce1a68-7e25-448f-ad69-c45adadf013f",
+    "{{mod-workflow}}/endEvent/e1872550-3905-427c-a895-74c4cbe2b7c9"
+  ],
+  "loopRef": {
+    "dataInputRefExpression": "${items.elements()}",
+    "inputDataName": "item",
+    "parallel": false
+  }
+}

@@ -55,7 +55,8 @@ var marcOrderData = {
   notes:  getMultipleSubfield(fields, '980', 'n'),
   price: getSubfield(fields, '980', 'm'),
   electronicIndicator: getSubfield(fields, '980', 'z'),
-  vendorItemId: getSubfield(fields, '980', 'c')
+  vendorItemId: getSubfield(fields, '980', 'c'),
+  barcode: getSubfield(fields, '947', 'a')
 };
 
 execution.setVariableLocal('marcOrderData', S(JSON.stringify(marcOrderData)));
