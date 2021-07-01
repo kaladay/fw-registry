@@ -29,8 +29,6 @@ var getMultipleSubfield = function (fields, tag, code) {
   return data;
 };
 
-print('\nfields = ' + JSON.stringify(fields, null, 2) + '\n');
-
 var title = getSubfield(fields, '245', 'a');
 if (title.endsWith(' :')) {
   title = title.substring(0, title.length - 1);

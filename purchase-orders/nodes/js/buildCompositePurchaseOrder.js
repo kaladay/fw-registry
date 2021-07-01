@@ -67,7 +67,7 @@ var findMaterialTypeIdByName = function (materialTypeName) {
 if (electronic) {
   orderLine.orderFormat = 'Electronic Resource';
 
-  orderLine.eResource = {
+  orderLine.eresource = {
     activated: false,
     createInventory: 'Instance, Holding',
     trial: false,
