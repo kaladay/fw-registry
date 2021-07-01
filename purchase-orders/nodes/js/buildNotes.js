@@ -13,16 +13,18 @@ if (marcOrderDataObj.notes && marcOrderDataObj.notes.length) {
 
   var noteTypes = JSON.parse(noteTypesResponse).noteTypes;
 
-  notes.push({
-    links: [{
-      type: 'poLine',
-      id: compositePurchaseOrderObj.compositePoLines[0].id
-    }],
-    typeId: findNoteTypeIdByName(noteType),
-    domain: 'orders',
-    content: marcOrderDataObj.notes,
-    title: marcOrderDataObj.notes
-  });
+  for (var i = 0; i < marcOrderDataObj.notes.length; ++i) {
+    notes.push({
+      links: [{
+        type: 'poLine',
+        id: compositePurchaseOrderObj.compositePoLines[0].id
+      }],
+      typeId: findNoteTypeIdByName(noteType),
+      domain: 'orders',
+      content: marcOrderDataObj.notes[i],
+      title: marcOrderDataObj.notes[i]
+    });
+  }
 }
 
 execution.setVariableLocal('notes', S(JSON.stringify(notes)));

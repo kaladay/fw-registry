@@ -15,6 +15,21 @@ var getSubfield = function (fields, tag, code) {
   }
 };
 
+var getMultipleSubfield = function (fields, tag, code) {
+  var data = [];
+  for (var i = 0; i < fields.length; ++i) {
+    if (fields[i].tag === tag) {
+      for (var j = 0; j < fields[i].subfields.length; ++j) {
+        if (fields[i].subfields[j].code === code) {
+          data.push(fields[i].subfields[j].data);
+        }
+      }
+      break
+    }
+  }
+  return data;
+};
+
 print('\nfields = ' + JSON.stringify(fields, null, 2) + '\n');
 
 var title = getSubfield(fields, '245', 'a');
@@ -40,7 +55,7 @@ var marcOrderData = {
   projectCode: getSubfield(fields, '980', 'r'),
   fundCode: getSubfield(fields, '980', 'b'),
   vendorCode:  getSubfield(fields, '980', 'v'),
-  notes:  getSubfield(fields, '980', 'n'),
+  notes:  getMultipleSubfield(fields, '980', 'n'),
   price: getSubfield(fields, '980', 'm'),
   electronicIndicator: getSubfield(fields, '980', 'z'),
   vendorItemId: getSubfield(fields, '980', 'c')
