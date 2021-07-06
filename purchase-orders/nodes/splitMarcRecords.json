@@ -1,0 +1,8 @@
+{
+  "id": "ba6e0cdf-7c82-4ff1-9cc5-ea2570f334bc",
+  "name": "Split MARC Records",
+  "description": "",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "splitMarcRecords.js"
+}

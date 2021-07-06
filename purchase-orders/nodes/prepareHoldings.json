@@ -1,0 +1,8 @@
+{
+  "id": "a9f5c38e-4c05-4732-ae53-88f763107427",
+  "name": "Prepare Holdings Record",
+  "description": "",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "prepareHoldings.js"
+}

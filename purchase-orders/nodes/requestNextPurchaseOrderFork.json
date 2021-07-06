@@ -1,0 +1,10 @@
+{
+  "id": "be158ddd-1143-40ff-84bd-59c46c94be04",
+  "name": "Request Next Purchase Order Number Fork",
+  "description": "",
+  "deserializeAs": "ParallelGateway",
+  "nodes": [
+    "{{mod-workflow}}/requestTask/695ef5e8-eb59-421b-a379-17d67161b12b",
+    "{{mod-workflow}}/parallelGateway/f64d6746-5c22-460b-81e7-b0e3a04bf4a5"
+  ]
+}

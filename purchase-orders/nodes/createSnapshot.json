@@ -1,0 +1,28 @@
+{
+  "id": "9046d37b-000d-4968-a41c-d77ff55f3622",
+  "name": "Create Snapshot",
+  "description": "Submits job execution to create snapshot",
+  "deserializeAs": "RequestTask",
+  "request": {
+    "url": "{{okapi}}/source-storage/snapshots",
+    "method": "POST",
+    "contentType": "application/json",
+    "accept": "application/json",
+    "bodyTemplate": "${jobExecution}"
+  },
+  "inputVariables": [
+    {
+      "key": "jobExecution",
+      "type": "LOCAL",
+      "spin": true,
+      "asJson": true
+    }
+  ],
+  "headerOutputVariables": [],
+  "outputVariable": {
+    "key": "jobExecution",
+    "type": "LOCAL",
+    "spin": true
+  },
+  "asyncBefore": true
+}

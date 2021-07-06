@@ -1,0 +1,8 @@
+{
+  "id": "2f0e2715-3e17-456c-a207-54596e54a9ba",
+  "name": "Extract Instance Id From PO Line",
+  "description": "",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "extractInstanceIdFromPoLine.js"
+}

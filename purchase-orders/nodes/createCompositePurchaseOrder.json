@@ -1,0 +1,28 @@
+{
+  "id": "b8973fbb-1a0a-4d0e-8721-9deabe0dbb88",
+  "name": "Create Composite Purchase Order",
+  "description": "Creates a purchase order",
+  "deserializeAs": "RequestTask",
+  "request": {
+    "url": "{{okapi}}/orders/composite-orders",
+    "method": "POST",
+    "contentType": "application/json",
+    "accept": "application/json",
+    "bodyTemplate": "${compositePurchaseOrder}"
+  },
+  "inputVariables": [
+    {
+      "key": "compositePurchaseOrder",
+      "type": "LOCAL",
+      "spin": true,
+      "asJson": true
+    }
+  ],
+  "headerOutputVariables": [],
+  "outputVariable": {
+    "key": "compositePurchaseOrder",
+    "type": "LOCAL",
+    "spin": true
+  },
+  "asyncBefore": true
+}

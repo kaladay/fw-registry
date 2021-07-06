@@ -1,5 +1,4 @@
 var FormatUtility = Java.type("org.folio.rest.utility.FormatUtility");
-var formatUtility = new FormatUtility();
 
 function tranform(patrons) {
   var users = [];
@@ -26,7 +25,7 @@ function tranform(patrons) {
     personal.firstName = patron.PERSONAL_FIRSTNAME;
     personal.middleName = patron.PERSONAL_MIDDLENAME;
     personal.email = patron.PERSONAL_EMAIL;
-    personal.phone = formatUtility.normalizePhoneNumber(patron.PERSONAL_PHONE);
+    personal.phone = FormatUtility.normalizePhoneNumber(patron.PERSONAL_PHONE);
     personal.preferredContactTypeId = '002';
 
     if (patron.ADDRESSES_PERMANENT_ADDRESSLINE1) {
@@ -38,7 +37,7 @@ function tranform(patrons) {
       permanentAddress.AddressLine2 = patron.ADDRESSES_PERMANENT_ADDRESSLINE2;
       permanentAddress.City = patron.ADDRESSES_PERMANENT_CITY;
       permanentAddress.Region = patron.ADDRESSES_PERMANENT_REGION;
-      permanentAddress.PostalCode = formatUtility.normalizePostalCode(patron.ADDRESSES_PERMANENT_POSTALCODE);
+      permanentAddress.PostalCode = FormatUtility.normalizePostalCode(patron.ADDRESSES_PERMANENT_POSTALCODE);
       permanentAddress.primaryAddress = true;
 
       personal.addresses.push(permanentAddress);
@@ -52,7 +51,7 @@ function tranform(patrons) {
       temporaryAddress.AddressLine2 = patron.ADDRESSES_TEMPORARY_ADDRESSLINE2;
       temporaryAddress.City = patron.ADDRESSES_TEMPORARY_CITY;
       temporaryAddress.Region = patron.ADDRESSES_TEMPORARY_REGION;
-      temporaryAddress.PostalCode = formatUtility.normalizePostalCode(patron.ADDRESSES_TEMPORARY_POSTALCODE);
+      temporaryAddress.PostalCode = FormatUtility.normalizePostalCode(patron.ADDRESSES_TEMPORARY_POSTALCODE);
 
       personal.addresses.push(temporaryAddress);
     }

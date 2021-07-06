@@ -1,0 +1,28 @@
+{
+  "id": "fe29b6f1-ffd7-4d99-a73d-ad4001948d2a",
+  "name": "Create Note",
+  "description": "Creates a purchase order line note",
+  "deserializeAs": "RequestTask",
+  "request": {
+    "url": "{{okapi}}/notes",
+    "method": "POST",
+    "contentType": "application/json",
+    "accept": "application/json",
+    "bodyTemplate": "${note}"
+  },
+  "inputVariables": [
+    {
+      "key": "note",
+      "type": "PROCESS",
+      "spin": true,
+      "asJson": true
+    }
+  ],
+  "headerOutputVariables": [],
+  "outputVariable": {
+    "key": "note",
+    "type": "LOCAL",
+    "spin": true
+  },
+  "asyncBefore": true
+}

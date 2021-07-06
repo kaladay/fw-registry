@@ -1,0 +1,19 @@
+{
+  "id": "ba79466f-51ac-4449-837c-f0568d671b66",
+  "name": "Request Loan Types",
+  "description": "Retrieve the Loan Types.",
+  "deserializeAs": "RequestTask",
+  "request": {
+    "url": "{{okapi}}/loan-types?limit=999",
+    "method": "GET",
+    "accept": "application/json"
+  },
+  "inputVariables": [],
+  "headerOutputVariables": [],
+  "outputVariable": {
+    "key": "loanTypesResponse",
+    "type": "PROCESS",
+    "spin": true
+  },
+  "asyncBefore": true
+}
