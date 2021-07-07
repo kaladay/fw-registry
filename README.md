@@ -83,3 +83,32 @@ fw build e-resource
 fw activate e-resource
 fw run e-resource
 ```
+
+## purchase-orders
+
+Purchase Orders Workflow.
+
+```
+fw build purchase-orders
+fw activate purchase-orders
+
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/test/purchase-orders' \
+--header 'Content-Type: multipart/form-data' \
+--header 'X-Okapi-Tenant: tern' \
+--form 'logLevel="INFO"' \
+--form 'file=@"/GOBI Print (1).mrc"' \
+--form 'path="/mnt/po.mrc"' \
+--form 'okapiUrl="https://folio-okapi-test.library.tamu.edu"' \
+--form 'username="***"' \
+--form 'password="***"' \
+--form 'permLocation="Evans stk"' \
+--form 'tempLocation="Evans nbs"' \
+--form 'fiscalYearCode="FY2021"' \
+--form 'permLoanType="normal"' \
+--form 'tempLoanType="newbook"' \
+--form 'noteType="General note"' \
+--form 'materialType="unmediated -- volume"' \
+--form 'permELocation="www_evans"' \
+--form 'eMaterialType="computer -- online resource"' \
+--form 'eHoldingsType="Unknown"'
+```

@@ -1,5 +1,4 @@
 if (logLevel === 'INFO' || logLevel === 'DEBUG') {
-
   print('\nindex = ' + loopCounter);
   print('\tokapiUrl = ' + okapiUrl);
   print('\tpermLocation = ' + permLocation);
