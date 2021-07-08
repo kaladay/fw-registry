@@ -29,7 +29,7 @@ if (logLevel === 'DEBUG') {
   print('\nmarcOrderData = ' + marcOrderData + '\n');
 
   print('\ncompositePurchaseOrder = ' + compositePurchaseOrder + '\n');
-  
+
   print('\njobExecution = ' + jobExecution + '\n');
   print('\nsourceRecord = ' + sourceRecord + '\n');
 

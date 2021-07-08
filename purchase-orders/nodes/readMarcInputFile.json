@@ -3,13 +3,18 @@
   "name": "Read MARC input file",
   "description": "",
   "deserializeAs": "FileTask",
-  "inputVariables": [],
+  "inputVariables": [
+    {
+      "key": "inputFilePath",
+      "type": "PROCESS"
+    }
+  ],
   "outputVariable": {
     "key": "marc",
     "type": "PROCESS",
     "asTransient": true
   },
-  "path": "/mnt/po.mrc",
+  "path": "${inputFilePath}",
   "op": "READ",
   "asyncBefore": true
 }

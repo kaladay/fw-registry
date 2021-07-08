@@ -27,6 +27,7 @@
     "{{mod-workflow}}/moveToNode/c6fd79b2-d6d4-41fc-a2a4-db9848532600",
     "{{mod-workflow}}/scriptTask/dbd8367c-6859-4035-a67b-610377cd1680",
     "{{mod-workflow}}/subprocess/25e32f01-0d24-4e0a-8ed4-97dd59caada9",
+    "{{mod-workflow}}/scriptTask/cdc9dab0-8182-4d5a-a494-51d7d8632fec",
     "{{mod-workflow}}/scriptTask/98606522-0f5a-4950-952f-d3e3fac86832",
     "{{mod-workflow}}/endEvent/ab94addf-021b-4b86-a49a-c370a3b3e9dc"
   ],

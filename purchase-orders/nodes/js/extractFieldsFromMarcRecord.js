@@ -27,7 +27,7 @@ var getMultipleSubfield = function (fields, tag, code) {
           data.push(fields[i].subfields[j].data);
         }
       }
-      break
+      break;
     }
   }
   return data;
