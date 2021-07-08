@@ -97,7 +97,7 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/test/p
 --header 'X-Okapi-Tenant: tern' \
 --form 'logLevel="INFO"' \
 --form 'file=@"/GOBI Print (1).mrc"' \
---form 'path="/mnt/po.mrc"' \
+--form 'path="/mnt/po"' \
 --form 'okapiUrl="https://folio-okapi-test.library.tamu.edu"' \
 --form 'username="***"' \
 --form 'password="***"' \
@@ -110,7 +110,9 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/test/p
 --form 'materialType="unmediated -- volume"' \
 --form 'permELocation="www_evans"' \
 --form 'eMaterialType="computer -- online resource"' \
---form 'eHoldingsType="Unknown"'
+--form 'eHoldingsType="Unknown"' \
+--form 'emailFrom="me@example.com"' \
+--form 'emailTo="you@example.com"'
 ```
 
 ## circ-fines
