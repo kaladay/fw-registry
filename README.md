@@ -112,3 +112,21 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/test/p
 --form 'eMaterialType="computer -- online resource"' \
 --form 'eHoldingsType="Unknown"'
 ```
+
+## circ-fines
+
+Circulation Fees/Fines Daily Report.
+
+```
+fw config set ldp-url ***
+fw config set ldp-user ***
+fw config set ldp-password ***
+fw config set circ-fines-mail-to ***
+fw config set circ-fines-mail-from ***
+```
+
+```
+fw build circ-fines
+fw activate circ-fines
+fw run circ-fines
+```
