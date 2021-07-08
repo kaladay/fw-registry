@@ -1,0 +1,9 @@
+{
+  "id": "b226b591-b810-4ea2-bc58-9691fafc366d",
+  "name": "Circulation Daily Fees/Fines Paid Trigger",
+  "description": "",
+  "type": "MESSAGE_CORRELATE",
+  "method": "POST",
+  "deserializeAs": "EventTrigger",
+  "pathPattern": "/events/test/circ-fines"
+}

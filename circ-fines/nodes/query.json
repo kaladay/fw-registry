@@ -1,0 +1,13 @@
+{
+  "id": "b3edd0b1-9611-4973-ad53-9f0e9f0f9e1e",
+  "name": "Query Daily Fees/Fines Paid from LDP",
+  "description": "",
+  "deserializeAs": "DatabaseQueryTask",
+  "inputVariables": [],
+  "outputVariable": {},
+  "outputPath": "feefines.tsv",
+  "resultType": "TSV",
+  "designation": "ldp",
+  "query": "SELECT DISTINCT isp.name AS service_point, actions.payment_method AS method, users.barcode, concat(users.data->'personal'->>'lastName', ' ', users.data->'personal'->>'firstName') AS name, to_timestamp(actions.date_action::text,'YYYY-MM-DD HH24:MI:SS') at time zone 'America/Chicago', actions.source AS operator, actions.amount_action AS amount, actions.comments AS comments, actions.id FROM public.audit_circulation_logs logs, public.inventory_service_points isp, public.user_users users, public.feesfines_accounts accounts, public.feesfines_feefineactions actions WHERE actions.type_action IN ('Paid fully', 'Paid partially') AND isp.id = logs.service_point_id AND logs.data->'linkToIds'->>'feeFineId' = accounts.id AND actions.user_id = users.id AND actions.account_id = accounts.id AND cast(logs.date AS date) = current_date-1 AND isp.name in ('Ask Us Desk (Evans)', 'Business Library Circulation', 'InterLibrary Loan Dept. (Evans)', 'Maps & GIS', 'Media and Reserves', 'PSEL Circulation Desk') ORDER BY to_timestamp(actions.date_action::text, 'YYYY-MM-DD HH24:MI:SS') at time zone 'America/Chicago' DESC",
+  "asyncBefore": true
+}
