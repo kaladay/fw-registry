@@ -1,0 +1,35 @@
+{
+  "id": "3dd5d171-771c-48a7-a2e7-9d063190c3e5",
+  "name": "Send Success Email",
+  "description": "",
+  "deserializeAs": "EmailTask",
+  "inputVariables": [
+    {
+      "key": "emailTo",
+      "type": "PROCESS"
+    },
+    {
+      "key": "emailFrom",
+      "type": "PROCESS"
+    },
+    {
+      "key": "successEmailSubject",
+      "type": "LOCAL"
+    },
+    {
+      "key": "successEmailText",
+      "type": "LOCAL"
+    },
+    {
+      "key": "successEmailMarkup",
+      "type": "LOCAL"
+    }
+  ],
+  "outputVariable": {},
+  "mailTo": "${emailTo}",
+  "mailFrom": "${emailFrom}",
+  "mailSubject": "${successEmailSubject}",
+  "mailText": "${successEmailText}",
+  "mailMarkup": "${successEmailMarkup}",
+  "asyncBefore": true
+}

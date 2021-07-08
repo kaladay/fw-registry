@@ -1,0 +1,8 @@
+{
+  "id": "cdc9dab0-8182-4d5a-a494-51d7d8632fec",
+  "name": "Post-Process Record",
+  "description": "",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "postProcessRecord.js"
+}

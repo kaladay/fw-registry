@@ -3,9 +3,14 @@
   "name": "Delete MARC input file",
   "description": "",
   "deserializeAs": "FileTask",
-  "inputVariables": [],
+  "inputVariables": [
+    {
+      "key": "inputFilePath",
+      "type": "PROCESS"
+    }
+  ],
   "outputVariable": {},
-  "path": "/mnt/po.mrc",
+  "path": "${inputFilePath}",
   "op": "DELETE",
   "asyncBefore": true
 }
