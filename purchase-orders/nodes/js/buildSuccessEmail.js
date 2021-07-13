@@ -1,6 +1,6 @@
 var reportObj = JSON.parse(report);
 
-var fileName = inputFilePath.replace(/.*\/([^\/]+)$/i, '$1');
+var fileName = inputFilePath.replace(/^.*[\\\/]/, '');
 var successEmailSubject = 'Purchase Orders Workflow Result for ' + fileName;
 var successEmailMarkup = '<p>A total of <strong>' + reportObj.records.length + '</strong> records from <strong>' + fileName + '</strong> were successfully processed.</p>\n';
 var successEmailText = '';
