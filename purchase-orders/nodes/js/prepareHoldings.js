@@ -29,5 +29,7 @@ if (electronic) {
   holdingsObj.temporaryLocationId = findLocationIdByName(tempLocation);
 }
 
+holdingsObj.callNumber = marcOrderDataObj.callNumber;
+
 execution.setVariable('holdingsRecordId', holdingsObj.id);
 execution.setVariable('holdings', S(JSON.stringify(holdingsObj)));

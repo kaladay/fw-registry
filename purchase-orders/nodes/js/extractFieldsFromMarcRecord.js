@@ -1,6 +1,6 @@
 var MarcUtility = Java.type("org.folio.rest.utility.MarcUtility");
 
-var fields = JSON.parse(MarcUtility.getFieldsFromMarcJson(records[loopCounter], ['245', '947', '980']));
+var fields = JSON.parse(MarcUtility.getFieldsFromMarcJson(records[loopCounter], ['050', '090', '245', '947', '980']));
 
 if (logLevel === 'DEBUG') {
   print('\nfields = ' + JSON.stringify(fields) + '\n');
@@ -41,7 +41,16 @@ if (title.endsWith(' /')) {
   title += ' ' + getSubfield(fields, '245', 'c');
 }
 
-/* TODO: Ask about MARC title parsing */
+var callNumber = undefined;
+var a050 = getSubfield(fields, '050', 'a');
+if (a050) {
+  callNumber = a050 + ' ' + getSubfield(fields, '050', 'b');
+} else {
+  var a090 = getSubfield(fields, '090', 'a');
+  if (a090) {
+    callNumber = a090 + ' ' + getSubfield(fields, '090', 'b');
+  }
+}
 
 var marcOrderData = {
   title: title,
@@ -53,7 +62,8 @@ var marcOrderData = {
   price: getSubfield(fields, '980', 'm'),
   electronicIndicator: getSubfield(fields, '980', 'z'),
   vendorItemId: getSubfield(fields, '980', 'c'),
-  barcode: getSubfield(fields, '947', 'a')
+  barcode: getSubfield(fields, '947', 'a'),
+  callNumber: callNumber
 };
 
 execution.setVariable('marcOrderData', S(JSON.stringify(marcOrderData)));
