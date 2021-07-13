@@ -54,6 +54,7 @@ if (a050) {
 
 var marcOrderData = {
   title: title,
+  callNumber: callNumber,
   objectCode: getSubfield(fields, '980', 'o'),
   projectCode: getSubfield(fields, '980', 'r'),
   fundCode: getSubfield(fields, '980', 'b'),
@@ -62,8 +63,7 @@ var marcOrderData = {
   price: getSubfield(fields, '980', 'm'),
   electronicIndicator: getSubfield(fields, '980', 'z'),
   vendorItemId: getSubfield(fields, '980', 'c'),
-  barcode: getSubfield(fields, '947', 'a'),
-  callNumber: callNumber
+  barcode: getSubfield(fields, '947', 'a')
 };
 
 execution.setVariable('marcOrderData', S(JSON.stringify(marcOrderData)));
