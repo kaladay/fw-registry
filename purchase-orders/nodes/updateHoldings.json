@@ -1,0 +1,32 @@
+{
+  "id": "90057fb3-7409-4a35-aa3b-6c56b30c8a8d",
+  "name": "Update Holdings",
+  "description": "Update holdings",
+  "deserializeAs": "RequestTask",
+  "request": {
+    "url": "{{okapi}}/holdings-storage/holdings/${holdingsRecordId}",
+    "method": "PUT",
+    "contentType": "application/json",
+    "accept": "text/plain",
+    "bodyTemplate": "${holdings}"
+  },
+  "inputVariables": [
+    {
+      "key": "holdingsRecordId",
+      "type": "PROCESS"
+    },
+    {
+      "key": "holdings",
+      "type": "PROCESS",
+      "spin": true,
+      "asJson": true
+    }
+  ],
+  "headerOutputVariables": [],
+  "outputVariable": {
+    "key": "holdings",
+    "type": "PROCESS",
+    "spin": true
+  },
+  "asyncBefore": true
+}

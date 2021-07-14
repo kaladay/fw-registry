@@ -1,0 +1,8 @@
+{
+  "id": "a17feeb4-2376-430d-97e6-21ce0a1e1719",
+  "name": "Build Success E-mail",
+  "description": "",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "buildSuccessEmail.js"
+}

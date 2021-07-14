@@ -1,0 +1,20 @@
+{
+  "id": "08233df1-02cb-4608-874e-8c83b8f9e76a",
+  "name": "Read MARC input file",
+  "description": "",
+  "deserializeAs": "FileTask",
+  "inputVariables": [
+    {
+      "key": "inputFilePath",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {
+    "key": "marc",
+    "type": "PROCESS",
+    "asTransient": true
+  },
+  "path": "${inputFilePath}",
+  "op": "READ",
+  "asyncBefore": true
+}

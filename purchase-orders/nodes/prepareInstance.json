@@ -1,0 +1,8 @@
+{
+  "id": "4845fc57-9e86-4782-8e20-325133f5cb6e",
+  "name": "Prepare Instance",
+  "description": "",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "prepareInstance.js"
+}

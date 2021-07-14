@@ -1,0 +1,32 @@
+{
+  "id": "8a5b4584-3b0e-4207-824f-6880692925f0",
+  "name": "Update Instance",
+  "description": "Update instance mapped from MARC record",
+  "deserializeAs": "RequestTask",
+  "request": {
+    "url": "{{okapi}}/inventory/instances/${instanceId}",
+    "method": "PUT",
+    "contentType": "application/json",
+    "accept": "application/json",
+    "bodyTemplate": "${instance}"
+  },
+  "inputVariables": [
+    {
+      "key": "instanceId",
+      "type": "PROCESS"
+    },
+    {
+      "key": "instance",
+      "type": "PROCESS",
+      "spin": true,
+      "asJson": true
+    }
+  ],
+  "headerOutputVariables": [],
+  "outputVariable": {
+    "key": "instance",
+    "type": "PROCESS",
+    "spin": true
+  },
+  "asyncBefore": true
+}

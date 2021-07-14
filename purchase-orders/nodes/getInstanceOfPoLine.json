@@ -1,0 +1,24 @@
+{
+  "id": "c8c18fc1-5422-4770-ade3-3a189b942071",
+  "name": "Request Instance For Purchase Order Line",
+  "description": "Retrieve the Instance Created by the Purchase Order Line.",
+  "deserializeAs": "RequestTask",
+  "request": {
+    "url": "{{okapi}}/inventory/instances/${instanceId}",
+    "method": "GET",
+    "accept": "application/json"
+  },
+  "inputVariables": [
+    {
+      "key": "instanceId",
+      "type": "PROCESS"
+    }
+  ],
+  "headerOutputVariables": [],
+  "outputVariable": {
+    "key": "instance",
+    "type": "PROCESS",
+    "spin": true
+  },
+  "asyncBefore": true
+}

@@ -1,0 +1,17 @@
+{
+  "id": "ba134de0-4754-413b-afbb-29fac81227bc",
+  "name": "Note Create Subprocess",
+  "description": "Subprocess to create purchase order line notes from MARC record",
+  "type": "EMBEDDED",
+  "deserializeAs": "Subprocess",
+  "nodes": [
+    "{{mod-workflow}}/startEvent/bce108d8-e104-43a6-84bc-c359114396d8",
+    "{{mod-workflow}}/requestTask/fe29b6f1-ffd7-4d99-a73d-ad4001948d2a",
+    "{{mod-workflow}}/endEvent/353d7131-0804-45b9-a983-295225bd5525"
+  ],
+  "loopRef": {
+    "dataInputRefExpression": "${notes.elements()}",
+    "inputDataName": "note",
+    "parallel": false
+  }
+}

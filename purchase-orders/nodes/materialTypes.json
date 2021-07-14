@@ -1,0 +1,19 @@
+{
+  "id": "f2ad94c1-5c61-4aab-97dd-4ffe7f55c538",
+  "name": "Request Material Types",
+  "description": "Retrieve the Material Types.",
+  "deserializeAs": "RequestTask",
+  "request": {
+    "url": "{{okapi}}/material-types?limit=999",
+    "method": "GET",
+    "accept": "application/json"
+  },
+  "inputVariables": [],
+  "headerOutputVariables": [],
+  "outputVariable": {
+    "key": "materialTypesResponse",
+    "type": "PROCESS",
+    "spin": true
+  },
+  "asyncBefore": true
+}
