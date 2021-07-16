@@ -16,7 +16,7 @@ mvn clean spring-boot:run
 
 ## patron
 
-DivIT patron workflow.
+DivIT patron workflow. (Scheduled)
 
 > Can use fw-cli mock okapi service to test. `yarn okapi`
 
@@ -46,12 +46,22 @@ fw config set orcid-mail-from ***
 ```
 fw build orcid
 fw activate orcid
+```
+
+```
 fw run orcid
+
+or
+
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/orcid/start' \
+--header 'Content-Type: application/json' \
+--header 'X-Okapi-Tenant: diku' \
+--data-raw '{}'
 ```
 
 ## gobi
 
-ISBN report to GOBI workflow.
+ISBN report to GOBI workflow. (Scheduled)
 
 ```
 fw config set ldp-url ***
@@ -64,7 +74,6 @@ fw config set gobi-mail-from ***
 ```
 fw build gobi
 fw activate gobi
-fw run gobi
 ```
 
 ## e-resource
@@ -81,7 +90,17 @@ fw config set divit-password ***
 ```
 fw build e-resource
 fw activate e-resource
+```
+
+```
 fw run e-resource
+
+or
+
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/e-resource/start' \
+--header 'Content-Type: application/json' \
+--header 'X-Okapi-Tenant: diku' \
+--data-raw '{}'
 ```
 
 ## purchase-orders
@@ -92,7 +111,7 @@ Purchase Orders Workflow.
 fw build purchase-orders
 fw activate purchase-orders
 
-curl --location --request POST 'http://localhost:9001/mod-workflow/events/test/purchase-orders' \
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/purchase-orders/start' \
 --header 'Content-Type: multipart/form-data' \
 --header 'X-Okapi-Tenant: tern' \
 --form 'logLevel="INFO"' \
@@ -117,7 +136,7 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/test/p
 
 ## circ-fines
 
-Circulation Fees/Fines Daily Report.
+Circulation Fees/Fines Daily Report. (Scheduled)
 
 ```
 fw config set ldp-url ***
@@ -130,5 +149,4 @@ fw config set circ-fines-mail-from ***
 ```
 fw build circ-fines
 fw activate circ-fines
-fw run circ-fines
 ```
