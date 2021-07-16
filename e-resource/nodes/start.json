@@ -4,5 +4,5 @@
   "description": "",
   "type": "MESSAGE_CORRELATION",
   "deserializeAs": "StartEvent",
-  "expression": "/events/test/e-resource"
+  "expression": "/events/workflow/e-resource/start"
 }
