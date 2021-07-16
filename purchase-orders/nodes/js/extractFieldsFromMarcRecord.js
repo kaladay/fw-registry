@@ -63,6 +63,9 @@ var marcOrderData = {
   price: getSubfield(fields, '980', 'm'),
   electronicIndicator: getSubfield(fields, '980', 'z'),
   vendorItemId: getSubfield(fields, '980', 'c'),
+  selector: getSubfield(fields, '980', 'f'),
+  acquisitionMethod: getSubfield(fields, '980', 't'),
+  expenseClass: getSubfield(fields, '980', 'y'),
   barcode: getSubfield(fields, '947', 'a')
 };
 
