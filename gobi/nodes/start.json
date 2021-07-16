@@ -2,7 +2,7 @@
   "id": "e16069e0-67f6-11eb-b7ce-65b004d2db88",
   "name": "Start",
   "description": "",
-  "type": "MESSAGE_CORRELATION",
+  "type": "SCHEDULED",
   "deserializeAs": "StartEvent",
-  "expression": "/events/test/gobi"
+  "expression": "0 0 * * * ?"
 }

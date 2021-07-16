@@ -1,9 +1,0 @@
-{
-  "id": "e1612d30-67f6-11eb-b7ce-65b004d2db88",
-  "name": "GOBI ISBN Report Start Trigger",
-  "description": "",
-  "type": "MESSAGE_CORRELATE",
-  "method": "POST",
-  "deserializeAs": "EventTrigger",
-  "pathPattern": "/events/test/gobi"
-}
