@@ -3,6 +3,8 @@ var MappingUtility = Java.type("org.folio.rest.utility.MappingUtility");
 var instanceObj = JSON.parse(instance);
 var marcJsonRecord = JSON.stringify(JSON.parse(sourceRecord).parsedRecord.content);
 
+var statisticalCodes = JSON.parse(statisticalCodesResponse).statisticalCodes;
+
 var token = execution.getVariable('X-Okapi-Token');
 
 var tenant = execution.getTenantId();
@@ -15,6 +17,8 @@ mappedInstanceObj.hrid = instanceObj.hrid;
 mappedInstanceObj.statusId = instanceObj.statusId;
 mappedInstanceObj.statusUpdatedDate = instanceObj.statusUpdatedDate;
 mappedInstanceObj.discoverySuppress = false;
+
+mappedInstanceObj.statisticalCodeIds = statisticalCodes;
 
 execution.setVariable('instance', S(JSON.stringify(mappedInstanceObj)));
 

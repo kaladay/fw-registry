@@ -3,6 +3,8 @@ var holdingsObj = JSON.parse(holdingsResponse).holdingsRecords[0];
 
 var marcOrderDataObj = JSON.parse(marcOrderData);
 
+var statisticalCodes = JSON.parse(statisticalCodesResponse).statisticalCodes;
+
 var holdingsTypes = JSON.parse(holdingsTypesResponse).holdingsTypes;
 
 var locations = JSON.parse(locationsResponse).locations;
@@ -30,6 +32,8 @@ if (electronic) {
 }
 
 holdingsObj.callNumber = marcOrderDataObj.callNumber;
+
+holdingsObj.statisticalCodeIds = statisticalCodes;
 
 execution.setVariable('holdingsRecordId', holdingsObj.id);
 execution.setVariable('holdings', S(JSON.stringify(holdingsObj)));

@@ -117,6 +117,7 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
 --form 'logLevel="INFO"' \
 --form 'file=@"/GOBI Print (1).mrc"' \
 --form 'path="/mnt/po"' \
+--form 'statisticalCode="ybppapp"' \
 --form 'okapiUrl="https://folio-okapi-test.library.tamu.edu"' \
 --form 'username="***"' \
 --form 'password="***"' \

@@ -7,13 +7,15 @@ var poNumber = JSON.parse(poNumberResponse).poNumber;
 
 var vendorId = JSON.parse(vendorsResponse).organizations[0].id;
 
-var marcOrderDataObj = JSON.parse(marcOrderData);
+var fundId = JSON.parse(fundsResponse).funds[0].id;
+
+var expenseClassId = JSON.parse(expenseClassesResponse).expenseClasses[0].id;
 
 var locations = JSON.parse(locationsResponse).locations;
 
-var funds = JSON.parse(fundsResponse).funds;
-
 var materialTypes = JSON.parse(materialTypesResponse).mtypes;
+
+var marcOrderDataObj = JSON.parse(marcOrderData);
 
 var electronic = marcOrderDataObj.electronicIndicator && marcOrderDataObj.electronicIndicator.toLowerCase().indexOf('electronic') >= 0;
 
@@ -26,13 +28,16 @@ var orderLine = {
   fundDistribution: [{
     code: funds[0].code,
     distributionType: 'percentage',
-    fundId: funds[0].id,
+    fundId: fundId,
+    expenseClassId: expenseClassId,
     value: 100
   }],
   locations: [],
   purchaseOrderId: orderId,
   source: 'User',
-  titleOrPackage: marcOrderDataObj.title
+  titleOrPackage: marcOrderDataObj.title,
+  selector: marcOrderDataObj.selector,
+  acquisitionMethod: marcOrderDataObj.acquisitionMethod
 };
 
 var compositePoLines = [
