@@ -3,9 +3,14 @@
   "name": "Send Student Email",
   "description": "",
   "deserializeAs": "EmailTask",
-  "inputVariables": [],
+  "inputVariables": [
+    {
+      "key": "emailTo",
+      "type": "PROCESS"
+    }
+  ],
   "outputVariable": {},
-  "mailTo": "{{orcid-mail-to}}",
+  "mailTo": "${emailTo}",
   "mailFrom": "{{orcid-mail-from}}",
   "mailSubject": "ORCID list for Students",
   "mailText": "Student TSV file attached",

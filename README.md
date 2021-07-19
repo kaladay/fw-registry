@@ -49,14 +49,10 @@ fw activate orcid
 ```
 
 ```
-fw run orcid
-
-or
-
 curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/orcid/start' \
 --header 'Content-Type: application/json' \
 --header 'X-Okapi-Tenant: diku' \
---data-raw '{}'
+--data-raw '{'emailTo':'you@example.com'}'
 ```
 
 ## gobi
