@@ -1,10 +1,10 @@
 {
   "id": "1e2fd518-812f-4ed1-ad05-5b330512cf15",
-  "name": "Disconnect DivIT",
+  "name": "Disconnect LDP",
   "description": "",
   "deserializeAs": "DatabaseDisconnectTask",
   "inputVariables": [],
   "outputVariable": {},
-  "designation": "divit",
+  "designation": "ldp",
   "asyncBefore": true
 }

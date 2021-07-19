@@ -1,13 +1,13 @@
 {
   "id": "82622f15-bcc1-4bcd-8af3-80e68f333830",
-  "name": "Connect DivIT",
+  "name": "Connect LDP",
   "description": "",
   "deserializeAs": "DatabaseConnectionTask",
   "inputVariables": [],
   "outputVariable": {},
-  "designation": "divit",
-  "url": "{{{divit-url}}}",
-  "username": "{{{divit-user}}}",
-  "password": "{{{divit-password}}}",
+  "designation": "ldp",
+  "url": "{{{ldp-url}}}",
+  "username": "{{{ldp-user}}}",
+  "password": "{{{ldp-password}}}",
   "asyncBefore": true
 }
