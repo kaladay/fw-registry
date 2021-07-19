@@ -52,7 +52,7 @@ fw activate orcid
 curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/orcid/start' \
 --header 'Content-Type: application/json' \
 --header 'X-Okapi-Tenant: diku' \
---data-raw '{'emailTo':'you@example.com'}'
+--data-raw '{"emailTo": "you@example.com"}'
 ```
 
 ## gobi
