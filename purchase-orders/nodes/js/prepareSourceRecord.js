@@ -29,7 +29,7 @@ var rawMarcRecord = MarcUtility.marcJsonToRawMarc(marcJsonRecord);
 
 var jobExecution = {
   jobExecutionId: snapshotId,
-  status: 'PARSING_IN_PROGRESS'
+  status: 'COMMITTED'
 };
 
 var sourceRecord = {
