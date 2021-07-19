@@ -151,3 +151,18 @@ fw config set circ-fines-mail-from ***
 fw build circ-fines
 fw activate circ-fines
 ```
+
+## rapid-print-serials
+
+Rapid ILS Print Serials Monthly Report. (Scheduled)
+
+```
+fw config set ldp-url ***
+fw config set ldp-user ***
+fw config set ldp-password ***
+```
+
+```
+fw build rapid-print-serials
+fw activate rapid-print-serials
+```
