@@ -1,9 +1,0 @@
-{
-  "id": "8591b916-e3dc-4c9d-aeca-05114ff1edef",
-  "name": "Rapid ILS Print Serials Start Trigger",
-  "description": "",
-  "type": "MESSAGE_CORRELATE",
-  "method": "POST",
-  "deserializeAs": "EventTrigger",
-  "pathPattern": "/events/workflow/rapid-ils-serials/start"
-}

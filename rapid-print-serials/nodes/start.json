@@ -2,7 +2,7 @@
   "id": "b75a8cd9-0eea-4c97-aed2-afba08438058",
   "name": "Start",
   "description": "",
-  "type": "MESSAGE_CORRELATION",
+  "type": "SCHEDULED",
   "deserializeAs": "StartEvent",
-  "expression": "/events/workflow/rapid-ils-serials/start"
+  "expression": "0 3 10 * * ?"
 }
