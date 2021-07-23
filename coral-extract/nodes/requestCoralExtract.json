@@ -1,0 +1,18 @@
+{
+  "id": "6bd576bb-ec21-4fb4-a7fd-ea01b8e76863",
+  "name": "Get Coral Extract",
+  "description": "Retrieve the Loan Types.",
+  "deserializeAs": "RequestTask",
+  "request": {
+    "url": "{{coral-url}}/folio_utilities/coral_extract.php",
+    "method": "GET",
+    "accept": "text/plain"
+  },
+  "inputVariables": [],
+  "headerOutputVariables": [],
+  "outputVariable": {
+    "key": "coralExtractResponse",
+    "type": "LOCAL"
+  },
+  "asyncBefore": true
+}

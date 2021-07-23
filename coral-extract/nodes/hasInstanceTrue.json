@@ -1,0 +1,12 @@
+{
+  "id": "9a399d00-6744-4ba7-9dee-4573c1101535",
+  "name": "Instance Found?",
+  "description": "",
+  "deserializeAs": "InclusiveGateway",
+  "direction": "DIVERGING",
+  "nodes": [
+    "{{mod-workflow}}/condition/ce31fe0a-2587-41ce-8d49-af5ea58fc8de",
+    "{{mod-workflow}}/scriptTask/5fc4c7d7-92de-4fbc-b4c4-5495b98b89ea",
+    "{{mod-workflow}}/inclusiveGateway/2f9c27e1-d12e-47cd-8806-49e7b99db831"
+  ]
+}
