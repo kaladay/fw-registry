@@ -29,7 +29,7 @@ var rawMarcRecord = MarcUtility.marcJsonToRawMarc(marcJsonRecord);
 
 var jobExecution = {
   jobExecutionId: snapshotId,
-  status: 'COMMITTED'
+  status: 'PARSING_IN_PROGRESS'
 };
 
 var sourceRecord = {
@@ -49,6 +49,11 @@ var sourceRecord = {
     content: JSON.parse(marcJsonRecord)
   }
 };
+
+if (logLevel === 'DEBUG') {
+  print('\njobExecution = ' + JSON.stringify(jobExecution) + '\n');
+  print('\nsourceRecord = ' + JSON.stringify(sourceRecord) + '\n');
+}
 
 execution.setVariableLocal('jobExecution', S(JSON.stringify(jobExecution)));
 

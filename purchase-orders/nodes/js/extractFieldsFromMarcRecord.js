@@ -33,6 +33,14 @@ var getMultipleSubfield = function (fields, tag, code) {
   return data;
 };
 
+var formalizeEnum = function (value) {
+  var words = value.split(' ');
+  for (var i = 0; i < words.length; i++) {
+    words[i] = words[i][0].toUpperCase() + words[i].substr(1);
+  }
+  return words.join(' ');
+};
+
 var title = getSubfield(fields, '245', 'a');
 if (title.endsWith(' :')) {
   title += ' ' + getSubfield(fields, '245', 'b');
@@ -64,9 +72,13 @@ var marcOrderData = {
   electronicIndicator: getSubfield(fields, '980', 'z'),
   vendorItemId: getSubfield(fields, '980', 'c'),
   selector: getSubfield(fields, '980', 'f'),
-  acquisitionMethod: getSubfield(fields, '980', 't'),
+  acquisitionMethod: formalizeEnum(getSubfield(fields, '980', 't')),
   expenseClass: getSubfield(fields, '980', 'y'),
   barcode: getSubfield(fields, '947', 'a')
 };
+
+if (logLevel === 'DEBUG') {
+  print('\nmarcOrderData = ' + JSON.stringify(marcOrderData) + '\n');
+}
 
 execution.setVariable('marcOrderData', S(JSON.stringify(marcOrderData)));
