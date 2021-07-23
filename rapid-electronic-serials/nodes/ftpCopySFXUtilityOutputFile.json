@@ -1,0 +1,16 @@
+{
+  "id": "8fc342de-6683-473a-ac52-9656b51095cf",
+  "name": "FTP Copy Rapid ILS Electronic Serials From SFX Utility",
+  "description": "",
+  "deserializeAs": "FtpTask",
+  "inputVariables": [],
+  "outputVariable": {},
+  "originPath": "/exlibris/sfx_ver/sfx4_1/tamu/dbs/scratch",
+  "destinationPath": "/mnt/workflows/scratch",
+  "op": "GET",
+  "scheme": "",
+  "port": "",
+  "username": "",
+  "password": "",
+  "asyncBefore": true
+}
