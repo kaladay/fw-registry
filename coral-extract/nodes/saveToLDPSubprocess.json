@@ -1,6 +1,6 @@
 {
   "id": "02155701-d1d5-4a33-b8fc-8057967bcc4f",
-  "name": "Save Coral Item to LDP Subprocess",
+  "name": "Save Coral Items to LDP Subprocess",
   "description": "Subprocess to save extracted Coral items to the LDP.",
   "type": "EMBEDDED",
   "deserializeAs": "Subprocess",
