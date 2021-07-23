@@ -1,4 +1,9 @@
 var instanceObj = JSON.parse(instance);
+
+if (logLevel === 'DEBUG') {
+  print('\nholdingsResponse = ' + holdingsResponse + '\n');
+}
+
 var holdingsObj = JSON.parse(holdingsResponse).holdingsRecords[0];
 
 var marcOrderDataObj = JSON.parse(marcOrderData);
@@ -21,6 +26,14 @@ var findLocationIdByName = function (locationName) {
   }
 };
 
+var mapStatisticalCodeIds = function (statisticalCodes) {
+  var statisticalCodeIds = [];
+  for (var i = 0; i < statisticalCodes.length; ++i) {
+    statisticalCodeIds.push(statisticalCodes[i].id);
+  }
+  return statisticalCodeIds;
+};
+
 var electronic = marcOrderDataObj.electronicIndicator && marcOrderDataObj.electronicIndicator.toLowerCase().indexOf('electronic') >= 0;
 
 holdingsObj.electronicAccess = instanceObj.electronicAccess;
@@ -33,7 +46,11 @@ if (electronic) {
 
 holdingsObj.callNumber = marcOrderDataObj.callNumber;
 
-holdingsObj.statisticalCodeIds = statisticalCodes;
+holdingsObj.statisticalCodeIds = mapStatisticalCodeIds(statisticalCodes);
+
+if (logLevel === 'DEBUG') {
+  print('\nholdings = ' + JSON.stringify(holdingsObj) + '\n');
+}
 
 execution.setVariable('holdingsRecordId', holdingsObj.id);
 execution.setVariable('holdings', S(JSON.stringify(holdingsObj)));
