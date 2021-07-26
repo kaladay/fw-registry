@@ -190,11 +190,6 @@ fw config set coral-url ***
 fw config set ldp-url ***
 fw config set ldp-user ***
 fw config set ldp-password ***
-fw config set mod-workflow ***
-fw config set okapi ***
-fw config set tenant ***
-fw config set username ***
-fw config set password ***
 fw config set holdings-template-file ***
 fw config set instance-template-file ***
 ```
