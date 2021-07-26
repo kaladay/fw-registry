@@ -17,6 +17,7 @@
       "asJson": true
     }
   ],
+  "outputVariable": {},
   "headerOutputVariables": [],
   "asyncBefore": true
 }
