@@ -1,0 +1,13 @@
+{
+  "id": "51c7b363-25bf-4886-a9f1-00eef0e429fb",
+  "name": "Query Authorization List",
+  "description": "",
+  "deserializeAs": "DatabaseQueryTask",
+  "inputVariables": [],
+  "outputVariable": {},
+  "outputPath": "{{medsci-gps-zone-file}}",
+  "resultType": "TSV",
+  "designation": "divit",
+  "query": "SELECT distinct stu.uin AS uin, id_card_num AS idcard, stu.acad_college AS college, enroll_status_name, max(rosters.semester) AS semester, primary_major FROM students stu, id_cards id, section_rosters rosters WHERE institution_abbr = 'TAMHSC' AND ( acad_college in ('MD','CP','NU') OR (acad_college in ('PH') AND substr(stu.classification,1,1) = 'G') ) AND id.uin(+) = stu.uin AND rosters.uin(+) = stu.uin AND stu.enroll_status = 'E' GROUP BY stu.uin, id_card_num, stu.acad_college, enroll_status_name, primary_major UNION SELECT distinct stu.uin AS uin, id_card_num AS idcard, stu.acad_college AS college, enroll_status_name, max(rosters.semester) AS semester, primary_major FROM students stu, id_cards id, section_rosters rosters WHERE acad_college = 'VM' AND substr(stu.classification,1,1) in ('G','V') AND id.uin(+) = stu.uin AND rosters.uin(+) = stu.uin AND stu.enroll_status = 'E' GROUP BY stu.uin, id_card_num, stu.acad_college, enroll_status_name, primary_major UNION SELECT distinct stu.uin AS uin, id_card_num AS idcard, stu.acad_college AS college, enroll_status_name, max(rosters.semester) AS semester, primary_major FROM students stu, id_cards id, section_rosters rosters WHERE acad_college = 'ED' AND acad_dept = 'HLKN' AND substr(stu.classification,1,1) = 'G' AND id.uin(+) = stu.uin AND rosters.uin(+) = stu.uin AND stu.enroll_status = 'E' GROUP BY stu.uin, id_card_num, stu.acad_college, enroll_status_name, primary_major UNION SELECT distinct stu.uin AS uin, id_card_num AS idcard, stu.acad_college AS college, enroll_status_name, max(rosters.semester) AS semester, primary_major FROM students stu, id_cards id, section_rosters rosters WHERE acad_college = 'AG' AND substr(stu.classification,1,1) = 'G' AND id.uin(+) = stu.uin AND rosters.uin(+) = stu.uin AND stu.enroll_status = 'E' GROUP BY stu.uin, id_card_num, stu.acad_college, enroll_status_name, primary_major UNION SELECT distinct stu.uin AS uin, id_card_num AS idcard, stu.acad_college AS college, enroll_status_name, max(rosters.semester) AS semester, primary_major FROM students stu, id_cards id, section_rosters rosters WHERE primary_major in ('BIOT', 'GENE', 'MEPS', 'NRSC', 'TOXI', 'BMEN') AND substr(stu.classification,1,1) = 'G' AND id.uin(+) = stu.uin AND rosters.uin(+) = stu.uin AND stu.enroll_status = 'E' GROUP BY stu.uin, id_card_num, stu.acad_college, enroll_status_name, primary_major",
+  "asyncBefore": true
+}
