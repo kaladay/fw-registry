@@ -1,0 +1,24 @@
+{
+  "id": "eda9f5b4-ccbe-4213-bd21-c56d440b85ed",
+  "name": "Request Instance",
+  "description": "",
+  "deserializeAs": "RequestTask",
+  "request": {
+    "url": "{{okapi}}/instance-storage/instances?query=${instanceQuery}&limit=1",
+    "method": "GET",
+    "accept": "application/json"
+  },
+  "inputVariables": [
+    {
+      "key": "instanceQuery",
+      "type": "LOCAL"
+    }
+  ],
+  "headerOutputVariables": [],
+  "outputVariable": {
+    "key": "instanceResponse",
+    "type": "LOCAL",
+    "spin": true
+  },
+  "asyncBefore": true
+}

@@ -177,3 +177,32 @@ fw config set ldp-password ***
 fw build rapid-print-monos
 fw activate rapid-print-monos
 ```
+
+## coral-extract
+
+Extract Coral Data and Import it into Folio (Scheduled).
+
+This utilizes LDP, which must have the table `dev.coral_extract` manually created.
+Each execution of this workflow clears the LDP table `dev.coral_extract` near the start of the process.
+
+```
+fw config set coral-url ***
+fw config set ldp-url ***
+fw config set ldp-user ***
+fw config set ldp-password ***
+fw config set holdings-template-file ***
+fw config set instance-template-file ***
+```
+
+```
+fw build coral-extract
+fw activate coral-extract
+```
+
+```
+fw run coral-extract
+
+or
+
+Wait for the cron job to execute.
+```

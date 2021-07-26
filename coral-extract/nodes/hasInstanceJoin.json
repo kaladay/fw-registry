@@ -1,0 +1,8 @@
+{
+  "id": "2f9c27e1-d12e-47cd-8806-49e7b99db831",
+  "name": "Join",
+  "description": "",
+  "deserializeAs": "InclusiveGateway",
+  "direction": "CONVERGING",
+  "nodes": []
+}
