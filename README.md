@@ -206,3 +206,25 @@ or
 
 Wait for the cron job to execute.
 ```
+
+## medsci-gps-zone
+
+MedSci GPS Zone
+
+For the `medsci-gps-zone-file` setting, the file name (without the path part) should likely be `grad_access.txt`.
+
+```
+fw config set divit-url ***
+fw config set divit-user ***
+fw config set divit-password ***
+fw config set medsci-gps-zone-file ***/grad_access.txt
+```
+
+```
+fw build medsci-gps-zone
+fw activate medsci-gps-zone
+```
+
+```
+fw run medsci-gps-zone
+```

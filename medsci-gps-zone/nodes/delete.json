@@ -1,0 +1,11 @@
+{
+  "id": "6ea7dc02-6b3d-4330-8015-d028fe71a904",
+  "name": "Delete Authorization List",
+  "description": "",
+  "deserializeAs": "FileTask",
+  "inputVariables": [],
+  "outputVariable": {},
+  "path": "{{medsci-gps-zone-file}}",
+  "op": "DELETE",
+  "asyncBefore": true
+}
