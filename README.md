@@ -228,3 +228,22 @@ fw activate medsci-gps-zone
 ```
 fw run medsci-gps-zone
 ```
+
+## hathitrust
+
+HathiTrust Export
+
+```
+fw config set ldp-url ***
+fw config set ldp-user ***
+fw config set ldp-password ***
+```
+
+```
+fw build hathitrust
+fw activate hathitrust
+```
+
+```
+fw run hathitrust
+```
