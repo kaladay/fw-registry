@@ -178,6 +178,15 @@ fw build rapid-print-monos
 fw activate rapid-print-monos
 ```
 
+## rapid-electronic-serials
+
+Rapid ILS Electronic Serials Monthly Report. (Scheduled)
+
+```
+fw build rapid-electronic-serials
+fw activate rapid-electronic-serials
+```
+
 ## coral-extract
 
 Extract Coral Data and Import it into Folio (Scheduled).
