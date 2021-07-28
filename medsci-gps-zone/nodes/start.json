@@ -4,5 +4,5 @@
   "description": "",
   "type": "MESSAGE_CORRELATION",
   "deserializeAs": "StartEvent",
-  "expression": "/events/workflow/mesci-gps-zone/start"
+  "expression": "/events/workflow/medsci-gps-zone/start"
 }
