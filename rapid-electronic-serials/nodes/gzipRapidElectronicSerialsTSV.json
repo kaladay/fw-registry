@@ -1,0 +1,18 @@
+{
+  "id": "d40b8866-3810-4c0e-94a4-f83779a53501",
+  "name": "Gzip Rapid ILS Electronic Serials",
+  "description": "",
+  "deserializeAs": "CompressFileTask",
+  "inputVariables": [
+    {
+      "key": "sfxFile",
+      "type": "LOCAL"
+    }
+  ],
+  "outputVariable": {},
+  "source": "${sfxFile}",
+  "destination": "/mnt/workflows/rapid/rapid_electronic_serials.gz",
+  "format": "GZIP",
+  "container": "NONE",
+  "asyncBefore": true
+}
