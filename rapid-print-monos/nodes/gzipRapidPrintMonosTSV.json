@@ -5,8 +5,8 @@
   "deserializeAs": "CompressFileTask",
   "inputVariables": [],
   "outputVariable": {},
-  "source": "/mnt/workflows/rapid_print_monos.txt",
-  "destination": "/mnt/workflows/rapid_print_monos.txt.gz",
+  "source": "/mnt/workflows/rapid/rapid_print_monos.txt",
+  "destination": "/mnt/workflows/rapid/rapid_print_monos.txt.gz",
   "format": "GZIP",
   "container": "NONE",
   "asyncBefore": true
