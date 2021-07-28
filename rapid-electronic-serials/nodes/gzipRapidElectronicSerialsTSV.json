@@ -3,10 +3,15 @@
   "name": "Gzip Rapid ILS Electronic Serials",
   "description": "",
   "deserializeAs": "CompressFileTask",
-  "inputVariables": [],
+  "inputVariables": [
+    {
+      "key": "sfxFile",
+      "type": "LOCAL"
+    }
+  ],
   "outputVariable": {},
-  "source": "/mnt/workflows/scratch",
-  "destination": "/mnt/workflows/scratch.tar.gz",
+  "source": "${sfxFile}",
+  "destination": "/mnt/workflows/rapid/rapid_electronic_serials.gz",
   "format": "GZIP",
   "container": "NONE",
   "asyncBefore": true
