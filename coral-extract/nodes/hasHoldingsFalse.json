@@ -1,0 +1,13 @@
+{
+  "id": "fe5c58ff-7fc1-4546-b829-e44aeca19289",
+  "name": "Holdings Not Found",
+  "description": "",
+  "deserializeAs": "MoveToNode",
+  "gatewayId": "inclusive_gateway_436522f9_0ad9_4965_a704_2fd1c569bd81",
+  "nodes": [
+    "{{mod-workflow}}/condition/dc531f98-f5ce-4b29-a152-6904457808e6",
+    "{{mod-workflow}}/scriptTask/478d4468-289e-48c1-90ca-6a09bcbc252b",
+    "{{mod-workflow}}/requestTask/b4887237-d835-4712-a645-7fae45062fcc",
+    "{{mod-workflow}}/connectTo/99e7036c-c928-4556-9100-5b671cc7f202"
+  ]
+}

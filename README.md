@@ -177,3 +177,73 @@ fw config set ldp-password ***
 fw build rapid-print-monos
 fw activate rapid-print-monos
 ```
+
+## coral-extract
+
+Extract Coral Data and Import it into Folio (Scheduled).
+
+This utilizes LDP, which must have the table `dev.coral_extract` manually created.
+Each execution of this workflow clears the LDP table `dev.coral_extract` near the start of the process.
+
+```
+fw config set coral-url ***
+fw config set ldp-url ***
+fw config set ldp-user ***
+fw config set ldp-password ***
+fw config set holdings-template-file ***
+fw config set instance-template-file ***
+```
+
+```
+fw build coral-extract
+fw activate coral-extract
+```
+
+```
+fw run coral-extract
+
+or
+
+Wait for the cron job to execute.
+```
+
+## medsci-gps-zone
+
+MedSci GPS Zone
+
+For the `medsci-gps-zone-file` setting, the file name (without the path part) should likely be `grad_access.txt`.
+
+```
+fw config set divit-url ***
+fw config set divit-user ***
+fw config set divit-password ***
+fw config set medsci-gps-zone-file ***/grad_access.txt
+```
+
+```
+fw build medsci-gps-zone
+fw activate medsci-gps-zone
+```
+
+```
+fw run medsci-gps-zone
+```
+
+## hathitrust
+
+HathiTrust Export
+
+```
+fw config set ldp-url ***
+fw config set ldp-user ***
+fw config set ldp-password ***
+```
+
+```
+fw build hathitrust
+fw activate hathitrust
+```
+
+```
+fw run hathitrust
+```

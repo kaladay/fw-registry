@@ -1,0 +1,13 @@
+{
+  "id": "11badfa7-a805-4a35-adc3-84a47cdaca67",
+  "name": "Instance Not Found",
+  "description": "",
+  "deserializeAs": "MoveToNode",
+  "gatewayId": "inclusive_gateway_9a399d00_6744_4ba7_9dee_4573c1101535",
+  "nodes": [
+    "{{mod-workflow}}/condition/6f4f3e9b-c1f3-404d-b141-3ea1ade5c102",
+    "{{mod-workflow}}/scriptTask/a20f3e19-9e0d-451d-af57-171f4fc05b66",
+    "{{mod-workflow}}/requestTask/f84bb551-2aa2-4e0c-ac5b-03f302013817",
+    "{{mod-workflow}}/connectTo/e92b2819-0d68-4f3b-8ffe-3f1f9d8cb521"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "3c513fd7-e542-4f9e-8468-5a94b5cdd73a",
+  "name": "Request Holdings",
+  "description": "",
+  "deserializeAs": "RequestTask",
+  "request": {
+    "url": "{{okapi}}/holdings-storage/holdings?query=instanceId==${instanceId}&limit=1",
+    "method": "GET",
+    "accept": "application/json"
+  },
+  "inputVariables": [
+    {
+      "key": "instanceId",
+      "type": "LOCAL"
+    }
+  ],
+  "headerOutputVariables": [],
+  "outputVariable": {
+    "key": "holdingsResponse",
+    "type": "PROCESS",
+    "spin": true
+  },
+  "asyncBefore": true
+}

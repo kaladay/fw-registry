@@ -3,13 +3,21 @@ var UUID = Java.type("java.util.UUID");
 var orderId = UUID.randomUUID().toString();
 var orderLineId = UUID.randomUUID().toString();
 
+if (logLevel === 'DEBUG') {
+  print('\npoNumberResponse = ' + poNumberResponse + '\n');
+  print('\nvendorsResponse = ' + vendorsResponse + '\n');
+  print('\nfundsResponse = ' + fundsResponse + '\n');
+  print('\nexpenseClassesResponse = ' + expenseClassesResponse + '\n');
+  print('\nmaterialTypesResponse = ' + expenseClassesResponse + '\n');
+}
+
 var poNumber = JSON.parse(poNumberResponse).poNumber;
 
 var vendorId = JSON.parse(vendorsResponse).organizations[0].id;
 
-var fundId = JSON.parse(fundsResponse).funds[0].id;
-
 var expenseClassId = JSON.parse(expenseClassesResponse).expenseClasses[0].id;
+
+var fund = JSON.parse(fundsResponse).funds[0];
 
 var locations = JSON.parse(locationsResponse).locations;
 
@@ -21,14 +29,13 @@ var electronic = marcOrderDataObj.electronicIndicator && marcOrderDataObj.electr
 
 var orderLine = {
   id: orderLineId,
-  acquisitionMethod: 'Purchase',
   cost: {
     currency: 'USD'
   },
   fundDistribution: [{
-    code: funds[0].code,
+    code: fund.code,
     distributionType: 'percentage',
-    fundId: fundId,
+    fundId: fund.id,
     expenseClassId: expenseClassId,
     value: 100
   }],
@@ -127,6 +134,10 @@ if (tagList.length) {
   orderLine.tags = {
     tagList: tagList
   };
+}
+
+if (logLevel === 'DEBUG') {
+  print('\ncompositePurchaseOrder = ' + JSON.stringify(compositePurchaseOrder) + '\n');
 }
 
 execution.setVariableLocal('compositePurchaseOrder', S(JSON.stringify(compositePurchaseOrder)));
