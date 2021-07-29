@@ -3,7 +3,7 @@
   "name": "Export to HathiTrust Workflow",
   "description": "HathiTrust workflow to create multiple files for HathiTrust upload",
   "versionTag": "1.0",
-  "historyTimeToLive": 0,
+  "historyTimeToLive": 90,
   "deploymentId": null,
   "active": false,
   "setup": {

@@ -3,7 +3,7 @@
   "name": "Rapid ILS Electronic Serials Workflow",
   "description": "",
   "versionTag": "1.0",
-  "historyTimeToLive": 0,
+  "historyTimeToLive": 90,
   "deploymentId": null,
   "active": false,
   "setup": {
