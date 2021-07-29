@@ -39,7 +39,6 @@ Extract for ORCID workflow.
 fw config set divit-url ***
 fw config set divit-user ***
 fw config set divit-password ***
-fw config set orcid-mail-to ***
 fw config set orcid-mail-from ***
 ```
 
