@@ -5,7 +5,7 @@
   "deserializeAs": "DatabaseQueryTask",
   "inputVariables": [],
   "outputVariable": {},
-  "outputPath": "isbn.tsv",
+  "outputPath": "/mnt/workflows/gobi/isbn.tsv",
   "resultType": "TSV",
   "designation": "ldp",
   "query": "SELECT DISTINCT split_part(identifiers->>'value', ' ', 1) AS isbn FROM public.inventory_instances instances, json_array_elements(data->'identifiers') identifiers, public.inventory_holdings holdings, public.inventory_locations locations WHERE current_date - cast( instances.data->'metadata'->>'createdDate' AS date) < 32 AND identifiers->>'identifierTypeId' = '8261054f-be78-422d-bd51-4ed9f33c3422' AND instances.id = holdings.instance_id AND holdings.permanent_location_id = locations.id AND locations.code NOT LIKE '%pda%' AND locations.code != 'epod'",

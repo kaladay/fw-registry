@@ -5,7 +5,7 @@
   "deserializeAs": "FileTask",
   "inputVariables": [],
   "outputVariable": {},
-  "path": "feefines.tsv",
+  "path": "/mnt/workflows/circ-fines/feefines.tsv",
   "op": "DELETE",
   "asyncBefore": true
 }
