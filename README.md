@@ -225,6 +225,8 @@ For the `medsci-gps-zone-file` setting, the file name (without the path part) sh
 fw config set divit-url ***
 fw config set divit-user ***
 fw config set divit-password ***
+fw config set medsci-gps-zone-to ***
+fw config set medsci-gps-zone-from ***
 ```
 
 ```
