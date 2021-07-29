@@ -5,7 +5,7 @@
   "deserializeAs": "FileTask",
   "inputVariables": [],
   "outputVariable": {},
-  "path": "{{medsci-gps-zone-file}}",
+  "path": "/mnt/workflows/medsci-gps-zone/grad_access.txt",
   "op": "DELETE",
   "asyncBefore": true
 }

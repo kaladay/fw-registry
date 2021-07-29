@@ -5,7 +5,7 @@
   "deserializeAs": "FileTask",
   "inputVariables": [],
   "outputVariable": {},
-  "path": "student.tsv",
+  "path": "/mnt/workflows/orcid/student.tsv",
   "op": "DELETE",
   "asyncBefore": true
 }

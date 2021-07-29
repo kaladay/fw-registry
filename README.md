@@ -39,7 +39,6 @@ Extract for ORCID workflow.
 fw config set divit-url ***
 fw config set divit-user ***
 fw config set divit-password ***
-fw config set orcid-mail-to ***
 fw config set orcid-mail-from ***
 ```
 
@@ -78,7 +77,7 @@ E-resource Workflow.
 
 ```
 fw config set e-resource-view LIBRARY_ERESOURCES
-fw config set divit-cis-report-url ***
+fw config set divit-url ***
 fw config set divit-user ***
 fw config set divit-password ***
 ```
@@ -226,7 +225,8 @@ For the `medsci-gps-zone-file` setting, the file name (without the path part) sh
 fw config set divit-url ***
 fw config set divit-user ***
 fw config set divit-password ***
-fw config set medsci-gps-zone-file ***/grad_access.txt
+fw config set medsci-gps-zone-to ***
+fw config set medsci-gps-zone-from ***
 ```
 
 ```

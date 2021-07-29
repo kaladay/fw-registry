@@ -9,6 +9,6 @@
   "mailFrom": "{{medsci-gps-zone-from}}",
   "mailSubject": "Grad access list",
   "mailText": "Grad access list is attached.",
-  "attachmentPath": "{{medsci-gps-zone-file}}",
+  "attachmentPath": "/mnt/workflows/medsci-gps-zone/grad_access.txt",
   "asyncBefore": true
 }

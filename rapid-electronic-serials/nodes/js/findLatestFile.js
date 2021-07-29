@@ -9,5 +9,3 @@ while (listing.length) {
     break;
   }
 }
-
-
