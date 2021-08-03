@@ -8,7 +8,7 @@
     "key": "instanceTemplate",
     "type": "PROCESS"
   },
-  "path": "{{instance-template-file}}",
+  "path": "/mnt/workflows/coral-extract/instance_template.json",
   "op": "READ",
   "asyncBefore": true
 }
