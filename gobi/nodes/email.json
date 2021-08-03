@@ -9,6 +9,6 @@
   "mailFrom": "{{gobi-mail-from}}",
   "mailSubject": "TAMU ISBN Report",
   "mailText": "ISBN TSV file attached",
-  "attachmentPath": "isbn.tsv",
+  "attachmentPath": "/mnt/workflows/gobi/isbn.tsv",
   "asyncBefore": true
 }

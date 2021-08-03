@@ -14,6 +14,6 @@
   "mailFrom": "{{orcid-mail-from}}",
   "mailSubject": "ORCID list for Faculty and Staff",
   "mailText": "Faculty and Staff TSV file attached",
-  "attachmentPath": "fast.tsv",
+  "attachmentPath": "/mnt/workflows/orcid/fast.tsv",
   "asyncBefore": true
 }
