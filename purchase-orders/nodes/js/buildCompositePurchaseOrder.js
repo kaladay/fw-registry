@@ -30,7 +30,7 @@ var electronic = marcOrderDataObj.electronicIndicator && marcOrderDataObj.electr
 var orderLine = {
   id: orderLineId,
   cost: {
-    currency: 'USD'
+    currency: marcOrderDataObj.currency
   },
   fundDistribution: [{
     code: fund.code,
@@ -88,7 +88,7 @@ if (electronic) {
   };
 
   orderLine.cost.quantityElectronic = 1;
-  orderLine.cost.listUnitPriceElectronic = marcOrderDataObj.price;
+  orderLine.cost.listUnitPriceElectronic = marcOrderDataObj.amount;
 
   orderLine.locations.push({
     quantityElectronic: 1,
@@ -103,7 +103,7 @@ if (electronic) {
   };
 
   orderLine.cost.quantityPhysical = 1;
-  orderLine.cost.listUnitPrice = marcOrderDataObj.price;
+  orderLine.cost.listUnitPrice = marcOrderDataObj.amount;
 
   orderLine.locations.push({
     quantityPhysical: 1,
@@ -111,19 +111,19 @@ if (electronic) {
   });
 }
 
-if (marcOrderDataObj.vendorItemId) {
+if (marcOrderDataObj.vendorReferenceNumber) {
   orderLine.vendorDetail = {
     instructions: '',
-    vendorAccount: '',
+    vendorAccount: marcOrderDataObj.vendorAccount,
     referenceNumbers: [{
-      refNumber: marcOrderDataObj.vendorItemId,
+      refNumber: marcOrderDataObj.vendorReferenceNumber,
       refNumberType: 'Vendor internal number'
     }]
   };
 }
 
-if (marcOrderDataObj.objectCode) {
-  tagList.push(marcOrderDataObj.objectCode);
+if (marcOrderDataObj.internalNote) {
+  tagList.push(marcOrderDataObj.internalNote);
 }
 
 if (marcOrderDataObj.projectCode) {

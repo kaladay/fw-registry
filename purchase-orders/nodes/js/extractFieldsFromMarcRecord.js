@@ -63,18 +63,23 @@ if (a050) {
 var marcOrderData = {
   title: title,
   callNumber: callNumber,
-  objectCode: getSubfield(fields, '980', 'o'),
-  projectCode: getSubfield(fields, '980', 'r'),
+  barcode: getSubfield(fields, '947', 'a'),
   fundCode: getSubfield(fields, '980', 'b'),
-  vendorCode:  getSubfield(fields, '980', 'v'),
-  notes:  getMultipleSubfield(fields, '980', 'n'),
-  price: getSubfield(fields, '980', 'm'),
-  electronicIndicator: getSubfield(fields, '980', 'z'),
-  vendorItemId: getSubfield(fields, '980', 'c'),
+  vendorReferenceNumber: getSubfield(fields, '980', 'c'),
   selector: getSubfield(fields, '980', 'f'),
+  vendorAccount: getSubfield(fields, '980', 'g'),
+  currency: getSubfield(fields, '980', 'k'),
+  amount: getSubfield(fields, '980', 'm'),
+  notes:  getMultipleSubfield(fields, '980', 'n'), /* requester */
+  internalNote: getSubfield(fields, '980', 'o'),
+  quantity: getSubfield(fields, '980', 'q'),
+  projectCode: getSubfield(fields, '980', 'r'),
+  billTo: getSubfield(fields, '980', 's'),
   acquisitionMethod: formalizeEnum(getSubfield(fields, '980', 't')),
+  vendorReferenceType: getSubfield(fields, '980', 'u'),
+  vendorCode:  getSubfield(fields, '980', 'v'),
   expenseClass: getSubfield(fields, '980', 'y'),
-  barcode: getSubfield(fields, '947', 'a')
+  electronicIndicator: getSubfield(fields, '980', 'z')
 };
 
 if (logLevel === 'DEBUG') {
