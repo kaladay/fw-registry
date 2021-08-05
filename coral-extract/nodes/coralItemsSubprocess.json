@@ -6,13 +6,10 @@
   "deserializeAs": "Subprocess",
   "nodes": [
     "{{mod-workflow}}/startEvent/984e9bd7-da9f-4d9e-ac3c-4cdf0b7e5fd2",
-    "{{mod-workflow}}/scriptTask/6aced8b1-ab60-4a50-9f9f-faf14f38e564",
-    "{{mod-workflow}}/requestTask/eda9f5b4-ccbe-4213-bd21-c56d440b85ed",
-    "{{mod-workflow}}/inclusiveGateway/9a399d00-6744-4ba7-9dee-4573c1101535",
-    "{{mod-workflow}}/moveToNode/11badfa7-a805-4a35-adc3-84a47cdaca67",
-    "{{mod-workflow}}/requestTask/3c513fd7-e542-4f9e-8468-5a94b5cdd73a",
-    "{{mod-workflow}}/inclusiveGateway/436522f9-0ad9-4965-a704-2fd1c569bd81",
-    "{{mod-workflow}}/moveToNode/fe5c58ff-7fc1-4546-b829-e44aeca19289",
+    "{{mod-workflow}}/scriptTask/a20f3e19-9e0d-451d-af57-171f4fc05b66",
+    "{{mod-workflow}}/requestTask/f84bb551-2aa2-4e0c-ac5b-03f302013817",
+    "{{mod-workflow}}/scriptTask/478d4468-289e-48c1-90ca-6a09bcbc252b",
+    "{{mod-workflow}}/requestTask/b4887237-d835-4712-a645-7fae45062fcc",
     "{{mod-workflow}}/endEvent/0956649b-0717-4ea6-802a-45c15e62ad73"
   ],
   "inputVariables": [],
