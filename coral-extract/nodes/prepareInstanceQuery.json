@@ -1,8 +1,0 @@
-{
-  "id": "6aced8b1-ab60-4a50-9f9f-faf14f38e564",
-  "name": "Prepare Instance",
-  "description": "",
-  "deserializeAs": "ScriptTask",
-  "scriptFormat": "javascript",
-  "code": "prepareInstanceQuery.js"
-}

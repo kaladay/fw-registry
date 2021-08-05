@@ -8,12 +8,21 @@ var buildExtractItems = function () {
   var lines = coralExtractResponse.replace(/\n$/i, '').split('\n');
   var parts;
   var items = [];
+  var coralIds = {};
+  var coralId;
 
   for (var i = 1; i < lines.length; ++i) {
     parts = lines[i].split('\t');
 
+    coralId = parts[0];
+
+    if (coralIds[coralId] == coralId) {
+      print("Duplicate Coral ID (" + coralId + ") detected.");
+      continue;
+    }
+
     items.push({
-      coralId: parts[0],
+      coralId: coralId,
       contributor: safe(parts[3]),
       title: safe(parts[6]),
       publisher: safe(parts[8]),
@@ -22,6 +31,8 @@ var buildExtractItems = function () {
       electronicAccess: safe(parts[32]),
       status: safe(parts[62])
     });
+
+    coralIds[coralId] = coralId;
   }
 
   return items;
