@@ -8,7 +8,7 @@
     "key": "instanceTemplate",
     "type": "PROCESS"
   },
-  "path": "/home/programming/projects/dedicated/fw/103/instance_template.json",
+  "path": "/mnt/workflows/coral-extract/instance_template.json",
   "op": "READ",
   "asyncBefore": true
 }
