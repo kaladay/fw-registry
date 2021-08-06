@@ -18,21 +18,6 @@ var getSubfield = function (fields, tag, code) {
   }
 };
 
-var getMultipleSubfield = function (fields, tag, code) {
-  var data = [];
-  for (var i = 0; i < fields.length; ++i) {
-    if (fields[i].tag === tag) {
-      for (var j = 0; j < fields[i].subfields.length; ++j) {
-        if (fields[i].subfields[j].code === code) {
-          data.push(fields[i].subfields[j].data);
-        }
-      }
-      break;
-    }
-  }
-  return data;
-};
-
 var formalizeEnum = function (value) {
   var words = value.split(' ');
   for (var i = 0; i < words.length; i++) {
@@ -70,7 +55,7 @@ var marcOrderData = {
   vendorAccount: getSubfield(fields, '980', 'g'),
   currency: getSubfield(fields, '980', 'k'),
   amount: getSubfield(fields, '980', 'm'),
-  notes:  getMultipleSubfield(fields, '980', 'n'), /* requester */
+  requester:  getSubfield(fields, '980', 'n'),
   internalNote: getSubfield(fields, '980', 'o'),
   quantity: getSubfield(fields, '980', 'q'),
   projectCode: getSubfield(fields, '980', 'r'),
@@ -79,7 +64,8 @@ var marcOrderData = {
   vendorReferenceType: getSubfield(fields, '980', 'u'),
   vendorCode:  getSubfield(fields, '980', 'v'),
   expenseClass: getSubfield(fields, '980', 'y'),
-  electronicIndicator: getSubfield(fields, '980', 'z')
+  electronicIndicator: getSubfield(fields, '980', 'z'),
+  notes: []
 };
 
 if (logLevel === 'DEBUG') {

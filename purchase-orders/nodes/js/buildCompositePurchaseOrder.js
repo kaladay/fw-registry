@@ -17,6 +17,8 @@ var vendorId = JSON.parse(vendorsResponse).organizations[0].id;
 
 var expenseClassId = JSON.parse(expenseClassesResponse).expenseClasses[0].id;
 
+var configurationEntryId = JSON.parse(configurationEntriesResponse).configs[0].id;
+
 var fund = JSON.parse(fundsResponse).funds[0];
 
 var locations = JSON.parse(locationsResponse).locations;
@@ -43,7 +45,9 @@ var orderLine = {
   purchaseOrderId: orderId,
   source: 'User',
   titleOrPackage: marcOrderDataObj.title,
+  description: marcOrderDataObj.internalNote,
   selector: marcOrderDataObj.selector,
+  requester: marcOrderDataObj.requester,
   acquisitionMethod: marcOrderDataObj.acquisitionMethod
 };
 
@@ -59,6 +63,7 @@ var compositePurchaseOrder = {
   poNumber: poNumber,
   reEncumber: false,
   vendor: vendorId,
+  billTo: configurationEntryId,
   workflowStatus: 'Open'
 };
 
@@ -87,11 +92,11 @@ if (electronic) {
     materialType: findMaterialTypeIdByName(eMaterialType)
   };
 
-  orderLine.cost.quantityElectronic = 1;
+  orderLine.cost.quantityElectronic = marcOrderDataObj.quantity;
   orderLine.cost.listUnitPriceElectronic = marcOrderDataObj.amount;
 
   orderLine.locations.push({
-    quantityElectronic: 1,
+    quantityElectronic: marcOrderDataObj.quantity,
     locationId: findLocationIdByName(permELocation)
   });
 } else {
@@ -102,11 +107,11 @@ if (electronic) {
     materialType: findMaterialTypeIdByName(materialType)
   };
 
-  orderLine.cost.quantityPhysical = 1;
+  orderLine.cost.quantityPhysical = marcOrderDataObj.quantity;
   orderLine.cost.listUnitPrice = marcOrderDataObj.amount;
 
   orderLine.locations.push({
-    quantityPhysical: 1,
+    quantityPhysical: marcOrderDataObj.quantity,
     locationId: findLocationIdByName(permLocation)
   });
 }
@@ -120,10 +125,6 @@ if (marcOrderDataObj.vendorReferenceNumber) {
       refNumberType: 'Vendor internal number'
     }]
   };
-}
-
-if (marcOrderDataObj.internalNote) {
-  tagList.push(marcOrderDataObj.internalNote);
 }
 
 if (marcOrderDataObj.projectCode) {
