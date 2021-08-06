@@ -8,7 +8,7 @@ if (logLevel === 'DEBUG') {
   print('\nvendorsResponse = ' + vendorsResponse + '\n');
   print('\nfundsResponse = ' + fundsResponse + '\n');
   print('\nexpenseClassesResponse = ' + expenseClassesResponse + '\n');
-  print('\nmaterialTypesResponse = ' + expenseClassesResponse + '\n');
+  print('\nmaterialTypesResponse = ' + materialTypesResponse + '\n');
 }
 
 var poNumber = JSON.parse(poNumberResponse).poNumber;
@@ -122,7 +122,7 @@ if (marcOrderDataObj.vendorReferenceNumber) {
     vendorAccount: marcOrderDataObj.vendorAccount,
     referenceNumbers: [{
       refNumber: marcOrderDataObj.vendorReferenceNumber,
-      refNumberType: 'Vendor internal number'
+      refNumberType: marcOrderDataObj.vendorReferenceType
     }]
   };
 }
