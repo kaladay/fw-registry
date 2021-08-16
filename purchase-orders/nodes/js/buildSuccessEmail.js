@@ -38,7 +38,7 @@ if (logLevel === 'INFO' || logLevel === 'DEBUG') {
     print('successEmailSubject = ' + successEmailSubject);
     print('successEmailText = ' + successEmailText);
     print('successEmailMarkup = ' + successEmailMarkup);
-    print('reportObj = ' + reportObj + '\n');
+    print('reportObj = ' + JSON.stringify(reportObj) + '\n');
   }
 }
 
