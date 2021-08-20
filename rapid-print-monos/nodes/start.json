@@ -4,5 +4,5 @@
   "description": "",
   "type": "SCHEDULED",
   "deserializeAs": "StartEvent",
-  "expression": "0 5 1 1,4,7,10"
+  "expression": "0 0 5 1 1,4,7,10 ?"
 }
