@@ -43,5 +43,5 @@ if (logLevel === 'INFO' || logLevel === 'DEBUG') {
 }
 
 execution.setVariableLocal('successEmailSubject', successEmailSubject);
-execution.setVariableLocal('successEmailText', successEmailText);
-execution.setVariableLocal('successEmailMarkup', successEmailMarkup);
+execution.setVariableLocal('successEmailText', Variables.stringValue(successEmailText, true).create());
+execution.setVariableLocal('successEmailMarkup', Variables.stringValue(successEmailMarkup, true).create());
