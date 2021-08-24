@@ -43,6 +43,10 @@ if (logLevel === 'INFO' || logLevel === 'DEBUG') {
   }
 }
 
-execution.setVariableLocal('successEmailSubject', successEmailSubject);
-execution.setVariableLocal('successEmailText', Variables.stringValue(successEmailText, true));
-execution.setVariableLocal('successEmailMarkup', Variables.stringValue(successEmailMarkup, true));
+var successEmail = {
+  subject: successEmailSubject,
+  text: successEmailText,
+  markup: successEmailMarkup
+};
+
+execution.setVariableLocal('successEmail', S(JSON.stringify(successEmail)));
