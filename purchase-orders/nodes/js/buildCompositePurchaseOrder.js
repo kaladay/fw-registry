@@ -34,6 +34,7 @@ var orderLine = {
   cost: {
     currency: marcOrderDataObj.currency
   },
+  details: {},
   fundDistribution: [{
     code: fund.code,
     distributionType: 'percentage',
