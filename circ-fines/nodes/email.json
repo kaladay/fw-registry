@@ -9,6 +9,6 @@
   "mailFrom": "{{circ-fines-mail-from}}",
   "mailSubject": "Daily Fees/Fines Paid Report",
   "mailText": "Daily Fees/Fines Paid TSV file attached",
-  "attachmentPath": "feefines.tsv",
+  "attachmentPath": "/mnt/workflows/circ-fines/feefines.tsv",
   "asyncBefore": true
 }

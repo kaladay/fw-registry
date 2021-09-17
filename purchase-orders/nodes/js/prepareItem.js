@@ -36,7 +36,7 @@ itemObj.materialTypeId = findMaterialTypeIdByName(materialType);
 
 itemObj.barcode = marcOrderDataObj.barcode;
 
-itemObj.status = 'Available';
+itemObj.status = { name: 'Available' };
 
 if (logLevel === 'DEBUG') {
   print('\nitem = ' + JSON.stringify(itemObj) + '\n');

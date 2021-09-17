@@ -50,6 +50,11 @@ var sourceRecord = {
   }
 };
 
+if (logLevel === 'DEBUG') {
+  print('\njobExecution = ' + JSON.stringify(jobExecution) + '\n');
+  print('\nsourceRecord = ' + JSON.stringify(sourceRecord) + '\n');
+}
+
 execution.setVariableLocal('jobExecution', S(JSON.stringify(jobExecution)));
 
 execution.setVariableLocal('sourceRecord', S(JSON.stringify(sourceRecord)));

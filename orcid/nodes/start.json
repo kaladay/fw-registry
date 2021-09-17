@@ -4,5 +4,5 @@
   "description": "",
   "type": "MESSAGE_CORRELATION",
   "deserializeAs": "StartEvent",
-  "expression": "/events/test/orcid"
+  "expression": "/events/workflow/orcid/start"
 }

@@ -1,0 +1,14 @@
+{
+  "id": "0cef6b3d-144c-4b5a-b1dd-68f6fa447d33",
+  "name": "Load Instance Template Data",
+  "description": "",
+  "deserializeAs": "FileTask",
+  "inputVariables": [],
+  "outputVariable": {
+    "key": "instanceTemplate",
+    "type": "PROCESS"
+  },
+  "path": "/mnt/workflows/coral-extract/instance_template.json",
+  "op": "READ",
+  "asyncBefore": true
+}

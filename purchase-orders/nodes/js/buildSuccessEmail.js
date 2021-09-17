@@ -1,3 +1,4 @@
+var Variables = Java.type("org.camunda.bpm.engine.variable.Variables");
 var reportObj = JSON.parse(report);
 
 var fileName = inputFilePath.indexOf('/') >= 0
@@ -38,10 +39,14 @@ if (logLevel === 'INFO' || logLevel === 'DEBUG') {
     print('successEmailSubject = ' + successEmailSubject);
     print('successEmailText = ' + successEmailText);
     print('successEmailMarkup = ' + successEmailMarkup);
-    print('reportObj = ' + reportObj + '\n');
+    print('reportObj = ' + JSON.stringify(reportObj) + '\n');
   }
 }
 
-execution.setVariableLocal('successEmailSubject', successEmailSubject);
-execution.setVariableLocal('successEmailText', successEmailText);
-execution.setVariableLocal('successEmailMarkup', successEmailMarkup);
+var successEmail = {
+  subject: successEmailSubject,
+  text: successEmailText,
+  markup: successEmailMarkup
+};
+
+execution.setVariableLocal('successEmail', S(JSON.stringify(successEmail)));

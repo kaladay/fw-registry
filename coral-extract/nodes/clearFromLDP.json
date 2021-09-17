@@ -1,0 +1,11 @@
+{
+  "id": "7c029ff5-4106-4214-987b-77be79141e12",
+  "name": "Clear Coral Items in LDP",
+  "description": "",
+  "deserializeAs": "DatabaseQueryTask",
+  "inputVariables": [],
+  "outputVariable": {},
+  "designation": "ldp",
+  "query": "TRUNCATE TABLE dev.coral_extract",
+  "asyncBefore": true
+}

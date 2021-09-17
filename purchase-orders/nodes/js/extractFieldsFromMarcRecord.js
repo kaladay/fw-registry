@@ -18,19 +18,12 @@ var getSubfield = function (fields, tag, code) {
   }
 };
 
-var getMultipleSubfield = function (fields, tag, code) {
-  var data = [];
-  for (var i = 0; i < fields.length; ++i) {
-    if (fields[i].tag === tag) {
-      for (var j = 0; j < fields[i].subfields.length; ++j) {
-        if (fields[i].subfields[j].code === code) {
-          data.push(fields[i].subfields[j].data);
-        }
-      }
-      break;
-    }
+var formalizeEnum = function (value) {
+  var words = value.split(' ');
+  for (var i = 0; i < words.length; i++) {
+    words[i] = words[i][0].toUpperCase() + words[i].substr(1);
   }
-  return data;
+  return words.join(' ');
 };
 
 var title = getSubfield(fields, '245', 'a');
@@ -55,15 +48,28 @@ if (a050) {
 var marcOrderData = {
   title: title,
   callNumber: callNumber,
-  objectCode: getSubfield(fields, '980', 'o'),
-  projectCode: getSubfield(fields, '980', 'r'),
+  barcode: getSubfield(fields, '947', 'a'),
   fundCode: getSubfield(fields, '980', 'b'),
+  vendorReferenceNumber: getSubfield(fields, '980', 'c'),
+  selector: getSubfield(fields, '980', 'f'),
+  vendorAccount: getSubfield(fields, '980', 'g'),
+  currency: getSubfield(fields, '980', 'k'),
+  amount: getSubfield(fields, '980', 'm'),
+  requester:  getSubfield(fields, '980', 'n'),
+  internalNote: getSubfield(fields, '980', 'o'),
+  quantity: getSubfield(fields, '980', 'q'),
+  projectCode: getSubfield(fields, '980', 'r'),
+  billTo: getSubfield(fields, '980', 's'),
+  acquisitionMethod: formalizeEnum(getSubfield(fields, '980', 't')),
+  vendorReferenceType: getSubfield(fields, '980', 'u'),
   vendorCode:  getSubfield(fields, '980', 'v'),
-  notes:  getMultipleSubfield(fields, '980', 'n'),
-  price: getSubfield(fields, '980', 'm'),
+  expenseClass: getSubfield(fields, '980', 'y'),
   electronicIndicator: getSubfield(fields, '980', 'z'),
-  vendorItemId: getSubfield(fields, '980', 'c'),
-  barcode: getSubfield(fields, '947', 'a')
+  notes: []
 };
+
+if (logLevel === 'DEBUG') {
+  print('\nmarcOrderData = ' + JSON.stringify(marcOrderData) + '\n');
+}
 
 execution.setVariable('marcOrderData', S(JSON.stringify(marcOrderData)));

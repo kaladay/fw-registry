@@ -14,50 +14,50 @@ function tranform(patrons) {
 
     var patron = patrons[i];
 
-    userImport.username = patron.USERNAME;
+    userImport.username = patron.username;
 
-    userImport.externalSystemId = patron.EXTERNALSYSTEMID;
-    userImport.barcode = patron.BARCODE;
-    userImport.active = patron.ACTIVE;
-    userImport.patronGroup = patron.PATRONGROUP;
+    userImport.externalSystemId = patron.externalSystemId;
+    userImport.barcode = patron.barcode;
+    userImport.active = patron.active;
+    userImport.patronGroup = patron.patronGroup;
 
-    personal.lastName = patron.PERSONAL_LASTNAME;
-    personal.firstName = patron.PERSONAL_FIRSTNAME;
-    personal.middleName = patron.PERSONAL_MIDDLENAME;
-    personal.email = patron.PERSONAL_EMAIL;
-    personal.phone = FormatUtility.normalizePhoneNumber(patron.PERSONAL_PHONE);
+    personal.lastName = patron.personal_lastName;
+    personal.firstName = patron.personal_firstName;
+    personal.middleName = patron.personal_middleName;
+    personal.email = patron.personal_email;
+    personal.phone = FormatUtility.normalizePhoneNumber(patron.personal_phone);
     personal.preferredContactTypeId = '002';
 
-    if (patron.ADDRESSES_PERMANENT_ADDRESSLINE1) {
+    if (patron.addresses_permanent_addressLine1) {
       var permanentAddress = {};
 
-      permanentAddress.AddressTypeId = patron.ADDRESSES_PERMANENT_ADDRESSTYPEID;
-      permanentAddress.CountryId = patron.ADDRESSES_PERMANENT_COUNTRYID;
-      permanentAddress.AddressLine1 = patron.ADDRESSES_PERMANENT_ADDRESSLINE1;
-      permanentAddress.AddressLine2 = patron.ADDRESSES_PERMANENT_ADDRESSLINE2;
-      permanentAddress.City = patron.ADDRESSES_PERMANENT_CITY;
-      permanentAddress.Region = patron.ADDRESSES_PERMANENT_REGION;
-      permanentAddress.PostalCode = FormatUtility.normalizePostalCode(patron.ADDRESSES_PERMANENT_POSTALCODE);
+      permanentAddress.addressTypeId = patron.addresses_permanent_addressTypeId;
+      permanentAddress.countryId = patron.addresses_permanent_countryId;
+      permanentAddress.addressLine1 = patron.addresses_permanent_addressLine1;
+      permanentAddress.addressLine2 = patron.addresses_permanent_addressLine2;
+      permanentAddress.city = patron.addresses_permanent_city;
+      permanentAddress.region = patron.addresses_permanent_region;
+      permanentAddress.postalCode = FormatUtility.normalizePostalCode(patron.addresses_permanent_postalCode);
       permanentAddress.primaryAddress = true;
 
       personal.addresses.push(permanentAddress);
     }
 
-    if (patron.ADDRESSES_TEMPORARY_ADDRESSLINE1) {
+    if (patron.addresses_temporary_addressLine1) {
       var temporaryAddress = {};
 
-      temporaryAddress.AddressTypeId = patron.ADDRESSES_TEMPORARY_ADDRESSTYPEID;
-      temporaryAddress.AddressLine1 = patron.ADDRESSES_TEMPORARY_ADDRESSLINE1;
-      temporaryAddress.AddressLine2 = patron.ADDRESSES_TEMPORARY_ADDRESSLINE2;
-      temporaryAddress.City = patron.ADDRESSES_TEMPORARY_CITY;
-      temporaryAddress.Region = patron.ADDRESSES_TEMPORARY_REGION;
-      temporaryAddress.PostalCode = FormatUtility.normalizePostalCode(patron.ADDRESSES_TEMPORARY_POSTALCODE);
+      temporaryAddress.addressTypeId = patron.addresses_temporary_addressTypeId;
+      temporaryAddress.addressLine1 = patron.addresses_temporary_addressLine1;
+      temporaryAddress.addressLine2 = patron.addresses_temporary_addressLine2;
+      temporaryAddress.city = patron.addresses_temporary_city;
+      temporaryAddress.region = patron.addresses_temporary_region;
+      temporaryAddress.postalCode = FormatUtility.normalizePostalCode(patron.addresses_temporary_postalCode);
 
       personal.addresses.push(temporaryAddress);
     }
 
-    if (patron.DEPARTMENTS_0) {
-      /* userImport.departments.push(patron.DEPARTMENTS_0); */
+    if (patron.departments_0) {
+      /* userImport.departments.push(patron.departments_0); */
     }
 
     userImport.personal = personal;

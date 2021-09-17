@@ -13,23 +13,16 @@
       "type": "PROCESS"
     },
     {
-      "key": "successEmailSubject",
-      "type": "LOCAL"
-    },
-    {
-      "key": "successEmailText",
-      "type": "LOCAL"
-    },
-    {
-      "key": "successEmailMarkup",
-      "type": "LOCAL"
+      "key": "successEmail",
+      "type": "LOCAL",
+      "spin": true
     }
   ],
   "outputVariable": {},
   "mailTo": "${emailTo}",
   "mailFrom": "${emailFrom}",
-  "mailSubject": "${successEmailSubject}",
-  "mailText": "${successEmailText}",
-  "mailMarkup": "${successEmailMarkup}",
+  "mailSubject": "${successEmail.subject}",
+  "mailText": "${successEmail.text}",
+  "mailMarkup": "${successEmail.markup}",
   "asyncBefore": true
 }

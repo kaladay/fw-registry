@@ -3,12 +3,17 @@
   "name": "Send Fast Email",
   "description": "",
   "deserializeAs": "EmailTask",
-  "inputVariables": [],
+  "inputVariables": [
+    {
+      "key": "emailTo",
+      "type": "PROCESS"
+    }
+  ],
   "outputVariable": {},
-  "mailTo": "{{orcid-mail-to}}",
+  "mailTo": "${emailTo}",
   "mailFrom": "{{orcid-mail-from}}",
   "mailSubject": "ORCID list for Faculty and Staff",
   "mailText": "Faculty and Staff TSV file attached",
-  "attachmentPath": "fast.tsv",
+  "attachmentPath": "/mnt/workflows/orcid/fast.tsv",
   "asyncBefore": true
 }

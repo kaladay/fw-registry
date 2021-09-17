@@ -1,0 +1,24 @@
+{
+  "id": "26da56ad-e640-4693-bd2a-e687d446224b",
+  "name": "Lookup Statistical Code by Code",
+  "description": "Retrieve the statistical code by code.",
+  "deserializeAs": "RequestTask",
+  "request": {
+    "url": "{{okapi}}/statistical-codes?limit=99&query=(code==\"${statisticalCode}\")",
+    "method": "GET",
+    "accept": "application/json"
+  },
+  "inputVariables": [
+    {
+      "key": "statisticalCode",
+      "type": "PROCESS"
+    }
+  ],
+  "headerOutputVariables": [],
+  "outputVariable": {
+    "key": "statisticalCodesResponse",
+    "type": "PROCESS",
+    "spin": true
+  },
+  "asyncBefore": true
+}

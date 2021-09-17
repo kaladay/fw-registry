@@ -1,0 +1,11 @@
+{
+  "id": "173ec7dc-12b6-42c4-8876-aa814498c685",
+  "name": "Lookup Expense Class by Name",
+  "description": "",
+  "deserializeAs": "MoveToNode",
+  "gatewayId": "parallel_gateway_be158ddd_1143_40ff_84bd_59c46c94be04",
+  "nodes": [
+    "{{mod-workflow}}/requestTask/94ff5df0-a7ff-4c16-84ee-fe71e96adabc",
+    "{{mod-workflow}}/connectTo/ec2aabf5-8431-4a5f-8f95-06e160098e30"
+  ]
+}

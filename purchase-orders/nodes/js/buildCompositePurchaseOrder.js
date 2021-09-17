@@ -3,36 +3,53 @@ var UUID = Java.type("java.util.UUID");
 var orderId = UUID.randomUUID().toString();
 var orderLineId = UUID.randomUUID().toString();
 
+if (logLevel === 'DEBUG') {
+  print('\npoNumberResponse = ' + poNumberResponse + '\n');
+  print('\nvendorsResponse = ' + vendorsResponse + '\n');
+  print('\nfundsResponse = ' + fundsResponse + '\n');
+  print('\nexpenseClassesResponse = ' + expenseClassesResponse + '\n');
+  print('\nmaterialTypesResponse = ' + materialTypesResponse + '\n');
+}
+
 var poNumber = JSON.parse(poNumberResponse).poNumber;
 
 var vendorId = JSON.parse(vendorsResponse).organizations[0].id;
 
-var marcOrderDataObj = JSON.parse(marcOrderData);
+var expenseClassId = JSON.parse(expenseClassesResponse).expenseClasses[0].id;
+
+var configurationEntryId = JSON.parse(configurationEntriesResponse).configs[0].id;
+
+var fund = JSON.parse(fundsResponse).funds[0];
 
 var locations = JSON.parse(locationsResponse).locations;
 
-var funds = JSON.parse(fundsResponse).funds;
-
 var materialTypes = JSON.parse(materialTypesResponse).mtypes;
+
+var marcOrderDataObj = JSON.parse(marcOrderData);
 
 var electronic = marcOrderDataObj.electronicIndicator && marcOrderDataObj.electronicIndicator.toLowerCase().indexOf('electronic') >= 0;
 
 var orderLine = {
   id: orderLineId,
-  acquisitionMethod: 'Purchase',
   cost: {
-    currency: 'USD'
+    currency: marcOrderDataObj.currency
   },
+  details: {},
   fundDistribution: [{
-    code: funds[0].code,
+    code: fund.code,
     distributionType: 'percentage',
-    fundId: funds[0].id,
+    fundId: fund.id,
+    expenseClassId: expenseClassId,
     value: 100
   }],
   locations: [],
   purchaseOrderId: orderId,
   source: 'User',
-  titleOrPackage: marcOrderDataObj.title
+  titleOrPackage: marcOrderDataObj.title,
+  description: marcOrderDataObj.internalNote,
+  selector: marcOrderDataObj.selector,
+  requester: marcOrderDataObj.requester,
+  acquisitionMethod: marcOrderDataObj.acquisitionMethod
 };
 
 var compositePoLines = [
@@ -47,6 +64,7 @@ var compositePurchaseOrder = {
   poNumber: poNumber,
   reEncumber: false,
   vendor: vendorId,
+  billTo: configurationEntryId,
   workflowStatus: 'Open'
 };
 
@@ -75,11 +93,11 @@ if (electronic) {
     materialType: findMaterialTypeIdByName(eMaterialType)
   };
 
-  orderLine.cost.quantityElectronic = 1;
-  orderLine.cost.listUnitPriceElectronic = marcOrderDataObj.price;
+  orderLine.cost.quantityElectronic = marcOrderDataObj.quantity;
+  orderLine.cost.listUnitPriceElectronic = marcOrderDataObj.amount;
 
   orderLine.locations.push({
-    quantityElectronic: 1,
+    quantityElectronic: marcOrderDataObj.quantity,
     locationId: findLocationIdByName(permELocation)
   });
 } else {
@@ -90,28 +108,24 @@ if (electronic) {
     materialType: findMaterialTypeIdByName(materialType)
   };
 
-  orderLine.cost.quantityPhysical = 1;
-  orderLine.cost.listUnitPrice = marcOrderDataObj.price;
+  orderLine.cost.quantityPhysical = marcOrderDataObj.quantity;
+  orderLine.cost.listUnitPrice = marcOrderDataObj.amount;
 
   orderLine.locations.push({
-    quantityPhysical: 1,
+    quantityPhysical: marcOrderDataObj.quantity,
     locationId: findLocationIdByName(permLocation)
   });
 }
 
-if (marcOrderDataObj.vendorItemId) {
+if (marcOrderDataObj.vendorReferenceNumber) {
   orderLine.vendorDetail = {
     instructions: '',
-    vendorAccount: '',
+    vendorAccount: marcOrderDataObj.vendorAccount,
     referenceNumbers: [{
-      refNumber: marcOrderDataObj.vendorItemId,
-      refNumberType: 'Vendor internal number'
+      refNumber: marcOrderDataObj.vendorReferenceNumber,
+      refNumberType: marcOrderDataObj.vendorReferenceType
     }]
   };
-}
-
-if (marcOrderDataObj.objectCode) {
-  tagList.push(marcOrderDataObj.objectCode);
 }
 
 if (marcOrderDataObj.projectCode) {
@@ -122,6 +136,10 @@ if (tagList.length) {
   orderLine.tags = {
     tagList: tagList
   };
+}
+
+if (logLevel === 'DEBUG') {
+  print('\ncompositePurchaseOrder = ' + JSON.stringify(compositePurchaseOrder) + '\n');
 }
 
 execution.setVariableLocal('compositePurchaseOrder', S(JSON.stringify(compositePurchaseOrder)));
