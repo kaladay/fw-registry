@@ -40,6 +40,7 @@ fw config set divit-url ***
 fw config set divit-user ***
 fw config set divit-password ***
 fw config set orcid-mail-from ***
+fw config set orcid-mail-to ***
 ```
 
 ```
@@ -62,8 +63,8 @@ ISBN report to GOBI workflow. (Scheduled)
 fw config set ldp-url ***
 fw config set ldp-user ***
 fw config set ldp-password ***
-fw config set gobi-mail-to ***
 fw config set gobi-mail-from ***
+fw config set gobi-mail-to ***
 ```
 
 ```
@@ -138,8 +139,8 @@ Circulation Fees/Fines Daily Report. (Scheduled)
 fw config set ldp-url ***
 fw config set ldp-user ***
 fw config set ldp-password ***
-fw config set circ-fines-mail-to ***
 fw config set circ-fines-mail-from ***
+fw config set circ-fines-mail-to ***
 ```
 
 ```
@@ -223,8 +224,8 @@ For the `medsci-gps-zone-file` setting, the file name (without the path part) sh
 fw config set divit-url ***
 fw config set divit-user ***
 fw config set divit-password ***
-fw config set medsci-gps-zone-to ***
 fw config set medsci-gps-zone-from ***
+fw config set medsci-gps-zone-to ***
 ```
 
 ```
