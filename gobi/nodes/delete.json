@@ -1,11 +1,11 @@
 {
   "id": "dec0f324-6566-460e-9ca9-79114ff1e1c0",
-  "name": "Delete ISBN TSV",
+  "name": "Delete ISBN Gzip TSV",
   "description": "",
   "deserializeAs": "FileTask",
   "inputVariables": [],
   "outputVariable": {},
-  "path": "/mnt/workflows/gobi/isbn.tsv",
+  "path": "/mnt/workflows/gobi/isbn.tsv.gz",
   "op": "DELETE",
   "asyncBefore": true
 }
