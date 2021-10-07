@@ -1,0 +1,13 @@
+{
+  "id": "7e48309d-efbb-42c0-9494-793ec2346ff5",
+  "name": "Gzip ISBN TSV",
+  "description": "",
+  "deserializeAs": "CompressFileTask",
+  "inputVariables": [],
+  "outputVariable": {},
+  "source": "/mnt/workflows/gobi/isbn.tsv",
+  "destination": "/mnt/workflows/gobi/isbn.tsv.gz",
+  "format": "GZIP",
+  "container": "NONE",
+  "asyncBefore": true
+}
