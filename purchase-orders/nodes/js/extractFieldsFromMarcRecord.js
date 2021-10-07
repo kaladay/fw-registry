@@ -68,6 +68,12 @@ var marcOrderData = {
   notes: []
 };
 
+if (statisticalCode === 'ybppapp' || statisticalCode === 'ybppfirm') {
+  marcOrderData.billTo = 'AcqMono Conventional';
+  marcOrderData.vendorReferenceType = 'Vendor order reference number';
+  marcOrderData.vendorCode = 'ZYBP';
+}
+
 if (logLevel === 'DEBUG') {
   print('\nmarcOrderData = ' + JSON.stringify(marcOrderData) + '\n');
 }
