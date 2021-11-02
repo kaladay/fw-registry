@@ -24,7 +24,7 @@ function tranform(patrons) {
     personal.lastName = patron.personal_lastName;
     personal.firstName = patron.personal_firstName;
     personal.middleName = patron.personal_middleName;
-    personal.email = patron.personal_email;
+    personal.email = 'folio_user@library.tamu.edu';
     personal.phone = FormatUtility.normalizePhoneNumber(patron.personal_phone);
     personal.preferredContactTypeId = '002';
 
