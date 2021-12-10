@@ -1,0 +1,23 @@
+{
+  "id": "c1e1ee7b-5549-483d-9b00-bbe2bcf0699b",
+  "name": "Shelftlist (holdings level) Report Workflow",
+  "description": "Build and email Shelflist (holdings level) report",
+  "versionTag": "1.0",
+  "historyTimeToLive": 90,
+  "deploymentId": null,
+  "active": false,
+  "setup": {
+    "asyncBefore": false,
+    "asyncAfter": false
+  },
+  "nodes": [
+    "{{mod-workflow}}/startEvent/61460103-3fd4-460b-bdb8-0a5d05bcc142",
+    "{{mod-workflow}}/scriptTask/1c93c66c-c707-47fd-9eee-9f4602aa8fdd",
+    "{{mod-workflow}}/queryTask/1554364a-f73a-41ee-b61b-8c1d8755d021",
+    "{{mod-workflow}}/scriptTask/5b10ff9c-d5c3-4eb9-815d-ed953772c8e5",
+    "{{mod-workflow}}/emailTask/0c544406-aa8b-4c91-b022-35dc4becd1fc",
+    "{{mod-workflow}}/fileTask/ea8ada64-30bc-441d-ad3a-8e5899b7e4d2",
+    "{{mod-workflow}}/endEvent/fa5c376f-03a5-4a4b-acd7-fc9780766fbd"
+  ],
+  "initialContext": {}
+}

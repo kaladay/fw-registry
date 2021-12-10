@@ -255,3 +255,17 @@ fw activate hathitrust
 ```
 fw run hathitrust
 ```
+
+## shelflist-holdings
+
+Shelflist (holdings level) Report Workflow.
+
+```
+fw build shelflist-holdings
+fw activate shelflist-holdings
+
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/shelflist-holdings/start' \
+--header 'Content-Type: multipart/form-data' \
+--header 'X-Okapi-Tenant: tern' \
+--form 'logLevel="INFO"'
+```

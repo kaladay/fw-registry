@@ -1,0 +1,13 @@
+{
+  "id": "1554364a-f73a-41ee-b61b-8c1d8755d021",
+  "name": "Query Shelflist (holdings level) report",
+  "description": "",
+  "deserializeAs": "DatabaseQueryTask",
+  "inputVariables": [],
+  "outputVariable": {},
+  "outputPath": "/mnt/workflows/shelflist-holdings/report.tsv",
+  "resultType": "TSV",
+  "designation": "divit",
+  "query": "",
+  "asyncBefore": true
+}

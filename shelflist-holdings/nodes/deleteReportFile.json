@@ -1,0 +1,16 @@
+{
+  "id": "ea8ada64-30bc-441d-ad3a-8e5899b7e4d2",
+  "name": "Shelftlist (holdings level) Report file",
+  "description": "",
+  "deserializeAs": "FileTask",
+  "inputVariables": [
+    {
+      "key": "inputFilePath",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {},
+  "path": "${inputFilePath}",
+  "op": "DELETE",
+  "asyncBefore": true
+}
