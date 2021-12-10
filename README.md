@@ -255,3 +255,22 @@ fw activate hathitrust
 ```
 fw run hathitrust
 ```
+
+## tags
+
+Tags Workflow.
+
+```
+fw build tags
+fw activate tags
+
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/tags/start' \
+--header 'Content-Type: multipart/form-data' \
+--header 'X-Okapi-Tenant: tern' \
+--form 'logLevel="INFO"' \
+--form 'file=@"/FOLIO Tags list.csv"' \
+--form 'path="/mnt/tags"' \
+--form 'okapiUrl="https://folio-okapi-test.library.tamu.edu"' \
+--form 'username="***"' \
+--form 'password="***"' \
+```
