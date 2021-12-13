@@ -3,11 +3,18 @@
   "name": "Query Shelflist (holdings level) report",
   "description": "",
   "deserializeAs": "DatabaseQueryTask",
-  "inputVariables": [],
-  "outputVariable": {},
-  "outputPath": "/mnt/workflows/shelflist-holdings/report.tsv",
-  "resultType": "TSV",
+  "inputVariables": [
+    {
+      "key": "reportQuery",
+      "type": "LOCAL"
+    }
+  ],
+  "outputVariable": {
+    "key": "report",
+    "type": "LOCAL"
+  },
+  "resultType": "CSV",
   "designation": "divit",
-  "query": "",
+  "query": "${reportQuery}",
   "asyncBefore": true
 }
