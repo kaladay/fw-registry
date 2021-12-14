@@ -49,7 +49,7 @@ while (arrMatches = objPattern.exec( tagsCSV )){
 for(var i=1;i<arrData.length;i++) {
     var tagLabel = arrData[i][0];
   tags.push({
-    labe: tagLabel
+    label: tagLabel
   });
 }
 
