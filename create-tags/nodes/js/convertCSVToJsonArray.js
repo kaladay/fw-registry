@@ -1,9 +1,5 @@
 var tags = [];
 
-if (logLevel === "DEBUG") {
-    print('\nlines = ' + lines + '\n');
-}
-
 strDelimiter = ",";
 
 var objPattern = new RegExp(
