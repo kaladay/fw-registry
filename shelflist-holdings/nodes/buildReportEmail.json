@@ -1,8 +1,0 @@
-{
-  "id": "5b10ff9c-d5c3-4eb9-815d-ed953772c8e5",
-  "name": "Build Report E-mail",
-  "description": "",
-  "deserializeAs": "ScriptTask",
-  "scriptFormat": "javascript",
-  "code": "buildReportEmail.js"
-}

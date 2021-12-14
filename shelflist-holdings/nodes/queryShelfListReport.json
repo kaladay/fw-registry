@@ -9,12 +9,10 @@
       "type": "LOCAL"
     }
   ],
-  "outputVariable": {
-    "key": "report",
-    "type": "LOCAL"
-  },
+  "outputVariable": {},
+  "outputPath": "/mnt/workflows/shelflist-holdings/report.csv",
   "resultType": "CSV",
-  "designation": "divit",
+  "designation": "ldp",
   "query": "${reportQuery}",
   "asyncBefore": true
 }

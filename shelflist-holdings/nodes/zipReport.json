@@ -1,0 +1,13 @@
+{
+  "id": "8e802921-9a6e-4a73-9a7e-3834fde8de4e",
+  "name": "Zip Shelflist (holdings level) report",
+  "description": "",
+  "deserializeAs": "CompressFileTask",
+  "inputVariables": [],
+  "outputVariable": {},
+  "source": "/mnt/workflows/shelflist-holdings/report.csv",
+  "destination": "/mnt/workflows/shelflist-holdings/report.csv.gz",
+  "format": "GZIP",
+  "container": "NONE",
+  "asyncBefore": true
+}

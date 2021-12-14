@@ -21,8 +21,8 @@
   "outputVariable": {},
   "mailTo": "${emailTo}",
   "mailFrom": "${emailFrom}",
-  "mailSubject": "${reportEmail.subject}",
-  "mailText": "${reportEmail.text}",
-  "mailMarkup": "${reportEmail.markup}",
+  "mailSubject": "Shelflist (holdings level) Report",
+  "mailText": "Shelflist (holdings level) Report CSV is attached",
+  "attachmentPath": "/mnt/workflows/shelflist-holdings/report.csv.zip",
   "asyncBefore": true
 }

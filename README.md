@@ -261,6 +261,12 @@ fw run hathitrust
 Shelflist (holdings level) Report Workflow.
 
 ```
+fw config set ldp-url ***
+fw config set ldp-user ***
+fw config set ldp-password ***
+```
+
+```
 fw build shelflist-holdings
 fw activate shelflist-holdings
 
