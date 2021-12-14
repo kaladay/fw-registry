@@ -256,15 +256,15 @@ fw activate hathitrust
 fw run hathitrust
 ```
 
-## tags
+## create-tags
 
-Tags Workflow.
+Create Tags Workflow.
 
 ```
-fw build tags
-fw activate tags
+fw build create-tags
+fw activate create-tags
 
-curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/tags/start' \
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/create-tags/start' \
 --header 'Content-Type: multipart/form-data' \
 --header 'X-Okapi-Tenant: tern' \
 --form 'logLevel="INFO"' \
