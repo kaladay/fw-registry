@@ -1,33 +1,60 @@
-var lines = tagsCSV.split('\n');
 var tags = [];
-var headers = lines[0].split(',');
 
 if (logLevel === "DEBUG") {
     print('\nlines = ' + lines + '\n');
 }
 
-for (var i = 1; i < lines.length; i++) {
-    if(!lines[i]) {
-        continue;
-    }
-    var tagName;
-    var currentline = lines[i].split(',');
+strDelimiter = ",";
 
-    for (var j = 0; j < headers.length; j++) {
-        if(headers[j] === "Tag Name") {
-            tagName = currentline[j];
-        }
-    }
+var objPattern = new RegExp(
+  (
+    "(\\" + strDelimiter + "|\\r?\\n|\\r|^)" +
 
-    if(!!tagName) {
-        tags.push({
-            label: tagName
-        });
-    } else {
-        if (logLevel === "DEBUG") {
-            print('\n Tag label not found \n');
-        }
-    }
+    "(?:\"([^\"]*(?:\"\"[^\"]*)*)\"|" +
+
+    "([^\"\\" + strDelimiter + "\\r\\n]*))"
+  ),
+  "gi"
+);
+
+var arrData = [[]];
+
+var arrMatches = null;
+
+while (arrMatches = objPattern.exec( tagsCSV )){
+
+  var strMatchedDelimiter = arrMatches[ 1 ];
+
+  if (
+    strMatchedDelimiter.length &&
+    (strMatchedDelimiter != strDelimiter)
+  ){
+
+    arrData.push( [] );
+
+  }
+
+  if (arrMatches[ 2 ]){
+
+    var strMatchedValue = arrMatches[ 2 ].replace(
+      new RegExp( "\"\"", "g" ),
+      "\""
+    );
+
+  } else {
+
+    var strMatchedValue = arrMatches[ 3 ];
+
+  }
+
+  arrData[ arrData.length - 1 ].push( strMatchedValue );
+}
+
+for(var i=1;i<arrData.length;i++) {
+    var tagLabel = arrData[i][0];
+  tags.push({
+    labe: tagLabel
+  });
 }
 
 if (logLevel === "DEBUG") {

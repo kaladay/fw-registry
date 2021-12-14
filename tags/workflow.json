@@ -1,7 +1,7 @@
 {
   "id": "c4266665-b1d2-4131-9ba4-e626dac85436",
-  "name": "Tags Workflow",
-  "description": "A workflow for managing tags in FOLIO",
+  "name": "Create Tags Workflow",
+  "description": "A workflow for creating tags in FOLIO",
   "versionTag": "1.0",
   "historyTimeToLive": 0,
   "deploymentId": null,
