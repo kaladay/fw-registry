@@ -279,3 +279,21 @@ fw activate hathitrust
 ```
 fw run hathitrust
 ```
+
+## create-tags
+
+Create Tags Workflow.
+
+```
+fw build create-tags
+fw activate create-tags
+
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/create-tags/start' \
+--header 'Content-Type: multipart/form-data' \
+--header 'X-Okapi-Tenant: tamu' \
+--form 'logLevel="DEBUG"' \
+--form 'file=@"FOLIOTags.csv"' \
+--form 'path="/mnt/workflows/create-tags"' \
+--form 'username="***"' \
+--form 'password="***"'
+```

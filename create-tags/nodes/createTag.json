@@ -1,0 +1,28 @@
+{
+  "id": "0f331243-d789-4c21-a472-ff62b32050fd",
+  "name": "Create Tag",
+  "description": "create tag",
+  "deserializeAs": "RequestTask",
+  "request": {
+    "url": "{{okapi}}/tags",
+    "method": "POST",
+    "contentType": "application/json",
+    "accept": "application/json",
+    "bodyTemplate": "${tag}"
+  },
+  "inputVariables": [
+    {
+      "key": "tag",
+      "type": "LOCAL",
+      "spin": true,
+      "asJson": true
+    }
+  ],
+  "headerOutputVariables": [],
+  "outputVariable": {
+    "key": "tag",
+    "type": "LOCAL",
+    "spin": true
+  },
+  "asyncBefore": true
+}
