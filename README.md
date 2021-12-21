@@ -266,11 +266,10 @@ fw activate create-tags
 
 curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/create-tags/start' \
 --header 'Content-Type: multipart/form-data' \
---header 'X-Okapi-Tenant: tern' \
---form 'logLevel="INFO"' \
---form 'file=@"/FOLIO Tags list.csv"' \
---form 'path="/mnt/tags"' \
---form 'okapiUrl="https://folio-okapi-test.library.tamu.edu"' \
+--header 'X-Okapi-Tenant: tamu' \
+--form 'logLevel="DEBUG"' \
+--form 'file=@"FOLIOTags.csv"' \
+--form 'path="/mnt/workflows/create-tags"' \
 --form 'username="***"' \
---form 'password="***"' \
+--form 'password="***"'
 ```
