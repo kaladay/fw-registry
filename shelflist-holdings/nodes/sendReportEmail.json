@@ -23,6 +23,6 @@
   "mailFrom": "${emailFrom}",
   "mailSubject": "Shelflist (holdings level) Report",
   "mailText": "Shelflist (holdings level) Report CSV is attached",
-  "attachmentPath": "/mnt/workflows/shelflist-holdings/report.csv.zip",
+  "attachmentPath": "/mnt/workflows/shelflist-holdings/report.csv.gz",
   "asyncBefore": true
 }
