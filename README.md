@@ -194,6 +194,30 @@ Extract Coral Data and Import it into Folio (Scheduled).
 This utilizes LDP, which must have the table `dev.coral_extract` manually created.
 Each execution of this workflow clears the LDP table `dev.coral_extract` near the start of the process.
 
+```sql
+-- DROP SCHEMA dev;
+
+CREATE SCHEMA dev AUTHORIZATION ldpadmin;
+
+GRANT USAGE ON SCHEMA dev TO ldp;
+
+ALTER DEFAULT PRIVILEGES IN SCHEMA dev GRANT ALL PRIVILEGES ON TABLES TO ldp;
+
+-- DROP TABLE dev.coral_extract;
+
+CREATE TABLE dev.coral_extract (
+coralid int2 NOT NULL,
+contributor varchar(256) NULL,
+title varchar(256) NULL,
+publisher varchar(256) NULL,
+summary varchar(4000) NULL,
+natureofcontentterm varchar(200) NULL,
+electronicaccess varchar(2000) NULL,
+status varchar(8) NULL,
+CONSTRAINT coral_extract_pkey PRIMARY KEY (coralid)
+);
+```
+
 ```
 fw config set coral-url ***
 fw config set ldp-url ***
@@ -254,6 +278,24 @@ fw activate hathitrust
 
 ```
 fw run hathitrust
+```
+
+## create-tags
+
+Create Tags Workflow.
+
+```
+fw build create-tags
+fw activate create-tags
+
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/create-tags/start' \
+--header 'Content-Type: multipart/form-data' \
+--header 'X-Okapi-Tenant: tamu' \
+--form 'logLevel="DEBUG"' \
+--form 'file=@"FOLIOTags.csv"' \
+--form 'path="/mnt/workflows/create-tags"' \
+--form 'username="***"' \
+--form 'password="***"'
 ```
 
 ## shelflist-holdings

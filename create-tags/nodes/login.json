@@ -1,16 +1,25 @@
 {
-  "id": "b4996879-e2d8-41b7-89c0-46e762d93af8",
+  "id": "0abf1dbc-5da6-40f8-9f04-07cc52d5a5bc",
   "name": "Login",
-  "description": "Login for token",
+  "description": "Get Login Token for Create Tags",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{okapi-internal}}/authn/login",
+    "url": "{{okapi}}/authn/login",
     "method": "POST",
     "contentType": "application/json",
     "accept": "application/json",
-    "bodyTemplate": "{\"username\": \"{{{username}}}\",\"password\": \"{{{password}}}\"}"
+    "bodyTemplate": "{\"username\": \"${username}\",\"password\": \"${password}\"}"
   },
-  "inputVariables": [],
+  "inputVariables": [
+    {
+      "key": "username",
+      "type": "PROCESS"
+    },
+    {
+      "key": "password",
+      "type": "PROCESS"
+    }
+  ],
   "headerOutputVariables": [
     {
       "key": "X-Okapi-Token",

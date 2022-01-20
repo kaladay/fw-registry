@@ -24,7 +24,7 @@ function tranform(patrons) {
     personal.lastName = patron.personal_lastName;
     personal.firstName = patron.personal_firstName;
     personal.middleName = patron.personal_middleName;
-    personal.email = 'folio_user@library.tamu.edu';
+    personal.email = patron.personal_email;
     personal.phone = FormatUtility.normalizePhoneNumber(patron.personal_phone);
     personal.preferredContactTypeId = 'email';
 
@@ -72,6 +72,10 @@ var students = tranform(JSON.parse(studentPatrons));
 var others = tranform(JSON.parse(otherPatrons));
 
 var users = employees.concat(students).concat(others);
+
+print(employees.length + " employees being imported");
+print(students.length + " students being imported");
+print(others.length + " others being imported");
 
 var userImportCollection = {
   users: users,
