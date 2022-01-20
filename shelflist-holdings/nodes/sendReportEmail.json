@@ -13,6 +13,10 @@
       "type": "PROCESS"
     },
     {
+      "key": "timestamp",
+      "type": "LOCAL"
+    },
+    {
       "key": "reportEmail",
       "type": "LOCAL",
       "spin": true
@@ -23,6 +27,6 @@
   "mailFrom": "${emailFrom}",
   "mailSubject": "Shelflist (holdings level) Report",
   "mailText": "Shelflist (holdings level) Report CSV is attached",
-  "attachmentPath": "/mnt/workflows/shelflist-holdings/report.csv.gz",
+  "attachmentPath": "/mnt/workflows/shelflist-holdings/shelflist-holdings-report-${date}.csv",
   "asyncBefore": true
 }

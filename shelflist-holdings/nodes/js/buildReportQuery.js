@@ -176,8 +176,12 @@ var reportQuery = '\n'
        + '\nWHERE ' + where
        + '\nORDER BY call_number, contributor_primary DESC\n';
 
+var date = new Date().toISOString().split('T')[0].replaceAll('-', '');
+
 if (logLevel === 'DEBUG') {
+  print('\ndate = ' + date);
   print('\nreportQuery = ' + reportQuery);
 }
 
+execution.setVariableLocal('date', date);
 execution.setVariableLocal('reportQuery', reportQuery);
