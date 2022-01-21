@@ -195,16 +195,13 @@ This utilizes LDP, which must have the table `dev.coral_extract` manually create
 Each execution of this workflow clears the LDP table `dev.coral_extract` near the start of the process.
 
 ```sql
--- DROP SCHEMA mis;
-
 CREATE SCHEMA mis AUTHORIZATION ldpadmin;
 
 GRANT USAGE ON SCHEMA mis TO ldp;
+GRANT USAGE ON SCHEMA mis TO ldpadmin;
 
 ALTER DEFAULT PRIVILEGES IN SCHEMA mis GRANT ALL PRIVILEGES ON TABLES TO ldp;
 ALTER DEFAULT PRIVILEGES IN SCHEMA mis GRANT ALL PRIVILEGES ON TABLES TO ldpadmin;
-
--- DROP TABLE mis.coral_extract;
 
 CREATE TABLE mis.coral_extract (
 coralid int2 NOT NULL,
