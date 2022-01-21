@@ -6,6 +6,6 @@
   "inputVariables": [],
   "outputVariable": {},
   "designation": "ldp",
-  "query": "TRUNCATE TABLE dev.coral_extract",
+  "query": "TRUNCATE TABLE mis.coral_extract",
   "asyncBefore": true
 }
