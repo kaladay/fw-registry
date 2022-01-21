@@ -6,8 +6,8 @@
   "inputVariables": [],
   "outputVariable": {},
   "source": "/mnt/workflows/shelflist-holdings/report.csv",
-  "destination": "/mnt/workflows/shelflist-holdings/report.csv.gz",
-  "format": "GZIP",
+  "destination": "/mnt/workflows/shelflist-holdings/report.csv.zip",
+  "format": "ZIP",
   "container": "NONE",
   "asyncBefore": true
 }

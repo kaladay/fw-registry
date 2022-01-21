@@ -5,7 +5,7 @@
   "deserializeAs": "FileTask",
   "inputVariables": [],
   "outputVariable": {},
-  "path": "/mnt/workflows/shelflist-holdings/report.csv.gz",
+  "path": "/mnt/workflows/shelflist-holdings/report.csv.zip",
   "op": "DELETE",
   "asyncBefore": true
 }
