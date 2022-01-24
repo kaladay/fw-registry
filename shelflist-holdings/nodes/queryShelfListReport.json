@@ -14,7 +14,7 @@
     }
   ],
   "outputVariable": {},
-  "outputPath": "/mnt/workflows/shelflist-holdings/report.csv",
+  "outputPath": "/mnt/workflows/shelflist-holdings/shelflist-holdings-report-${timestamp}.csv",
   "resultType": "CSV",
   "designation": "ldp",
   "query": "${reportQuery}",

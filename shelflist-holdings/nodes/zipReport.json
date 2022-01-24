@@ -5,8 +5,8 @@
   "deserializeAs": "CompressFileTask",
   "inputVariables": [],
   "outputVariable": {},
-  "source": "/mnt/workflows/shelflist-holdings/report.csv",
-  "destination": "/mnt/workflows/shelflist-holdings/report.csv.zip",
+  "source": "/mnt/workflows/shelflist-holdings/shelflist-holdings-report-${timestamp}.csv",
+  "destination": "/mnt/workflows/shelflist-holdings/shelflist-holdings-report-${timestamp}.csv.zip",
   "format": "ZIP",
   "container": "NONE",
   "asyncBefore": true
