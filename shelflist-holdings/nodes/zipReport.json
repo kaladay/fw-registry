@@ -3,7 +3,12 @@
   "name": "Zip Shelflist (holdings level) report",
   "description": "",
   "deserializeAs": "CompressFileTask",
-  "inputVariables": [],
+  "inputVariables": [
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    }
+  ],
   "outputVariable": {},
   "source": "/mnt/workflows/shelflist-holdings/shelflist-holdings-report-${timestamp}.csv",
   "destination": "/mnt/workflows/shelflist-holdings/shelflist-holdings-report-${timestamp}.csv.zip",

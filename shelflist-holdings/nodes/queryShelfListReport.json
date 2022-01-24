@@ -10,7 +10,7 @@
     },
     {
       "key": "timestamp",
-      "type": "LOCAL"
+      "type": "PROCESS"
     }
   ],
   "outputVariable": {},

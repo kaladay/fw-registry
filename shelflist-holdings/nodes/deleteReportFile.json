@@ -3,7 +3,12 @@
   "name": "Delete Shelftlist (holdings level) Report file",
   "description": "",
   "deserializeAs": "FileTask",
-  "inputVariables": [],
+  "inputVariables": [
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    }
+  ],
   "outputVariable": {},
   "path": "/mnt/workflows/shelflist-holdings/shelflist-holdings-report-${timestamp}.csv",
   "op": "DELETE",

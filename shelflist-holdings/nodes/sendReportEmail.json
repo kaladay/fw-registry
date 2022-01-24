@@ -14,7 +14,7 @@
     },
     {
       "key": "timestamp",
-      "type": "LOCAL"
+      "type": "PROCESS"
     },
     {
       "key": "reportEmail",
