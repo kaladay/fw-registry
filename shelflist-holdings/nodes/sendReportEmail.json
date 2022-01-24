@@ -15,11 +15,6 @@
     {
       "key": "timestamp",
       "type": "PROCESS"
-    },
-    {
-      "key": "reportEmail",
-      "type": "LOCAL",
-      "spin": true
     }
   ],
   "outputVariable": {},
@@ -27,6 +22,6 @@
   "mailFrom": "${emailFrom}",
   "mailSubject": "Shelflist (holdings level) Report",
   "mailText": "Shelflist (holdings level) Report CSV is attached",
-  "attachmentPath": "/mnt/workflows/shelflist-holdings/shelflist-holdings-report-${timestamp}.csv.zip",
+  "attachmentPath": "/mnt/workflows/shelflist-holdings/shelflist-holdings-report-${timestamp}.zip",
   "asyncBefore": true
 }

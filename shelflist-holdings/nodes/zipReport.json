@@ -11,7 +11,7 @@
   ],
   "outputVariable": {},
   "source": "/mnt/workflows/shelflist-holdings/shelflist-holdings-report-${timestamp}.csv",
-  "destination": "/mnt/workflows/shelflist-holdings/shelflist-holdings-report-${timestamp}.csv.zip",
+  "destination": "/mnt/workflows/shelflist-holdings/shelflist-holdings-report-${timestamp}.zip",
   "format": "ZIP",
   "container": "NONE",
   "asyncBefore": true
