@@ -1,0 +1,20 @@
+{
+  "id": "eda78d56-b57f-4395-a374-5d7f9a9d03da",
+  "name": "Write Shelflist (holdings level) Report file",
+  "description": "",
+  "deserializeAs": "FileTask",
+  "inputVariables": [
+    {
+      "key": "report",
+      "type": "PROCESS"
+    },
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {},
+  "path": "/mnt/workflows/shelflist-holdings/shelflist-holdings-report-${timestamp}.csv",
+  "op": "WRITE",
+  "asyncBefore": true
+}

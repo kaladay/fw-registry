@@ -1,0 +1,8 @@
+{
+  "id": "3c2bbba8-310c-47df-a54c-216dc689f17a",
+  "name": "Add Identifier",
+  "description": "",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "addIdentifier.js"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "c6b03ab0-6d99-4191-8fa5-41e34555ef24",
+  "name": "Build Report",
+  "description": "",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "buildReport.js"
+}

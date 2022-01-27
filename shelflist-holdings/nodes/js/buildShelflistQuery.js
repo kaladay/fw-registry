@@ -150,7 +150,7 @@ if (updatedDateEnd != '') {
          + '\n\t AND cast(to_timestamp(instance_ext.updated_date::text,\'YYYY-MM-DD\') AT TIME ZONE \'America/Chicago\' AS DATE) <= to_date(\'' + updatedDateEnd + '\', \'YYYY-MM-DD\')';
 }
 
-var reportQuery = '\n'
+var shelflistQuery = '\n'
        + '\nSELECT DISTINCT'
        + '\n\tinstance_ext.instance_id AS instance_id,'
        + '\n\tinstance_ext.instance_hrid AS instance_hrid,'
@@ -176,12 +176,8 @@ var reportQuery = '\n'
        + '\nWHERE ' + where
        + '\nORDER BY call_number, contributor_primary DESC\n';
 
-var date = new Date().toISOString().split('T')[0].replaceAll('-', '');
-
 if (logLevel === 'DEBUG') {
-  print('\ndate = ' + date);
-  print('\nreportQuery = ' + reportQuery);
+  print('\nshelflistQuery = ' + shelflistQuery);
 }
 
-execution.setVariableLocal('date', date);
-execution.setVariableLocal('reportQuery', reportQuery);
+execution.setVariableLocal('shelflistQuery', shelflistQuery);

@@ -1,0 +1,20 @@
+{
+  "id": "1554364a-f73a-41ee-b61b-8c1d8755d021",
+  "name": "Query Shelflist (holdings level)",
+  "description": "",
+  "deserializeAs": "DatabaseQueryTask",
+  "inputVariables": [
+    {
+      "key": "shelflistQuery",
+      "type": "LOCAL"
+    }
+  ],
+  "outputVariable": {
+    "key": "shelflistResults",
+    "type": "PROCESS",
+    "spin": true
+  },
+  "designation": "ldp",
+  "query": "${shelflistQuery}",
+  "asyncBefore": true
+}

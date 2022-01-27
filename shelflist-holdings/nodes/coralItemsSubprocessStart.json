@@ -1,0 +1,8 @@
+{
+  "id": "ba34cef3-345b-4779-b493-31bc5607a9e2",
+  "name": "Start",
+  "description": "",
+  "type": "NONE",
+  "deserializeAs": "StartEvent",
+  "asyncBefore": true
+}

@@ -1,0 +1,21 @@
+{
+  "id": "5dfa3ef2-ba07-4247-89fd-9229a0ea8b1c",
+  "name": "Process Shelflist (holdings level) identifier lookup Subprocess",
+  "description": "Subprocess to lookup identifiers for each holdings level shelflist.",
+  "type": "EMBEDDED",
+  "deserializeAs": "Subprocess",
+  "nodes": [
+    "{{mod-workflow}}/startEvent/ba34cef3-345b-4779-b493-31bc5607a9e2",
+    "{{mod-workflow}}/scriptTask/50ad1d49-8134-45fb-99bc-1fa35a80a42d",
+    "{{mod-workflow}}/queryTask/66d0eb65-182a-458c-af28-ec4514353757",
+    "{{mod-workflow}}/scriptTask/3c2bbba8-310c-47df-a54c-216dc689f17a",
+    "{{mod-workflow}}/endEvent/96f5de03-4c44-455b-aa29-81ad5c68d271"
+  ],
+  "inputVariables": [],
+  "loopRef": {
+    "dataInputRefExpression": "${shelflistResults.elements()}",
+    "inputDataName": "shelflistResult",
+    "parallel": false
+  }
+}
+
