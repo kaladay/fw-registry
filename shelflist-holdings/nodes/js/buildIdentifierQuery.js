@@ -1,7 +1,3 @@
-if (logLevel === 'DEBUG') {
-  print('\nshelflistResult = ' + shelflistResult);
-}
-
 var shelflist = JSON.parse(shelflistResult);
 
 var identifierTypeName = shelflist.issuance === 'serial' ? 'ISSN' : 'ISBN';
