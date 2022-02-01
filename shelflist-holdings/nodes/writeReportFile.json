@@ -5,7 +5,7 @@
   "deserializeAs": "FileTask",
   "inputVariables": [
     {
-      "key": "report",
+      "key": "shelflistResults",
       "type": "PROCESS"
     },
     {

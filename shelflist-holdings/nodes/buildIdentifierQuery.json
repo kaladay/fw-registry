@@ -1,8 +1,0 @@
-{
-  "id": "50ad1d49-8134-45fb-99bc-1fa35a80a42d",
-  "name": "Build Identifier Query",
-  "description": "",
-  "deserializeAs": "ScriptTask",
-  "scriptFormat": "javascript",
-  "code": "buildIdentifierQuery.js"
-}

@@ -30,4 +30,4 @@ for (var i = 0; i < results.length; i++) {
   report += instance_id + ',' + instance_hrid + ',' + holdings_hrid + ',' + location + ',' + call_number + ',' + contributor_name + ',' + title + ',' + issuance + ',' + identifier + ',' + resource_type + ',' + format + ',' + language + ',' + stat_code + ',' + pub_date + ',' + create_date + ',' + update_date + '\n';
 }
 
-execution.setVariableLocal('report', S(report));
+execution.setVariable('shelflistResults', report);
