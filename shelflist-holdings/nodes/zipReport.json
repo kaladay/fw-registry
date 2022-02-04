@@ -1,0 +1,18 @@
+{
+  "id": "8e802921-9a6e-4a73-9a7e-3834fde8de4e",
+  "name": "Zip Shelflist (holdings level) report",
+  "description": "",
+  "deserializeAs": "CompressFileTask",
+  "inputVariables": [
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {},
+  "source": "/mnt/workflows/shelflist-holdings/shelflist-holdings-report-${timestamp}.csv",
+  "destination": "/mnt/workflows/shelflist-holdings/shelflist-holdings-report-${timestamp}.zip",
+  "format": "ZIP",
+  "container": "NONE",
+  "asyncBefore": true
+}
