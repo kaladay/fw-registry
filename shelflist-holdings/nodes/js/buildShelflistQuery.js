@@ -20,13 +20,13 @@ if (logLevel === 'DEBUG') {
 }
 
 var from = 'folio_reporting.holdings_ext'
-            + '\n\t INNER JOIN folio_reporting.instance_ext ON holdings_ext.instance_id = instance_ext.instance_id'
-            + '\n\t LEFT JOIN folio_reporting.instance_contributors contribs ON holdings_ext.instance_id = contribs.instance_id'
-            + '\n\t LEFT JOIN folio_reporting.instance_publication pubs ON holdings_ext.instance_id = pubs.instance_id'
-            + '\n\t LEFT JOIN folio_reporting.instance_identifiers idents ON holdings_ext.instance_id = idents.instance_id'
-            + '\n\t LEFT JOIN folio_reporting.instance_formats formats ON holdings_ext.instance_id = formats.instance_id'
-            + '\n\t LEFT JOIN folio_reporting.instance_languages lan ON holdings_ext.instance_id = lan.instance_id'
-            + '\n\t LEFT JOIN folio_reporting.instance_statistical_codes stat_codes ON holdings_ext.instance_id = stat_codes.instance_id';
+            + '\n\t\tINNER JOIN folio_reporting.instance_ext ON holdings_ext.instance_id = instance_ext.instance_id'
+            + '\n\t\tLEFT JOIN folio_reporting.instance_contributors contribs ON holdings_ext.instance_id = contribs.instance_id'
+            + '\n\t\tLEFT JOIN folio_reporting.instance_publication pubs ON holdings_ext.instance_id = pubs.instance_id'
+            + '\n\t\tLEFT JOIN folio_reporting.instance_identifiers idents ON holdings_ext.instance_id = idents.instance_id'
+            + '\n\t\tLEFT JOIN folio_reporting.instance_formats formats ON holdings_ext.instance_id = formats.instance_id'
+            + '\n\t\tLEFT JOIN folio_reporting.instance_languages lan ON holdings_ext.instance_id = lan.instance_id'
+            + '\n\t\tLEFT JOIN folio_reporting.instance_statistical_codes stat_codes ON holdings_ext.instance_id = stat_codes.instance_id';
 
 var where = 'TRUE';
 
@@ -43,11 +43,11 @@ if (libraryNameArray) {
   normalizeArray(libraryNameArray);
   if (libraryNameArray.length > 0) {
     from += ''
-          + '\n\t LEFT JOIN public.inventory_locations display_name ON holdings_ext.permanent_location_name = display_name.name'
-          + '\n\t LEFT JOIN public.inventory_libraries libraries ON display_name.library_id = libraries.id';
+          + '\n\t\tLEFT JOIN public.inventory_locations publoc ON holdings_ext.permanent_location_id = publoc.id'
+          + '\n\t\tLEFT JOIN public.inventory_libraries publib ON publoc.library_id = publib.id';
 
     where += ''
-          + '\n\t AND libraries.name IN (\'' + libraryNameArray.join('\',\'') + '\')';
+          + '\n\t\tAND publib.name IN (\'' + libraryNameArray.join('\',\'') + '\')';
   }
 }
 
@@ -58,10 +58,10 @@ if (locationDiscoveryDisplayNameArray) {
 
   if (locationDiscoveryDisplayNameArray.length > 0) {
     from += ''
-          + '\n\t LEFT JOIN public.inventory_locations display_name ON holdings_ext.permanent_location_name = display_name.name';
+          + '\n\t\tLEFT JOIN public.inventory_locations publoc ON holdings_ext.permanent_location_name = publoc.name';
 
     where += ''
-          + '\n\t AND display_name.discovery_display_name IN (\'' + locationDiscoveryDisplayNameArray.join('\',\'') + '\')';
+          + '\n\t\tAND publoc.discovery_display_name IN (\'' + locationDiscoveryDisplayNameArray.join('\',\'') + '\')';
   }
 }
 
@@ -72,7 +72,7 @@ if (locationNameArray) {
 
   if (locationNameArray.length > 0) {
     where += ''
-           + '\n\t AND holdings_ext.permanent_location_name IN (\'' + locationNameArray.join('\',\'') + '\')';
+           + '\n\t\tAND holdings_ext.permanent_location_name IN (\'' + locationNameArray.join('\',\'') + '\')';
   }
 }
 
@@ -83,7 +83,8 @@ if (languageArray) {
 
   if (languageArray.length > 0) {
     where += ''
-          + '\n\t AND lan.language IN (\'' + languageArray.join('\',\'') + '\')';
+          + '\n\t\tAND lan.language IN (\'' + languageArray.join('\',\'') + '\')'
+          + '\n\t\tAND lan.language_ordinality = 1';
   }
 }
 
@@ -94,7 +95,7 @@ if (resourceTypeArray) {
 
   if (resourceTypeArray.length > 0) {
     where += ''
-           + '\n\t AND instance_ext.type_name IN (\'' + resourceTypeArray.join('\',\'') + '\')';
+           + '\n\t\tAND instance_ext.type_name IN (\'' + resourceTypeArray.join('\',\'') + '\')';
   }
 }
 
@@ -105,76 +106,81 @@ if (formatArray) {
 
   if (formatArray.length > 0) {
     where += ''
-          + '\n\t AND formats.format_name IN (\'' + formatArray.join('\',\'') + '\')';
+          + '\n\t\tAND formats.format_name IN (\'' + formatArray.join('\',\'') + '\')';
   }
 }
 
 if (batchId != '') {
   where += ''
-         + '\n\t AND stat_codes.statistical_code_type_name = \'batch_id\''
-         + '\n\t AND stat_codes.statistical_code_name = \'' + batchId + '\'';
+         + '\n\t\tAND stat_codes.statistical_code_type_name = \'batch_id\''
+         + '\n\t\tAND stat_codes.statistical_code_name = \'' + batchId + '\'';
 }
 
 if (issuance != '') {
   where += ''
-         + '\n\t AND instance_ext.mode_of_issuance_name = \'' + issuance + '\'';
+         + '\n\t\tAND instance_ext.mode_of_issuance_name = \'' + issuance + '\'';
 }
 
 if (suppressInstance) {
   where += ''
-         + '\n\t AND instance_ext.discovery_suppress = ' + suppressInstance;
+         + '\n\t\tAND instance_ext.discovery_suppress = ' + suppressInstance;
 }
 
 if (suppressHoldings) {
   where += ''
-         + '\n\t AND holdings_ext.discovery_suppress = ' + suppressHoldings;
+         + '\n\t\tAND holdings_ext.discovery_suppress = ' + suppressHoldings;
 }
 
 if (createdDateStart != '') {
   where += ''
-         + '\n\t AND cast(to_timestamp(instance_ext.record_created_date::text,\'YYYY-MM-DD\') AT TIME ZONE \'America/Chicago\' AS DATE) >= to_date(\'' + createdDateStart + '\', \'YYYY-MM-DD\')';
+         + '\n\t\tAND cast(to_timestamp(instance_ext.record_created_date::text,\'YYYY-MM-DD\') AT TIME ZONE \'America/Chicago\' AS DATE) >= to_date(\'' + createdDateStart + '\', \'YYYY-MM-DD\')';
 }
 
 if (createdDateEnd != '') {
   where += ''
-         + '\n\t AND cast(to_timestamp(instance_ext.record_created_date::text,\'YYYY-MM-DD\') AT TIME ZONE \'America/Chicago\' AS DATE) <= to_date(\'' + createdDateEnd + '\', \'YYYY-MM-DD\')';
+         + '\n\t\tAND cast(to_timestamp(instance_ext.record_created_date::text,\'YYYY-MM-DD\') AT TIME ZONE \'America/Chicago\' AS DATE) <= to_date(\'' + createdDateEnd + '\', \'YYYY-MM-DD\')';
 }
 
 if (updatedDateStart != '') {
   where += ''
-         + '\n\t AND cast(to_timestamp(instance_ext.updated_date::text,\'YYYY-MM-DD\') AT TIME ZONE \'America/Chicago\' AS DATE) >= to_date(\'' + updatedDateStart + '\', \'YYYY-MM-DD\')';
+         + '\n\t\tAND cast(to_timestamp(instance_ext.updated_date::text,\'YYYY-MM-DD\') AT TIME ZONE \'America/Chicago\' AS DATE) >= to_date(\'' + updatedDateStart + '\', \'YYYY-MM-DD\')';
 }
 
 if (updatedDateEnd != '') {
   where += ''
-         + '\n\t AND cast(to_timestamp(instance_ext.updated_date::text,\'YYYY-MM-DD\') AT TIME ZONE \'America/Chicago\' AS DATE) <= to_date(\'' + updatedDateEnd + '\', \'YYYY-MM-DD\')';
+         + '\n\t\tAND cast(to_timestamp(instance_ext.updated_date::text,\'YYYY-MM-DD\') AT TIME ZONE \'America/Chicago\' AS DATE) <= to_date(\'' + updatedDateEnd + '\', \'YYYY-MM-DD\')';
 }
 
 var shelflistQuery = '\n'
-       + '\nSELECT DISTINCT'
-       + '\n\tinstance_ext.instance_id AS instance_id,'
-       + '\n\tinstance_ext.instance_hrid AS instance_hrid,'
-       + '\n\tholdings_hrid,'
-       + '\n\tholdings_ext.permanent_location_name AS location,'
-       + '\n\tcall_number,'
-       + '\n\tcall_number_prefix AS prefix,'
-       + '\n\tcall_number_suffix AS suffix,'
-       + '\n\tinstance_ext.discovery_suppress AS instance_suppress,'
-       + '\n\tholdings_ext.discovery_suppress AS holdings_suppress,'
-       + '\n\tcontributor_name,'
-       + '\n\tcontributor_primary,'
-       + '\n\tsubstr(instance_ext.title,1,60) AS title,'
-       + '\n\tinstance_ext.mode_of_issuance_name AS issuance,'
-       + '\n\tinstance_ext.type_name AS resource_type,'
-       + '\n\tformats.format_name AS format,'
-       + '\n\tlan.language AS language,'
-       + '\n\tstat_codes.statistical_code_name AS stat_code,'
-       + '\n\tpubs.date_of_publication AS pub_date,'
-       + '\n\tcast(to_timestamp(instance_ext.record_created_date::text,\'YYYY-MM-DD\') AT TIME ZONE \'America/Chicago\' AS DATE) AS create_date,'
-       + '\n\tcast(to_timestamp(instance_ext.updated_date::text,\'YYYY-MM-DD\') AT TIME ZONE \'America/Chicago\' AS DATE) AS update_date'
-       + '\nFROM ' + from
-       + '\nWHERE ' + where
-       + '\nORDER BY call_number, contributor_primary DESC\n';
+       + '\nSELECT DISTINCT ON (instance_hrid, holdings_hrid) * FROM ('
+       + '\n\tSELECT DISTINCT'
+       + '\n\t\tinstance_ext.instance_id AS instance_id,'
+       + '\n\t\tinstance_ext.instance_hrid AS instance_hrid,'
+       + '\n\t\tholdings_hrid,'
+       + '\n\t\tholdings_ext.permanent_location_name AS location,'
+       + '\n\t\tcall_number,'
+       + '\n\t\tcall_number_prefix AS prefix,'
+       + '\n\t\tcall_number_suffix AS suffix,'
+       + '\n\t\tinstance_ext.discovery_suppress AS instance_suppress,'
+       + '\n\t\tholdings_ext.discovery_suppress AS holdings_suppress,'
+       + '\n\t\tCASE WHEN contributor_primary = \'t\' THEN contributor_name ELSE \'\' END AS author,'
+       + '\n\t\tRANK() OVER (PARTITION BY holdings_hrid ORDER BY contributor_primary) AS author_rank,'
+       + '\n\t\tsubstr(instance_ext.title,1,60) AS title,'
+       + '\n\t\tinstance_ext.mode_of_issuance_name AS issuance,'
+       + '\n\t\tinstance_ext.type_name AS resource_type,'
+       + '\n\t\tformats.format_name AS format,'
+       + '\n\t\tCASE WHEN idents.identifier_type_name = \'ISSN\' AND instance_ext.mode_of_issuance_name = \'serial\' THEN identifier WHEN idents.identifier_type_name = \'OCLC\' AND instance_ext.mode_of_issuance_name != \'serial\' THEN identifier ELSE \'\' END AS identifier,'
+       + '\n\t\tCASE WHEN lan.language_ordinality = 1 THEN lan.language ELSE \'\' END AS language,'
+       + '\n\t\tstat_codes.statistical_code_name AS stat_code,'
+       + '\n\t\tpubs.date_of_publication AS pub_date,'
+       + '\n\t\tRANK() OVER (PARTITION BY holdings_hrid ORDER BY pubs.date_of_publication) AS pub_rank,'
+       + '\n\t\tCAST(to_timestamp(instance_ext.record_created_date::text,\'YYYY-MM-DD\') AT TIME ZONE \'America/Chicago\' AS DATE) AS create_date,'
+       + '\n\t\tCAST(to_timestamp(instance_ext.updated_date::text,\'YYYY-MM-DD\') AT TIME ZONE \'America/Chicago\' AS DATE) AS update_date'
+       + '\n\tFROM ' + from
+       + '\n\tWHERE ' + where
+       + '\n) AS superset'
+       + '\nWHERE pub_rank = 1 AND author_rank = 1'
+       + '\nORDER BY instance_hrid, holdings_hrid, author desc, identifier desc, pub_date desc, format\n';
 
 if (logLevel === 'DEBUG') {
   print('\nshelflistQuery = ' + shelflistQuery);

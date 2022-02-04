@@ -7,13 +7,14 @@
     {
       "key": "shelflistQuery",
       "type": "LOCAL"
+    },
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
     }
   ],
-  "outputVariable": {
-    "key": "shelflistResults",
-    "type": "PROCESS",
-    "spin": true
-  },
+  "outputPath": "/mnt/workflows/shelflist-holdings/shelflist-holdings-report-${timestamp}.csv",
+  "resultType": "CSV",
   "designation": "ldp",
   "query": "${shelflistQuery}",
   "asyncBefore": true
