@@ -303,6 +303,7 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
 Shelflist (holdings level) Report Workflow.
 
 ```
+fw config set mis-catalog-reports-url https://localhost/catalog_reports/site/
 fw config set ldp-url ***
 fw config set ldp-user ***
 fw config set ldp-password ***
@@ -317,5 +318,19 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
 --header 'X-Okapi-Tenant: tern' \
 --form 'logLevel="INFO"' \
 --form 'emailFrom="folio@k1000.library.tamu.edu"' \
---form 'emailTo="wwelling@library.tamu.edu"'
+--form 'emailTo="wwelling@library.tamu.edu"' \
+--form 'libraryName="[\"Texas A&M University Qatar Library\"]"' \
+--form 'locationDiscoveryDisplayName'="[]"' \
+--form 'locationName'="[]"' \
+--form 'language'="[]"' \
+--form 'resourceType'="[]"' \
+--form 'format'="[]"' \
+--form 'batchId'=""' \
+--form 'issuance'=""' \
+--form 'suppressInstance'=false' \
+--form 'suppressHoldings'=false' \
+--form 'createdDateStart'=""' \
+--form 'createdDateEnd'=""' \
+--form 'updatedDateStart'=""' \
+--form 'updatedDateEnd'=""'
 ```
