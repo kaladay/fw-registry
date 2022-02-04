@@ -17,5 +17,6 @@
   "resultType": "CSV",
   "designation": "ldp",
   "query": "${shelflistQuery}",
+  "includeHeader": true,
   "asyncBefore": true
 }
