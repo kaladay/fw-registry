@@ -42,12 +42,10 @@ var normalizeArray = function (array) {
 if (libraryNameArray) {
   normalizeArray(libraryNameArray);
   if (libraryNameArray.length > 0) {
-    from += ''
-          + '\n\t\tLEFT JOIN public.inventory_locations publoc ON holdings_ext.permanent_location_id = publoc.id'
+    from += '\n\t\tLEFT JOIN public.inventory_locations publoc ON holdings_ext.permanent_location_id = publoc.id'
           + '\n\t\tLEFT JOIN public.inventory_libraries publib ON publoc.library_id = publib.id';
 
-    where += ''
-          + '\n\t\tAND publib.name IN (\'' + libraryNameArray.join('\',\'') + '\')';
+    where += '\n\t\tAND publib.name IN (\'' + libraryNameArray.join('\',\'') + '\')';
   }
 }
 
@@ -57,11 +55,9 @@ if (locationDiscoveryDisplayNameArray) {
   normalizeArray(locationDiscoveryDisplayNameArray);
 
   if (locationDiscoveryDisplayNameArray.length > 0) {
-    from += ''
-          + '\n\t\tLEFT JOIN public.inventory_locations publoc ON holdings_ext.permanent_location_name = publoc.name';
+    from += '\n\t\tLEFT JOIN public.inventory_locations publoc ON holdings_ext.permanent_location_name = publoc.name';
 
-    where += ''
-          + '\n\t\tAND publoc.discovery_display_name IN (\'' + locationDiscoveryDisplayNameArray.join('\',\'') + '\')';
+    where += '\n\t\tAND publoc.discovery_display_name IN (\'' + locationDiscoveryDisplayNameArray.join('\',\'') + '\')';
   }
 }
 
@@ -71,8 +67,7 @@ if (locationNameArray) {
   normalizeArray(locationNameArray);
 
   if (locationNameArray.length > 0) {
-    where += ''
-           + '\n\t\tAND holdings_ext.permanent_location_name IN (\'' + locationNameArray.join('\',\'') + '\')';
+    where += '\n\t\tAND holdings_ext.permanent_location_name IN (\'' + locationNameArray.join('\',\'') + '\')';
   }
 }
 
@@ -82,8 +77,7 @@ if (languageArray) {
   normalizeArray(languageArray);
 
   if (languageArray.length > 0) {
-    where += ''
-          + '\n\t\tAND lan.language IN (\'' + languageArray.join('\',\'') + '\')'
+    where += '\n\t\tAND lan.language IN (\'' + languageArray.join('\',\'') + '\')'
           + '\n\t\tAND lan.language_ordinality = 1';
   }
 }
@@ -94,8 +88,7 @@ if (resourceTypeArray) {
   normalizeArray(resourceTypeArray);
 
   if (resourceTypeArray.length > 0) {
-    where += ''
-           + '\n\t\tAND instance_ext.type_name IN (\'' + resourceTypeArray.join('\',\'') + '\')';
+    where += '\n\t\tAND instance_ext.type_name IN (\'' + resourceTypeArray.join('\',\'') + '\')';
   }
 }
 
@@ -105,50 +98,41 @@ if (formatArray) {
   normalizeArray(formatArray);
 
   if (formatArray.length > 0) {
-    where += ''
-          + '\n\t\tAND formats.format_name IN (\'' + formatArray.join('\',\'') + '\')';
+    where += '\n\t\tAND formats.format_name IN (\'' + formatArray.join('\',\'') + '\')';
   }
 }
 
 if (batchId != '') {
-  where += ''
-         + '\n\t\tAND stat_codes.statistical_code_type_name = \'batch_id\''
+  where += '\n\t\tAND stat_codes.statistical_code_type_name = \'batch_id\''
          + '\n\t\tAND stat_codes.statistical_code_name = \'' + batchId + '\'';
 }
 
 if (issuance != '') {
-  where += ''
-         + '\n\t\tAND instance_ext.mode_of_issuance_name = \'' + issuance + '\'';
+  where += '\n\t\tAND instance_ext.mode_of_issuance_name = \'' + issuance + '\'';
 }
 
 if (suppressInstance) {
-  where += ''
-         + '\n\t\tAND instance_ext.discovery_suppress = ' + suppressInstance;
+  where += '\n\t\tAND instance_ext.discovery_suppress = ' + suppressInstance;
 }
 
 if (suppressHoldings) {
-  where += ''
-         + '\n\t\tAND holdings_ext.discovery_suppress = ' + suppressHoldings;
+  where += '\n\t\tAND holdings_ext.discovery_suppress = ' + suppressHoldings;
 }
 
 if (createdDateStart != '') {
-  where += ''
-         + '\n\t\tAND cast(to_timestamp(instance_ext.record_created_date::text,\'YYYY-MM-DD\') AT TIME ZONE \'America/Chicago\' AS DATE) >= to_date(\'' + createdDateStart + '\', \'YYYY-MM-DD\')';
+  where += '\n\t\tAND cast(to_timestamp(instance_ext.record_created_date::text,\'YYYY-MM-DD\') AT TIME ZONE \'America/Chicago\' AS DATE) >= to_date(\'' + createdDateStart + '\', \'YYYY-MM-DD\')';
 }
 
 if (createdDateEnd != '') {
-  where += ''
-         + '\n\t\tAND cast(to_timestamp(instance_ext.record_created_date::text,\'YYYY-MM-DD\') AT TIME ZONE \'America/Chicago\' AS DATE) <= to_date(\'' + createdDateEnd + '\', \'YYYY-MM-DD\')';
+  where += '\n\t\tAND cast(to_timestamp(instance_ext.record_created_date::text,\'YYYY-MM-DD\') AT TIME ZONE \'America/Chicago\' AS DATE) <= to_date(\'' + createdDateEnd + '\', \'YYYY-MM-DD\')';
 }
 
 if (updatedDateStart != '') {
-  where += ''
-         + '\n\t\tAND cast(to_timestamp(instance_ext.updated_date::text,\'YYYY-MM-DD\') AT TIME ZONE \'America/Chicago\' AS DATE) >= to_date(\'' + updatedDateStart + '\', \'YYYY-MM-DD\')';
+  where += '\n\t\tAND cast(to_timestamp(instance_ext.updated_date::text,\'YYYY-MM-DD\') AT TIME ZONE \'America/Chicago\' AS DATE) >= to_date(\'' + updatedDateStart + '\', \'YYYY-MM-DD\')';
 }
 
 if (updatedDateEnd != '') {
-  where += ''
-         + '\n\t\tAND cast(to_timestamp(instance_ext.updated_date::text,\'YYYY-MM-DD\') AT TIME ZONE \'America/Chicago\' AS DATE) <= to_date(\'' + updatedDateEnd + '\', \'YYYY-MM-DD\')';
+  where += '\n\t\tAND cast(to_timestamp(instance_ext.updated_date::text,\'YYYY-MM-DD\') AT TIME ZONE \'America/Chicago\' AS DATE) <= to_date(\'' + updatedDateEnd + '\', \'YYYY-MM-DD\')';
 }
 
 var shelflistQuery = '\n'
