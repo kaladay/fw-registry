@@ -3,12 +3,17 @@
   "name": "Send Authorization List Email",
   "description": "",
   "deserializeAs": "EmailTask",
-  "inputVariables": [],
+  "inputVariables": [
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    }
+  ],
   "outputVariable": {},
   "mailTo": "{{medsci-gps-zone-to}}",
   "mailFrom": "{{medsci-gps-zone-from}}",
   "mailSubject": "Grad access list",
   "mailText": "Grad access list is attached.",
-  "attachmentPath": "/mnt/workflows/medsci-gps-zone/grad_access.txt",
+  "attachmentPath": "/mnt/workflows/medsci-gps-zone/grad_access_${timestamp}.txt",
   "asyncBefore": true
 }
