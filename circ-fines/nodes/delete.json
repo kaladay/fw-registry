@@ -3,9 +3,14 @@
   "name": "Delete Daily Fees/Fines Paid TSV",
   "description": "",
   "deserializeAs": "FileTask",
-  "inputVariables": [],
+  "inputVariables": [
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    }
+  ],
   "outputVariable": {},
-  "path": "/mnt/workflows/circ-fines/feefines.tsv",
+  "path": "/mnt/workflows/circ-fines/feefines-report-${timestamp}.tsv",
   "op": "DELETE",
   "asyncBefore": true
 }
