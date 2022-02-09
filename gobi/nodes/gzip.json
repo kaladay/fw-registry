@@ -3,10 +3,15 @@
   "name": "Gzip ISBN TSV",
   "description": "",
   "deserializeAs": "CompressFileTask",
-  "inputVariables": [],
+  "inputVariables": [
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    }
+  ],
   "outputVariable": {},
-  "source": "/mnt/workflows/gobi/isbn.tsv",
-  "destination": "/mnt/workflows/gobi/isbn.tsv.gz",
+  "source": "/mnt/workflows/gobi/isbn-report-${timestamp}.tsv",
+  "destination": "/mnt/workflows/gobi/isbn-report-${timestamp}.tsv.gz",
   "format": "GZIP",
   "container": "NONE",
   "asyncBefore": true

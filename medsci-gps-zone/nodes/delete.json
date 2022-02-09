@@ -3,9 +3,14 @@
   "name": "Delete Authorization List",
   "description": "",
   "deserializeAs": "FileTask",
-  "inputVariables": [],
+  "inputVariables": [
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    }
+  ],
   "outputVariable": {},
-  "path": "/mnt/workflows/medsci-gps-zone/grad_access.txt",
+  "path": "/mnt/workflows/medsci-gps-zone/grad_access_${timestamp}.txt",
   "op": "DELETE",
   "asyncBefore": true
 }
