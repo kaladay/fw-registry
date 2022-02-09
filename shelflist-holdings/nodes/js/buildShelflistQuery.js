@@ -112,11 +112,11 @@ if (issuance != '') {
 }
 
 if (suppressInstance) {
-  where += '\n\t\tAND instance_ext.discovery_suppress = ' + suppressInstance;
+  where += '\n\t\tAND instance_ext.discovery_suppress = ' + (suppressInstance === 't' ? 'true' : 'false');
 }
 
 if (suppressHoldings) {
-  where += '\n\t\tAND holdings_ext.discovery_suppress = ' + suppressHoldings;
+  where += '\n\t\tAND holdings_ext.discovery_suppress = ' + (suppressHoldings === 't' ? 'true' : 'false');
 }
 
 if (createdDateStart != '') {
