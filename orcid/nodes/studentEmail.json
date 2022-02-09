@@ -7,6 +7,10 @@
     {
       "key": "emailTo",
       "type": "PROCESS"
+    },
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
     }
   ],
   "outputVariable": {},
@@ -14,6 +18,6 @@
   "mailFrom": "{{orcid-mail-from}}",
   "mailSubject": "ORCID list for Students",
   "mailText": "Student TSV file attached",
-  "attachmentPath": "/mnt/workflows/orcid/student.tsv",
+  "attachmentPath": "/mnt/workflows/orcid/student-${timestamp}.tsv",
   "asyncBefore": true
 }
