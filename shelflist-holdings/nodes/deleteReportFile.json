@@ -1,6 +1,6 @@
 {
-  "id": "a43cdc4e-c2ca-47eb-bbc9-dcc35bfcf798",
-  "name": "Delete Fast TSV",
+  "id": "1a63114b-b47d-4d93-8c27-5a8d2d509406",
+  "name": "Delete Shelftlist (holdings level) Report file",
   "description": "",
   "deserializeAs": "FileTask",
   "inputVariables": [
@@ -10,7 +10,7 @@
     }
   ],
   "outputVariable": {},
-  "path": "/mnt/workflows/orcid/fast-${timestamp}.tsv",
+  "path": "/mnt/workflows/shelflist-holdings/shelflist-holdings-report-${timestamp}.csv",
   "op": "DELETE",
   "asyncBefore": true
 }

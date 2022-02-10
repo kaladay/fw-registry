@@ -1,6 +1,6 @@
 {
-  "id": "a43cdc4e-c2ca-47eb-bbc9-dcc35bfcf798",
-  "name": "Delete Fast TSV",
+  "id": "61ff3d3f-446c-481d-bb39-8c5fa8bdbaf5",
+  "name": "Delete ISBN TSV",
   "description": "",
   "deserializeAs": "FileTask",
   "inputVariables": [
@@ -10,7 +10,7 @@
     }
   ],
   "outputVariable": {},
-  "path": "/mnt/workflows/orcid/fast-${timestamp}.tsv",
+  "path": "/mnt/workflows/gobi/isbn-report-${timestamp}.tsv",
   "op": "DELETE",
   "asyncBefore": true
 }

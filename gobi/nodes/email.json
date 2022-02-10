@@ -3,12 +3,17 @@
   "name": "Send GOBI Email",
   "description": "",
   "deserializeAs": "EmailTask",
-  "inputVariables": [],
+  "inputVariables": [
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    }
+  ],
   "outputVariable": {},
   "mailTo": "{{gobi-mail-to}}",
   "mailFrom": "{{gobi-mail-from}}",
   "mailSubject": "TAMU ISBN Report",
   "mailText": "ISBN Gzip TSV file attached",
-  "attachmentPath": "/mnt/workflows/gobi/isbn.tsv.gz",
+  "attachmentPath": "/mnt/workflows/gobi/isbn-report-${timestamp}.tsv.gz",
   "asyncBefore": true
 }

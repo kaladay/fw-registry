@@ -195,17 +195,15 @@ This utilizes LDP, which must have the table `dev.coral_extract` manually create
 Each execution of this workflow clears the LDP table `dev.coral_extract` near the start of the process.
 
 ```sql
--- DROP SCHEMA dev;
+CREATE SCHEMA mis AUTHORIZATION ldpadmin;
 
-CREATE SCHEMA dev AUTHORIZATION ldpadmin;
+GRANT USAGE ON SCHEMA mis TO ldp;
+GRANT USAGE ON SCHEMA mis TO ldpadmin;
 
-GRANT USAGE ON SCHEMA dev TO ldp;
+ALTER DEFAULT PRIVILEGES IN SCHEMA mis GRANT ALL PRIVILEGES ON TABLES TO ldp;
+ALTER DEFAULT PRIVILEGES IN SCHEMA mis GRANT ALL PRIVILEGES ON TABLES TO ldpadmin;
 
-ALTER DEFAULT PRIVILEGES IN SCHEMA dev GRANT ALL PRIVILEGES ON TABLES TO ldp;
-
--- DROP TABLE dev.coral_extract;
-
-CREATE TABLE dev.coral_extract (
+CREATE TABLE mis.coral_extract (
 coralid int2 NOT NULL,
 contributor varchar(256) NULL,
 title varchar(256) NULL,
@@ -296,4 +294,41 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
 --form 'path="/mnt/workflows/create-tags"' \
 --form 'username="***"' \
 --form 'password="***"'
+```
+
+## shelflist-holdings
+
+Shelflist (holdings level) Report Workflow.
+
+```
+fw config set mis-catalog-reports-url https://localhost/catalog_reports/site
+fw config set ldp-url ***
+fw config set ldp-user ***
+fw config set ldp-password ***
+```
+
+```
+fw build shelflist-holdings
+fw activate shelflist-holdings
+
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/shelflist-holdings/start' \
+--header 'Content-Type: multipart/form-data' \
+--header 'X-Okapi-Tenant: tern' \
+--form 'logLevel="INFO"' \
+--form 'emailFrom="folio@k1000.library.tamu.edu"' \
+--form 'emailTo="wwelling@library.tamu.edu"' \
+--form 'libraryName="[\"Texas A&M University Qatar Library\"]"' \
+--form 'locationDiscoveryDisplayName'="[]"' \
+--form 'locationName'="[]"' \
+--form 'language'="[]"' \
+--form 'resourceType'="[]"' \
+--form 'format'="[]"' \
+--form 'batchId'=""' \
+--form 'issuance'=""' \
+--form 'suppressInstance'=false' \
+--form 'suppressHoldings'=false' \
+--form 'createdDateStart'=""' \
+--form 'createdDateEnd'=""' \
+--form 'updatedDateStart'=""' \
+--form 'updatedDateEnd'=""'
 ```
