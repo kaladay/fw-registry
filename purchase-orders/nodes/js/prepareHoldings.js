@@ -45,6 +45,7 @@ if (electronic) {
 }
 
 holdingsObj.callNumber = marcOrderDataObj.callNumber;
+holdingsObj.callNumberTypeId = callNumberTypeId;
 
 holdingsObj.statisticalCodeIds = mapStatisticalCodeIds(statisticalCodes);
 
