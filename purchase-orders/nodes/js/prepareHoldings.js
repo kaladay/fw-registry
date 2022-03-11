@@ -36,8 +36,6 @@ var mapStatisticalCodeIds = function (statisticalCodes) {
 
 var electronic = marcOrderDataObj.electronicIndicator && marcOrderDataObj.electronicIndicator.toLowerCase().indexOf('electronic') >= 0;
 
-holdingsObj.electronicAccess = instanceObj.electronicAccess;
-
 if (electronic) {
   holdingsObj.holdingsTypeId = findHoldingsTypeIdByName(eHoldingsType);
 } else {
