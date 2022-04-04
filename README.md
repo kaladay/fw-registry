@@ -191,8 +191,8 @@ fw activate rapid-electronic-serials
 
 Extract Coral Data and Import it into Folio (Scheduled).
 
-This utilizes LDP, which must have the table `dev.coral_extract` manually created.
-Each execution of this workflow clears the LDP table `dev.coral_extract` near the start of the process.
+This utilizes LDP, which must have the table `mis.coral_extract` manually created.
+Each execution of this workflow clears the LDP table `mis.coral_extract` near the start of the process.
 
 ```sql
 CREATE SCHEMA mis AUTHORIZATION ldpadmin;
