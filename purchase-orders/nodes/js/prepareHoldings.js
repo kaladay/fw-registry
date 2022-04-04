@@ -41,10 +41,12 @@ holdingsObj.electronicAccess = instanceObj.electronicAccess;
 if (electronic) {
   holdingsObj.holdingsTypeId = findHoldingsTypeIdByName(eHoldingsType);
 } else {
+  holdingsObj.holdingsTypeId = findHoldingsTypeIdByName(holdingsType);
   holdingsObj.permanentLocationId = findLocationIdByName(permLocation);
 }
 
 holdingsObj.callNumber = marcOrderDataObj.callNumber;
+holdingsObj.callNumberTypeId = callNumberTypeId;
 
 holdingsObj.statisticalCodeIds = mapStatisticalCodeIds(statisticalCodes);
 
