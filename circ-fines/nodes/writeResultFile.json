@@ -1,11 +1,15 @@
 {
   "id": "7d3a9e36-d0a5-11ec-9d64-0242ac120002",
-  "name": "Read Daily Fees/Fines Paid TSV",
+  "name": "Rewrite Daily Fees/Fines Paid TSV",
   "description": "335b9604-d0a4-11ec-9d64-0242ac120002",
   "deserializeAs": "FileTask",
   "inputVariables": [
     {
       "key": "feefinesReport",
+      "type": "PROCESS"
+    },
+    {
+      "key": "timestamp",
       "type": "PROCESS"
     }
   ],
