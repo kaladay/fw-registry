@@ -10,6 +10,10 @@
     "asyncBefore": false,
     "asyncAfter": false
   },
-  "nodes": [],
+  "nodes": [
+    "{{mod-workflow}}/startEvent/8334ffed-e14b-45e4-b9b3-40596de50e10",
+    "{{mod-workflow}}/scriptTask/967382d8-d5c1-4332-825d-aec8a4c71b1d",
+    "{{mod-workflow}}/endEvent/c0820883-7921-4a05-8b3a-2c9d12fb3cdf"
+  ],
   "initialContext": {}
 }
