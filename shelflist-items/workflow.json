@@ -1,0 +1,15 @@
+{
+  "id": "4df7d530-156f-4c85-b08d-007d690f8488",
+  "name": "Shelftlist (items level) Report Workflow",
+  "description": "Build and email Shelflist (items level) report",
+  "versionTag": "1.0",
+  "historyTimeToLive": 90,
+  "deploymentId": null,
+  "active": false,
+  "setup": {
+    "asyncBefore": false,
+    "asyncAfter": false
+  },
+  "nodes": [],
+  "initialContext": {}
+}
