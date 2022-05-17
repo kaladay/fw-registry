@@ -1,0 +1,18 @@
+{
+  "id": "9243a5bc-cb16-4519-9107-2fbac8768393",
+  "name": "Zip Shelflist (items level) report",
+  "description": "",
+  "deserializeAs": "CompressFileTask",
+  "inputVariables": [
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {},
+  "source": "/mnt/workflows/shelflist-items/shelflist-items-report-${timestamp}.csv",
+  "destination": "/mnt/workflows/shelflist-items/shelflist-items-report-${timestamp}.zip",
+  "format": "ZIP",
+  "container": "NONE",
+  "asyncBefore": true
+}

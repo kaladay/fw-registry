@@ -1,0 +1,22 @@
+{
+  "id": "1554364a-f73a-41ee-b61b-8c1d8755d021",
+  "name": "Query Shelflist (items level)",
+  "description": "",
+  "deserializeAs": "DatabaseQueryTask",
+  "inputVariables": [
+    {
+      "key": "shelflistQuery",
+      "type": "LOCAL"
+    },
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    }
+  ],
+  "outputPath": "/mnt/workflows/shelflist-items/shelflist-items-report-${timestamp}.csv",
+  "resultType": "CSV",
+  "designation": "ldp",
+  "query": "${shelflistQuery}",
+  "includeHeader": true,
+  "asyncBefore": true
+}

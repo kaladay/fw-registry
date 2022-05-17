@@ -1,0 +1,27 @@
+{
+  "id": "f888e0c9-1e17-48b7-8539-10113bcedc98",
+  "name": "Send Shelflist (items level) Report Email",
+  "description": "",
+  "deserializeAs": "EmailTask",
+  "inputVariables": [
+    {
+      "key": "emailTo",
+      "type": "PROCESS"
+    },
+    {
+      "key": "emailFrom",
+      "type": "PROCESS"
+    },
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {},
+  "mailTo": "${emailTo}",
+  "mailFrom": "${emailFrom}",
+  "mailSubject": "Shelflist (items level) Report",
+  "mailText": "Zipped Shelflist (items level) Report CSV can be downloaded with {{{mis-catalog-reports-url}}}/reports/?action=generate&reportId=shwf&configuration[fileName]=shelflist-items-report-${timestamp}.zip",
+  "mailMarkup": "Click <a href=\"{{{mis-catalog-reports-url}}}/reports/?action=generate&reportId=shwf&configuration[fileName]=shelflist-items-report-${timestamp}.zip\">here</a> to download Zipped Shelflist (items level) Report CSV",
+  "asyncBefore": true
+}
