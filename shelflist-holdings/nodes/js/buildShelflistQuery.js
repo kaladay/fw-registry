@@ -1,3 +1,4 @@
+var Variables = Java.type("org.camunda.bpm.engine.variable.Variables");
 
 if (logLevel === 'DEBUG') {
   print('\nlogLevel = ' + logLevel + '\n');
@@ -145,7 +146,7 @@ var shelflistQuery = '\n'
        + '\n\t\tSUM(item_hist.hist_charges) AS hist_charges,'
        + '\n\t\tSUM(item_hist.hist_browses) AS hist_browses,'
        + '\n\t\tMAX(item_hist.last_transaction) AS last_trans_date,'
-       + '\n\t\tstring_agg(DISTINCT item_ext.material_type_name, '||' ORDER BY item_ext.material_type_name ASC) AS item_material_type'
+       + '\n\t\tstring_agg(DISTINCT item_ext.material_type_name, \' || \'  ORDER BY item_ext.material_type_name ASC) AS item_material_type'
        + '\n\tFROM folio_reporting.holdings_ext holdings_ext'
        + '\n\t\tLEFT JOIN folio_reporting.item_ext item_ext ON holdings_ext.holdings_id = item_ext.holdings_record_id'
        + '\n\t\tLEFT JOIN mis.item_history item_hist ON item_ext.item_id = item_hist.item_id'
@@ -200,6 +201,8 @@ if (logLevel === 'DEBUG') {
   print('\nshelflistQuery = ' + shelflistQuery);
 }
 
+var queryWrapper = {
+  sql: shelflistQuery
+};
 
-execution.setVariableLocal('shelflistQuery', shelflistQuery);
-
+execution.setVariableLocal('shelflistQuery', S(JSON.stringify(queryWrapper)));
