@@ -12,7 +12,7 @@
   "outputVariable": {},
   "source": "/mnt/workflows/shelflist-items/shelflist-items-report-${timestamp}.csv",
   "destination": "/mnt/workflows/shelflist-items/shelflist-items-report-${timestamp}.zip",
-  "format": "GZIP",
+  "format": "ZIP",
   "container": "NONE",
   "asyncBefore": true
 }

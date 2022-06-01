@@ -17,7 +17,6 @@
     "{{mod-workflow}}/queryTask/4765e1b2-ff7f-42af-ae0c-680ded6faa33",
     "{{mod-workflow}}/databaseConnectionTask/ad2c63f2-f2bb-4fd4-86c9-cf200861395a",
     "{{mod-workflow}}/compressFileTask/9243a5bc-cb16-4519-9107-2fbac8768393",
-    "{{mod-workflow}}/fileTask/26fe1703-dfdc-4867-a702-3aee9b43c248",
     "{{mod-workflow}}/emailTask/f888e0c9-1e17-48b7-8539-10113bcedc98",
     "{{mod-workflow}}/endEvent/c0820883-7921-4a05-8b3a-2c9d12fb3cdf"
   ],
