@@ -60,7 +60,7 @@ if (locationNameArray) {
   normalizeArray(locationNameArray);
 
   if (locationNameArray.length > 0) {
-    where += '\n\tAND ie.permanent_location_name IN (\'' + locationNameArray.join('\',\'') + '\')';
+    where += '\n\tAND ie.effective_location_name IN (\'' + locationNameArray.join('\',\'') + '\')';
   }
 }
 
