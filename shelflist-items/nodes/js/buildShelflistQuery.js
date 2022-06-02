@@ -60,7 +60,7 @@ if (locationNameArray) {
   normalizeArray(locationNameArray);
 
   if (locationNameArray.length > 0) {
-    where += '\n\tAND ie.effective_location_name IN (\'' + locationNameArray.join('\',\'') + '\')';
+    where += '\n\tAND ie.permanent_location_name IN (\'' + locationNameArray.join('\',\'') + '\')';
   }
 }
 
@@ -114,7 +114,9 @@ var shelflistQuery = '\n'
        + '\nSELECT DISTINCT'
        + '\n\tie.item_hrid AS item_hrid,'
        + '\n\tie.barcode AS barcode,'
-       + '\n\tie.effective_location_name AS location,'
+       + '\n\tie.permanent_location_name AS item_permanent_location,'
+       + '\n\tie.effective_location_name AS item_effective_location,'
+       + '\n\tie.temporary_location_name AS item_temporary_location,'
        + '\n\tquote_ident(ie.effective_call_number) as call_number,'
        + '\n\tquote_ident(ie.enumeration) as enumeration,'
        + '\n\tquote_ident(ie.chronology) as chronology,'
