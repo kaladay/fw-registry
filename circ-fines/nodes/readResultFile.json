@@ -1,7 +1,7 @@
 {
   "id": "335b9604-d0a4-11ec-9d64-0242ac120002",
   "name": "Read Daily Fees/Fines Paid TSV",
-  "description": "335b9604-d0a4-11ec-9d64-0242ac120002",
+  "description": "",
   "deserializeAs": "FileTask",
   "inputVariables": [
     {
