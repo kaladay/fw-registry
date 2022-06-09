@@ -48,6 +48,8 @@ holdingsObj.callNumberTypeId = callNumberTypeId;
 
 holdingsObj.statisticalCodeIds = mapStatisticalCodeIds(statisticalCodes);
 
+holdingsObj.discoverySuppress = false;
+
 if (logLevel === 'DEBUG') {
   print('\nholdings = ' + JSON.stringify(holdingsObj) + '\n');
 }

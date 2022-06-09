@@ -1,3 +1,4 @@
+var Variables = Java.type("org.camunda.bpm.engine.variable.Variables");
 
 if (logLevel === 'DEBUG') {
   print('\nlogLevel = ' + logLevel + '\n');
@@ -19,14 +20,17 @@ if (logLevel === 'DEBUG') {
   print('updatedDateEnd = ' + updatedDateEnd + '\n');
 }
 
-var from = 'folio_reporting.holdings_ext'
+var from = 'folio_reporting.holdings_ext holdings_ext'
             + '\n\t\tINNER JOIN folio_reporting.instance_ext ON holdings_ext.instance_id = instance_ext.instance_id'
             + '\n\t\tLEFT JOIN folio_reporting.instance_contributors contribs ON holdings_ext.instance_id = contribs.instance_id'
             + '\n\t\tLEFT JOIN folio_reporting.instance_publication pubs ON holdings_ext.instance_id = pubs.instance_id'
             + '\n\t\tLEFT JOIN folio_reporting.instance_identifiers idents ON holdings_ext.instance_id = idents.instance_id'
             + '\n\t\tLEFT JOIN folio_reporting.instance_formats formats ON holdings_ext.instance_id = formats.instance_id'
             + '\n\t\tLEFT JOIN folio_reporting.instance_languages lan ON holdings_ext.instance_id = lan.instance_id'
-            + '\n\t\tLEFT JOIN folio_reporting.instance_statistical_codes stat_codes ON holdings_ext.instance_id = stat_codes.instance_id';
+            + '\n\t\tLEFT JOIN folio_reporting.instance_statistical_codes stat_codes ON holdings_ext.instance_id = stat_codes.instance_id'
+            + '\n\t\tLEFT JOIN folio_reporting.holdings_statements hold_state ON holdings_ext.holdings_hrid = hold_state.holdings_hrid'
+            + '\n\t\tLEFT JOIN folio_reporting.items_holdings_instances item_hold_in ON holdings_ext.instance_id = item_hold_in.instance_id'
+            + '\n\t\tLEFT JOIN item_detail item_detail ON holdings_ext.holdings_id  = item_detail.holdings_id';
 
 var where = 'TRUE';
 
@@ -136,45 +140,69 @@ if (updatedDateEnd != '') {
 }
 
 var shelflistQuery = '\n'
+       + '\nWITH item_detail as ('
+       + '\n\tSELECT'
+       + '\n\t\tholdings_ext.holdings_id,'
+       + '\n\t\tSUM(item_hist.hist_charges) AS hist_charges,'
+       + '\n\t\tSUM(item_hist.hist_browses) AS hist_browses,'
+       + '\n\t\tMAX(item_hist.last_transaction) AS last_trans_date,'
+       + '\n\t\tstring_agg(DISTINCT item_ext.material_type_name, \' || \'  ORDER BY item_ext.material_type_name ASC) AS item_material_type'
+       + '\n\tFROM folio_reporting.holdings_ext holdings_ext'
+       + '\n\t\tLEFT JOIN folio_reporting.item_ext item_ext ON holdings_ext.holdings_id = item_ext.holdings_record_id'
+       + '\n\t\tLEFT JOIN mis.item_history item_hist ON item_ext.item_id = item_hist.item_id'
+       + '\n\tGROUP BY'
+       + '\n\t\tholdings_ext.holdings_id'
+       + '\n)'
        + '\nSELECT DISTINCT ON (instance_hrid, holdings_hrid) * FROM ('
        + '\n\tSELECT DISTINCT'
        + '\n\t\tinstance_ext.instance_id AS instance_id,'
        + '\n\t\tinstance_ext.instance_hrid AS instance_hrid,'
-       + '\n\t\tholdings_hrid,'
+       + '\n\t\tholdings_ext.holdings_hrid AS holdings_hrid,'
+       + '\n\t\titem_detail.hist_charges,'
+       + '\n\t\titem_detail.hist_browses,'
+       + '\n\t\titem_detail.last_trans_date,'
+       + '\n\t\titem_detail.item_material_type,'
        + '\n\t\tquote_ident(holdings_ext.permanent_location_name) AS location,'
-       + '\n\t\tCASE WHEN call_number_prefix IS NOT NULL AND call_number_suffix IS NOT NULL THEN quote_ident(call_number_prefix || \' \' || call_number || \' \' || call_number_suffix)'
-       + '\n\t\tWHEN call_number_prefix IS NOT NULL AND call_number_suffix IS NULL THEN quote_ident(call_number_prefix || \' \' || call_number)'
-       + '\n\t\tWHEN call_number_prefix IS NULL AND call_number_suffix IS NOT NULL THEN quote_ident(call_number || \' \' || call_number_suffix)'
-       + '\n\t\tELSE quote_ident(call_number)'
+       + '\n\t\tquote_ident(hold_state.statement) AS holdings_statement,'
+       + '\n\t\tCASE WHEN call_number_prefix IS NOT NULL AND call_number_suffix IS NOT NULL THEN quote_ident(call_number_prefix || \' \' || holdings_ext.call_number || \' \' || call_number_suffix)'
+       + '\n\t\tWHEN call_number_prefix IS NOT NULL AND call_number_suffix IS NULL THEN quote_ident(call_number_prefix || \' \' || holdings_ext.call_number)'
+       + '\n\t\tWHEN call_number_prefix IS NULL AND call_number_suffix IS NOT NULL THEN quote_ident(holdings_ext.call_number || \' \' || call_number_suffix)'
+       + '\n\t\tELSE quote_ident(holdings_ext.call_number)'
        + '\n\t\tEND AS call_number,'
        + '\n\t\tinstance_ext.discovery_suppress AS instance_suppress,'
        + '\n\t\tholdings_ext.discovery_suppress AS holdings_suppress,'
        + '\n\t\tCASE WHEN contributor_primary = \'t\' THEN quote_ident(contributor_name) ELSE \'\' END AS author,'
-       + '\n\t\tRANK() OVER (PARTITION BY holdings_hrid ORDER BY contributor_primary) AS author_rank,'
-       + '\n\t\tquote_ident(substr(instance_ext.title,1,60)) AS title,'
-       + '\n\t\tinstance_ext.mode_of_issuance_name AS issuance,'
+       + '\n\t\tRANK() OVER (PARTITION BY holdings_ext.holdings_hrid ORDER BY contributor_primary) AS author_rank,'
+       + '\n\t\tquote_ident(instance_ext.index_title) AS title,'
+       + '\n\t\tinstance_ext.mode_of_issuance_name AS mode_of_issuance,'
        + '\n\t\tinstance_ext.type_name AS resource_type,'
        + '\n\t\tformats.format_name AS format,'
-       + '\n\t\tCASE WHEN idents.identifier_type_name = \'ISSN\' AND instance_ext.mode_of_issuance_name = \'serial\' THEN identifier'
-       + '\n\t\tWHEN idents.identifier_type_name = \'OCLC\' AND instance_ext.mode_of_issuance_name != \'serial\' THEN identifier'
+       + '\n\t\tCASE WHEN idents.identifier_type_name = \'ISBN\' AND instance_ext.mode_of_issuance_name = \'serial\' THEN idents.identifier'
+       + '\n\t\t\tWHEN idents.identifier_type_name = \'ISSN_Invalid\' AND instance_ext.mode_of_issuance_name = \'serial\' THEN idents.identifier'
+       + '\n\t\t\tWHEN idents.identifier_type_name = \'ISSN\' AND instance_ext.mode_of_issuance_name = \'serial\' THEN idents.identifier'
+       + '\n\t\t\tWHEN idents.identifier_type_name = \'OCLC\' AND instance_ext.mode_of_issuance_name != \'serial\' THEN idents.identifier'
        + '\n\t\tELSE \'\''
        + '\n\t\tEND AS identifier,'
        + '\n\t\tCASE WHEN lan.language_ordinality = 1 THEN lan.language'
        + '\n\t\tELSE \'\''
        + '\n\t\tEND AS language,'
        + '\n\t\tstat_codes.statistical_code_name AS stat_code,'
-       + '\n\t\tpubs.date_of_publication AS pub_date,'
-       + '\n\t\tRANK() OVER (PARTITION BY holdings_hrid ORDER BY pubs.date_of_publication) AS pub_rank,'
+       + '\n\t\tpubs.date_of_publication AS begin_pub_date,'
+       + '\n\t\tRANK() OVER (PARTITION BY holdings_ext.holdings_hrid ORDER BY pubs.date_of_publication) AS pub_rank,'
        + '\n\t\tCAST(to_timestamp(instance_ext.record_created_date::text,\'YYYY-MM-DD\') AT TIME ZONE \'America/Chicago\' AS DATE) AS create_date,'
        + '\n\t\tCAST(to_timestamp(instance_ext.updated_date::text,\'YYYY-MM-DD\') AT TIME ZONE \'America/Chicago\' AS DATE) AS update_date'
        + '\n\tFROM ' + from
        + '\n\tWHERE ' + where
        + '\n) AS superset'
        + '\nWHERE pub_rank = 1 AND author_rank = 1'
-       + '\nORDER BY instance_hrid, holdings_hrid, author desc, identifier desc, pub_date desc, format\n';
+       + '\nORDER BY instance_hrid, holdings_hrid, author desc, identifier desc, begin_pub_date desc, format\n';
 
 if (logLevel === 'DEBUG') {
   print('\nshelflistQuery = ' + shelflistQuery);
 }
 
-execution.setVariableLocal('shelflistQuery', shelflistQuery);
+var queryWrapper = {
+  sql: shelflistQuery
+};
+
+execution.setVariableLocal('shelflistQuery', S(JSON.stringify(queryWrapper)));

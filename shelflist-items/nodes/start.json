@@ -1,0 +1,8 @@
+{
+  "id": "8334ffed-e14b-45e4-b9b3-40596de50e10",
+  "name": "Start",
+  "description": "",
+  "type": "MESSAGE_CORRELATION",
+  "deserializeAs": "StartEvent",
+  "expression": "/events/workflow/shelflist-items/start"
+}
