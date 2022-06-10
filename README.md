@@ -332,3 +332,36 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
 --form 'updatedDateStart'=""' \
 --form 'updatedDateEnd'=""'
 ```
+
+## shelflist-items
+
+Shelflist (items level) Report Workflow.
+
+```
+fw config set mis-catalog-reports-url https://localhost/catalog_reports/site
+fw config set ldp-url ***
+fw config set ldp-user ***
+fw config set ldp-password ***
+```
+
+```
+fw build shelflist-holdings
+fw activate shelflist-holdings
+
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/shelflist-items/start' \
+--header 'Content-Type: multipart/form-data' \
+--header 'X-Okapi-Tenant: tern' \
+--form 'logLevel="INFO"' \
+--form 'emailFrom="folio@k1000.library.tamu.edu"' \
+--form 'emailTo="wwelling@library.tamu.edu"' \
+--form 'libraryName="[\"Texas A&M University Qatar Library\"]"' \
+--form 'locationDiscoveryDisplayName'="[]"' \
+--form 'locationName'="[]"' \
+--form 'loanType'="[]"' \
+--form 'materialType'="[]"' \
+--form 'itemStatus'="[]"' \
+--form 'createdDateStart'=""' \
+--form 'createdDateEnd'=""' \
+--form 'updatedDateStart'=""' \
+--form 'updatedDateEnd'=""'
+```
