@@ -137,7 +137,7 @@ var shelflistQuery = '\n'
        + '\n\the.holdings_hrid AS holdings_hrid'
        + '\nFROM ' + from
        + '\nWHERE ' + where
-       + '\nORDER BY location, shelving_order, enumeration, chronology, holdings_hrid\n';
+       + '\nORDER BY item_effective_location, shelving_order, enumeration, chronology, holdings_hrid\n';
 
 if (logLevel === 'DEBUG') {
   print('\nshelflistQuery = ' + shelflistQuery);
