@@ -19,7 +19,7 @@ var field = {
   }]
 };
 
-var marcJsonRecord = records[loopCounter];
+var marcJsonRecord = record;
 
 marcJsonRecord = MarcUtility.addFieldToMarcJson(marcJsonRecord, JSON.stringify(field));
 

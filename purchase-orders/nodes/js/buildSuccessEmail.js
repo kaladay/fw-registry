@@ -1,4 +1,3 @@
-var Variables = Java.type("org.camunda.bpm.engine.variable.Variables");
 var reportObj = JSON.parse(report);
 
 var fileName = inputFilePath.indexOf('/') >= 0

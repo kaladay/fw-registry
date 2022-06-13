@@ -1,6 +1,6 @@
 var MarcUtility = Java.type("org.folio.rest.utility.MarcUtility");
 
-var fields = JSON.parse(MarcUtility.getFieldsFromMarcJson(records[loopCounter], ['050', '090', '245', '947', '980']));
+var fields = JSON.parse(MarcUtility.getFieldsFromMarcJson(record.stringValue(), ['050', '090', '245', '947', '980']));
 
 if (logLevel === 'DEBUG') {
   print('\nfields = ' + JSON.stringify(fields) + '\n');

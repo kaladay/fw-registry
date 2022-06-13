@@ -1,5 +1,3 @@
-var Variables = Java.type("org.camunda.bpm.engine.variable.Variables");
-
 if (logLevel === 'DEBUG') {
   print('\nlogLevel = ' + logLevel + '\n');
   print('emailFrom = ' + emailFrom + '\n');
