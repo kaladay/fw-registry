@@ -1,0 +1,18 @@
+{
+  "id": "e82fa56b-6380-4c99-bae8-db79209fee11",
+  "name": "Query LDP",
+  "description": "",
+  "deserializeAs": "DatabaseQueryTask",
+  "inputVariables": [
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {},
+  "outputPath": "/mnt/workflows/item-history-update/item-history-update-${timestamp}.tsv",
+  "resultType": "TSV",
+  "designation": "ldp",
+  "query": "SELECT * FROM public.inventory_loan_types ilt",
+  "asyncBefore": true
+}
