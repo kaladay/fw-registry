@@ -365,3 +365,20 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
 --form 'updatedDateStart'=""' \
 --form 'updatedDateEnd'=""'
 ```
+
+## item-history-update
+
+Item History Update Workflow.
+
+```
+fw config set mis-catalog-reports-url https://localhost/catalog_reports/site
+fw config set ldp-url ***
+fw config set ldp-user ***
+fw config set ldp-password ***
+```
+
+```
+fw build item-history-update
+fw activate item-history-update
+fw run item-history-update
+```
