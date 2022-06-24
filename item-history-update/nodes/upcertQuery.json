@@ -1,0 +1,16 @@
+{
+  "id": "67d9b49f-fc45-4d10-b341-e59383dabaf8",
+  "name": "Upcert Query to LDP",
+  "description": "",
+  "deserializeAs": "DatabaseQueryTask",
+  "inputVariables": [
+    {
+      "key": "upcertQuery",
+      "type": "LOCAL"
+    }
+  ],
+  "outputVariable": {},
+  "designation": "ldp",
+  "query": "${upcertQuery}",
+  "asyncBefore": true
+}
