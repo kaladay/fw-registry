@@ -1,0 +1,10 @@
+{
+  "id": "e8a85748-f95a-4176-9861-606823dba27f",
+  "name": "Disconnect LDP",
+  "description": "",
+  "deserializeAs": "DatabaseDisconnectTask",
+  "inputVariables": [],
+  "outputVariable": {},
+  "designation": "ldp",
+  "asyncBefore": true
+}
