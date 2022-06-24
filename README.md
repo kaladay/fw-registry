@@ -371,7 +371,6 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
 Item History Update Workflow.
 
 ```
-fw config set mis-catalog-reports-url https://localhost/catalog_reports/site
 fw config set ldp-url ***
 fw config set ldp-user ***
 fw config set ldp-password ***
