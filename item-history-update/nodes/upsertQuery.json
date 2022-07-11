@@ -1,0 +1,16 @@
+{
+  "id": "67d9b49f-fc45-4d10-b341-e59383dabaf8",
+  "name": "Upsert Query to LDP",
+  "description": "",
+  "deserializeAs": "DatabaseQueryTask",
+  "inputVariables": [
+    {
+      "key": "upsertQuery",
+      "type": "LOCAL"
+    }
+  ],
+  "outputVariable": {},
+  "designation": "ldp",
+  "query": "${upsertQuery.prop('sql').stringValue()}",
+  "asyncBefore": true
+}

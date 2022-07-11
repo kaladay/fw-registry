@@ -35,7 +35,7 @@ var normalizeArray = function (array) {
 if (libraryNameArray) {
   normalizeArray(libraryNameArray);
   if (libraryNameArray.length > 0) {
-    from += '\n\tLEFT JOIN public.inventory_locations publoc ON ie.permanent_location_id = publoc.id'
+    from += '\n\tLEFT JOIN public.inventory_locations publoc ON ie.effective_location_id = publoc.id'
           + '\n\tLEFT JOIN public.inventory_libraries publib ON publoc.library_id = publib.id';
 
     where += '\n\tAND publib.name IN (\'' + libraryNameArray.join('\',\'') + '\')';
@@ -48,7 +48,7 @@ if (locationDiscoveryDisplayNameArray) {
   normalizeArray(locationDiscoveryDisplayNameArray);
 
   if (locationDiscoveryDisplayNameArray.length > 0) {
-    from += '\n\tLEFT JOIN public.inventory_locations publoc ON ie.permanent_location_name = publoc.name';
+    from += '\n\tLEFT JOIN public.inventory_locations publoc ON ie.effective_location_name = publoc.name';
 
     where += '\n\tAND publoc.discovery_display_name IN (\'' + locationDiscoveryDisplayNameArray.join('\',\'') + '\')';
   }
