@@ -19,10 +19,10 @@ var field = {
   }]
 };
 
-var marcJsonRecord = record;
+var marcJsonRecord = JSON.parse(record);
 
 if (logLevel === 'DEBUG') {
-  print('\nmarcJsonRecord = ' + marcJsonRecord + '\n');
+  print('\nmarcJsonRecord = ' + JSON.stringify(marcJsonRecord) + '\n');
 }
 
 marcJsonRecord = MarcUtility.addFieldToMarcJson(marcJsonRecord, JSON.stringify(field));
@@ -61,7 +61,7 @@ var sourceRecord = {
 if (logLevel === 'DEBUG') {
   print('\njobExecution = ' + JSON.stringify(jobExecution) + '\n');
   print('\nsourceRecord = ' + JSON.stringify(sourceRecord) + '\n');
-  print('\nmarcJsonRecord = ' + marcJsonRecord + '\n');
+  print('\nmarcJsonRecord = ' + JSON.stringify(marcJsonRecord) + '\n');
 }
 
 execution.setVariableLocal('jobExecution', S(JSON.stringify(jobExecution)));
