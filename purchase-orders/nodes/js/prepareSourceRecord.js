@@ -21,11 +21,19 @@ var field = {
 
 var marcJsonRecord = record;
 
+if (logLevel === 'DEBUG') {
+  print('\nmarcJsonRecord = ' + marcJsonRecord + '\n');
+}
+
 marcJsonRecord = MarcUtility.addFieldToMarcJson(marcJsonRecord, JSON.stringify(field));
 
 marcJsonRecord = MarcUtility.updateControlNumberField(marcJsonRecord, instanceObj.hrid);
 
 var rawMarcRecord = MarcUtility.marcJsonToRawMarc(marcJsonRecord);
+
+if (logLevel === 'DEBUG') {
+  print('\nrawMarcRecord = ' + rawMarcRecord + '\n');
+}
 
 var jobExecution = {
   jobExecutionId: snapshotId,
@@ -53,7 +61,6 @@ var sourceRecord = {
 if (logLevel === 'DEBUG') {
   print('\njobExecution = ' + JSON.stringify(jobExecution) + '\n');
   print('\nsourceRecord = ' + JSON.stringify(sourceRecord) + '\n');
-  print('\nrawMarcRecord = ' + rawMarcRecord + '\n');
   print('\nmarcJsonRecord = ' + marcJsonRecord + '\n');
 }
 
