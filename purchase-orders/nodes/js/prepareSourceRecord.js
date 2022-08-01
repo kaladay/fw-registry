@@ -53,6 +53,8 @@ var sourceRecord = {
 if (logLevel === 'DEBUG') {
   print('\njobExecution = ' + JSON.stringify(jobExecution) + '\n');
   print('\nsourceRecord = ' + JSON.stringify(sourceRecord) + '\n');
+  print('\nrawMarcRecord = ' + rawMarcRecord + '\n');
+  print('\nmarcJsonRecord = ' + marcJsonRecord + '\n');
 }
 
 execution.setVariableLocal('jobExecution', S(JSON.stringify(jobExecution)));
