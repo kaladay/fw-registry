@@ -9,6 +9,10 @@
       "type": "PROCESS"
     },
     {
+      "key": "tenantId",
+      "type": "PROCESS"
+    },
+    {
       "key": "count",
       "type": "PROCESS"
     }
@@ -18,7 +22,7 @@
   "mailFrom": "{{circ-fines-mail-from}}",
   "mailSubject": "Daily Fees/Fines Paid Report",
   "mailText": "${(count > 0)?then('Daily Fees/Fines Paid TSV file attached', 'No results to report')}",
-  "attachmentPath": "/mnt/workflows/circ-fines/feefines-report-${timestamp}.tsv",
+  "attachmentPath": "/mnt/workflows/${tenantId}/circ-fines/feefines-report-${timestamp}.tsv",
   "includeAttachment": "${(count > 0)?then('true', 'false')}",
   "asyncBefore": true
 }

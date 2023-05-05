@@ -7,6 +7,10 @@
     {
       "key": "timestamp",
       "type": "PROCESS"
+    },
+    {
+      "key": "tenantId",
+      "type": "PROCESS"
     }
   ],
   "outputVariable": {},
@@ -14,6 +18,7 @@
   "mailFrom": "{{medsci-gps-zone-from}}",
   "mailSubject": "Grad access list",
   "mailText": "Grad access list is attached.",
-  "attachmentPath": "/mnt/workflows/medsci-gps-zone/grad_access_${timestamp}.txt",
+  "attachmentPath": "/mnt/workflows/${tenantId}/medsci-gps-zone/grad_access_${timestamp}.txt",
+  "includeAttachment": "true",
   "asyncBefore": true
 }

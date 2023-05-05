@@ -9,11 +9,15 @@
       "type": "LOCAL"
     },
     {
+      "key": "tenantId",
+      "type": "PROCESS"
+    },
+    {
       "key": "timestamp",
       "type": "PROCESS"
     }
   ],
-  "outputPath": "/mnt/workflows/shelflist-holdings/shelflist-holdings-report-${timestamp}.csv",
+  "outputPath": "/mnt/workflows/${tenantId}/shelflist-holdings/shelflist-holdings-report-${timestamp}.csv",
   "resultType": "CSV",
   "designation": "ldp",
   "query": "${shelflistQuery.prop('sql').stringValue()}",

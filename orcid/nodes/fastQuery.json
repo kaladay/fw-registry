@@ -7,10 +7,14 @@
     {
       "key": "timestamp",
       "type": "PROCESS"
+    },
+    {
+      "key": "tenantId",
+      "type": "PROCESS"
     }
   ],
   "outputVariable": {},
-  "outputPath": "/mnt/workflows/orcid/fast-${timestamp}.tsv",
+  "outputPath": "/mnt/workflows/${tenantId}/orcid/fast-${timestamp}.tsv",
   "resultType": "TSV",
   "designation": "divit",
   "query": "SELECT DISTINCT pi.uid32 AS uid32, emp.uin AS id, emp.tamu_netid AS tamu_netid, CASE WHEN pi.last_name IS NOT NULL THEN pi.last_name ELSE emp.last_name END AS last_name, CASE WHEN pi.first_name IS NOT NULL THEN pi.first_name ELSE emp.first_name END AS first_name, emp.middle_name AS middle_name, emp.tamu_preferred_alias AS tamumail, emp.employee_type_name AS employee_type_name, emp.adloc_dept_name AS adloc_dept_name, emp.title AS title FROM patron.employees_retirees emp LEFT OUTER JOIN patron.person_identifiers pi ON emp.uin = pi.uin, patron.library_eresources eres WHERE emp.uin = eres.uin AND emp.employee_type_name != 'Student' AND emp.employee_type_name IS NOT NULL AND emp.employment_status_name NOT IN('Deceased', 'Terminated') AND emp.title_code != '8491' ORDER BY emp.uin",
