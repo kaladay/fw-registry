@@ -7,6 +7,10 @@
     {
       "key": "timestamp",
       "type": "PROCESS"
+    },
+    {
+      "key": "tenantId",
+      "type": "PROCESS"
     }
   ],
   "outputVariable": {},
@@ -14,6 +18,6 @@
   "mailFrom": "{{gobi-mail-from}}",
   "mailSubject": "TAMU ISBN Report",
   "mailText": "ISBN Gzip TSV file attached",
-  "attachmentPath": "/mnt/workflows/gobi/isbn-report-${timestamp}.tsv.gz",
+  "attachmentPath": "/mnt/workflows/${tenanId}/gobi/isbn-report-${timestamp}.tsv.gz",
   "asyncBefore": true
 }

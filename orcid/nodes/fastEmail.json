@@ -9,6 +9,10 @@
       "type": "PROCESS"
     },
     {
+      "key": "tenantId",
+      "type": "PROCESS"
+    },
+    {
       "key": "timestamp",
       "type": "PROCESS"
     }
@@ -18,6 +22,6 @@
   "mailFrom": "{{orcid-mail-from}}",
   "mailSubject": "ORCID list for Faculty and Staff",
   "mailText": "Faculty and Staff TSV file attached",
-  "attachmentPath": "/mnt/workflows/orcid/fast-${timestamp}.tsv",
+  "attachmentPath": "/mnt/workflows/${tenantId}/orcid/fast-${timestamp}.tsv",
   "asyncBefore": true
 }
