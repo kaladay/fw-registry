@@ -13,7 +13,7 @@
     "key": "instanceTemplate",
     "type": "PROCESS"
   },
-  "path": "/mnt/workflowss/${tenantId}/coral-extract/instance_template.json",
+  "path": "/mnt/workflows/${tenantId}/coral-extract/instance_template.json",
   "op": "READ",
   "asyncBefore": true
 }
