@@ -7,10 +7,14 @@
     {
       "key": "timestamp",
       "type": "PROCESS"
+    },
+    {
+      "key": "tenantId",
+      "type": "PROCESS"
     }
   ],
   "outputVariable": {},
-  "path": "/mnt/workflows/orcid/student-${timestamp}.tsv",
+  "path": "/mnt/workflowss/${tenantId}/orcid/student-${timestamp}.tsv",
   "op": "DELETE",
   "asyncBefore": true
 }

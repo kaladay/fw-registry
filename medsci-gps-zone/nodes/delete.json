@@ -7,10 +7,14 @@
     {
       "key": "timestamp",
       "type": "PROCESS"
+    },
+    {
+      "key": "tenantId",
+      "type": "PROCESS"
     }
   ],
   "outputVariable": {},
-  "path": "/mnt/workflows/medsci-gps-zone/grad_access_${timestamp}.txt",
+  "path": "/mnt/workflows/${tenantId}/medsci-gps-zone/grad_access_${timestamp}.txt",
   "op": "DELETE",
   "asyncBefore": true
 }
