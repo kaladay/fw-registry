@@ -3,10 +3,15 @@
   "name": "Gzip Rapid ILS Print Monos",
   "description": "",
   "deserializeAs": "CompressFileTask",
-  "inputVariables": [],
+  "inputVariables": [
+    {
+      "key": "tenandId",
+      "type": "PROCESS"
+    }
+  ],
   "outputVariable": {},
-  "source": "/mnt/workflows/rapid/rapid_print_monos.txt",
-  "destination": "/mnt/workflows/rapid/rapid_print_monos.txt.gz",
+  "source": "/mnt/workflows/${tenantId}/rapid/rapid_print_monos.txt",
+  "destination": "/mnt/workflows/${tenantId}/rapid/rapid_print_monos.txt.gz",
   "format": "GZIP",
   "container": "NONE",
   "asyncBefore": true
