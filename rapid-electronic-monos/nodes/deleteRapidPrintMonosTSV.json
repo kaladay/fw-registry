@@ -3,9 +3,14 @@
   "name": "Delete Rapid Electronic Monos TSV",
   "description": "",
   "deserializeAs": "FileTask",
-  "inputVariables": [],
+  "inputVariables": [
+    {
+      "key": "tenantId",
+      "type": "PROCESS"
+    }
+  ],
   "outputVariable": {},
-  "path": "/mnt/workflows/rapid/rapid_electronic_monos.txt",
+  "path": "/mnt/workflows/${tenantId}/rapid/rapid_electronic_monos.txt",
   "op": "DELETE",
   "asyncBefore": true
 }

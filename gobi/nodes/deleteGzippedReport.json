@@ -7,10 +7,14 @@
     {
       "key": "timestamp",
       "type": "PROCESS"
+    },
+    {
+      "key": "tenantId",
+      "type": "PROCESS"
     }
   ],
   "outputVariable": {},
-  "path": "/mnt/workflows/gobi/isbn-report-${timestamp}.tsv.gz",
+  "path": "/mnt/workflows/${tenantId}/gobi/isbn-report-${timestamp}.tsv.gz",
   "op": "DELETE",
   "asyncBefore": true
 }

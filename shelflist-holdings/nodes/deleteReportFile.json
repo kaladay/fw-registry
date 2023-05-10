@@ -7,10 +7,14 @@
     {
       "key": "timestamp",
       "type": "PROCESS"
+    },
+    {
+      "key": "tenantId",
+      "type": "PROCESS"
     }
   ],
   "outputVariable": {},
-  "path": "/mnt/workflows/shelflist-holdings/shelflist-holdings-report-${timestamp}.csv",
+  "path": "/mnt/workflows/${tenantId}/shelflist-holdings/shelflist-holdings-report-${timestamp}.csv",
   "op": "DELETE",
   "asyncBefore": true
 }

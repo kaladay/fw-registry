@@ -297,7 +297,7 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
 --header 'X-Okapi-Tenant: tamu' \
 --form 'logLevel="DEBUG"' \
 --form 'file=@"FOLIOTags.csv"' \
---form 'path="/mnt/workflows/create-tags"' \
+--form 'path="/mnt/workflows/${tenantId}/create-tags"' \
 --form 'username="***"' \
 --form 'password="***"'
 ```
