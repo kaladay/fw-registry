@@ -9,7 +9,12 @@
       "type": "PROCESS"
     }
   ],
-  "outputVariable": {},
+  "outputVariable": [
+    {
+    "key": "tenantId",
+    "type": "PROCESS"
+    }
+  ],
   "source": "/mnt/workflows/${tenantId}/rapid/rapid_print_monos.txt",
   "destination": "/mnt/workflows/${tenantId}/rapid/rapid_print_monos.txt.gz",
   "format": "GZIP",
