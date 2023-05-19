@@ -13,12 +13,10 @@
       "type": "PROCESS"
     }
   ],
-  "outputVariable": [
-    {
-      "key": "tenantId",
-      "type": "PROCESS"
-    }
-  ],
+  "outputVariable": {
+    "key": "tenantId",
+    "type": "PROCESS"
+  },
   "source": "${sfxFile}",
   "destination": "/mnt/workflows/${tenantId}/rapid/rapid_electronic_serials.gz",
   "format": "GZIP",
