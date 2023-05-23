@@ -9,7 +9,7 @@
       "type": "PROCESS"
     },
     {
-      "key": "tenandId",
+      "key": "tenantId",
       "type": "PROCESS"
     }
   ],

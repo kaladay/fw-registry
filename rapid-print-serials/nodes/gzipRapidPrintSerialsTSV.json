@@ -5,7 +5,7 @@
   "deserializeAs": "CompressFileTask",
   "inputVariables": [
     {
-      "key": "tenandId",
+      "key": "tenantId",
       "type": "PROCESS"
     }
   ],
