@@ -9,7 +9,7 @@
       "type": "LOCAL"
     },
     {
-      "key": "tenandId",
+      "key": "tenantId",
       "type": "PROCESS"
     }
   ],
