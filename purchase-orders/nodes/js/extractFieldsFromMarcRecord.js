@@ -57,6 +57,7 @@ var marcOrderData = {
   amount: getSubfield(fields, '980', 'm'),
   requester:  getSubfield(fields, '980', 'n'),
   internalNote: getSubfield(fields, '980', 'o'),
+  poLineDescription: getSubfield(fields, '980', 'p'),
   quantity: getSubfield(fields, '980', 'q'),
   projectCode: getSubfield(fields, '980', 'r'),
   billTo: getSubfield(fields, '980', 's'),

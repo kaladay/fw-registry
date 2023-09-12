@@ -74,6 +74,7 @@ var orderLine = {
   source: 'User',
   titleOrPackage: marcOrderDataObj.title,
   description: marcOrderDataObj.internalNote,
+  poLineDescription: marcOrderDataObj.poLineDescription,
   selector: marcOrderDataObj.selector,
   requester: marcOrderDataObj.requester,
   acquisitionMethod: acquisitionMethod
