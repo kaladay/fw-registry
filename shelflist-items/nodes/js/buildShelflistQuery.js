@@ -149,7 +149,7 @@ if (updatedDateEnd != '') {
 
 var shelflistQuery = '\n\n'
        + cte
-       + '\nSELECT DISTINCT'
+       + '\nSELECT DISTINCT ON (item_ext.item_hrid,item_ext.barcode)'
        + '\n\titem_ext.item_hrid AS item_hrid,'
        + '\n\titem_ext.barcode AS barcode,'
        + '\n\titem_ext.permanent_location_name AS item_permanent_location,'
@@ -181,7 +181,7 @@ var shelflistQuery = '\n\n'
        + '\n\tisbn.value AS isbn'
        + '\nFROM ' + from
        + '\nWHERE ' + where
-       + '\nORDER BY item_effective_location, shelving_order, enumeration, chronology, holdings_hrid\n';
+       + '\nORDER BY item_ext.item_hrid, item_ext.barcode, item_effective_location, shelving_order, enumeration, chronology, holdings_hrid\n';
 
 if (logLevel === 'DEBUG') {
   print('\nshelflistQuery = ' + shelflistQuery);
