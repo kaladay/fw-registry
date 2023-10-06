@@ -12,7 +12,7 @@ if (logLevel === 'DEBUG') {
   print('\nacquisitionMethodsResponse = ' + acquisitionMethodsResponse + '\n');
 }
 
-var extractResponseArray = function (response, key, firstId, fallback) {
+var extractResponseArray = function (response, key, firstId) {
   if (!response || !response.totalRecords || response.totalRecords == 0 || !response[key]) {
     return (firstId === true) ? undefined : [];
   }
