@@ -12,27 +12,38 @@ if (logLevel === 'DEBUG') {
   print('\nacquisitionMethodsResponse = ' + acquisitionMethodsResponse + '\n');
 }
 
-var poNumber = JSON.parse(poNumberResponse).poNumber;
+var extractResponseArray = function (response, key, firstId, fallback) {
+  if (!response || !response.totalRecords || response.totalRecords == 0 || !response[key]) {
+    return (firstId === true) ? undefined : [];
+  }
 
-var vendorId = JSON.parse(vendorsResponse).organizations[0].id;
+  if (firstId === true) {
+    return (response[key].length > 0 && !!response[key][0] && !!response[key][0].id) ? response[key][0].id : undefined;
+  }
 
-var expenseClassId = JSON.parse(expenseClassesResponse).expenseClasses[0].id;
+  return response[key];
+};
 
-var configurationEntryId = JSON.parse(configurationEntriesResponse).configs[0].id;
+var poNumberObj = JSON.parse(poNumberResponse);
+var poNumber = !!poNumberObj && !!poNumberObj.poNumber ? poNumberObj.poNumber : undefined;
 
-var fund = JSON.parse(fundsResponse).funds[0];
+var vendorId = extractResponseArray(JSON.parse(vendorsResponse), 'organizations', true);
 
-var locations = JSON.parse(locationsResponse).locations;
+var expenseClassId = extractResponseArray(JSON.parse(expenseClassesResponse), 'expenseClasses', true);
 
-var materialTypes = JSON.parse(materialTypesResponse).mtypes;
+var configurationEntryId = extractResponseArray(JSON.parse(configurationEntriesResponse), 'configs', true);
 
-var materialTypes = JSON.parse(materialTypesResponse).mtypes;
+var funds = extractResponseArray(JSON.parse(fundsResponse), 'funds');
 
-var acquisitionMethods = JSON.parse(acquisitionMethodsResponse).acquisitionMethods;
+var locations = extractResponseArray(JSON.parse(locationsResponse), 'locations');
+
+var materialTypes = extractResponseArray(JSON.parse(materialTypesResponse), 'mtypes');
+
+var acquisitionMethods = extractResponseArray(JSON.parse(acquisitionMethodsResponse), 'acquisitionMethods');
 
 var marcOrderDataObj = JSON.parse(marcOrderData);
 
-var electronic = marcOrderDataObj.electronicIndicator && marcOrderDataObj.electronicIndicator.toLowerCase().indexOf('electronic') >= 0;
+var electronic = !!marcOrderDataObj.electronicIndicator && marcOrderDataObj.electronicIndicator.toLowerCase().indexOf('electronic') >= 0;
 
 var findLocationIdByName = function (locationName) {
   for (var i = 0; i < locations.length; ++i) {
@@ -63,9 +74,9 @@ var orderLine = {
   },
   details: {},
   fundDistribution: [{
-    code: fund.code,
+    code: funds.length > 0 ? funds[0].code : undefined,
     distributionType: 'percentage',
-    fundId: fund.id,
+    fundId: funds.length > 0 ? funds[0].id : undefined,
     expenseClassId: expenseClassId,
     value: 100
   }],
@@ -97,8 +108,6 @@ var compositePurchaseOrder = {
 };
 
 var tagList = [];
-
-
 
 if (electronic) {
   orderLine.orderFormat = 'Electronic Resource';
