@@ -1,0 +1,28 @@
+{
+  "id": "0d236b3c-e571-4b37-8114-7570c9d496a4",
+  "name": "Update Item",
+  "description": "Update the Item using the appropriate REST request.",
+  "deserializeAs": "RequestTask",
+  "request": {
+    "url": "{{okapi-internal}}/inventory/items/${itemId}",
+    "method": "PUT",
+    "contentType": "application/json",
+    "accept": "text/plain",
+    "bodyTemplate": "${updatedItem}"
+  },
+  "inputVariables": [
+    {
+      "key": "updatedItem",
+      "type": "PROCESS",
+      "spin": true,
+      "asJson": true
+    },
+    {
+      "key": "itemId",
+      "type": "PROCESS"
+    }
+  ],
+  "headerOutputVariables": [],
+  "outputVariable": {},
+  "asyncBefore": true
+}

@@ -1,0 +1,25 @@
+{
+  "id": "225fbb68-b311-4623-b397-856357be1c90",
+  "name": "Request Item",
+  "description": "Request the Item by its given Item ID.",
+  "deserializeAs": "RequestTask",
+  "request": {
+    "url": "{{okapi-internal}}/inventory/items/${item.id}",
+    "method": "GET",
+    "accept": "application/json"
+  },
+  "inputVariables": [
+    {
+      "key": "item",
+      "type": "PROCESS",
+      "spin": true
+    }
+  ],
+  "headerOutputVariables": [],
+  "outputVariable": {
+    "key": "itemResponse",
+    "type": "LOCAL",
+    "spin": true
+  },
+  "asyncBefore": true
+}

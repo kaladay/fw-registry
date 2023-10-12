@@ -1,0 +1,8 @@
+{
+  "id": "cdd600ba-e209-429c-a60f-f42632bfe5c3",
+  "name": "Start",
+  "description": "Execute workflow as a cronjob.",
+  "type": "SCHEDULED",
+  "deserializeAs": "StartEvent",
+  "expression": "0 7 * * * ?"
+}
