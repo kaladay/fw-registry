@@ -9,6 +9,6 @@
     "type": "PROCESS"
   },
   "designation": "ldp",
-  "query": "(select id from inventory_items where effective_location_id = '07a4e97e-9941-4f60-ad25-577bb6672c08' and status__name = 'Checked out' and json_array_length(data->'circulationNotes') = 0 ) union ( select s.id from ( select id, json_array_elements(data->'circulationNotes')->>'note' as note from inventory_items where effective_location_id = '07a4e97e-9941-4f60-ad25-577bb6672c08' and status__name = 'Checked out' ) s where 'Place on New Bookshelf' <> any (string_to_array(s.note, ';')));",
+  "query": "(select id from inventory_items where effective_location_id = '07a4e97e-9941-4f60-ad25-577bb6672c08' and status__name = 'Checked out' and json_array_length(data->'circulationNotes') = 0 ) union ( select s.id from ( select id, to_jsonb(data->'circulationNotes') as notes from inventory_items where effective_location_id = '07a4e97e-9941-4f60-ad25-577bb6672c08' and status__name = 'Checked out' ) s where not s.notes @> '[{\"note\":\"Place on New Bookshelf\"}]'::jsonb)",
   "asyncBefore": true
 }
