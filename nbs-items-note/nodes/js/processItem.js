@@ -12,8 +12,8 @@ if (!!itemObj && !!itemObj.status && !!itemObj.status.name && itemObj.status.nam
 
   if (circulationNotes.length > 0) {
     for (var i = 0; i < circulationNotes.length; i++) {
-      if (!!circulationNotes.noteType && !!circulationNotes.note) {
-        if (circulationNotes.noteType == 'Check in' && circulation.note == 'Place on New Bookshelf') {
+      if (!!circulationNotes[i].noteType && !!circulationNotes[i].note) {
+        if (circulationNotes[i].noteType == 'Check in' && circulationNotes[i].note == 'Place on New Bookshelf') {
           addNote = false;
           break;
         }
