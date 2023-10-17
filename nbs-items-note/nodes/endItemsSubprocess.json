@@ -1,0 +1,6 @@
+{
+  "id": "ac4abb19-0cb8-482b-8cab-e1c385cd7b6b",
+  "name": "End Items Subprocess",
+  "description": "The Items sub-process is complete.",
+  "deserializeAs": "EndEvent"
+}
