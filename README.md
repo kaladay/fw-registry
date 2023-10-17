@@ -387,3 +387,35 @@ fw build item-history-update
 fw activate item-history-update
 fw run item-history-update
 ```
+
+## nbs-items-note
+
+### New Bookshelf Items Note (Scheduled)
+
+This workflows adds a special check-in note for *New Bookshelf Items* for a specific temporary location **UUID**.
+If the check-in note already exists, then the new note is not added.
+
+This utilizes **LDP** in order to fine-tune the query in ways not normally allowed via the **FOLIO** **REST** end points.
+These fetched *Items* are then used to fetch an up to date version using the appropriate **FOLIO** **REST** end point and updates the *Items* as appropriate using the appropriate **FOLIO** **REST** end point.
+
+The scheduled event is for **12:00pm UTC**, which is **7:00am in CDT**.
+
+```shell
+fw config set ldp-url ***
+fw config set ldp-user ***
+fw config set ldp-password ***
+fw config set okapi-internal ***
+fw config set username ***
+fw config set password ***
+```
+
+To build and activate:
+```shell
+fw build nbs-items-note
+fw activate nbs-items-note
+```
+
+Either wait for scheduled event to occur or manually execute via:
+```shell
+fw run nbs-items-note
+```
