@@ -1,7 +1,5 @@
 var itemsArr = JSON.parse(itemsResponse);
 
-print('\nitemsResponse = ' + itemsResponse + '\n');
-
 if (!itemsArr) {
   itemsArr = [];
 }

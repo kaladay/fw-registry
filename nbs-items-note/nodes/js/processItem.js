@@ -1,7 +1,5 @@
 var itemObj = JSON.parse(itemResponse);
 
-print('\nitemResponse = ' + itemResponse + '\n');
-
 var extractResponseArray = function (response, key) {
   return (!response || !response[key]) ? [] : response[key];
 };
