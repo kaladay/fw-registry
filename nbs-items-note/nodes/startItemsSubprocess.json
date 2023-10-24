@@ -1,0 +1,8 @@
+{
+  "id": "fa28c94a-7f55-4b60-85f0-fb1a3fe03c1b",
+  "name": "Start Items Subprocess",
+  "description": "Start processing the Items array.",
+  "type": "NONE",
+  "deserializeAs": "StartEvent",
+  "asyncBefore": true
+}
