@@ -1,5 +1,9 @@
 # fw-registry
 
+## Warnings
+
+- Be sure to check and update the tenant header in all the curl requests documented below.
+
 Start mod-workflow and mod-camunda.
 
 ```
@@ -324,19 +328,19 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
 --form 'emailFrom="folio@k1000.library.tamu.edu"' \
 --form 'emailTo="wwelling@library.tamu.edu"' \
 --form 'libraryName="[\"Texas A&M University Qatar Library\"]"' \
---form 'locationDiscoveryDisplayName'="[]"' \
---form 'locationName'="[]"' \
---form 'language'="[]"' \
---form 'resourceType'="[]"' \
---form 'format'="[]"' \
---form 'batchId'=""' \
---form 'issuance'=""' \
---form 'suppressInstance'=false' \
---form 'suppressHoldings'=false' \
---form 'createdDateStart'=""' \
---form 'createdDateEnd'=""' \
---form 'updatedDateStart'=""' \
---form 'updatedDateEnd'=""'
+--form 'locationDiscoveryDisplayName="[]"' \
+--form 'locationName="[]"' \
+--form 'language="[]"' \
+--form 'resourceType="[]"' \
+--form 'format="[]"' \
+--form 'batchId=""' \
+--form 'issuance=""' \
+--form 'suppressInstance=false' \
+--form 'suppressHoldings=false' \
+--form 'createdDateStart=""' \
+--form 'createdDateEnd=""' \
+--form 'updatedDateStart=""' \
+--form 'updatedDateEnd=""'
 ```
 
 ## shelflist-items
@@ -361,15 +365,15 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
 --form 'emailFrom="folio@k1000.library.tamu.edu"' \
 --form 'emailTo="wwelling@library.tamu.edu"' \
 --form 'libraryName="[\"Texas A&M University Qatar Library\"]"' \
---form 'locationDiscoveryDisplayName'="[]"' \
---form 'locationName'="[]"' \
---form 'loanType'="[]"' \
---form 'materialType'="[]"' \
---form 'itemStatus'="[]"' \
---form 'createdDateStart'=""' \
---form 'createdDateEnd'=""' \
---form 'updatedDateStart'=""' \
---form 'updatedDateEnd'=""'
+--form 'locationDiscoveryDisplayName="[]"' \
+--form 'locationName="[]"' \
+--form 'loanType="[]"' \
+--form 'materialType="[]"' \
+--form 'itemStatus="[]"' \
+--form 'createdDateStart=""' \
+--form 'createdDateEnd=""' \
+--form 'updatedDateStart=""' \
+--form 'updatedDateEnd=""'
 ```
 
 ## item-history-update
