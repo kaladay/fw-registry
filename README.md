@@ -390,7 +390,7 @@ fw run item-history-update
 
 ## nbs-items-note
 
-### New Bookshelf Items Note (Scheduled)
+### New Bookshelf Items Note Workflow (Scheduled)
 
 This workflows adds a special check-in note for *New Bookshelf Items* for a specific temporary location **UUID**.
 If the check-in note already exists, then the new note is not added.
@@ -418,4 +418,64 @@ fw activate nbs-items-note
 Either wait for scheduled event to occur or manually execute via:
 ```shell
 fw run nbs-items-note
+```
+
+## create-notes
+
+### FOLIO Create Notes Workflow
+
+This workflow adds a given note, specified by the *Note Type UUID*, with the given *Note Text* message and the given *Staff Only* setting.
+If a given Note already exists on an Item then that Note is not added multiple times to the Item.
+
+This utilizes **LDP** in order to fine-tune the query in ways not normally allowed via the **FOLIO** **REST** end points.
+These fetched *Items* are then used to fetch an up to date version using the appropriate **FOLIO** **REST** end point and updates the *Items* as appropriate using the appropriate **FOLIO** **REST** end point.
+
+At the end of this process, an e-mail is set to the given destination address.
+
+```shell
+fw config set okapi-internal ***
+```
+
+These variables are required when triggering the workflow:
+
+| Variable Name  | Allowed Values | Short Description |
+| -------------- | -------------- | ----------------- |
+| path           | directory path | The directory on the system where the CSV file is stored within on the server and contain the `tenantPath` (include trailing slash after the directory). |
+| file           | file name      | The file path within the specified directory path representing the CSV file to process (do not prefix with a starting slash). |
+| emailFrom      | e-mail address | An e-mail address used as the "FROM" in the sent e-mails. |
+| emailTo        | e-mail address | An e-mail address used as the "TO" in the sent e-mails. |
+| itemNoteTypeId | UUID           | The Item Note Type UUID to be used for the Note. |
+| noteText       | string         | A message used as the Note. |
+| staffOnly      | boolean        | Designate whether or not this is a *Staff Only* note. |
+| username       | string         | Okapi login username. |
+| password       | string         | Okapi login password. |
+| ldp-user       | string         | LDP login username. |
+| ldp-password   | string         | LDP login password. |
+| ldp-url        | URL            | LDP URL. |
+
+
+To build and activate:
+```shell
+fw build create-notes
+fw activate create-notes
+```
+
+Trigger the workflow using an **HTTP** request such as with **Curl**:
+```shell
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/create-notes/start' \
+  --header 'Content-Type: multipart/form-data' \
+  --header 'X-Okapi-Tenant: diku' \
+  --form 'logLevel="INFO"' \
+  --form 'emailFrom="folio@k1000.library.tamu.edu"' \
+  --form 'emailTo="wwelling@library.tamu.edu"' \
+  --form 'file=@"itemBarcodes.csv"' \
+  --form 'path="/mnt/workflows/${tenantId}/create-notes/"' \
+  --form 'itemNoteTypeId="d5684236-e4ab-4a64-97b3-2aa7a595cfc4"' \
+  --form 'noteText="This is a note text message."' \
+  --form 'staffOnly=false' \
+  --form 'username="***"' \
+  --form 'password="***"' \
+  --form 'ldp-user="***"' \
+  --form 'ldp-password="***"' \
+  --form 'ldp-url="http://ldp.example.com/ldp"'
 ```
