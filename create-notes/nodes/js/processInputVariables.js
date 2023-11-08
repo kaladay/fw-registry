@@ -1,3 +1,4 @@
+var FormatUtility = Java.type('org.folio.rest.utility.FormatUtility');
 var MappingUtility = Java.type('org.folio.rest.utility.MappingUtility');
 var UUID = Java.type('java.util.UUID');
 var StringUtils = Java.type('org.apache.commons.lang3.StringUtils');
@@ -26,8 +27,7 @@ if (Array.isArray(idsMatrix) && idsMatrix.length > 0) {
     let key = Object.keys(idsMatrix[i]);
 
     try {
-      /* TODO: This needs an SQL escape, such as: StringUtils.escapeSql(idsMatrix[i][key]); */
-      let value = idsMatrix[i][key];
+      let value = FormatUtility.sanitizeSqlCode(idsMatrix[i][key]);
 
       if (!!idSql) {
         idSql += ', ';
@@ -57,14 +57,13 @@ try {
 }
 
 try {
-  /* TODO: This needs an SQL escape, such as: queryWrapper.noteText = StringUtils.escapeSql(noteText); */
-  queryWrapper.noteText = noteText;
+  queryWrapper.noteText = FormatUtility.sanitizeSqlCode(noteText);
 } catch (err) {
   throw new Error('Failed to escape SQL in noteText: ' + noteText + '!');
 }
 
 if (staffOnly !== true && staffOnly !== false && ('' + staffOnly).toLowerCase() !== 'true' && ('' + staffOnly).toLowerCase() !== 'false') {
-  throw new Error('The staffOnly variable must be either \'true\' or \'false\'.');
+  throw new Error('The staffOnly variable must be either \'true\' or \'false\' but is instead \'' + staffOnly + '\'.');
 }
 
 queryWrapper.staffOnly = (staffOnly === true || ('' + staffOnly).toLowerCase() === 'true') ? true : false;
