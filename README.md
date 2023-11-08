@@ -324,27 +324,7 @@ fw activate shelflist-holdings
 curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/shelflist-holdings/start' \
 --header 'Content-Type: application/json' \
 --header 'X-Okapi-Tenant: tern' \
---data-raw '{
-
-  "logLevel": "INFO",
-  "emailFrom": "folio@k1000.library.tamu.edu",
-  "emailTo": "wwelling@library.tamu.edu",
-  "libraryName': "[\"Texas A&M University Qatar Library\"]",
-  "locationDiscoveryDisplayName": "[]",
-  "locationName": "[]",
-  "language=": "[]",
-  "resourceType": "[]",
-  "format": "[]",
-  "batchId": "",
-  "issuance": "",
-  "suppressInstance": false,
-  "suppressHoldings": false,
-  "createdDateStart": "",
-  "createdDateEnd": "",
-  "updatedDateStart": "",
-  "updatedDateEnd": ""
-
-  }'
+--data-raw '{ "logLevel": "INFO", "emailFrom": "folio@k1000.library.tamu.edu", "emailTo": "wwelling@library.tamu.edu", "libraryName': "[\"Texas A&M University Qatar Library\"], "locationDiscoveryDisplayName": "[]", "locationName": "[]", "language=": "[]", "resourceType": "[]", "format": "[]", "batchId": "", "issuance": "", "suppressInstance": false, "suppressHoldings": false, "createdDateStart": "", "createdDateEnd": "", "updatedDateStart": "", "updatedDateEnd": "" }'
 
 ```
 
@@ -366,22 +346,7 @@ fw activate shelflist-holdings
 curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/shelflist-items/start' \
 --header 'Content-Type: application/json' \
 --header 'X-Okapi-Tenant: tern' \
---data-raw '{
-
-   "logLevel": "INFO",
-   "emailFrom": "folio@k1000.library.tamu.edu",
-   "emailTo": "wwelling@library.tamu.edu",
-   "libraryName": "[\"Texas A&M University Qatar Library\"]",
-   "locationDiscoveryDisplayName": "[]",
-   "locationName": "[]",
-   "loanType": "[]",
-   "materialType": "[]",
-   "itemStatus": "[]",
-   "createdDateStart": "",
-   "createdDateEnd": "",
-   "updatedDateStart": "",
-   "updatedDateEnd": ""
-  }'
+--data-raw '{ "logLevel": "INFO", "emailFrom": "folio@k1000.library.tamu.edu", "emailTo": "wwelling@library.tamu.edu", "libraryName": "[\"Texas A&M University Qatar Library\"] ", "locationDiscoveryDisplayName": "[]", "locationName": "[]", "loanType": "[]", "materialType": "[]", "itemStatus": "[]", "createdDateStart": "", "createdDateEnd": "", "updatedDateStart": "", "updatedDateEnd": "" }'
 
 ```
 
