@@ -322,7 +322,7 @@ fw build shelflist-holdings
 fw activate shelflist-holdings
 
 curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/shelflist-holdings/start' \
---header 'Content-Type: multipart/form-data' \
+--header 'Content-Type: application/json' \
 --header 'X-Okapi-Tenant: tern' \
 --form 'logLevel="INFO"' \
 --form 'emailFrom="folio@k1000.library.tamu.edu"' \
@@ -359,7 +359,7 @@ fw build shelflist-holdings
 fw activate shelflist-holdings
 
 curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/shelflist-items/start' \
---header 'Content-Type: multipart/form-data' \
+--header 'Content-Type: application/json' \
 --header 'X-Okapi-Tenant: tern' \
 --form 'logLevel="INFO"' \
 --form 'emailFrom="folio@k1000.library.tamu.edu"' \
