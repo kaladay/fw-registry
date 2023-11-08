@@ -14,6 +14,10 @@ cd mod-camunda
 mvn clean spring-boot:run
 ```
 
+## Warnings
+
+- Be sure to check and update the tenant header in all the curl requests documented below.
+
 ## patron
 
 DivIT patron workflow. (Scheduled)
@@ -318,25 +322,10 @@ fw build shelflist-holdings
 fw activate shelflist-holdings
 
 curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/shelflist-holdings/start' \
---header 'Content-Type: multipart/form-data' \
+--header 'Content-Type: application/json' \
 --header 'X-Okapi-Tenant: tern' \
---form 'logLevel="INFO"' \
---form 'emailFrom="folio@k1000.library.tamu.edu"' \
---form 'emailTo="wwelling@library.tamu.edu"' \
---form 'libraryName="[\"Texas A&M University Qatar Library\"]"' \
---form 'locationDiscoveryDisplayName'="[]"' \
---form 'locationName'="[]"' \
---form 'language'="[]"' \
---form 'resourceType'="[]"' \
---form 'format'="[]"' \
---form 'batchId'=""' \
---form 'issuance'=""' \
---form 'suppressInstance'=false' \
---form 'suppressHoldings'=false' \
---form 'createdDateStart'=""' \
---form 'createdDateEnd'=""' \
---form 'updatedDateStart'=""' \
---form 'updatedDateEnd'=""'
+--data-raw '{ "logLevel": "INFO", "emailFrom": "folio@k1000.library.tamu.edu", "emailTo": "wwelling@library.tamu.edu", "libraryName': "[\"Texas A&M University Qatar Library\"], "locationDiscoveryDisplayName": "[]", "locationName": "[]", "language=": "[]", "resourceType": "[]", "format": "[]", "batchId": "", "issuance": "", "suppressInstance": false, "suppressHoldings": false, "createdDateStart": "", "createdDateEnd": "", "updatedDateStart": "", "updatedDateEnd": "" }'
+
 ```
 
 ## shelflist-items
@@ -355,21 +344,10 @@ fw build shelflist-holdings
 fw activate shelflist-holdings
 
 curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/shelflist-items/start' \
---header 'Content-Type: multipart/form-data' \
+--header 'Content-Type: application/json' \
 --header 'X-Okapi-Tenant: tern' \
---form 'logLevel="INFO"' \
---form 'emailFrom="folio@k1000.library.tamu.edu"' \
---form 'emailTo="wwelling@library.tamu.edu"' \
---form 'libraryName="[\"Texas A&M University Qatar Library\"]"' \
---form 'locationDiscoveryDisplayName'="[]"' \
---form 'locationName'="[]"' \
---form 'loanType'="[]"' \
---form 'materialType'="[]"' \
---form 'itemStatus'="[]"' \
---form 'createdDateStart'=""' \
---form 'createdDateEnd'=""' \
---form 'updatedDateStart'=""' \
---form 'updatedDateEnd'=""'
+--data-raw '{ "logLevel": "INFO", "emailFrom": "folio@k1000.library.tamu.edu", "emailTo": "wwelling@library.tamu.edu", "libraryName": "[\"Texas A&M University Qatar Library\"] ", "locationDiscoveryDisplayName": "[]", "locationName": "[]", "loanType": "[]", "materialType": "[]", "itemStatus": "[]", "createdDateStart": "", "createdDateEnd": "", "updatedDateStart": "", "updatedDateEnd": "" }'
+
 ```
 
 ## item-history-update
