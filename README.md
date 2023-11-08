@@ -1,9 +1,5 @@
 # fw-registry
 
-## Warnings
-
-- Be sure to check and update the tenant header in all the curl requests documented below.
-
 Start mod-workflow and mod-camunda.
 
 ```
@@ -17,6 +13,10 @@ mvn clean spring-boot:run
 cd mod-camunda
 mvn clean spring-boot:run
 ```
+
+## Warnings
+
+- Be sure to check and update the tenant header in all the curl requests documented below.
 
 ## patron
 
