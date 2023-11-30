@@ -1,0 +1,16 @@
+{
+  "id": "7d51b48f-6c81-48da-aefd-b94f9295fb86",
+  "name": "Delete Input CSV File",
+  "description": "Delete the CSV file containing a single column of IDs.",
+  "deserializeAs": "FileTask",
+  "inputVariables": [
+    {
+      "key": "inputFilePath",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {},
+  "path": "${inputFilePath}",
+  "op": "DELETE",
+  "asyncBefore": true
+}

@@ -1,0 +1,28 @@
+{
+  "id": "7457e2f9-ebab-4973-ad10-595ae9d60bb7",
+  "name": "Send Success E-mail",
+  "description": "Send an e-mail when the entire process is complete.",
+  "deserializeAs": "EmailTask",
+  "inputVariables": [
+    {
+      "key": "emailTo",
+      "type": "PROCESS"
+    },
+    {
+      "key": "emailFrom",
+      "type": "PROCESS"
+    },
+    {
+      "key": "successEmail",
+      "type": "LOCAL",
+      "spin": true
+    }
+  ],
+  "outputVariable": {},
+  "mailTo": "${emailTo}",
+  "mailFrom": "${emailFrom}",
+  "mailSubject": "${successEmail.subject}",
+  "mailText": "${successEmail.text}",
+  "mailMarkup": "${successEmail.markup}",
+  "asyncBefore": true
+}
