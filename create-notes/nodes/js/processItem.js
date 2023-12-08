@@ -24,7 +24,7 @@ if (!!itemObj) {
 
   if (notes.length > 0) {
     for (var i = 0; i < notes.length; i++) {
-      if (!!notes[i].itemNoteTypeId && !!notes[i].note && !!notes[i].staffOnly) {
+      if (!!notes[i].itemNoteTypeId && !!notes[i].note && notes[i].hasOwnProperty("staffOnly")) {
         if (notes[i].itemNoteTypeId == itemNoteTypeId && notes[i].note.toLowerCase() == noteText.toLowerCase() && notes[i].staffOnly == staffOnlyBoolean) {
           addNote = false;
           break;
