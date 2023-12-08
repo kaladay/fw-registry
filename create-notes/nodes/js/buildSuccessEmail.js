@@ -21,8 +21,12 @@ successEmailMarkup += '<p>Of those ' + totalProcessedItems + ' processed Items, 
 if (changedItemsArr.length > 0) {
   successEmailMarkup += ':</p><ul>';
 
-  for (let i = 0; i < changedItemsArr.length; i++) {
+  for (let i = 0; i < changedItemsArr.length && i < 4; i++) {
     successEmailMarkup += '<li>\tItem UUID: ' + changedItemsArr[i] + '</li>';
+  }
+
+  if (changedItemsArr.length > 3) {
+    successEmailMarkup += '<li>\t...</li>';
   }
 
   successEmailMarkup += '</ul>';
