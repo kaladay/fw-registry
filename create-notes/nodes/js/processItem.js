@@ -12,6 +12,7 @@ var extractResponseArray = function (response, key) {
 if (logLevel === "DEBUG") {
   print('\nitemResponse = ' + itemResponse + '\n');
   print('\nitemNoteTypeId = ' + itemNoteTypeId + '\n');
+  print('\nitemNoteTypeName = ' + itemNoteTypeName + '\n');
   print('\nnoteText = ' + noteText + '\n');
   print('\nstaffOnly = ' + staffOnly + '\n');
   print('\nchangedItemsArr = ' + changedItemsArr + '\n');
@@ -36,6 +37,7 @@ if (!!itemObj) {
   if (addNote) {
     notes.push({
       'itemNoteTypeId': itemNoteTypeId,
+      'itemNotTypeName': itemNotTypeName,
       'note': noteText,
       'staffOnly': staffOnlyBoolean
     });

@@ -13,6 +13,7 @@ var successEmailText = '';
 successEmailMarkup += '<p>Information regarding the Note being added:</p>';
 successEmailMarkup += '<ul>';
 successEmailMarkup += '<li>\tNote Type UUID: ' + itemNoteTypeId + '</li>';
+successEmailMarkup += '<li>\tNote Type Name: ' + itemNoteTypeName + '</li>';
 successEmailMarkup += '<li>\tNote Message: ' + noteText + '</li>';
 successEmailMarkup += '<li>\tStaff Only: ' + staffOnly + '</li>';
 successEmailMarkup += '</ul>';
