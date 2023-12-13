@@ -12,6 +12,7 @@ var extractResponseArray = function (response, key) {
 if (logLevel === "DEBUG") {
   print('\nitemResponse = ' + itemResponse + '\n');
   print('\nitemNoteTypeId = ' + itemNoteTypeId + '\n');
+  print('\nitemNoteTypeName = ' + itemNoteTypeName + '\n');
   print('\nnoteText = ' + noteText + '\n');
   print('\nstaffOnly = ' + staffOnly + '\n');
   print('\nchangedItemsArr = ' + changedItemsArr + '\n');
@@ -24,7 +25,7 @@ if (!!itemObj) {
 
   if (notes.length > 0) {
     for (var i = 0; i < notes.length; i++) {
-      if (!!notes[i].itemNoteTypeId && !!notes[i].note && !!notes[i].staffOnly) {
+      if (!!notes[i].itemNoteTypeId && !!notes[i].note && notes[i].hasOwnProperty("staffOnly")) {
         if (notes[i].itemNoteTypeId == itemNoteTypeId && notes[i].note.toLowerCase() == noteText.toLowerCase() && notes[i].staffOnly == staffOnlyBoolean) {
           addNote = false;
           break;
@@ -36,6 +37,7 @@ if (!!itemObj) {
   if (addNote) {
     notes.push({
       'itemNoteTypeId': itemNoteTypeId,
+      'itemNotTypeName': itemNotTypeName,
       'note': noteText,
       'staffOnly': staffOnlyBoolean
     });

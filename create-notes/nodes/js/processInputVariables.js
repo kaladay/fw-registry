@@ -7,6 +7,7 @@ var idsMatrix = JSON.parse(idsJson);
 var queryWrapper = {
   'noteText': null,
   'noteType': null,
+  'noteTypeName': null,
   'staffOnly': false,
   'sql': ''
 };
@@ -18,6 +19,7 @@ if (logLevel === 'DEBUG') {
   print('\ninputFilePath = ' + inputFilePath + '\n');
   print('\nidsJson = ' + idsJson + '\n');
   print('\nitemNoteTypeId = ' + itemNoteTypeId + '\n');
+  print('\nitemNoteTypeName = ' + itemNoteTypeName + '\n');
   print('\nnoteText = ' + noteText + '\n');
   print('\nstaffOnly = ' + staffOnly + '\n');
 }
