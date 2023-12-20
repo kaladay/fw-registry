@@ -3,27 +3,11 @@
   "name": "Connect to LDP",
   "description": "Connect to the LDP.",
   "deserializeAs": "DatabaseConnectionTask",
-  "inputVariables": [
-    {
-      "key": "ldp-url",
-      "type": "PROCESS",
-      "spin": false
-    },
-    {
-      "key": "ldp-user",
-      "type": "PROCESS",
-      "spin": false
-    },
-    {
-      "key": "ldp-password",
-      "type": "PROCESS",
-      "spin": false
-    }
-  ],
+  "inputVariables": [],
   "outputVariable": {},
   "designation": "ldp",
-  "url": "${ldp-url}",
-  "username": "${ldp-user}",
-  "password": "${ldp-password}",
+  "url": "{{{ldp-url}}}",
+  "username": "{{{ldp-user}}}",
+  "password": "{{{ldp-password}}}",
   "asyncBefore": true
 }

@@ -412,6 +412,9 @@ At the end of this process, an e-mail is set to the given destination address.
 
 ```shell
 fw config set okapi-internal ***
+fw config set ldp-url ***
+fw config set ldp-user ***
+fw config set ldp-password ***
 ```
 
 These variables are required when triggering the workflow:
@@ -452,8 +455,5 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
   --form 'noteText="This is a note text message."' \
   --form 'staffOnly=false' \
   --form 'username="***"' \
-  --form 'password="***"' \
-  --form 'ldp-user="***"' \
-  --form 'ldp-password="***"' \
-  --form 'ldp-url="http://ldp.example.com/ldp"'
+  --form 'password="***"'
 ```
