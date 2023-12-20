@@ -37,7 +37,7 @@ if (!!itemObj) {
   if (addNote) {
     notes.push({
       'itemNoteTypeId': itemNoteTypeId,
-      'itemNotTypeName': itemNotTypeName,
+      'itemNoteTypeName': itemNoteTypeName,
       'note': noteText,
       'staffOnly': staffOnlyBoolean
     });
