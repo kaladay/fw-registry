@@ -1,11 +1,26 @@
 {
-    "id": "78ae1271-bcf8-452f-a3de-7e4583ba8017",
-    "name": "Query list of books from a given call number range.",
-    "description": "",
-    "deserializeAs": "DatabaseQueryTask",
-    "inputVariables": [],
-    "outputVariable": { },
-    "designation": "books-call-number",
-    "query": "WITH MaxLength AS (SELECT MAX(LENGTH(he.call_number)) AS max_len FROM folio_reporting.holdings_ext he) SELECT * FROM folio_reporting.item_ext ie JOIN folio_reporting.holdings_ext he ON ie.holdings_record_id = he.holdings_id CROSS JOIN MaxLength WHERE UPPER(he.call_number) >= UPPER('a') AND UPPER(he.call_number) <= RPAD(UPPER('b9'), max_len, 'ÿ') ORDER BY he.call_number;",
-    "asyncBefore": true
-  }
+  "id": "78ae1271-bcf8-452f-a3de-7e4583ba8017",
+  "name": "Query by Call Number",
+  "description": "Query books by specied call number range provided.",
+  "deserializeAs": "DatabaseQueryTask",
+  "inputVariables": [
+    {
+      "key": "booksCallNumberQuery",
+      "type": "LOCAL"
+    },
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    },
+    {
+      "key": "path",
+      "type": "PROCESS"
+    }
+  ],
+  "designation": "ldp",
+  "query": "${booksCallNumberQuery.prop('sql').stringValue()}",
+  "outputPath": "${path}/checked-out-books-report-${timestamp}.csv",
+  "resultType": "CSV",
+  "includeHeader": true,
+  "asyncBefore": true
+}
