@@ -476,8 +476,13 @@ These variables are required when triggering the workflow:
 | ldp-user                | string         | LDP login username. |
 | ldp-password            | string         | LDP login password. |
 | ldp-url                 | URL            | LDP URL. |
+<<<<<<< HEAD
 | bcn-mail-to             | e-mail address | An e-mail address used as the "TO" in the sent e-mails. |
 | bcn-mail-from           | e-mail address | An e-mail address used on behalf of the workflow. |
+=======
+| bcnMailTo               | e-mail address | An e-mail address used as the "TO" in the sent e-mails. |
+| bcnMailFrom             | e-mail address | An e-mail address used as the "FROM" in the sent e-mails. |
+>>>>>>> 4099d18 (Updated readMe documentation for Books-call-number)
 | mis-catalog-reports-url | URL            | URL for the MIS Catalog Reports website. |
 | logLevel                | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG". |
 
@@ -488,7 +493,7 @@ This utilizes **LDP** to get the query result which gets written to: */mnt/workf
 fw config set ldp-url ***
 fw config set ldp-user ***
 fw config set ldp-password ***
-fw config set bcn-mail-from ***
+fw config set bcnMailFrom ***
 fw config set mis-catalog-reports-url https://localhost/catalog_reports/site
 
 ```
