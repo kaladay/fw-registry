@@ -25,5 +25,3 @@
   "attachmentPath": "${path}/checked-out-books-report-${timestamp}.zip",
   "asyncBefore": true
 }
-
-  
