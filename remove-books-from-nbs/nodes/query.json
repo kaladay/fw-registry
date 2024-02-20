@@ -6,7 +6,7 @@
   "inputVariables": [
     {
       "key": "barcodeQuery",
-      "type": "LOCAL"
+      "type": "PROCESS"
     },
     {
       "key": "tenantId",

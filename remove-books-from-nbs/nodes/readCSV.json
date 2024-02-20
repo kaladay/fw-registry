@@ -1,5 +1,5 @@
 {
-  "id": "0e636437-1f47-4f2d-a11e-1cb7ee2a30f1",
+  "id": "7e95d7c3-6a22-4708-8294-ce3a46aa33f5",
   "name": "Read CSV File.",
   "description": "Read CSV file containing list of barcodes.",
   "deserializeAs": "FileTask",
@@ -10,7 +10,7 @@
     }
   ],
   "outputVariable": {
-    "key": "barCodeCsv",
+    "key": "barCodes",
     "type": "PROCESS",
     "asTransient": true
   },
