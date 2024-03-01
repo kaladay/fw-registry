@@ -15,6 +15,7 @@ var barcodeQuery =
 if (logLevel === 'DEBUG') {
   print('\nbarcodeQuery = ' + barcodeQuery);
 }
+print("testing in scriptTask \n");
 
 var queryWrapper = {
   sql: barcodeQuery,

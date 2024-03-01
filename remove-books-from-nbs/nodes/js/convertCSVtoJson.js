@@ -1,4 +1,4 @@
-var MappingUtility = Java.type("org.folio.rest.utility.MappingUtility");
+var MappingUtility = Java.type("org.folio.rest.camunda.utility.MappingUtility");
 var barCodeJSON = MappingUtility.mapCsvToJson(barCodeCsv);
 
 if (logLevel === "DEBUG") {

@@ -5,28 +5,20 @@
   "deserializeAs": "EmailTask",
   "inputVariables": [
     {
-      "key": "emailTo",
-      "type": "PROCESS"
-    },
-    {
       "key": "timestamp",
       "type": "PROCESS"
     },
     {
       "key": "tenantId",
       "type": "PROCESS"
-    },
-    {
-      "key": "count",
-      "type": "PROCESS"
     }
   ],
   "outputVariable": {},
-  "mailTo": "${emailTo}",
+  "mailTo": "${{bcn-mail-to}}",
   "mailFrom": "${{bcn-mail-from}}",
   "mailSubject": "List of Barcodes removed from Evans new bookshelf",
   "mailText": "This email provides list of barcodes that has been taken off Evans new bookshelf",
-  "attachmentPath": "/mnt/workflows/${tenantId}/remove-books-from-nbs/remove-books-from-nbs-report-${timestamp}.zip",
-  "includeAttachment": "${(count > 0)?then('true', 'false')}",
+  "attachmentPath": "/mnt/workflows/${tenantId}/remove-books-from-nbs/remove-books-from-nbs-report-${timestamp}.csv",
+  "includeAttachment": true,
   "asyncBefore": true
 }
