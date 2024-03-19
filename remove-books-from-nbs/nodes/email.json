@@ -5,20 +5,20 @@
   "deserializeAs": "EmailTask",
   "inputVariables": [
     {
-      "key": "timestamp",
+      "key": "emailTo",
       "type": "PROCESS"
     },
     {
-      "key": "tenantId",
-      "type": "PROCESS"
+      "key": "email",
+      "type": "LOCAL",
+      "spin": true
     }
   ],
   "outputVariable": {},
-  "mailTo": "${{bcn-mail-to}}",
+  "mailTo": "${emailTo}",
   "mailFrom": "${{bcn-mail-from}}",
-  "mailSubject": "List of Barcodes removed from Evans new bookshelf",
-  "mailText": "This email provides list of barcodes that has been taken off Evans new bookshelf",
-  "attachmentPath": "/mnt/workflows/${tenantId}/remove-books-from-nbs/remove-books-from-nbs-report-${timestamp}.csv",
-  "includeAttachment": true,
+  "mailSubject": "${email.subject}",
+  "mailText": "${email.text}",
+  "mailMarkup": "${email.markup}",
   "asyncBefore": true
 }
