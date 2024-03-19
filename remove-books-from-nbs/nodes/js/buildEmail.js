@@ -11,7 +11,7 @@ for (var i = 0; i < itemsRemoved.length; ++i) {
   emailMarkup += '<ul>';
   emailMarkup += '<li>\tid: ' + item.id + '</li>';
   emailMarkup += '<li>\thrid: ' + item.hrid + '</li>';
-  emailMarkup += '<li>\tcallnumber: ' + item.callnumber + '</li>';
+  emailMarkup += '<li>\tcall number: ' + item.callNumber + '</li>';
   emailMarkup += '</ul>';
 }
 emailMarkup += '</p>';
