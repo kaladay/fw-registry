@@ -464,7 +464,7 @@ Remove items from new bookshelf location for provided CSV of call numbers.
 
 ```shell
 fw config set okapi-internal ***
-fw config set bcn-mail-from ***
+fw config set nbs-mail-from ***
 ```
 
 These variables are required when triggering the workflow:
