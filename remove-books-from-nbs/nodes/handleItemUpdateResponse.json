@@ -1,8 +1,0 @@
-{
-  "id": "6969d4aa-fba6-4c2b-8fb2-b097a025aa66",
-  "name": "Handle item update response",
-  "description": "",
-  "deserializeAs": "ScriptTask",
-  "scriptFormat": "javascript",
-  "code": "handleItemUpdateResponse.js"
-}
