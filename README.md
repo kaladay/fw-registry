@@ -324,7 +324,7 @@ fw activate shelflist-holdings
 curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/shelflist-holdings/start' \
 --header 'Content-Type: application/json' \
 --header 'X-Okapi-Tenant: tern' \
---data-raw '{ "logLevel": "INFO", "emailFrom": "folio@k1000.library.tamu.edu", "emailTo": "wwelling@library.tamu.edu", "libraryName': "[\"Texas A&M University Qatar Library\"], "locationDiscoveryDisplayName": "[]", "locationName": "[]", "language=": "[]", "resourceType": "[]", "format": "[]", "batchId": "", "issuance": "", "suppressInstance": false, "suppressHoldings": false, "createdDateStart": "", "createdDateEnd": "", "updatedDateStart": "", "updatedDateEnd": "" }'
+--data-raw '{ "logLevel": "INFO", "emailFrom": "folio@k1000.library.tamu.edu", "emailTo": "workflows@library.tamu.edu", "libraryName': "[\"Texas A&M University Qatar Library\"], "locationDiscoveryDisplayName": "[]", "locationName": "[]", "language=": "[]", "resourceType": "[]", "format": "[]", "batchId": "", "issuance": "", "suppressInstance": false, "suppressHoldings": false, "createdDateStart": "", "createdDateEnd": "", "updatedDateStart": "", "updatedDateEnd": "" }'
 
 ```
 
@@ -346,7 +346,7 @@ fw activate shelflist-holdings
 curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/shelflist-items/start' \
 --header 'Content-Type: application/json' \
 --header 'X-Okapi-Tenant: tern' \
---data-raw '{ "logLevel": "INFO", "emailFrom": "folio@k1000.library.tamu.edu", "emailTo": "wwelling@library.tamu.edu", "libraryName": "[\"Texas A&M University Qatar Library\"] ", "locationDiscoveryDisplayName": "[]", "locationName": "[]", "loanType": "[]", "materialType": "[]", "itemStatus": "[]", "createdDateStart": "", "createdDateEnd": "", "updatedDateStart": "", "updatedDateEnd": "" }'
+--data-raw '{ "logLevel": "INFO", "emailFrom": "folio@k1000.library.tamu.edu", "emailTo": "workflows@library.tamu.edu", "libraryName": "[\"Texas A&M University Qatar Library\"] ", "locationDiscoveryDisplayName": "[]", "locationName": "[]", "loanType": "[]", "materialType": "[]", "itemStatus": "[]", "createdDateStart": "", "createdDateEnd": "", "updatedDateStart": "", "updatedDateEnd": "" }'
 
 ```
 
@@ -448,7 +448,7 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
   --header 'X-Okapi-Tenant: diku' \
   --form 'logLevel="INFO"' \
   --form 'emailFrom="folio@k1000.library.tamu.edu"' \
-  --form 'emailTo="wwelling@library.tamu.edu"' \
+  --form 'emailTo="workflows@library.tamu.edu"' \
   --form 'file=@"itemBarcodes.csv"' \
   --form 'path="/mnt/workflows/${tenantId}/create-notes/"' \
   --form 'itemNoteTypeId="d5684236-e4ab-4a64-97b3-2aa7a595cfc4"' \
@@ -478,6 +478,7 @@ These variables are required when triggering the workflow:
 | password       | string         | Okapi login password. |
 | logLevel       | [INFO,DEBUG]   | Desired log level |
 
+
 To build and activate:
 ```shell
 fw build remove-books-from-nbs
@@ -490,9 +491,66 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
   --header 'Content-Type: multipart/form-data' \
   --header 'X-Okapi-Tenant: diku' \
   --form 'logLevel="INFO"' \
-  --form 'emailTo="wwelling@library.tamu.edu"' \
+  --form 'emailTo="workflows@library.tamu.edu"' \
   --form 'file=@"itemBarcodes.csv"' \
   --form 'path="/mnt/workflows/${tenantId}/remove-books-from-nbs/"' \
   --form 'username="***"' \
   --form 'password="***"'
+```
+
+## books-call-number
+
+### Books Checked Out By Call Number Report Workflow
+
+This workflow queries checked-out books within a specific call number range, generates a list, and emails this list to the specified recipient.
+
+These variables are required when triggering the workflow:
+
+| Variable Name           | Allowed Values | Short Description |
+| --------------          | -------------- | ----------------- |
+| path                    | directory path | The directory on the system where the files, like the CSV file, are stored within on the server and contain the `tenantPath` (include trailing slash after the directory). |
+| startRange              | string         | Start Range of call number. |
+| endRange                | string         | End range of call number. |
+| username                | string         | Okapi login username. |
+| password                | string         | Okapi login password. |
+| ldp-user                | string         | LDP login username. |
+| ldp-password            | string         | LDP login password. |
+| ldp-url                 | URL            | LDP URL. |
+| bcnMailTo               | e-mail address | An e-mail address used as the "TO" in the sent e-mails. |
+| bcnMailFrom             | e-mail address | An e-mail address used as the "FROM" in the sent e-mails. |
+| mis-catalog-reports-url | URL            | URL for the MIS Catalog Reports website. |
+| logLevel                | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG". |
+
+This utilizes **LDP** to get the query result which gets written to: */mnt/workflows/tamu/books-call-number* path.
+
+```shell
+
+fw config set ldp-url ***
+fw config set ldp-user ***
+fw config set ldp-password ***
+fw config set bcnMailFrom ***
+fw config set mis-catalog-reports-url https://localhost/catalog_reports/site
+
+```
+
+To build and activate:
+
+```shell
+
+fw build books-call-number
+fw activate books-call-number
+
+```
+
+User inititates form submission from catalog_reports Book-Call-Number Report.
+
+Trigger the workflow using an **HTTP** request such as with **Curl**:
+
+```shell
+
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/books-call-number/start' \
+  --header 'Content-Type: application/json' \
+  --header 'X-Okapi-Tenant: diku' \
+  --data-raw '{"logLevel": "INFO", "bcn-mail-from": "folio@k1000.library.tamu.edu", "startRange": "a0", "endRange":"b9","username":"*","password":"*", "bcm-mail-to": "recipient@tamu.edu", "path": "/mnt/workflows/${tenantId}/bcn" }'
+
 ```
