@@ -457,3 +457,42 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
   --form 'username="***"' \
   --form 'password="***"'
 ```
+
+## remove-books-from-nbs
+
+Remove items from new bookshelf location for provided CSV of call numbers.
+
+```shell
+fw config set okapi-internal ***
+fw config set bcn-mail-from ***
+```
+
+These variables are required when triggering the workflow:
+
+| Variable Name  | Allowed Values | Short Description |
+| -------------- | -------------- | ----------------- |
+| path           | directory path | The directory on the system where the CSV file is stored within on the server and contain the `tenantPath` (include trailing slash after the directory). |
+| file           | file name      | The file path within the specified directory path representing the CSV file to process (do not prefix with a starting slash). |
+| emailTo        | e-mail address | An e-mail address used as the "TO" in the sent e-mails. |
+| username       | string         | Okapi login username. |
+| password       | string         | Okapi login password. |
+| logLevel       | [INFO,DEBUG]   | Desired log level |
+
+To build and activate:
+```shell
+fw build remove-books-from-nbs
+fw activate remove-books-from-nbs
+```
+
+Trigger the workflow using an **HTTP** request such as with **Curl**:
+```shell
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/remove-books-from-nbs/start' \
+  --header 'Content-Type: multipart/form-data' \
+  --header 'X-Okapi-Tenant: diku' \
+  --form 'logLevel="INFO"' \
+  --form 'emailTo="wwelling@library.tamu.edu"' \
+  --form 'file=@"itemBarcodes.csv"' \
+  --form 'path="/mnt/workflows/${tenantId}/remove-books-from-nbs/"' \
+  --form 'username="***"' \
+  --form 'password="***"'
+```
