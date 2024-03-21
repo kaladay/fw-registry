@@ -27,7 +27,7 @@ The workflow JSON files are templates initially processed by `fw-cli` using node
 1. `{{{}}}` and `{{}}`
 Syntax for [handlebars](https://handlebarsjs.com/) template processing in `fw-cli`.
 1. `${}`
-Syntax for [freemarker](https://freemarker.apache.org/) template processing in `mod-camunda`.
+Syntax for [freemarker](https://freemarker.apache.org/) template processing in `mod-camunda`. Also used by [camunda expressions](https://docs.camunda.org/manual/7.18/user-guide/process-engine/expression-language/) evaluation which affords calling methods on the object.
 
 ## patron
 
