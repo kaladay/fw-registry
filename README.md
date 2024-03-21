@@ -301,7 +301,7 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
 --header 'X-Okapi-Tenant: tamu' \
 --form 'logLevel="DEBUG"' \
 --form 'file=@"FOLIOTags.csv"' \
---form 'path="/mnt/workflows/${tenantId}/create-tags"' \
+--form 'path="/mnt/workflows/diku/create-tags"' \
 --form 'username="***"' \
 --form 'password="***"'
 ```
@@ -450,7 +450,7 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
   --form 'emailFrom="folio@k1000.library.tamu.edu"' \
   --form 'emailTo="workflows@library.tamu.edu"' \
   --form 'file=@"itemBarcodes.csv"' \
-  --form 'path="/mnt/workflows/${tenantId}/create-notes/"' \
+  --form 'path="/mnt/workflows/diku/create-notes/"' \
   --form 'itemNoteTypeId="d5684236-e4ab-4a64-97b3-2aa7a595cfc4"' \
   --form 'noteText="This is a note text message."' \
   --form 'staffOnly=false' \
@@ -493,7 +493,7 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
   --form 'logLevel="INFO"' \
   --form 'emailTo="workflows@library.tamu.edu"' \
   --form 'file=@"itemBarcodes.csv"' \
-  --form 'path="/mnt/workflows/${tenantId}/remove-books-from-nbs/"' \
+  --form 'path="/mnt/workflows/diku/remove-books-from-nbs/"' \
   --form 'username="***"' \
   --form 'password="***"'
 ```
@@ -551,6 +551,6 @@ Trigger the workflow using an **HTTP** request such as with **Curl**:
 curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/books-call-number/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
-  --data-raw '{"logLevel": "INFO", "bcn-mail-from": "folio@k1000.library.tamu.edu", "startRange": "a0", "endRange":"b9","username":"*","password":"*", "bcm-mail-to": "recipient@tamu.edu", "path": "/mnt/workflows/${tenantId}/bcn" }'
+  --data-raw '{"logLevel": "INFO", "bcn-mail-from": "folio@k1000.library.tamu.edu", "startRange": "a0", "endRange":"b9","username":"*","password":"*", "bcm-mail-to": "recipient@tamu.edu", "path": "/mnt/workflows/diku/bcn" }'
 
 ```
