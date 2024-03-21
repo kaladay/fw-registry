@@ -18,6 +18,17 @@ mvn clean spring-boot:run
 
 - Be sure to check and update the tenant header in all the curl requests documented below.
 
+## Variable substitution
+
+The workflow JSON files are templates initially processed by `fw-cli` using node handlebars template engine followed by Java delegate expression value variable substitution done with [FreeMarkerTemplateUtils](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/ui/freemarker/FreeMarkerTemplateUtils.html) in `mod-camunda`. These JSON files are also a `fw-cli` representation of `mod-workflow` domain model which is heavily influenced on [BPMN](https://www.bpmn.org/) and [Camunda](https://camunda.com/).
+
+***These hold credentials/secrets that conf node package used by fw-cli to store configurations loaded into a user home app data directory.***
+
+1. `{{{}}}` and `{{}}`
+Syntax for [handlebars](https://handlebarsjs.com/) template processing in `fw-cli`.
+1. `${}`
+Syntax for [freemarker](https://freemarker.apache.org/) template processing in `mod-camunda`.
+
 ## patron
 
 DivIT patron workflow. (Scheduled)
