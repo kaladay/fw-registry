@@ -20,14 +20,19 @@ mvn clean spring-boot:run
 
 ## Variable substitution
 
-The workflow JSON files are templates initially processed by `fw-cli` using node handlebars template engine followed by Java delegate expression value variable substitution done with [FreeMarkerTemplateUtils](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/ui/freemarker/FreeMarkerTemplateUtils.html) in `mod-camunda`. These JSON files are also a `fw-cli` representation of `mod-workflow` domain model which is heavily influenced on [BPMN](https://www.bpmn.org/) and [Camunda](https://camunda.com/).
+The workflow JSON files are templates initially processed by `fw-cli` using node handlebars template engine followed by Java delegate expression value variable substitution done with [FreeMarkerTemplateUtils](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/ui/freemarker/FreeMarkerTemplateUtils.html) in `mod-camunda` Java delegates. These JSON files are also a `fw-cli` representation of `mod-workflow` domain model which is heavily influenced on [BPMN](https://www.bpmn.org/) and [Camunda](https://camunda.com/).
 
 ***These hold credentials/secrets that conf node package used by fw-cli to store configurations loaded into a user home app data directory.***
 
 1. `{{{}}}` and `{{}}`
-Syntax for [handlebars](https://handlebarsjs.com/) template processing in `fw-cli`.
+Syntax for [handlebars](https://handlebarsjs.com/) template processing in `fw-cli` at workflow build using `fw build`.
 1. `${}`
-Syntax for [freemarker](https://freemarker.apache.org/) template processing in `mod-camunda`. Also used by [camunda expressions](https://docs.camunda.org/manual/7.18/user-guide/process-engine/expression-language/) evaluation which affords calling methods on the object.
+Syntax for [freemarker](https://freemarker.apache.org/) template processing in `mod-camunda` at workflow activate. Also used by [camunda expressions](https://docs.camunda.org/manual/7.20/user-guide/process-engine/expression-language/) evaluation which affords calling methods on the object at runtime of the workflow.
+
+
+1. build args are kabab-case using `{{}}` or `{{{}}}` handlebars syntax
+1. activate args are camelCase using `${}` freemarker syntax
+1. run args are camelCase supporting method calls from the [Camuna SPIN](https://docs.camunda.org/manual/7.20/reference/spin/) object using `${}` freemarker syntax
 
 ## patron
 
