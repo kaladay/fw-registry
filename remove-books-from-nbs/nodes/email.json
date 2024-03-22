@@ -12,6 +12,14 @@
       "key": "email",
       "type": "LOCAL",
       "spin": true
+    },
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    },
+    {
+      "key": "tenantId",
+      "type": "PROCESS"
     }
   ],
   "outputVariable": {},
@@ -20,5 +28,6 @@
   "mailSubject": "${email.subject}",
   "mailText": "${email.text}",
   "mailMarkup": "${email.markup}",
+  "attachmentPath": "/mnt/workflows/${tenantId}/remove-books-from-nbs/barcodesOfItemsRemoved-${timestamp}.csv",
   "asyncBefore": true
 }

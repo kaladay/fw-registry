@@ -1,18 +1,18 @@
 var itemsRemoved = JSON.parse(itemsToRemove);
+var skippedItems = JSON.parse(itemsSkipped);
 
 var emailSubject = 'Items removed from new bookshelf';
-var emailMarkup = '<p>A total of <strong>' + itemsRemoved.length + '</strong> items have been successfully processed.</p>\n';
+var emailMarkup = '<p>A total of <strong>' + itemsRemoved.length + '</strong> items have been successfully processed. Attached is the CSV file of the barcodes of the items removed from the New Bookshelf. </p>\n';
 var emailText = '';
 
-emailMarkup += '<p>';
-for (var i = 0; i < itemsRemoved.length; ++i) {
-  var item = itemsRemoved[i];
+
+emailMarkup += '<p>Here are the list of items skipped from the inputted barcodes.</p><p>';
+for (var i = 0; i < skippedItems.length; ++i) {
+  var item = skippedItems[i];
   emailMarkup += '<p>Item: ' + item.title + '</p>';
   emailMarkup += '<ul>';
   emailMarkup += '<li>\tid: ' + item.id + '</li>';
-  emailMarkup += '<li>\thrid: ' + item.hrid + '</li>';
   emailMarkup += '<li>\tbarcode: ' + item.barcode + '</li>';
-  emailMarkup += '<li>\tcall number: ' + item.callNumber + '</li>';
   emailMarkup += '</ul>';
 }
 emailMarkup += '</p>';
@@ -43,3 +43,4 @@ var email = {
 };
 
 execution.setVariableLocal('email', S(JSON.stringify(email)));
+
