@@ -6,7 +6,7 @@ var emailMarkup = '<p>A total of <strong>' + itemsRemoved.length + '</strong> it
 var emailText = '';
 
 
-emailMarkup += '<p>Here are the list of items skipped from the inputted barcodes.</p><p>';
+emailMarkup += '<p>Here are the list of items skipped from the input barcodes.</p><p>';
 for (var i = 0; i < skippedItems.length; ++i) {
   var item = skippedItems[i];
   emailMarkup += '<p>Item: ' + item.title + '</p>';
