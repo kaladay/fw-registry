@@ -20,7 +20,7 @@ mvn clean spring-boot:run
 
 ## Variable substitution
 
-The workflow JSON files are templates initially processed by `fw-cli` using node handlebars template engine followed by Java delegate expression value variable substitution done with [FreeMarkerTemplateUtils](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/ui/freemarker/FreeMarkerTemplateUtils.html) in `mod-camunda` Java delegates. These JSON files are also a `fw-cli` representation of `mod-workflow` domain model which is heavily influenced on [BPMN](https://www.bpmn.org/) and [Camunda](https://camunda.com/).
+The workflow JSON files are templates initially processed by `fw-cli` using node handlebars template engine followed by Java delegate expression value variable substitution done with [FreeMarkerTemplateUtils](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/ui/freemarker/FreeMarkerTemplateUtils.html) in `mod-camunda` Java delegates and [JUEL](https://juel.sourceforge.net/) used by the Camunda BPMN engine. These JSON files are also a `fw-cli` representation of `mod-workflow` domain model which is heavily influenced on [BPMN](https://www.bpmn.org/) and [Camunda](https://camunda.com/).
 
 ***These hold credentials/secrets that conf node package used by fw-cli to store configurations loaded into a user home app data directory.***
 
