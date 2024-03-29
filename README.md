@@ -27,7 +27,7 @@ The workflow JSON files are templates initially processed by `fw-cli` using node
 1. `{{{}}}` and `{{}}`
 Syntax for [handlebars](https://handlebarsjs.com/) template processing in `fw-cli` at workflow build using `fw build`.
 1. `${}`
-Syntax for [freemarker](https://freemarker.apache.org/) and [JUEL](https://juel.sourceforge.net/) template processing in `mod-camunda` at workflow activate. Also used by [camunda expressions](https://docs.camunda.org/manual/7.20/user-guide/process-engine/expression-language/) evaluation which affords calling methods on the object at runtime of the workflow.
+Syntax for [freemarker](https://freemarker.apache.org/) and [JUEL](https://juel.sourceforge.net/) template processing in `mod-camunda` at workflow run. Also used by [camunda expressions](https://docs.camunda.org/manual/7.20/user-guide/process-engine/expression-language/) evaluation which affords calling methods on the object at runtime of the workflow.
 
 
 1. build args are kabab-case using `{{}}` or `{{{}}}` handlebars syntax
