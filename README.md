@@ -476,7 +476,7 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
 
 ## remove-books-from-nbs
 
-Remove items from new bookshelf location for provided CSV of call numbers.
+For the uploaded CSV of call numbers, remove items that have been on the new bookshelf location for more than 30 days.
 
 ```shell
 fw config set okapi-internal ***
