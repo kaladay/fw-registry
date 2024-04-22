@@ -570,3 +570,33 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
   --data-raw '{"logLevel": "INFO", "bcn-mail-from": "folio@k1000.library.tamu.edu", "startRange": "a0", "endRange":"b9","username":"*","password":"*", "bcm-mail-to": "recipient@tamu.edu", "path": "/mnt/workflows/diku/bcn" }'
 
 ```
+
+## evans-pres-repr
+
+### Evans Pres Repr Workflow (Scheduled)
+
+This workflows sends out a monthly email a list of all items  with a temporary location of **Eva Pres Repr** for a specific configured email address **evansPresReprFrom**.
+If the check-in note already exists, then the new note is not added.
+
+This utilizes **LDP** to get the data.
+
+The scheduled event is for **8:00AM UTC** on the first day of every month.
+
+```shell
+fw config set ldp-url ***
+fw config set ldp-user ***
+fw config set ldp-password ***
+fw config set evansPresReprFrom ***
+fw config set evansPresReprTo ***
+```
+
+To build and activate:
+```shell
+fw build evans-pres-repr
+fw activate evans-pres-repr
+```
+
+Either wait for scheduled event to occur or manually execute via:
+```shell
+fw run evans-pres-repr
+```
