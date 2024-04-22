@@ -576,7 +576,6 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
 ### Evans Pres Repr Workflow (Scheduled)
 
 This workflows sends out a monthly email a list of all items  with a temporary location of **Eva Pres Repr** for a specific configured email address **evansPresReprFrom**.
-If the check-in note already exists, then the new note is not added.
 
 This utilizes **LDP** to get the data.
 
