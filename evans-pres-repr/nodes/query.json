@@ -1,0 +1,25 @@
+{
+  "id": "44ba063b-d801-4afb-a7dd-95b4d5fd1326",
+  "name": "Query items with location as Evans Pres Repr",
+  "description": "Query items with temp loc of Evans Pres Repr",
+  "deserializeAs": "DatabaseQueryTask",
+  "inputVariables": [
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    },
+    {
+      "key": "tenantId",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {
+    "key": "count",
+    "type": "PROCESS"
+  },
+  "outputPath": "/mnt/workflows/${tenantId}/evans-pres-repr/evans-pres-repr-${timestamp}.csv",
+  "resultType": "CSV",
+  "designation": "ldp",
+  "query": "SELECT *  FROM item_ext ie WHERE ie.temporary_location_name = 'Evans pres repr'",
+  "asyncBefore": true
+}
