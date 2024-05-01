@@ -1,7 +1,7 @@
 {
   "id": "61dfa92b-e89b-4f69-b16f-84a703f0b33f",
   "name": "Delete Evans Pres Repr CSV",
-  "description": "",
+  "description": "Delete the CSV file that contains the list of items where the temporary location is 'Evans Pres Repr'.",
   "deserializeAs": "FileTask",
   "inputVariables": [
     {

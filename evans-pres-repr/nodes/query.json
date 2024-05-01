@@ -1,7 +1,7 @@
 {
   "id": "44ba063b-d801-4afb-a7dd-95b4d5fd1326",
   "name": "Query items with location as Evans Pres Repr",
-  "description": "Query items with temp loc of Evans Pres Repr",
+  "description": "Query items with temporary_location_name of 'Evans Pres Repr'.",
   "deserializeAs": "DatabaseQueryTask",
   "inputVariables": [
     {
@@ -21,5 +21,6 @@
   "resultType": "CSV",
   "designation": "ldp",
   "query": "SELECT *  FROM item_ext ie WHERE ie.temporary_location_name = 'Evans pres repr'",
+  "includeHeader": true,
   "asyncBefore": true
 }

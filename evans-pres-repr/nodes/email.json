@@ -1,7 +1,7 @@
 {
   "id": "939e1dfc-840f-4261-b8a3-d7a19a32719c",
   "name": "Send Evans Pres Repr Email",
-  "description": "",
+  "description": "Send an e-mail of the report to the configured email address.",
   "deserializeAs": "EmailTask",
   "inputVariables": [
     {
@@ -21,8 +21,8 @@
   "mailTo": "{{evansPresReprTo}}",
   "mailFrom": "{{evansPresReprFrom}}",
   "mailSubject": "Evans Pres Repr Report",
-  "mailText": "${(count > 0)?then('Monthly Evans Pres Repr CSV file attached', 'No results to report')}",
+  "mailText": "${(count > 0) ? then('Monthly Evans Pres Repr CSV file attached', 'No results to report')}",
   "attachmentPath": "/mnt/workflows/${tenantId}/evans-pres-repr/evans-pres-repr-${timestamp}.csv",
-  "includeAttachment": "${(count > 0)?then('true', 'false')}",
+  "includeAttachment": "${(count > 0) ? then('true', 'false')}",
   "asyncBefore": true
 }

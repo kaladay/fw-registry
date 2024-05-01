@@ -1,7 +1,7 @@
 {
   "id": "959c601c-96f9-48a0-847c-6857922ba397",
   "name": "Start",
-  "description": "",
+  "description": "Execute the workflow as a cronjob on a monthly basis.",
   "type": "SCHEDULED",
   "deserializeAs": "StartEvent",
   "expression": "0 0 8 1 * ?"

@@ -575,9 +575,21 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
 
 ### Evans Pres Repr Workflow (Scheduled)
 
-This workflows sends out a monthly email a list of all items  with a temporary location of **Eva Pres Repr** for a specific configured email address **evansPresReprFrom**.
+This workflow sends a monthly email containing a list of all items with 'temporary location' set to "Eva Pres Repr" to a specifically configured email address `evansPresReprFrom`.
 
-This utilizes **LDP** to get the data.
+These variables are required when triggering the workflow:
+
+| Variable Name           | Allowed Values | Short Description |
+| --------------          | -------------- | ----------------- |
+| path                    | directory path | The directory on the system where the files, like the CSV file, are stored within on the server and contain the `tenantPath` (include trailing slash after the directory). |
+| ldp-url                 | URL            | LDP URL. |
+| ldp-user                | string         | LDP login username. |
+| ldp-password            | string         | LDP login password. |
+| logLevel                | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG". |
+| evansPresReprTo         | e-mail address | An e-mail address used as the "TO" in the sent e-mails. |
+| evansPresReprFrom       | e-mail address | An e-mail address used as the "FROM" in the sent e-mails. |
+
+This utilizes **LDP** to get the query result which gets written to: */mnt/workflows/tamu/evans-pres-repr* path.
 
 The scheduled event is for **8:00AM UTC** on the first day of every month.
 

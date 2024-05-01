@@ -1,7 +1,7 @@
 {
   "id": "c5b5c214-d06b-4037-888d-27de3d376e11",
   "name": "Evans Pres Repr Report",
-  "description": "Generate monthly Evans Pres Repr report.",
+  "description": "Generate monthly 'Evans Pres Repr' report.",
   "versionTag": "1.0",
   "historyTimeToLive": 90,
   "deploymentId": null,

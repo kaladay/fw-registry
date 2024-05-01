@@ -1,7 +1,7 @@
 {
   "id": "53f0e0f0-708e-49f1-b2f0-3b35b7fb6b13",
   "name": "Disconnect LDP",
-  "description": "",
+  "description": "Disconnect from the LDP.",
   "deserializeAs": "DatabaseDisconnectTask",
   "inputVariables": [],
   "outputVariable": {},
