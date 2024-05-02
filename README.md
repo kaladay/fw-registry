@@ -570,3 +570,43 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
   --data-raw '{"logLevel": "INFO", "bcn-mail-from": "folio@k1000.library.tamu.edu", "startRange": "a0", "endRange":"b9","username":"*","password":"*", "bcm-mail-to": "recipient@tamu.edu", "path": "/mnt/workflows/diku/bcn" }'
 
 ```
+
+## evans-pres-repr
+
+### Evans Pres Repr Workflow (Scheduled)
+
+This workflow sends a monthly email containing a list of all items with 'temporary location' set to "Eva Pres Repr" to a specifically configured email address `evansPresReprFrom`.
+
+These variables are required when triggering the workflow:
+
+| Variable Name           | Allowed Values | Short Description |
+| --------------          | -------------- | ----------------- |
+| ldp-url                 | URL            | LDP URL. |
+| ldp-user                | string         | LDP login username. |
+| ldp-password            | string         | LDP login password. |
+| logLevel                | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG". |
+| evansPresReprTo         | e-mail address | An e-mail address used as the "TO" in the sent e-mails. |
+| evansPresReprFrom       | e-mail address | An e-mail address used as the "FROM" in the sent e-mails. |
+
+This utilizes **LDP** to get the query result which gets written to: */mnt/workflows/tamu/evans-pres-repr* path.
+
+The scheduled event is for **8:00AM UTC** on the first day of every month.
+
+```shell
+fw config set ldp-url ***
+fw config set ldp-user ***
+fw config set ldp-password ***
+fw config set evansPresReprFrom ***
+fw config set evansPresReprTo ***
+```
+
+To build and activate:
+```shell
+fw build evans-pres-repr
+fw activate evans-pres-repr
+```
+
+Either wait for scheduled event to occur or manually execute via:
+```shell
+fw run evans-pres-repr
+```
