@@ -581,7 +581,6 @@ These variables are required when triggering the workflow:
 
 | Variable Name           | Allowed Values | Short Description |
 | --------------          | -------------- | ----------------- |
-| path                    | directory path | The directory on the system where the files, like the CSV file, are stored within on the server and contain the `tenantPath` (include trailing slash after the directory). |
 | ldp-url                 | URL            | LDP URL. |
 | ldp-user                | string         | LDP login username. |
 | ldp-password            | string         | LDP login password. |
