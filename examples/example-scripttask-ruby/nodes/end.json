@@ -1,6 +1,6 @@
 {
   "id": "a25c2fd3-cbbc-4604-b2aa-8f2565a6c76f",
   "name": "End",
-  "description": "End of Ruby Test Workflow",
+  "description": "End of Ruby Test Workflow.",
   "deserializeAs": "EndEvent"
 }
