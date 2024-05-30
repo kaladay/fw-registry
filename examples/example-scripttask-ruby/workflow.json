@@ -1,6 +1,6 @@
 {
   "id": "6780cd32-a445-4fe0-990f-dcc9913ce99e",
-  "name": "Quick Ruby ScriptTest",
+  "name": "Example Ruby ScriptTask",
   "description": "Test Ruby workflow.",
   "versionTag": "1.0",
   "historyTimeToLive": 90,
