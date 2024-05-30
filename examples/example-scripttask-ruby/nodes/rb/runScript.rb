@@ -1,2 +1,2 @@
-print "Hello World from Ruby workflow!!"
+print "\nHello World from Ruby workflow!!\n"
 
