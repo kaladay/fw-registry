@@ -34,3 +34,10 @@ fw build example-emailtask
 fw activate example-emailtask
 fw run example-emailtask
 ```
+
+```
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/example-emailtask/start' \
+--header 'Content-Type: application/json' \
+--header 'X-Okapi-Tenant: diku' \
+--data-raw '{"emailTo": "you@example.com"}'
+```
