@@ -17,3 +17,20 @@ The `wd` variable in the `fw-cli` configuration should then look something like 
 ```
   "wd": "fw-registry/examples",
 ```
+
+# example-scripttask-rb
+```
+fw build example-scripttask-rb
+fw activate example-scripttask-rb
+fw run example-scripttask-rb
+```
+# example-emailtask
+```
+fw config set exampleEmailFrom ***
+fw config set exampleEmailTo ***
+```
+```
+fw build example-emailtask
+fw activate example-emailtask
+fw run example-emailtask
+```
