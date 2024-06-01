@@ -1,34 +1,29 @@
 {
-    "id": "48286e12-ba6c-4627-97fd-2296a20c9db1",
-    "name": "Send Email",
-    "description": "Send e-mail.",
-    "deserializeAs": "EmailTask",
-    "inputVariables": [
-      {
-        "key": "exampleEmailTo",
-        "type": "PROCESS"
-      },
-      {
-        "key": "email",
-        "type": "LOCAL",
-        "spin": true
-      },
-      {
-        "key": "timestamp",
-        "type": "PROCESS"
-      },
-      {
-        "key": "tenantId",
-        "type": "PROCESS"
-      }
-    ],
-    "outputVariable": {},
-    "includeAttachment": false,
-    "mailTo": "{{exampleEmailTo}}",
-    "mailFrom": "{{exampleEmailFrom}}",
-    "mailMarkup": "<html><head><title>Example Email</title></head><body> <p> Text for Email </p> <body></html>",
-    "mailSubject": "Example Email subject",
-    "mailText": "Email Test 123",
-    "asyncBefore": true,
-    "asyncAfter": false
-  }
+  "id": "48286e12-ba6c-4627-97fd-2296a20c9db1",
+  "name": "Send Email",
+  "description": "Send e-mail.",
+  "deserializeAs": "EmailTask",
+  "inputVariables": [
+    {
+      "key": "exampleEmailTo",
+      "type": "PROCESS"
+    },
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    },
+    {
+      "key": "tenantId",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {},
+  "includeAttachment": false,
+  "mailTo": "${exampleEmailTo}",
+  "mailFrom": "{{exampleEmailFrom}}",
+  "mailMarkup": "<p> Text for Email </p>",
+  "mailSubject": "Example Email subject",
+  "mailText": "Email Test 123",
+  "asyncBefore": true,
+  "asyncAfter": false
+}
