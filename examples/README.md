@@ -51,9 +51,8 @@ These variables are required when triggering the workflow:
 
 | Variable Name  | Allowed Values | Short Description |
 | -------------- | -------------- | ----------------- |
-| emailTo        | e-mail address | An e-mail address used as the "TO" in the sent e-mails. |
-| username       | string         | Okapi login username. |
-| password       | string         | Okapi login password. |
+| exampleEmailFrom | e-mail address | The source e-mail address to send from. |
+| exampleEmailTo   | e-mail address | The destination e-mail address to send to. |
 | logLevel       | [INFO,DEBUG]   | Desired log level |
 
 
