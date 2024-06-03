@@ -7,14 +7,6 @@
     {
       "key": "exampleEmailTo",
       "type": "PROCESS"
-    },
-    {
-      "key": "timestamp",
-      "type": "PROCESS"
-    },
-    {
-      "key": "tenantId",
-      "type": "PROCESS"
     }
   ],
   "outputVariable": {},
