@@ -48,11 +48,11 @@ fw config set exampleEmailFrom ***
 
 These variables are required when triggering the workflow:
 
-| Variable Name  | Allowed Values | Short Description |
-| -------------- | -------------- | ----------------- |
+| Variable Name    | Allowed Values | Short Description |
+| ---------------- | -------------- | ----------------- |
 | exampleEmailFrom | e-mail address | The source e-mail address to send from. |
 | exampleEmailTo   | e-mail address | The destination e-mail address to send to. |
-| logLevel       | [INFO,DEBUG]   | Desired log level |
+| logLevel         | [INFO,DEBUG]   | Desired log level |
 
 
 To build and activate:
