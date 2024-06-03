@@ -44,7 +44,6 @@ This workflows sends an email to the user who's email address is specified in th
 
 ```shell
 fw config set exampleEmailFrom ***
-fw config set exampleEmailTo ***
 ```
 
 These variables are required when triggering the workflow:
