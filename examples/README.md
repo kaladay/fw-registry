@@ -69,9 +69,9 @@ fw run example-emailtask
 Trigger the workflow using an **HTTP** request such as with **Curl**:
 
 ```shell
-curl --location --request POST 'https://folio-edge-dev.library.tamu.edu/mod-workflow/events/workflow/example-emailtask/start' \
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/example-emailtask/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
-  --data-raw '{ "logLevel": "INFO", "exampleEmailFrom": "*", "username":"diku","password":"*", "exampleEmailTo": "you@example.com" }'
+  --data-raw '{ "logLevel": "INFO", "exampleEmailTo": "you@example.com" }'
 
 ```
