@@ -27,13 +27,13 @@ This workflows prints a hello world message on the screen utilizing Ruby as a sc
 
 To build and activate:
 ```shell
-fw build example-scripttask-rb
-fw activate example-scripttask-rb
+fw build example-scripttask-ruby
+fw activate example-scripttask-ruby
 ```
 
 To manually execute via:
 ```shell
-fw run example-scripttask-rb
+fw run example-scripttask-ruby
 ```
 
 ## example-emailtask
