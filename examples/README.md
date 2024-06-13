@@ -17,3 +17,46 @@ The `wd` variable in the `fw-cli` configuration should then look something like 
 ```
   "wd": "fw-registry/examples",
 ```
+## example-database-connection-task
+
+### Example DatabaseConnectionTask Workflow
+
+This workflows connects to and disconnects from a given server/database.
+
+```shell
+fw config set exampleDatabaseURI ***
+fw config set exampleDatabaseUser ***
+fw config set exampleDatabasePassword ***
+
+```
+
+These variables are required when triggering the workflow:
+
+| Variable Name           | Allowed Values | Short Description |
+| ------------------------| -------------- | ----------------- |
+| exampleDatabaseURI      | URL            | The url of the server you want to connect to. |
+| exampleDatabaseUser     | string         | The username of the server you want to connect to. |
+| exampleDatabasePassword | string         | The password of the server you want to connect to. |
+| logLevel                | [INFO,DEBUG]   | Desired log level. |
+
+
+To build and activate:
+```shell
+fw build example-databasetask-connect
+fw activate example-databasetask-connect
+```
+
+To manually execute via:
+```shell
+fw run example-databasetask-connect
+```
+
+Trigger the workflow using an **HTTP** request such as with **Curl**:
+
+```shell
+curl --location --request POST 'https://folio-edge-dev.library.tamu.edu/mod-workflow/events/workflow/example-databasetask-connect/start' \
+  --header 'Content-Type: application/json' \
+  --header 'X-Okapi-Tenant: tamu' \
+  --data-raw '{ "logLevel": "INFO", "exampleDatabaseURI": "someUri", "exampleDatabaseUser": "db_username", "exampleDatabasePassword": "db_password" }'
+
+```
