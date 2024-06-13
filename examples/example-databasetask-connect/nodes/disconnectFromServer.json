@@ -1,0 +1,11 @@
+{
+    "id": "a20eb62c-ace8-4b3c-b4ba-ed0e3b2b0c19",
+    "name": "Disconnect From Server",
+    "description": "Disconnect From A Given Server.",
+    "deserializeAs": "DatabaseDisconnectTask",
+    "inputVariables": [],
+    "outputVariable": {},
+    "designation": "{{{exampleDesignation}}}",
+    "asyncBefore": true,
+    "asyncAfter": false
+}
