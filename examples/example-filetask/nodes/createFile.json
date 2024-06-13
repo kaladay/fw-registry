@@ -1,0 +1,19 @@
+{
+  "id": "e3ce8683-b324-407a-95be-0f2c55481102",
+  "name": "Create File Task",
+  "description": "Create a File in Directory.",
+  "deserializeAs": "FileTask",
+  "inputVariables": [
+    {
+      "key": "exampleFileData",
+      "type": "PROCESS",
+      "spin": false
+    }
+  ],
+  "outputVariable":{},
+  "path": "{{{exampleFilePath}}}/testFileCreate/{{{exampleFileName}}}",
+  "op": "WRITE",
+  "target": "exampleFileData",
+  "asyncAfter": false,
+  "asyncBefore": true
+}
