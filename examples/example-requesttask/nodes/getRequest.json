@@ -1,0 +1,24 @@
+{
+  "id": "f99d0430-3028-4b40-9eb3-c9bbf8799c5a",
+  "name": "Send GET Request",
+  "description": "Send GET Request To A Given Resource.",
+  "deserializeAs": "RequestTask",
+  "inputVariables": [
+    {
+      "key": "urlPath",
+      "type": "PROCESS"
+ 
+    }
+  ],
+  "headerOutputVariables": [],
+  "outputVariable": {
+    "key": "reqResponse",
+    "type": "LOCAL"
+  },
+  "request": {
+    "url": "{{{exampleUrlPath}}}",
+    "method": "GET",
+    "accept": "application/json"
+  },
+  "asyncBefore": true
+}
