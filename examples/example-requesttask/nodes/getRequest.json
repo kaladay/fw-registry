@@ -1,7 +1,7 @@
 {
   "id": "f99d0430-3028-4b40-9eb3-c9bbf8799c5a",
   "name": "Send GET Request",
-  "description": "Send GET Request to a Given Server.",
+  "description": "Send GET request to a given server.",
   "deserializeAs": "RequestTask",
   "inputVariables": [
   ],
