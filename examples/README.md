@@ -49,7 +49,7 @@ fw run example-requesttask
 Trigger the workflow using an **HTTP** request such as with **Curl**:
 
 ```shell
-curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/example-requesttaskt/start' \
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/example-requesttask/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
   --data-raw '{ "logLevel": "INFO" }'
