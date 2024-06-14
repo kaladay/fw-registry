@@ -35,7 +35,7 @@ These variables are required when triggering the workflow:
 | ---------------- | -------------- | ----------------- |
 | exampleFilePath  | directory path | The full directory path on the system where the CSV file will be stored on the server (exclude trailing slash after the directory).  |
 | exampleFileName  | file name      | The name of the file within the specified directory path representing the CSV file to process (do not prefix with a starting slash). |
-| logLevel         | [INFO,DEBUG]   | Desired log level |
+| logLevel         | [INFO,DEBUG]   | Desired log level. |
 
 
 To build and activate:
