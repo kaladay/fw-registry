@@ -1,7 +1,7 @@
 {
     "id": "15c5ebaf-a64e-417e-bdf3-0b3641467e9b",
-    "name": "Database Query Task Workflow",
-    "description": "Quick Database Connect, Query, and Disconnect workflow",
+    "name": "Example DatabaseQueryTask Workflow",
+    "description": "Workflow that connects, queries, and disconnects from a database.",
     "versionTag": "1.0",
     "historyTimeToLive": 90,
     "deploymentId": null,
@@ -20,4 +20,3 @@
     ],
     "initialContext": {}
   }
-  

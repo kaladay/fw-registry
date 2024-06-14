@@ -1,7 +1,7 @@
 {
   "id": "06f6e63e-c532-45f5-a159-24737dd2e5aa",
-  "name": "Query Server",
-  "description": "Query database-server on specied path.",
+  "name": "Query Database",
+  "description": "Execute the query on the database.",
   "deserializeAs": "DatabaseQueryTask",
   "inputVariables": [],
   "outputVariable": {
