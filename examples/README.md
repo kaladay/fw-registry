@@ -27,16 +27,15 @@ This workflows connects to and disconnects from a given server/database.
 fw config set exampleDatabaseURI ***
 fw config set exampleDatabaseUser ***
 fw config set exampleDatabasePassword ***
-
 ```
 
 These variables are required when triggering the workflow:
 
 | Variable Name           | Allowed Values | Short Description |
 | ------------------------| -------------- | ----------------- |
-| exampleDatabaseURI      | URL            | The url of the server you want to connect to. |
-| exampleDatabaseUser     | string         | The username of the server you want to connect to. |
-| exampleDatabasePassword | string         | The password of the server you want to connect to. |
+| exampleDatabaseURI      | URL            | The URI of the database you want to connect to. |
+| exampleDatabaseUser     | string         | The username of the database you want to connect to. |
+| exampleDatabasePassword | string         | The password of the database you want to connect to. |
 | logLevel                | [INFO,DEBUG]   | Desired log level. |
 
 
@@ -54,9 +53,9 @@ fw run example-databasetask-connect
 Trigger the workflow using an **HTTP** request such as with **Curl**:
 
 ```shell
-curl --location --request POST 'https://folio-edge-dev.library.tamu.edu/mod-workflow/events/workflow/example-databasetask-connect/start' \
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/example-databasetask-connect/start' \
   --header 'Content-Type: application/json' \
-  --header 'X-Okapi-Tenant: tamu' \
-  --data-raw '{ "logLevel": "INFO", "exampleDatabaseURI": "someUri", "exampleDatabaseUser": "db_username", "exampleDatabasePassword": "db_password" }'
+  --header 'X-Okapi-Tenant: diku' \
+  --data-raw '{ "logLevel": "INFO" }'
 
 ```
