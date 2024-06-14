@@ -3,12 +3,7 @@
   "name": "Zip File",
   "description": "Compress File using the ZIP format",
   "deserializeAs": "CompressFileTask",
-  "inputVariables": [
-    {
-    "key": "timestamp",
-    "type": "PROCESS"
-    }
-  ],
+  "inputVariables": [],
   "outputVariable": {},
   "source": "{{{exampleFilePath}}}/testFileCreate/{{{exampleFileName}}}",
   "destination": "{{{exampleFilePath}}}/testFileCreate/{{{exampleFileName}}}.zip",
