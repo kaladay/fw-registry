@@ -34,9 +34,9 @@ These variables are required when triggering the workflow:
 
 | Variable Name           | Allowed Values | Short Description |
 | ------------------------| -------------- | ----------------- |
-| exampleDatabaseURI      | URL            | The url of the server you want to connect to. |
-| exampleDatabaseUser     | string         | The username of the server you want to connect to. |
-| exampleDatabasePassword | string         | The password of the server you want to connect to. |
+| exampleDatabaseURI      | URL            | The URI of the database you want to connect to. |
+| exampleDatabaseUser     | string         | The username of the database you want to connect to. |
+| exampleDatabasePassword | string         | The password of the database you want to connect to. |
 | exampleQuery            | string         | The query. |
 | logLevel                | [INFO,DEBUG]   | Desired log level. |
 
