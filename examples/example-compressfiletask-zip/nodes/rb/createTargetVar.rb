@@ -7,5 +7,3 @@ query_wrapper = {
 
 json_string  = query_wrapper.to_json
 execution.setVariableLocal('exampleFileData', json_string)
-
-
