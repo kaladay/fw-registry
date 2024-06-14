@@ -31,7 +31,7 @@ These variables are required when triggering the workflow:
 
 | Variable Name    | Allowed Values | Short Description |
 | ---------------- | -------------- | ----------------- |
-| exampleUrlPath   | url            | The url to send a GET request to. |
+| exampleUrlPath   | URL            | The URL to send a GET request to. |
 | logLevel         | [INFO,DEBUG]   | Desired log level |
 
 
@@ -49,9 +49,9 @@ fw run example-requesttask
 Trigger the workflow using an **HTTP** request such as with **Curl**:
 
 ```shell
-curl --location --request POST 'https://folio-edge-dev.library.tamu.edu/mod-workflow/events/workflow/example-requesttask/start' \
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/example-requesttaskt/start' \
   --header 'Content-Type: application/json' \
-  --header 'X-Okapi-Tenant: tamu' \
-  --data-raw '{ "logLevel": "INFO", "exampleUrlPath": "https://www.google.com" }'
+  --header 'X-Okapi-Tenant: diku' \
+  --data-raw '{ "logLevel": "INFO" }'
 
 ```
