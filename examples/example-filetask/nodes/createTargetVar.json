@@ -4,7 +4,6 @@
     "description": "Create Target variable for FileTask.",
     "deserializeAs": "ScriptTask",
     "outputVariable":{
-
       "key": "exampleFileData",
       "type": "PROCESS"
     },
