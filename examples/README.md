@@ -55,8 +55,8 @@ fw run example-databasetask-query
 Trigger the workflow using an **HTTP** request such as with **Curl**:
 
 ```shell
-curl --location --request POST 'https://example.com/mod-workflow/events/workflow/example-databasetask-query/start' \
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/example-databasetask-query/start' \
   --header 'Content-Type: application/json' \
-  --header 'X-Okapi-Tenant: tamu' \
-  --data-raw '{ "logLevel": "INFO", "exampleDatabaseURI": "exampleurl", "exampleDatabaseUser": "exampleUserName", "exampleDatabasePassword": "examplePassword", "exampleQuery": "example" }'
+  --header 'X-Okapi-Tenant: diku' \
+  --data-raw '{ "logLevel": "INFO" }'
 ```
