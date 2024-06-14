@@ -3,8 +3,7 @@
     "name": "Create Target Variable",
     "description": "Create Target Variable For File Task Which Will be Compressed.",
     "deserializeAs": "ScriptTask",
-    "outputVariable":{
-
+    "outputVariable": {
       "key": "exampleFileData",
       "type": "LOCAL"
     },
