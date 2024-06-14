@@ -4,11 +4,6 @@
   "description": "Send GET Request to a Given Server.",
   "deserializeAs": "RequestTask",
   "inputVariables": [
-    {
-      "key": "urlPath",
-      "type": "PROCESS"
- 
-    }
   ],
   "headerOutputVariables": [],
   "outputVariable": {
