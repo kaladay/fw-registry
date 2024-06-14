@@ -8,7 +8,7 @@
     "key": "exampleQueryResult",
     "type": "PROCESS"
   },
-  "designation": "exampleDesignation",
+  "designation": "example_db",
   "query": "{{{exampleQuery}}}",
   "includeHeader": true,
   "resultType": "JSON",

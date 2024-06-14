@@ -5,7 +5,7 @@
   "deserializeAs": "DatabaseConnectionTask",
   "inputVariables": [],
   "outputVariable": {},
-  "designation": "exampleDesignation",
+  "designation": "example_db",
   "url": "{{{exampleDatabaseURI}}}",
   "username": "{{{exampleDatabaseUser}}}",
   "password": "{{{exampleDatabasePassword}}}",

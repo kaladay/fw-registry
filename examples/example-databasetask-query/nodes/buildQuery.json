@@ -1,9 +1,0 @@
-{
-    "id": "8d6f5e5b-2713-47d7-a4b9-91b1147943d6",
-    "name": "Build Query",
-    "description": "Build Query To Query Server/DB.",
-    "deserializeAs": "ScriptTask",
-    "scriptFormat": "ruby",
-    "code": "buildQuery.rb"
-  }
-  

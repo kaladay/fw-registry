@@ -5,7 +5,7 @@
     "deserializeAs": "DatabaseDisconnectTask",
     "inputVariables": [],
     "outputVariable": {},
-    "designation": "exampleDesignation",
+    "designation": "example_db",
     "asyncBefore": true,
     "asyncAfter": false
 }
