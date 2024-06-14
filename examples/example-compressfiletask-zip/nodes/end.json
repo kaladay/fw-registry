@@ -1,6 +1,6 @@
 {
   "id": "1f2f5247-d970-4dfd-b0fc-0ac57112f7c1",
   "name": "End",
-  "description": "End of Workflow",
+  "description": "End of workflow.",
   "deserializeAs": "EndEvent"
 }
