@@ -28,7 +28,6 @@ fw config set exampleDatabaseURI ***
 fw config set exampleDatabaseUser ***
 fw config set exampleDatabasePassword ***
 fw config set exampleQuery ***
-
 ```
 
 These variables are required when triggering the workflow:
