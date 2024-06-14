@@ -32,7 +32,7 @@ These variables are required when triggering the workflow:
 | Variable Name    | Allowed Values | Short Description |
 | ---------------- | -------------- | ----------------- |
 | exampleUrlPath   | URL            | The URL to send a GET request to. |
-| logLevel         | [INFO,DEBUG]   | Desired log level |
+| logLevel         | [INFO,DEBUG]   | Desired log level. |
 
 
 To build and activate:
