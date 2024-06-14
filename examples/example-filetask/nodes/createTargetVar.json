@@ -1,7 +1,7 @@
 {
     "id": "2c1ff822-aeb1-4850-b27c-ee74cfe3daa5",
     "name": "Create Target Variable",
-    "description": "Create Target Variable For File Task.",
+    "description": "Create Target variable for FileTask.",
     "deserializeAs": "ScriptTask",
     "outputVariable":{
 
