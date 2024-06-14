@@ -1,4 +1,3 @@
-
 require 'json'
 
 query_wrapper = {
