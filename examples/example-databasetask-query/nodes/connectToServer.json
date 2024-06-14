@@ -1,0 +1,13 @@
+{
+  "id": "ca8ed7f5-61ff-4ed3-bb63-cff504351804",
+  "name": "Connect To Server",
+  "description": "Connect To A Given Server.",
+  "deserializeAs": "DatabaseConnectionTask",
+  "inputVariables": [],
+  "outputVariable": {},
+  "designation": "exampleDesignation",
+  "url": "{{{exampleDatabaseURI}}}",
+  "username": "{{{exampleDatabaseUser}}}",
+  "password": "{{{exampleDatabasePassword}}}",
+  "asyncBefore": true
+}

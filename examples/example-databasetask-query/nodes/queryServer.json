@@ -1,0 +1,16 @@
+{
+  "id": "06f6e63e-c532-45f5-a159-24737dd2e5aa",
+  "name": "Query Server",
+  "description": "Query database-server on specied path.",
+  "deserializeAs": "DatabaseQueryTask",
+  "inputVariables": [],
+  "outputVariable": {
+    "key": "exampleQueryResult",
+    "type": "PROCESS"
+  },
+  "designation": "exampleDesignation",
+  "query": "{{{exampleQuery}}}",
+  "includeHeader": true,
+  "resultType": "JSON",
+  "asyncBefore": true
+}
