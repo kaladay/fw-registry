@@ -1,5 +1,5 @@
 {
-    "id": "",
+    "id": "a7050fab-824d-41f3-a7be-479a3980d122",
     "name": "Quick Database Query Test Start Trigger",
     "description": "REST Post Endpoint",
     "type": "MESSAGE_CORRELATE",
