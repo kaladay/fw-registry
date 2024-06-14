@@ -17,3 +17,44 @@ The `wd` variable in the `fw-cli` configuration should then look something like 
 ```
   "wd": "fw-registry/examples",
 ```
+
+## example file-task
+
+### Example FileTask Workflow
+
+This workflows creates a file in a specified path.
+
+```shell
+fw config set exampleFilePath ***
+fw config set exampleFileName ***
+```
+
+These variables are required when triggering the workflow:
+
+| Variable Name    | Allowed Values | Short Description |
+| ---------------- | -------------- | ----------------- |
+| exampleFilePath  | directory path | The directory on the system where the CSV file will be stored on the server and contain the `tenantPath` (exclude trailing slash after the directory).  |
+| exampleFileName  | file name      | The file path within the specified directory path representing the CSV file to process (do not prefix with a starting slash). |
+| logLevel         | [INFO,DEBUG]   | Desired log level |
+
+
+To build and activate:
+```shell
+fw build example-filetask
+fw activate example-filetask
+```
+
+To manually execute via:
+```shell
+fw run example-filetask
+```
+
+Trigger the workflow using an **HTTP** request such as with **Curl**:
+
+```shell
+curl --location --request POST 'https://folio-edge-dev.library.tamu.edu/mod-workflow/events/workflow/example-filetask/start' \
+  --header 'Content-Type: application/json' \
+  --header 'X-Okapi-Tenant: tamu' \
+  --data-raw '{ "logLevel": "INFO", "exampleFilePath": "/mnt/workflows/tamu", "exampleFileName": "testFile" }'
+
+```
