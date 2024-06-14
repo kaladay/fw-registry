@@ -1,7 +1,7 @@
 
 {
   "id": "eae461cd-9ae1-422a-8e96-60e12a8fdbf4",
-  "name": "Send GET Request Ruby",
+  "name": "Example RequestTask Workflow",
   "description": "This workflow makes a url request and prints a response.",
   "versionTag": "1.0",
   "historyTimeToLive": 90,
