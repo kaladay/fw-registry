@@ -1,0 +1,18 @@
+{
+  "id": "da2288da-2304-4695-87bc-649453bb1d93",
+  "name": "Zip File",
+  "description": "Compress File using the ZIP format",
+  "deserializeAs": "CompressFileTask",
+  "inputVariables": [
+    {
+    "key": "timestamp",
+    "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {},
+  "source": "{{{exampleFilePath}}}/testFileCreate/{{{exampleFileName}}}",
+  "destination": "{{{exampleFilePath}}}/testFileCreate/{{{exampleFileName}}}.zip",
+  "format": "ZIP",
+  "container": "NONE",
+  "asyncBefore": true
+}
