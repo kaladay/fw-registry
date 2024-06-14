@@ -52,9 +52,9 @@ fw run example-filetask
 Trigger the workflow using an **HTTP** request such as with **Curl**:
 
 ```shell
-curl --location --request POST 'https://folio-edge-dev.library.tamu.edu/mod-workflow/events/workflow/example-filetask/start' \
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/example-filetask/start' \
   --header 'Content-Type: application/json' \
-  --header 'X-Okapi-Tenant: tamu' \
-  --data-raw '{ "logLevel": "INFO", "exampleFilePath": "/mnt/workflows/tamu", "exampleFileName": "testFile" }'
+  --header 'X-Okapi-Tenant: diku' \
+  --data-raw '{ "logLevel": "INFO" }'
 
 ```
