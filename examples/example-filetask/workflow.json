@@ -1,7 +1,7 @@
 {
     "id": "6487be3e-e38d-495c-a9ed-92a49fe1942d",
-    "name": "Create File Ruby",
-    "description": "Create File in Specified Path workflow.",
+    "name": "Example FileTask",
+    "description": "Example workflow that creates a file in the specified path.",
     "versionTag": "1.0",
     "historyTimeToLive": 90,
     "deploymentId": null,

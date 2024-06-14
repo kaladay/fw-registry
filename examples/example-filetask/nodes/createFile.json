@@ -1,6 +1,6 @@
 {
   "id": "e3ce8683-b324-407a-95be-0f2c55481102",
-  "name": "Create File Task",
+  "name": "Create File",
   "description": "Create a file in a directory.",
   "deserializeAs": "FileTask",
   "inputVariables": [
