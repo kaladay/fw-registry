@@ -21,7 +21,7 @@ The `wd` variable in the `fw-cli` configuration should then look something like 
 
 ### Example Compressed File Task Workflow
 
-This workflows creates a file in a specified path.
+This workflows creates a file in a specified path and compresses it in a zip format.
 
 ```shell
 fw config set exampleFilePath ***
