@@ -1,7 +1,7 @@
 {
     "id": "875ddfd2-5ab3-4cd6-94d3-145d941388bd",
-    "name": "Quick Database Connect Test Start Trigger",
-    "description": "REST Post Endpoint",
+    "name": "Example DatabaseTask Start Trigger",
+    "description": "REST POST end point.",
     "type": "MESSAGE_CORRELATE",
     "method": "POST",
     "deserializeAs": "EventTrigger",
