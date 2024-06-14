@@ -1,7 +1,7 @@
 {
   "id": "da2288da-2304-4695-87bc-649453bb1d93",
   "name": "Zip File",
-  "description": "Compress File using the ZIP format",
+  "description": "Compress a file using the ZIP format.",
   "deserializeAs": "CompressFileTask",
   "inputVariables": [],
   "outputVariable": {},
