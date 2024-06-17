@@ -1,0 +1,19 @@
+{
+  "id": "f99d0430-3028-4b40-9eb3-c9bbf8799c5a",
+  "name": "Send GET Request",
+  "description": "Send GET request to a given server.",
+  "deserializeAs": "RequestTask",
+  "inputVariables": [
+  ],
+  "headerOutputVariables": [],
+  "outputVariable": {
+    "key": "reqResponse",
+    "type": "LOCAL"
+  },
+  "request": {
+    "url": "{{{exampleUrlPath}}}",
+    "method": "GET",
+    "accept": "application/json"
+  },
+  "asyncBefore": true
+}
