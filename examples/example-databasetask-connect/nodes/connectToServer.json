@@ -1,0 +1,13 @@
+{
+  "id": "8a3f9596-6d74-4a0e-a78b-5675510a3edc",
+  "name": "Connect to Database",
+  "description": "Connect to a given database.",
+  "deserializeAs": "DatabaseConnectionTask",
+  "inputVariables": [],
+  "outputVariable": {},
+  "designation": "example_db",
+  "url": "{{{exampleDatabaseURI}}}",
+  "username": "{{{exampleDatabaseUser}}}",
+  "password": "{{{exampleDatabasePassword}}}",
+  "asyncBefore": true
+}
