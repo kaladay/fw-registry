@@ -39,7 +39,6 @@ These variables are required when triggering the workflow:
 | exampleDatabasePassword | string         | The password of the database you want to connect to. |
 | logLevel                | [INFO,DEBUG]   | Desired log level. |
 
-
 To build and activate:
 ```shell
 fw build example-databasetask-connect
