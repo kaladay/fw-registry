@@ -1,0 +1,6 @@
+{
+  "id": "f5805a42-5e55-479b-b954-a53aa89498a8",
+  "name": "End",
+  "description": "End of Example EmailTask Workflow.",
+  "deserializeAs": "EndEvent"
+}
