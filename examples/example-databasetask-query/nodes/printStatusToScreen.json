@@ -1,0 +1,12 @@
+{
+    "id": "764269d4-2aa0-4a8c-a2d9-aa29023bc272",
+    "name": "Print Query Result",
+    "description": "Print the query result to the screen.",
+    "deserializeAs": "ScriptTask",
+    "scriptFormat": "ruby",
+    "inputVariables":[{
+      "key": "exampleQueryResult",
+      "type": "PROCESS"
+    }],
+    "code": "printStatusToScreen.rb"
+  }
