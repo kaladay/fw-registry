@@ -18,9 +18,9 @@ The `wd` variable in the `fw-cli` configuration should then look something like 
   "wd": "fw-registry/examples",
 ```
 
-## example compressed-file-task
+## example-compressfiletask-zip
 
-### Example Compressed File Task Workflow
+### Example Compress File Task (Zip) Workflow
 
 This workflows creates a file in a specified path and compresses it in a zip format.
 
