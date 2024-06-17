@@ -1,0 +1,8 @@
+{
+  "id": "3a4c9f71-249a-48de-aaf7-f38e1f2fc279",
+  "name": "Display Response",
+  "description": "Process and display GET response.",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "ruby",
+  "code": "printResponseToScreen.rb"
+}
