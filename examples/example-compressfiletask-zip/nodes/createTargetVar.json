@@ -1,12 +1,12 @@
 {
-    "id": "49fef1c7-aa46-4a32-ac88-9a765e54c810",
-    "name": "Create Target Variable",
-    "description": "Create Target variable for CompressFileTask.",
-    "deserializeAs": "ScriptTask",
-    "outputVariable": {
-      "key": "exampleFileData",
-      "type": "LOCAL"
-    },
-    "scriptFormat": "ruby",
-    "code": "createTargetVar.rb"
-  }
+  "id": "49fef1c7-aa46-4a32-ac88-9a765e54c810",
+  "name": "Create Target Variable",
+  "description": "Create Target variable for CompressFileTask.",
+  "deserializeAs": "ScriptTask",
+  "outputVariable": {
+    "key": "exampleFileData",
+    "type": "LOCAL"
+  },
+  "scriptFormat": "ruby",
+  "code": "createTargetVar.rb"
+}
