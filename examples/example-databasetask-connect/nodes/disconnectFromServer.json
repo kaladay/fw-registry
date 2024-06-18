@@ -1,11 +1,11 @@
 {
-    "id": "a20eb62c-ace8-4b3c-b4ba-ed0e3b2b0c19",
-    "name": "Disconnect from Database",
-    "description": "Disconnect from a given database.",
-    "deserializeAs": "DatabaseDisconnectTask",
-    "inputVariables": [],
-    "outputVariable": {},
-    "designation": "example_db",
-    "asyncBefore": true,
-    "asyncAfter": false
+  "id": "a20eb62c-ace8-4b3c-b4ba-ed0e3b2b0c19",
+  "name": "Disconnect from Database",
+  "description": "Disconnect from a given database.",
+  "deserializeAs": "DatabaseDisconnectTask",
+  "inputVariables": [],
+  "outputVariable": {},
+  "designation": "example_db",
+  "asyncBefore": true,
+  "asyncAfter": false
 }
