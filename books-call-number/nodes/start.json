@@ -6,4 +6,3 @@
   "deserializeAs": "StartEvent",
   "expression": "/events/workflow/books-call-number/start"
 }
- 
