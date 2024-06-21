@@ -6,6 +6,53 @@ if (logLevel === 'DEBUG') {
 
 var where = 'TRUE';
 
+// wip top
+
+var libraryNameArray = JSON.parse(libraryName);
+
+var normalizeArray = function (array) {
+  var index = array.indexOf('All');
+  if (index >= 0) {
+      array.splice(index, 1);
+  }
+};
+
+if (libraryNameArray) {
+  normalizeArray(libraryNameArray);
+  if (libraryNameArray.length > 0) {
+    from += '\n\tLEFT JOIN public.inventory_locations publoc ON item_ext.effective_location_id = publoc.id'
+          + '\n\tLEFT JOIN public.inventory_libraries publib ON publoc.library_id = publib.id';
+
+    where += '\n\tAND publib.name IN (\'' + libraryNameArray.join('\',\'') + '\')';
+  }
+}
+
+
+var locationDiscoveryDisplayNameArray = JSON.parse(locationDiscoveryDisplayName);
+
+if (locationDiscoveryDisplayNameArray) {
+  normalizeArray(locationDiscoveryDisplayNameArray);
+
+  if (locationDiscoveryDisplayNameArray.length > 0) {
+    from += '\n\tLEFT JOIN public.inventory_locations publoc ON item_ext.effective_location_name = publoc.name';
+
+    where += '\n\tAND publoc.discovery_display_name IN (\'' + locationDiscoveryDisplayNameArray.join('\',\'') + '\')';
+  }
+}
+
+var locationNameArray = JSON.parse(locationName);
+
+if (locationNameArray) {
+  normalizeArray(locationNameArray);
+
+  if (locationNameArray.length > 0) {
+    where += '\n\tAND item_ext.effective_location_name IN (\'' + locationNameArray.join('\',\'') + '\')';
+  }
+}
+
+
+// wip bottom
+
 if (startRange) {
   where = '\n\t\tUPPER(ie.effective_call_number) >= UPPER(\'' + startRange + '\')';
 }
@@ -24,6 +71,7 @@ var cte = 'WITH MaxLength AS (' +
 var booksCallNumberQuery =
   '\n\n' + cte +
   '\nSELECT ie.effective_call_number' +
+  '\n\tie.effective_location_name AS item_effective_location,' +     // wip
   '\n\tFROM folio_reporting.item_ext ie' +
   '\n\tCROSS JOIN MaxLength' +
   '\nWHERE ' + where +
