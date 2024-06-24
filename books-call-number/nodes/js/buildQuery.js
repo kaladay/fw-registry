@@ -1,16 +1,10 @@
-if (logLevel === 'DEBUG') {
   print('\nlogLevel = ' + logLevel + '\n');
   print('\ncall number start range = ' + startRange + '\n');
   print('\ncall number end range = ' + endRange + '\n');
 
-  print('libraryName = ' + libraryName + '\n');
-  print('locationDiscoveryDisplayName = ' + locationDiscoveryDisplayName + '\n');
   print('locationName = ' + locationName + '\n');
-}
 
 var where = 'TRUE';
-
-var libraryNameArray = JSON.parse(libraryName);
 
 var normalizeArray = function (array) {
   var index = array.indexOf('All');
@@ -19,37 +13,7 @@ var normalizeArray = function (array) {
   }
 };
 
-if (libraryNameArray) {
-  normalizeArray(libraryNameArray);
-  if (libraryNameArray.length > 0) {
-    from += '\n\tLEFT JOIN public.inventory_locations publoc ON item_ext.effective_location_id = publoc.id'
-          + '\n\tLEFT JOIN public.inventory_libraries publib ON publoc.library_id = publib.id';
-
-    where += '\n\tAND publib.name IN (\'' + libraryNameArray.join('\',\'') + '\')';
-  }
-}
-
-var locationDiscoveryDisplayNameArray = JSON.parse(locationDiscoveryDisplayName);
-
-if (locationDiscoveryDisplayNameArray) {
-  normalizeArray(locationDiscoveryDisplayNameArray);
-
-  if (locationDiscoveryDisplayNameArray.length > 0) {
-    from += '\n\tLEFT JOIN public.inventory_locations publoc ON item_ext.effective_location_name = publoc.name';
-
-    where += '\n\tAND publoc.discovery_display_name IN (\'' + locationDiscoveryDisplayNameArray.join('\',\'') + '\')';
-  }
-}
-
 var locationNameArray = JSON.parse(locationName);
-
-if (locationNameArray) {
-  normalizeArray(locationNameArray);
-
-  if (locationNameArray.length > 0) {
-    where += '\n\tAND item_ext.effective_location_name IN (\'' + locationNameArray.join('\',\'') + '\')';
-  }
-}
 
 if (startRange) {
   where = '\n\t\tUPPER(ie.effective_call_number) >= UPPER(\'' + startRange + '\')';
@@ -61,6 +25,13 @@ if (endRange) {
 
 where += '\n\t\tAND ie.status_name = \'Checked out\'';
 
+if (locationNameArray.length > 0) {
+  normalizeArray(locationNameArray);
+  print(locationNameArray);
+
+  where += '\n\tAND ie.effective_location_name IN (\'' + locationNameArray.join('\',\'') + '\')';
+}
+
 var cte = 'WITH MaxLength AS (' +
 '\n\tSELECT MAX(LENGTH(ie.effective_call_number)) AS max_len' +
 '\n\tFROM folio_reporting.item_ext ie' +
@@ -68,20 +39,14 @@ var cte = 'WITH MaxLength AS (' +
 
 var booksCallNumberQuery =
   '\n\n' + cte +
-  '\nSELECT ie.effective_call_number' +
-  '\n\tie.effective_location_name AS item_effective_location,' +
+  '\nSELECT ie.effective_call_number,' +
+  '\n\tie.effective_location_name AS item_effective_location' +
   '\n\tFROM folio_reporting.item_ext ie' +
   '\n\tCROSS JOIN MaxLength' +
   '\nWHERE ' + where +
   '\nORDER BY ie.effective_call_number, item_effective_location';
 
-if (logLevel === 'DEBUG') {
-  print('\nbooksCallNumberQuery = ' + booksCallNumberQuery);
-}
-
-if (logLevel === 'DEBUG') {
-  print('\nbooksCallNumberQuery = ' + booksCallNumberQuery);
-}
+print(booksCallNumberQuery);
 
 var queryWrapper = {
   sql: booksCallNumberQuery,
