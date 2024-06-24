@@ -13,9 +13,6 @@ var normalizeArray = function (array) {
   }
 };
 
-if(locationName == ["All"]){
-
-}
 var locationNameArray = JSON.parse(locationName);
 
 if (startRange) {
