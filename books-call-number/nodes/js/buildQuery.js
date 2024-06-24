@@ -2,11 +2,13 @@ if (logLevel === 'DEBUG') {
   print('\nlogLevel = ' + logLevel + '\n');
   print('\ncall number start range = ' + startRange + '\n');
   print('\ncall number end range = ' + endRange + '\n');
+
+  print('libraryName = ' + libraryName + '\n');
+  print('locationDiscoveryDisplayName = ' + locationDiscoveryDisplayName + '\n');
+  print('locationName = ' + locationName + '\n');
 }
 
 var where = 'TRUE';
-
-// wip top
 
 var libraryNameArray = JSON.parse(libraryName);
 
@@ -26,7 +28,6 @@ if (libraryNameArray) {
     where += '\n\tAND publib.name IN (\'' + libraryNameArray.join('\',\'') + '\')';
   }
 }
-
 
 var locationDiscoveryDisplayNameArray = JSON.parse(locationDiscoveryDisplayName);
 
@@ -50,9 +51,6 @@ if (locationNameArray) {
   }
 }
 
-
-// wip bottom
-
 if (startRange) {
   where = '\n\t\tUPPER(ie.effective_call_number) >= UPPER(\'' + startRange + '\')';
 }
@@ -71,11 +69,15 @@ var cte = 'WITH MaxLength AS (' +
 var booksCallNumberQuery =
   '\n\n' + cte +
   '\nSELECT ie.effective_call_number' +
-  '\n\tie.effective_location_name AS item_effective_location,' +     // wip
+  '\n\tie.effective_location_name AS item_effective_location,' +
   '\n\tFROM folio_reporting.item_ext ie' +
   '\n\tCROSS JOIN MaxLength' +
   '\nWHERE ' + where +
-  '\nORDER BY ie.effective_call_number';
+  '\nORDER BY ie.effective_call_number, item_effective_location';
+
+if (logLevel === 'DEBUG') {
+  print('\nbooksCallNumberQuery = ' + booksCallNumberQuery);
+}
 
 if (logLevel === 'DEBUG') {
   print('\nbooksCallNumberQuery = ' + booksCallNumberQuery);
