@@ -13,6 +13,9 @@ var normalizeArray = function (array) {
   }
 };
 
+if(locationName == ["All"]){
+
+}
 var locationNameArray = JSON.parse(locationName);
 
 if (startRange) {
@@ -25,12 +28,9 @@ if (endRange) {
 
 where += '\n\t\tAND ie.status_name = \'Checked out\'';
 
-if (locationNameArray.length > 0) {
-  normalizeArray(locationNameArray);
-  print(locationNameArray);
-
-  where += '\n\tAND ie.effective_location_name IN (\'' + locationNameArray.join('\',\'') + '\')';
-}
+ normalizeArray(locationNameArray);
+ print(locationNameArray);
+ where += '\n\tAND ie.effective_location_name IN (\'' + locationNameArray.join('\',\'') + '\')';
 
 var cte = 'WITH MaxLength AS (' +
 '\n\tSELECT MAX(LENGTH(ie.effective_call_number)) AS max_len' +
