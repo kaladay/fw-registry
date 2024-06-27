@@ -1,11 +1,9 @@
 print('\nlogLevel = ' + logLevel + '\n');
 print('\ncall number start range = ' + startRange + '\n');
 print('\ncall number end range = ' + endRange + '\n');
-
 print('locationName = ' + locationName + '\n');
 
-var where;
-var batchSize = 10;
+var where = 'TRUE';
 
 var normalizeArray = function (array) {
 var index = array.indexOf('All');
@@ -26,29 +24,26 @@ where += '\n\t\tAND UPPER(ie.effective_call_number) <= RPAD(UPPER(\'' + endRange
 
 where += '\n\t\tAND ie.status_name = \'Checked out\'';
 
+if (locationNameArray.length > 0) {
+ print(locationNameArray);
+
+where += "\n\tAND ie.effective_location_name IN ('"+locationNameArray.join("', '")+"')";
+print("less than 20");
+}
+
 var cte = 'WITH MaxLength AS (' +
 '\n\tSELECT MAX(LENGTH(ie.effective_call_number)) AS max_len' +
 '\n\tFROM folio_reporting.item_ext ie' +
 ')';
-
-if (locationNameArray.length) {
-normalizeArray(locationNameArray);
-print(locationNameArray);
-where += '\n\tAND ie.effective_location_name IN (\'' + locationNameArray.join('\',\'') + '\')';
-} 
 
 var booksCallNumberQuery =
 '\n\n' + cte +
 '\nSELECT ie.effective_call_number,' +
 '\n\tie.effective_location_name AS item_effective_location' +
 '\n\tFROM folio_reporting.item_ext ie' +
-'\n\tCROSS JOIN MaxLength';
-
-if(!!where){
-booksCallNumberQuery += '\nWHERE ' + where;
-}
-
-booksCallNumberQuery+= '\nORDER BY ie.effective_call_number, item_effective_location';
+'\n\tCROSS JOIN MaxLength' +
+'\nWHERE ' + where +
+'\nORDER BY ie.effective_call_number, item_effective_location';
 
 print(booksCallNumberQuery);
 
