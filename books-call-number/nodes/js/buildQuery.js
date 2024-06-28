@@ -13,8 +13,8 @@ var locationNameArray = JSON.parse(locationName);
 
 
 for (var i = 0; i < locationNames.length; i++) {
-  var locationName = locationNames[i];
-  totalCharacterCount += locationName.length;
+  var locationNameVar = locationNames[i];
+  totalCharacterCount += locationNameVar.length;
 }
 
 
@@ -33,7 +33,7 @@ where += '\n\t\tAND UPPER(ie.effective_call_number) <= RPAD(UPPER(\'' + endRange
 
 where += '\n\t\tAND ie.status_name = \'Checked out\'';
 
-if (locationNameArray.length > 0) {
+if (locationNameArray.length > 0 && locationNameArray.length < totalCharacterCount) {
  print(locationNameArray);
   where += "\n\tAND ie.effective_location_name IN ('"+locationNameArray.join("', '")+"')";
 }
