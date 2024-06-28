@@ -5,14 +5,23 @@ print('locationName = ' + locationName + '\n');
 
 var where = 'TRUE';
 
-var normalizeArray = function (array) {
-var index = array.indexOf('All');
-if (index >= 0) {
-    array.splice(index, 1);
-}
-};
+const locationNames = execution.getVariable('locationName') || [];
+const maxAllowedCharacters = 3000;
+let totalCharacterCount = 0;
 
 var locationNameArray = JSON.parse(locationName);
+
+
+for (var i = 0; i < locationNames.length; i++) {
+  var locationName = locationNames[i];
+  totalCharacterCount += locationName.length;
+}
+
+
+if (totalCharacterCount > maxAllowedCharacters) {
+   throw new Error("Selection exceeds the maximum allowed character count.");
+}
+execution.setVariable('validatedLocationNames', locationNames);
 
 if (startRange) {
 where = '\n\t\tUPPER(ie.effective_call_number) >= UPPER(\'' + startRange + '\')';
@@ -26,9 +35,7 @@ where += '\n\t\tAND ie.status_name = \'Checked out\'';
 
 if (locationNameArray.length > 0) {
  print(locationNameArray);
-
-where += "\n\tAND ie.effective_location_name IN ('"+locationNameArray.join("', '")+"')";
-print("less than 20");
+  where += "\n\tAND ie.effective_location_name IN ('"+locationNameArray.join("', '")+"')";
 }
 
 var cte = 'WITH MaxLength AS (' +
