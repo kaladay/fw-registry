@@ -50,7 +50,7 @@ var booksCallNumberQuery =
 print(booksCallNumberQuery);
 
 var queryWrapper = {
-sql: booksCallNumberQuery,
+  sql: booksCallNumberQuery,
 };
 
 execution.setVariableLocal('booksCallNumberQuery', S(JSON.stringify(queryWrapper)));
