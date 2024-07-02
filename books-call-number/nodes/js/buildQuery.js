@@ -28,13 +28,17 @@ var cte = 'WITH MaxLength AS (' +
 ')';
 
 var booksCallNumberQuery =
-'\n\n' + cte +
-'\nSELECT ie.effective_call_number,' +
-'\n\tie.effective_location_name AS item_effective_location' +
-'\n\tFROM folio_reporting.item_ext ie' +
-'\n\tCROSS JOIN MaxLength' +
-'\nWHERE ' + where +
-'\nORDER BY ie.effective_call_number, item_effective_location';
+  '\n\n' + cte +
+  '\nSELECT ie.effective_call_number,' +
+  '\n\tie.effective_location_name AS item_effective_location' +
+  '\n\tFROM folio_reporting.item_ext ie' +
+  '\n\tCROSS JOIN MaxLength' +
+  '\nWHERE ' + where +
+  '\nORDER BY ie.effective_call_number, item_effective_location';
+
+if (logLevel === 'DEBUG') {
+  print('\nbooksCallNumberQuery = ' + booksCallNumberQuery);
+}
 
 var queryWrapper = {
   sql: booksCallNumberQuery,
