@@ -18,9 +18,8 @@ if (endRange) {
 
 where += '\n\t\tAND ie.status_name = \'Checked out\'';
 
-if(locationNameArray.length > 0)
-{ 
-   where += "\n\tAND ie.effective_location_name IN ('"+locationNameArray.join("', '")+"')";
+if(locationNameArray.length > 0) { 
+  where += "\n\tAND ie.effective_location_name IN ('"+locationNameArray.join("', '")+"')";
 }
 
 var cte = 'WITH MaxLength AS (' +
