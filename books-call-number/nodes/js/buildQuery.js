@@ -9,7 +9,7 @@ var where = 'TRUE';
 
 var locationNameArray = JSON.parse(locationName);
 
-if (startRange) {
+if (!!startRange) {
   where = '\n\t\tUPPER(ie.effective_call_number) >= UPPER(\'' + startRange + '\')';
 }
 
