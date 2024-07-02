@@ -24,9 +24,9 @@ if (locationNameArray.length > 0) {
 }
 
 var cte = 'WITH MaxLength AS (' +
-'\n\tSELECT MAX(LENGTH(ie.effective_call_number)) AS max_len' +
-'\n\tFROM folio_reporting.item_ext ie' +
-')';
+  '\n\tSELECT MAX(LENGTH(ie.effective_call_number)) AS max_len' +
+  '\n\tFROM folio_reporting.item_ext ie' +
+  ')';
 
 var booksCallNumberQuery =
   '\n\n' + cte +
