@@ -6,17 +6,10 @@ if (logLevel === 'DEBUG') {
 }
 var where = 'TRUE';
 
-const locationNames = execution.getVariable('locationName') || [];
+const locationNames = execution.getVariable('locationName');
+
 const maxAllowedCharacters = 3000;
 let totalCharacterCount = 0;
-
-var locationNameArray = JSON.parse(locationName);
-
-for (var i = 0; i < locationNames.length; i++) {
-  var locationNameVar = locationNames[i];
-  totalCharacterCount += locationNameVar.length;
-}
-
 
 if (startRange) {
   where = '\n\t\tUPPER(ie.effective_call_number) >= UPPER(\'' + startRange + '\')';
@@ -28,9 +21,9 @@ if (endRange) {
 
 where += '\n\t\tAND ie.status_name = \'Checked out\'';
 
-if (locationNameArray.length > 0 && locationNameArray.length < totalCharacterCount) {
-  print(locationNameArray);
-  where += "\n\tAND ie.effective_location_name IN ('"+locationNameArray.join("', '")+"')";
+if(locationNames.length > 0)
+{ 
+  where += "\n\tAND ie.effective_location_name IN ('"+locationNames+"')";
 }
 
 var cte = 'WITH MaxLength AS (' +
