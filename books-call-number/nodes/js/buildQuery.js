@@ -2,7 +2,7 @@ if (logLevel === 'DEBUG') {
   print('\nlogLevel = ' + logLevel + '\n');
   print('\ncall number start range = ' + startRange + '\n');
   print('\ncall number end range = ' + endRange + '\n');
-  print('locationName = ' + locationName + '\n');
+  print('\nlocationName = ' + locationName + '\n');
 }
 var where = 'TRUE';
 
