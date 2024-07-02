@@ -4,6 +4,7 @@ if (logLevel === 'DEBUG') {
   print('\ncall number end range = ' + endRange + '\n');
   print('\nlocationName = ' + locationName + '\n');
 }
+
 var where = 'TRUE';
 
 var locationNameArray = JSON.parse(locationName);
