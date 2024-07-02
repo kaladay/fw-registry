@@ -18,7 +18,7 @@ if (endRange) {
 
 where += '\n\t\tAND ie.status_name = \'Checked out\'';
 
-if(locationNameArray.length > 0) { 
+if (locationNameArray.length > 0) { 
   where += "\n\tAND ie.effective_location_name IN ('"+locationNameArray.join("', '")+"')";
 }
 
@@ -35,8 +35,6 @@ var booksCallNumberQuery =
 '\n\tCROSS JOIN MaxLength' +
 '\nWHERE ' + where +
 '\nORDER BY ie.effective_call_number, item_effective_location';
-
-print(booksCallNumberQuery);
 
 var queryWrapper = {
   sql: booksCallNumberQuery,
