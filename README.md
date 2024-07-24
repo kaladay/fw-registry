@@ -18,21 +18,19 @@ mvn clean spring-boot:run
 
 - Be sure to check and update the tenant header in all the curl requests documented below.
 
-## Variable substitution
+## Variable Substitution
 
-The workflow JSON files are templates initially processed by `fw-cli` using node handlebars template engine followed by Java delegate expression value variable substitution done with [FreeMarkerTemplateUtils](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/ui/freemarker/FreeMarkerTemplateUtils.html) in `mod-camunda` Java delegates and [JUEL](https://juel.sourceforge.net/) used by the Camunda BPMN engine. These JSON files are also a `fw-cli` representation of `mod-workflow` domain model which is heavily influenced on [BPMN](https://www.bpmn.org/) and [Camunda](https://camunda.com/).
+The [Workflow](https://github.com/folio-org/mod-workflow/) JSON files are templates that are pre-processed by [fw-cli](https://github.com/TAMULib/fw-cli) using the [Handlebars template engine](https://handlebarsjs.com/). The Handlebars template engine follows the [Mustache Syntax](https://mustache.github.io/mustache.5.html). Some properties are also processed using the [Free Marker Template Utilities](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/ui/freemarker/FreeMarkerTemplateUtils.html) by the Workflow engine called [Camunda](https://github.com/folio-org/mod-camunda/). Camunda may then perform its own pre-processing of the templates while using the [BPMN](https://www.bpmn.org/) based on the [JUEL Syntax](https://jcp.org/aboutJava/communityprocess/mrel/jsr245/index.html). See also the [JUEL Project Page](http://juel.sourceforge.net/).
 
-***These hold credentials/secrets that conf node package used by fw-cli to store configurations loaded into a user home app data directory.***
+***These variables might be used to hold credentials/secrets in the fw-cli configurations within the home directory of the user using the fw-cli script.***
 
-1. `{{{}}}` and `{{}}`
-Syntax for [handlebars](https://handlebarsjs.com/) template processing in `fw-cli` at workflow build using `fw build`.
-1. `${}`
-Syntax for [freemarker](https://freemarker.apache.org/) and [JUEL](https://juel.sourceforge.net/) template processing in `mod-camunda` at workflow run. Also used by [camunda expressions](https://docs.camunda.org/manual/7.20/user-guide/process-engine/expression-language/) evaluation which affords calling methods on the object at runtime of the workflow.
-
-
-1. build args are kabab-case using `{{}}` or `{{{}}}` handlebars syntax
-1. activate args are camelCase using `${}` freemarker syntax
-1. run args are camelCase supporting method calls from the [Camuna SPIN](https://docs.camunda.org/manual/7.20/reference/spin/) object using `${}` JUEL syntax
+1. **Build time** arguments are processed and substituted during the use of `fw build` from the fw-cli project.
+1. The fw-cli build-time arguments use the two braces `{{}}` or three braces `{{{}}}` and follows the Mustache Syntax.
+1. The two braces `{{}}` will result in HTML encoding of the substituted values.
+1. The three braces `{{{}}}` will result in raw values being substituted.
+1. **Run time** arguments use the dollar and one brace syntax `${}` from the Workflow) engine.
+1. The JUEL Syntax uses minus signs for mathematical interpretation of variables and therefore minus signs `-` and plus signs `+` should be avoided (avoid using *kabab-case* variable names).
+1. Workflow) engines other than Camunda may or may not follow the JUEL Syntax.
 
 ## patron
 
