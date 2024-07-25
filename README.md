@@ -426,7 +426,7 @@ These variables are required when building and running the workflow:
 | -------------- | -------------- | ----------------- |
 | file                    | file name      | The file path within the specified directory path representing the CSV file to process (do not prefix with a starting slash). |
 | logLevel                | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG". |
-| mis-catalog-reports-url | URL            | Catalog Reports URL. |
+| mis-catalog-reports-url | URL            | Catalog Reports URL (must not include a trailing slash). |
 | password                | string         | Okapi login password. |
 | path                    | directory path | The system directory where the CSV file is stored on the server that also contains the `tenantPath` (include trailing slash after the directory). |
 | username                | string         | Okapi login username.
@@ -468,7 +468,7 @@ These variables are required when building and running the workflow:
 | logLevel                     | string | Designate the desired logging, such as "INFO", "WARN", or "DEBUG". |
 | locationDiscoveryDisplayName | string | A JSON Array of location names. |
 | locationName                 | string | A JSON Array of location names. |
-| mis-catalog-reports-url      | URL    | Catalog Reports URL. |
+| mis-catalog-reports-url      | URL    | Catalog Reports URL (must not include a trailing slash). |
 | resourceType                 | string | A JSON Array of resource types. |
 | suppressHoldings             | boolean | Designate whether or not Holdings should be suppressed. |
 | suppressInstance             | boolean | Designate whether or not Instances should be suppressed. |
@@ -515,7 +515,7 @@ These variables are required when building and running the workflow:
 | locationDiscoveryDisplayName | string | A JSON Array of location names. |
 | locationName                 | string | A JSON Array of location names. |
 | materialType                 | string | A JSON Array of material types. |
-| mis-catalog-reports-url      | URL    | Catalog Reports URL. |
+| mis-catalog-reports-url      | URL    | Catalog Reports URL (must not include a trailing slash). |
 | updatedDateEnd               | string | An updated end date. |
 | updatedDateStart             | string | An updated start date. |
 
@@ -723,7 +723,7 @@ These variables are required when building and running the workflow:
 | ldp-url                 | URL            | LDP URL. |
 | ldp-user                | string         | LDP login username. |
 | logLevel                | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG". |
-| mis-catalog-reports-url | URL            | Catalog Reports URL. |
+| mis-catalog-reports-url | URL            | Catalog Reports URL (must not include a trailing slash). |
 | password                | string         | Okapi login password. |
 | path                    | directory path | The directory on the system where the files, like the CSV file, are stored within on the server and contain the `tenantPath` (include trailing slash after the directory). |
 | startRange              | string         | Start Range of call number. |
