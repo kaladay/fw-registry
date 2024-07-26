@@ -527,8 +527,8 @@ fw config set ldp-password ***
 ```
 
 ```shell
-fw build shelflist-holdings
-fw activate shelflist-holdings
+fw build shelflist-items
+fw activate shelflist-items
 ```
 
 ```shell
