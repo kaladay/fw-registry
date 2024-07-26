@@ -526,7 +526,7 @@ fw config set ldp-user ***
 fw config set ldp-password ***
 ```
 
-```
+```shell
 fw build shelflist-items
 fw activate shelflist-items
 ```
