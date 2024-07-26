@@ -356,8 +356,8 @@ fw config set ldp-password ***
 ```
 
 ```
-fw build shelflist-holdings
-fw activate shelflist-holdings
+fw build shelflist-items
+fw activate shelflist-items
 
 curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/shelflist-items/start' \
 --header 'Content-Type: application/json' \
