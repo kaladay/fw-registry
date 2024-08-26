@@ -9,7 +9,7 @@
     "type": "PROCESS"
   },
   "designation": "example_db",
-  "query": "{{{exampleQuery}}}",
+  "query": "select id, name from workflows limit 20", 
   "includeHeader": true,
   "resultType": "JSON",
   "asyncBefore": true

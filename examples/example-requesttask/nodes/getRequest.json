@@ -11,7 +11,7 @@
     "type": "LOCAL"
   },
   "request": {
-    "url": "{{{exampleUrlPath}}}",
+    "url": "http://example.com/",
     "method": "GET",
     "accept": "text/html"
   },

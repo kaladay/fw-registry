@@ -5,8 +5,8 @@
   "deserializeAs": "CompressFileTask",
   "inputVariables": [],
   "outputVariable": {},
-  "source": "{{{exampleFilePath}}}/testFileCreate/{{{exampleFileName}}}",
-  "destination": "{{{exampleFilePath}}}/testFileCreate/{{{exampleFileName}}}.zip",
+  "source": "/tmp/example/testFileCreate/file.name",
+  "destination": "/tmp/example/testFileCreate/file.name.zip",
   "format": "ZIP",
   "container": "NONE",
   "asyncBefore": true

@@ -11,7 +11,7 @@
     }
   ],
   "outputVariable":{},
-  "path": "{{{exampleFilePath}}}/testFileCreate/{{{exampleFileName}}}",
+  "path": "/tmp/example/testFileCreate/file.name",
   "op": "WRITE",
   "target": "exampleFileData",
   "asyncAfter": false,

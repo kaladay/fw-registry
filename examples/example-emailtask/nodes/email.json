@@ -12,7 +12,7 @@
   "outputVariable": {},
   "includeAttachment": false,
   "mailTo": "${exampleEmailTo}",
-  "mailFrom": "{{{exampleEmailFrom}}}",
+  "mailFrom": "example@localhost",
   "mailMarkup": "<p> Text for Email </p>",
   "mailSubject": "Example Email subject",
   "mailText": "Email Test 123",
